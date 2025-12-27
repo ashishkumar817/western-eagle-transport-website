@@ -13,24 +13,38 @@ const ContactSection = () => {
     equipment: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    const subject = `Enquiry from ${formData.name}${formData.equipment ? ` - ${formData.equipment}` : ''}`;
-    const body = `Name: ${formData.name}
-Email: ${formData.email || 'Not provided'}
-Phone: ${formData.phone}
-Equipment Interest: ${formData.equipment || 'Not specified'}
+    try {
+      const response = await fetch("https://formspree.io/f/xregqpap", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          equipment: formData.equipment,
+          message: formData.message,
+        }),
+      });
 
-Message:
-${formData.message || 'No message provided'}`;
-
-    const mailtoLink = `mailto:sales@westerneagletransportllc.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
-    
-    toast.success("Opening your email client...");
-    setFormData({ name: "", email: "", phone: "", equipment: "", message: "" });
+      if (response.ok) {
+        toast.success("Message sent successfully! We'll get back to you soon.");
+        setFormData({ name: "", email: "", phone: "", equipment: "", message: "" });
+      } else {
+        toast.error("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -128,8 +142,13 @@ ${formData.message || 'No message provided'}`;
                   className="bg-muted border-border resize-none"
                 />
               </div>
-              <Button type="submit" size="lg" className="btn-primary w-full uppercase tracking-wider font-semibold">
-                Send Message
+              <Button 
+                type="submit" 
+                size="lg" 
+                className="btn-primary w-full uppercase tracking-wider font-semibold"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </div>
