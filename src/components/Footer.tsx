@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import logo from "@/assets/logo.webp";
 
 const Footer = () => {
   const quickLinks = [
@@ -30,18 +31,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                <span className="font-heading font-bold text-primary-foreground text-xl">WE</span>
-              </div>
-              <div>
-                <p className="font-heading font-bold text-lg uppercase tracking-wide text-foreground">
-                  Western Eagle
-                </p>
-                <p className="text-xs text-muted-foreground uppercase tracking-wider">
-                  Transport Company
-                </p>
-              </div>
+            <div className="mb-6">
+              <img src={logo} alt="Western Eagle Transport Company" className="h-20 w-auto" />
             </div>
             <p className="text-muted-foreground mb-6">
               Your trusted partner for heavy equipment rental across UAE. We deliver reliable machinery for all your construction and industrial needs.
