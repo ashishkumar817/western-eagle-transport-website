@@ -16,7 +16,20 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent successfully! We'll get back to you soon.");
+    
+    const subject = `Enquiry from ${formData.name}${formData.equipment ? ` - ${formData.equipment}` : ''}`;
+    const body = `Name: ${formData.name}
+Email: ${formData.email || 'Not provided'}
+Phone: ${formData.phone}
+Equipment Interest: ${formData.equipment || 'Not specified'}
+
+Message:
+${formData.message || 'No message provided'}`;
+
+    const mailtoLink = `mailto:sales@westerneagletransportllc.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
+    
+    toast.success("Opening your email client...");
     setFormData({ name: "", email: "", phone: "", equipment: "", message: "" });
   };
 
