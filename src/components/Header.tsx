@@ -28,8 +28,12 @@ const Header = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Western Eagle Transport Company" className="h-16 w-auto" />
+          <Link to="/" className="flex items-center gap-3">
+            <img src={logo} alt="Western Eagle Transport Company" className="h-14 w-auto" />
+            <div className="hidden sm:block">
+              <p className="font-heading font-bold text-lg text-foreground leading-tight">WESTERN EAGLE</p>
+              <p className="text-xs text-muted-foreground uppercase tracking-wider">Transport Company</p>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -42,12 +46,14 @@ const Header = () => {
               <DropdownMenuTrigger className="nav-link flex items-center gap-1 focus:outline-none">
                 Equipment <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-background border-border w-56 max-h-80 overflow-y-auto">
-                {equipmentList.map((item) => (
-                  <DropdownMenuItem key={item.slug} asChild>
+              <DropdownMenuContent className="bg-background/95 backdrop-blur-sm border-border/50 w-56 max-h-96 overflow-y-auto p-1 rounded-none shadow-xl">
+                {equipmentList.map((item, index) => (
+                  <DropdownMenuItem key={item.slug} asChild className="p-0">
                     <Link
                       to={`/equipment/${item.slug}`}
-                      className="cursor-pointer hover:bg-muted hover:text-primary"
+                      className={`block w-full px-4 py-2.5 text-sm cursor-pointer transition-colors ${
+                        index === 0 ? 'text-primary bg-muted/50' : 'text-foreground hover:text-primary hover:bg-muted/50'
+                      }`}
                     >
                       {item.name}
                     </Link>
@@ -61,12 +67,14 @@ const Header = () => {
               <DropdownMenuTrigger className="nav-link flex items-center gap-1 focus:outline-none">
                 Services <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-background border-border w-72 max-h-80 overflow-y-auto">
-                {servicesList.map((item) => (
-                  <DropdownMenuItem key={item.slug} asChild>
+              <DropdownMenuContent className="bg-background/95 backdrop-blur-sm border-border/50 w-72 max-h-96 overflow-y-auto p-1 rounded-none shadow-xl">
+                {servicesList.map((item, index) => (
+                  <DropdownMenuItem key={item.slug} asChild className="p-0">
                     <Link
                       to={`/services/${item.slug}`}
-                      className="cursor-pointer hover:bg-muted hover:text-primary"
+                      className={`block w-full px-4 py-2.5 text-sm cursor-pointer transition-colors ${
+                        index === 0 ? 'text-primary bg-muted/50' : 'text-foreground hover:text-primary hover:bg-muted/50'
+                      }`}
                     >
                       {item.name}
                     </Link>

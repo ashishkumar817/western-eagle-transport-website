@@ -12,8 +12,11 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import { Helmet } from "react-helmet-async";
+import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 const Index = () => {
+  useScrollAnimation();
+
   return (
     <>
       <Helmet>

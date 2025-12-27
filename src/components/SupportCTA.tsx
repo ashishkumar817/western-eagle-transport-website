@@ -17,13 +17,13 @@ const SupportCTA = () => {
             <Button
               size="lg"
               variant="outline"
-              className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+              className="border-2 border-background bg-transparent text-background font-semibold hover:bg-background hover:text-primary"
             >
               Get Quick Support
             </Button>
             <Button
               size="lg"
-              className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
+              className="bg-background text-primary font-semibold hover:bg-background/90"
             >
               Request a Quote
             </Button>

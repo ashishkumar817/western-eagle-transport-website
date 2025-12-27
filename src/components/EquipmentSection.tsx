@@ -19,7 +19,7 @@ interface EquipmentCardProps {
 
 const EquipmentCard = ({ name, image, slug }: EquipmentCardProps) => {
   return (
-    <div className="bg-card rounded-lg overflow-hidden transition-all duration-300 hover:shadow-gold hover:-translate-y-2 group">
+    <div className="bg-card rounded-lg overflow-hidden transition-all duration-300 hover:shadow-gold hover:-translate-y-2 group animate-on-scroll">
       <div className="relative overflow-hidden">
         <img
           src={image}
@@ -32,14 +32,9 @@ const EquipmentCard = ({ name, image, slug }: EquipmentCardProps) => {
         <h3 className="font-heading font-semibold text-lg text-foreground uppercase tracking-wide mb-3">
           {name}
         </h3>
-        <div className="flex gap-2">
-          <Button size="sm" variant="outline" className="flex-1 text-xs" asChild>
-            <Link to={`/equipment/${slug}`}>View Details</Link>
-          </Button>
-          <Button size="sm" className="flex-1 text-xs" asChild>
-            <Link to={`/equipment/${slug}`}>Book Now</Link>
-          </Button>
-        </div>
+        <Button size="sm" variant="outline" className="w-full text-xs" asChild>
+          <Link to={`/equipment/${slug}`}>View Details</Link>
+        </Button>
       </div>
     </div>
   );

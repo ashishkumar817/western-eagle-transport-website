@@ -15,18 +15,13 @@ const AboutSection = () => {
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image */}
-          <div className="relative">
+          <div className="relative animate-on-scroll">
             <div className="relative overflow-hidden rounded-lg shadow-dark">
               <img
                 src={aboutImage}
                 alt="Heavy Equipment in Action"
                 className="w-full h-[400px] lg:h-[500px] object-cover"
               />
-              {/* Overlay Badge */}
-              <div className="absolute bottom-6 left-6 bg-primary px-6 py-4 rounded-lg">
-                <p className="font-heading font-bold text-3xl text-primary-foreground">10+</p>
-                <p className="text-sm text-primary-foreground/80 uppercase tracking-wide">Years Experience</p>
-              </div>
             </div>
           </div>
 

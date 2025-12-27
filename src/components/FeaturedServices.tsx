@@ -11,7 +11,7 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ title, description, image }: ServiceCardProps) => {
   return (
-    <div className="group relative overflow-hidden rounded-lg">
+    <div className="group relative overflow-hidden rounded-lg animate-on-scroll">
       <img
         src={image}
         alt={title}

@@ -8,7 +8,7 @@ interface FeatureCardProps {
 
 const FeatureCard = ({ icon: Icon, title, description }: FeatureCardProps) => {
   return (
-    <div className="group bg-card p-6 rounded-lg border border-border hover:border-primary transition-all duration-300">
+    <div className="group bg-card p-6 rounded-lg border border-border hover:border-primary transition-all duration-300 animate-on-scroll">
       <div className="feature-icon mb-4">
         <Icon className="w-8 h-8" />
       </div>
