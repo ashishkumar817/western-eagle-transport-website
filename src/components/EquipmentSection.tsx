@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import excavatorImg from "@/assets/equipment/excavator.jpg";
 import forkliftImg from "@/assets/equipment/forklift.jpg";
 import wheelLoaderImg from "@/assets/equipment/wheel-loader.jpg";
@@ -13,9 +14,10 @@ import busImg from "@/assets/equipment/bus.jpg";
 interface EquipmentCardProps {
   name: string;
   image: string;
+  slug: string;
 }
 
-const EquipmentCard = ({ name, image }: EquipmentCardProps) => {
+const EquipmentCard = ({ name, image, slug }: EquipmentCardProps) => {
   return (
     <div className="bg-card rounded-lg overflow-hidden transition-all duration-300 hover:shadow-gold hover:-translate-y-2 group">
       <div className="relative overflow-hidden">
@@ -31,11 +33,11 @@ const EquipmentCard = ({ name, image }: EquipmentCardProps) => {
           {name}
         </h3>
         <div className="flex gap-2">
-          <Button size="sm" variant="outline" className="flex-1 text-xs">
-            View Details
+          <Button size="sm" variant="outline" className="flex-1 text-xs" asChild>
+            <Link to={`/equipment/${slug}`}>View Details</Link>
           </Button>
-          <Button size="sm" className="flex-1 text-xs">
-            Book Now
+          <Button size="sm" className="flex-1 text-xs" asChild>
+            <Link to={`/equipment/${slug}`}>Book Now</Link>
           </Button>
         </div>
       </div>
@@ -45,22 +47,21 @@ const EquipmentCard = ({ name, image }: EquipmentCardProps) => {
 
 const EquipmentSection = () => {
   const equipment = [
-    { name: "Forklift for Rent", image: forkliftImg },
-    { name: "Wheel Loader for Rent", image: wheelLoaderImg },
-    { name: "Excavator for Rent", image: excavatorImg },
-    { name: "Crane for Rent", image: craneImg },
-    { name: "Boom Lift for Rent", image: boomLiftImg },
-    { name: "Scissor Lift for Rent", image: scissorLiftImg },
-    { name: "Generator for Rent", image: generatorImg },
-    { name: "Skid Steer Loader for Rent", image: skidSteerImg },
-    { name: "Backhoe Loader for Rent", image: backhoeImg },
-    { name: "Passenger Bus for Rent", image: busImg },
+    { name: "Forklift for Rent", image: forkliftImg, slug: "forklift" },
+    { name: "Wheel Loader for Rent", image: wheelLoaderImg, slug: "wheel-loader" },
+    { name: "Excavator for Rent", image: excavatorImg, slug: "mini-excavator" },
+    { name: "Crane for Rent", image: craneImg, slug: "cranes" },
+    { name: "Boom Lift for Rent", image: boomLiftImg, slug: "boomloader" },
+    { name: "Scissor Lift for Rent", image: scissorLiftImg, slug: "scissor-lift" },
+    { name: "Generator for Rent", image: generatorImg, slug: "generators" },
+    { name: "Skid Steer Loader for Rent", image: skidSteerImg, slug: "skid-steer-bobcat" },
+    { name: "Backhoe Loader for Rent", image: backhoeImg, slug: "jcb-backhoe-3cx" },
+    { name: "Passenger Bus for Rent", image: busImg, slug: "passenger-bus" },
   ];
 
   return (
     <section id="equipment" className="section-padding bg-background">
       <div className="container-custom">
-        {/* Header */}
         <div className="text-center mb-12">
           <p className="text-primary font-heading uppercase tracking-[0.2em] mb-2">
             Our Fleet
@@ -73,14 +74,12 @@ const EquipmentSection = () => {
           </p>
         </div>
 
-        {/* Equipment Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {equipment.map((item) => (
-            <EquipmentCard key={item.name} name={item.name} image={item.image} />
+            <EquipmentCard key={item.name} name={item.name} image={item.image} slug={item.slug} />
           ))}
         </div>
 
-        {/* View All Button */}
         <div className="text-center mt-10">
           <Button size="lg" className="btn-primary">
             View All Equipment
