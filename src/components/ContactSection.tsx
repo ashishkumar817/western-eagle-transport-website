@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -10,13 +10,14 @@ const ContactSection = () => {
     name: "",
     email: "",
     phone: "",
+    equipment: "",
     message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast.success("Message sent successfully! We'll get back to you soon.");
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    setFormData({ name: "", email: "", phone: "", equipment: "", message: "" });
   };
 
   const handleChange = (
@@ -25,57 +26,34 @@ const ContactSection = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const contactInfo = [
-    {
-      icon: Phone,
-      title: "Call Us",
-      details: ["+971 50 123 4567", "+971 4 123 4567"],
-    },
-    {
-      icon: Mail,
-      title: "Email Us",
-      details: ["info@westerneagle.ae", "support@westerneagle.ae"],
-    },
-    {
-      icon: MapPin,
-      title: "Our Location",
-      details: ["Dubai, United Arab Emirates"],
-    },
-    {
-      icon: Clock,
-      title: "Working Hours",
-      details: ["Mon - Sat: 8:00 AM - 6:00 PM"],
-    },
-  ];
-
   return (
     <section id="contact" className="section-padding bg-secondary">
       <div className="container-custom">
         {/* Header */}
         <div className="text-center mb-12">
-          <p className="text-primary font-heading uppercase tracking-[0.2em] mb-2">
-            Get in Touch
-          </p>
-          <h2 className="heading-secondary text-foreground mb-4">
-            Contact Us
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Have questions about our equipment or services? Reach out to us and we'll be happy to assist you.
+          <p className="text-muted-foreground italic text-lg">
+            Have questions about our equipment or services? Reach out to us today.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8">
           {/* Contact Form */}
           <div className="bg-card p-8 rounded-lg border border-border animate-on-scroll">
-            <h3 className="heading-tertiary text-foreground mb-6">
-              Send Us a Message
-            </h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="flex items-center gap-3 mb-6">
+              <MessageSquare className="w-6 h-6 text-primary" />
+              <h3 className="heading-tertiary text-foreground">
+                Get Enquiry
+              </h3>
+            </div>
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
+                  <label className="block text-sm text-foreground mb-2">
+                    Your Name <span className="text-red-500">*</span>
+                  </label>
                   <Input
                     name="name"
-                    placeholder="Your Name"
+                    placeholder="John Doe"
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -83,78 +61,144 @@ const ContactSection = () => {
                   />
                 </div>
                 <div>
+                  <label className="block text-sm text-foreground mb-2">
+                    Email Address
+                  </label>
                   <Input
                     name="email"
                     type="email"
-                    placeholder="Your Email"
+                    placeholder="john@example.com"
                     value={formData.email}
+                    onChange={handleChange}
+                    className="bg-muted border-border"
+                  />
+                </div>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm text-foreground mb-2">
+                    Phone Number <span className="text-red-500">*</span>
+                  </label>
+                  <Input
+                    name="phone"
+                    type="tel"
+                    placeholder="+971 00 000 0000"
+                    value={formData.phone}
                     onChange={handleChange}
                     required
                     className="bg-muted border-border"
                   />
                 </div>
+                <div>
+                  <label className="block text-sm text-foreground mb-2">
+                    Equipment Interest
+                  </label>
+                  <Input
+                    name="equipment"
+                    placeholder="e.g., Excavator, Crane"
+                    value={formData.equipment}
+                    onChange={handleChange}
+                    className="bg-muted border-border"
+                  />
+                </div>
               </div>
               <div>
-                <Input
-                  name="phone"
-                  type="tel"
-                  placeholder="Phone Number"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="bg-muted border-border"
-                />
-              </div>
-              <div>
+                <label className="block text-sm text-foreground mb-2">
+                  Message
+                </label>
                 <Textarea
                   name="message"
-                  placeholder="Your Message"
+                  placeholder="Tell us about your project requirements..."
                   value={formData.message}
                   onChange={handleChange}
-                  required
                   rows={5}
                   className="bg-muted border-border resize-none"
                 />
               </div>
-              <Button type="submit" size="lg" className="btn-primary w-full gap-2">
-                <Send className="w-4 h-4" />
+              <Button type="submit" size="lg" className="btn-primary w-full uppercase tracking-wider font-semibold">
                 Send Message
               </Button>
             </form>
           </div>
 
           {/* Contact Info & Map */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             {/* Contact Cards */}
             <div className="grid sm:grid-cols-2 gap-4">
-              {contactInfo.map((info) => (
-                <div
-                  key={info.title}
-                  className="bg-card p-6 rounded-lg border border-border animate-on-scroll"
-                >
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                    <info.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h4 className="font-heading font-semibold text-foreground uppercase tracking-wide mb-2">
-                    {info.title}
-                  </h4>
-                  {info.details.map((detail) => (
-                    <p key={detail} className="text-muted-foreground text-sm">
-                      {detail}
-                    </p>
-                  ))}
+              {/* Address */}
+              <div className="bg-card p-5 rounded-lg border border-border animate-on-scroll flex items-start gap-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-6 h-6 text-primary" />
                 </div>
-              ))}
-            </div>
-
-            {/* Map Placeholder */}
-            <div className="bg-card rounded-lg border border-border overflow-hidden h-64">
-              <div className="w-full h-full bg-muted flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-primary mx-auto mb-2" />
-                  <p className="text-muted-foreground">
-                    Dubai, United Arab Emirates
+                <div>
+                  <h4 className="font-heading text-sm text-muted-foreground mb-1">Address</h4>
+                  <p className="text-foreground text-sm leading-relaxed">
+                    Mussafah-44, Building ELITE Business Zone Investment, Office No.58, Abu Dhabi - U.A.E
                   </p>
                 </div>
+              </div>
+
+              {/* Phone */}
+              <div className="bg-card p-5 rounded-lg border border-border animate-on-scroll flex items-start gap-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-heading text-sm text-muted-foreground mb-1">Phone</h4>
+                  <a href="tel:+971505567467" className="block text-foreground text-sm hover:text-primary transition-colors">
+                    +971 50 556 7467
+                  </a>
+                  <a href="tel:+971565881099" className="block text-foreground text-sm hover:text-primary transition-colors">
+                    +971 56 588 1099
+                  </a>
+                </div>
+              </div>
+
+              {/* Email */}
+              <div className="bg-card p-5 rounded-lg border border-border animate-on-scroll flex items-start gap-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-heading text-sm text-muted-foreground mb-1">Email</h4>
+                  <a href="mailto:sales@westerneagletransportllc.com" className="block text-foreground text-sm hover:text-primary transition-colors break-all">
+                    sales@westerneagletransportllc.com
+                  </a>
+                </div>
+              </div>
+
+              {/* Working Hours */}
+              <div className="bg-card p-5 rounded-lg border border-border animate-on-scroll flex items-start gap-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-heading text-sm text-muted-foreground mb-1">Working Hours</h4>
+                  <p className="text-foreground text-sm">
+                    Mon - Sat 8:00 AM - 6:00 PM
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Map */}
+            <div className="animate-on-scroll">
+              <div className="flex items-center gap-2 mb-4 justify-center">
+                <MapPin className="w-5 h-5 text-primary" />
+                <h3 className="heading-tertiary text-foreground">Our Location</h3>
+              </div>
+              <div className="bg-card rounded-lg border border-border overflow-hidden">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3635.0258213263446!2d54.471253875354506!3d24.345593178268913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e405eeee92e83%3A0xec5e3e72ef2bb44c!2sElite%20Business%20Zone%20Investment!5e0!3m2!1sen!2sin!4v1766849313822!5m2!1sen!2sin" 
+                  width="100%" 
+                  height="280" 
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Western Eagle Transport Location"
+                  className="w-full"
+                />
               </div>
             </div>
           </div>

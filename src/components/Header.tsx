@@ -38,12 +38,12 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
-            <Link to="/" className="nav-link">Home</Link>
-            <a href="/#about" className="nav-link">About Us</a>
+            <Link to="/" className="text-white hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">Home</Link>
+            <a href="/#about" className="text-white hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">About Us</a>
             
             {/* Equipment Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="nav-link flex items-center gap-1 focus:outline-none">
+              <DropdownMenuTrigger className="text-white hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide flex items-center gap-1 focus:outline-none">
                 Equipment <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background/95 backdrop-blur-sm border-border/50 w-56 max-h-96 overflow-y-auto p-1 rounded-none shadow-xl">
@@ -64,7 +64,7 @@ const Header = () => {
             
             {/* Services Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="nav-link flex items-center gap-1 focus:outline-none">
+              <DropdownMenuTrigger className="text-white hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide flex items-center gap-1 focus:outline-none">
                 Services <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background/95 backdrop-blur-sm border-border/50 w-72 max-h-96 overflow-y-auto p-1 rounded-none shadow-xl">
@@ -83,9 +83,9 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
             
-            <a href="/#gallery" className="nav-link">Gallery</a>
-            <Link to="/blog" className="nav-link">Blogs</Link>
-            <a href="/#contact" className="nav-link">Contact</a>
+            <a href="/#gallery" className="text-white hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">Gallery</a>
+            <Link to="/blog" className="text-white hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">Blog</Link>
+            <a href="/#contact" className="text-white hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">Contact</a>
           </nav>
 
           {/* CTA Buttons & Theme Toggle */}
