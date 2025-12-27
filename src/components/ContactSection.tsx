@@ -66,7 +66,7 @@ const ContactSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-card p-8 rounded-lg border border-border">
+          <div className="bg-card p-8 rounded-lg border border-border animate-on-scroll">
             <h3 className="heading-tertiary text-foreground mb-6">
               Send Us a Message
             </h3>
@@ -129,7 +129,7 @@ const ContactSection = () => {
               {contactInfo.map((info) => (
                 <div
                   key={info.title}
-                  className="bg-card p-6 rounded-lg border border-border"
+                  className="bg-card p-6 rounded-lg border border-border animate-on-scroll"
                 >
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                     <info.icon className="w-6 h-6 text-primary" />
