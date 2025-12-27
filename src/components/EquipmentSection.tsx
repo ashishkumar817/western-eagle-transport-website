@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { equipmentList } from "@/lib/data";
 import excavatorImg from "@/assets/equipment/excavator.jpg";
 import forkliftImg from "@/assets/equipment/forklift.jpg";
 import wheelLoaderImg from "@/assets/equipment/wheel-loader.jpg";
@@ -11,6 +11,23 @@ import skidSteerImg from "@/assets/equipment/skid-steer.jpg";
 import backhoeImg from "@/assets/equipment/backhoe.jpg";
 import busImg from "@/assets/equipment/bus.jpg";
 
+const equipmentImages: Record<string, string> = {
+  "forklift": forkliftImg,
+  "wheel-loader": wheelLoaderImg,
+  "jcb-backhoe-3cx": backhoeImg,
+  "boomloader": boomLiftImg,
+  "mini-excavator": excavatorImg,
+  "cranes": craneImg,
+  "manlifts": boomLiftImg,
+  "scissor-lift": scissorLiftImg,
+  "roller": wheelLoaderImg,
+  "recovery-trucks-10-ton": busImg,
+  "generators": generatorImg,
+  "compressors": generatorImg,
+  "skid-steer-bobcat": skidSteerImg,
+  "passenger-bus": busImg,
+};
+
 interface EquipmentCardProps {
   name: string;
   image: string;
@@ -19,66 +36,47 @@ interface EquipmentCardProps {
 
 const EquipmentCard = ({ name, image, slug }: EquipmentCardProps) => {
   return (
-    <div className="bg-card rounded-lg overflow-hidden transition-all duration-300 hover:shadow-gold hover:-translate-y-2 group animate-on-scroll">
-      <div className="relative overflow-hidden">
-        <img
-          src={image}
-          alt={name}
-          className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      </div>
-      <div className="p-4">
-        <h3 className="font-heading font-semibold text-lg text-foreground uppercase tracking-wide mb-3">
+    <Link 
+      to={`/equipment/${slug}`}
+      className="group relative overflow-hidden rounded-lg aspect-[4/3] block animate-on-scroll"
+    >
+      <img
+        src={image}
+        alt={name}
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
+        <h3 className="font-heading font-semibold text-sm md:text-base text-foreground uppercase tracking-wide">
           {name}
         </h3>
-        <Button size="sm" variant="outline" className="w-full text-xs" asChild>
-          <Link to={`/equipment/${slug}`}>View Details</Link>
-        </Button>
       </div>
-    </div>
+    </Link>
   );
 };
 
 const EquipmentSection = () => {
-  const equipment = [
-    { name: "Forklift for Rent", image: forkliftImg, slug: "forklift" },
-    { name: "Wheel Loader for Rent", image: wheelLoaderImg, slug: "wheel-loader" },
-    { name: "Excavator for Rent", image: excavatorImg, slug: "mini-excavator" },
-    { name: "Crane for Rent", image: craneImg, slug: "cranes" },
-    { name: "Boom Lift for Rent", image: boomLiftImg, slug: "boomloader" },
-    { name: "Scissor Lift for Rent", image: scissorLiftImg, slug: "scissor-lift" },
-    { name: "Generator for Rent", image: generatorImg, slug: "generators" },
-    { name: "Skid Steer Loader for Rent", image: skidSteerImg, slug: "skid-steer-bobcat" },
-    { name: "Backhoe Loader for Rent", image: backhoeImg, slug: "jcb-backhoe-3cx" },
-    { name: "Passenger Bus for Rent", image: busImg, slug: "passenger-bus" },
-  ];
-
   return (
     <section id="equipment" className="section-padding bg-background">
       <div className="container-custom">
-        <div className="text-center mb-12">
-          <p className="text-primary font-heading uppercase tracking-[0.2em] mb-2">
-            Our Fleet
-          </p>
+        <div className="text-center mb-8 md:mb-12">
           <h2 className="heading-secondary text-foreground mb-4">
             Equipment Categories
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Explore our comprehensive range of heavy equipment available for rent. All machinery is well-maintained and ready for your project.
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base px-4">
+            Browse our extensive range of heavy machinery available for rent. All equipment is well-maintained and ready for your project.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {equipment.map((item) => (
-            <EquipmentCard key={item.name} name={item.name} image={item.image} slug={item.slug} />
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
+          {equipmentList.map((item) => (
+            <EquipmentCard 
+              key={item.slug} 
+              name={item.name} 
+              image={equipmentImages[item.slug] || excavatorImg} 
+              slug={item.slug} 
+            />
           ))}
-        </div>
-
-        <div className="text-center mt-10">
-          <Button size="lg" className="btn-primary">
-            View All Equipment
-          </Button>
         </div>
       </div>
     </section>
