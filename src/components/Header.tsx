@@ -43,8 +43,19 @@ const Header = () => {
             
             {/* Equipment Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="text-white hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide flex items-center gap-1 focus:outline-none">
-                Equipment <ChevronDown className="w-4 h-4" />
+              <DropdownMenuTrigger asChild>
+                <a 
+                  href="/#equipment" 
+                  className="text-white hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide flex items-center gap-1 focus:outline-none cursor-pointer"
+                  onClick={(e) => {
+                    if (window.location.pathname === '/') {
+                      e.preventDefault();
+                      document.getElementById('equipment')?.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                >
+                  Equipment <ChevronDown className="w-4 h-4" />
+                </a>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background/95 backdrop-blur-sm border-border/50 w-56 max-h-96 overflow-y-auto p-1 rounded-none shadow-xl">
                 {equipmentList.map((item, index) => (
@@ -64,8 +75,19 @@ const Header = () => {
             
             {/* Services Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="text-white hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide flex items-center gap-1 focus:outline-none">
-                Services <ChevronDown className="w-4 h-4" />
+              <DropdownMenuTrigger asChild>
+                <a 
+                  href="/#services" 
+                  className="text-white hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide flex items-center gap-1 focus:outline-none cursor-pointer"
+                  onClick={(e) => {
+                    if (window.location.pathname === '/') {
+                      e.preventDefault();
+                      document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                >
+                  Services <ChevronDown className="w-4 h-4" />
+                </a>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background/95 backdrop-blur-sm border-border/50 w-72 max-h-96 overflow-y-auto p-1 rounded-none shadow-xl">
                 {servicesList.map((item, index) => (

@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/hooks/useTheme";
 import Index from "./pages/Index";
 import EquipmentDetail from "./pages/EquipmentDetail";
 import ServiceDetail from "./pages/ServiceDetail";
+import Services from "./pages/Services";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
@@ -26,6 +27,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/equipment/:slug" element={<EquipmentDetail />} />
               <Route path="/services/:slug" element={<ServiceDetail />} />
+              <Route path="/services" element={<Services />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
