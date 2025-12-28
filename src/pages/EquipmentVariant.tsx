@@ -107,7 +107,7 @@ const EquipmentVariant = () => {
                 {/* Equipment Image */}
                 <div className="relative rounded-lg overflow-hidden shadow-xl">
                   <img 
-                    src={equipment.image} 
+                    src={variant.image || equipment.image} 
                     alt={variant.name}
                     className="w-full h-auto object-cover"
                   />
@@ -246,7 +246,7 @@ const EquipmentVariant = () => {
                       name={v.name}
                       slug={v.slug}
                       parentSlug={slug!}
-                      image={equipment.image}
+                      image={v.image || equipment.image}
                     />
                   ))}
                 </div>

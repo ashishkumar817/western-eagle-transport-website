@@ -50,6 +50,7 @@ export interface ServiceData {
   metaKeywords: string;
   layoutType: ServiceLayoutType;
   icon: LucideIcon;
+  image: string; // Service-specific image path
   overview: {
     title: string;
     content: string[];
@@ -66,6 +67,11 @@ export interface ServiceData {
   relatedServices: RelatedService[];
 }
 
+// ============================================
+// SERVICE IMAGE PATHS - EASY TO UPDATE
+// All images are in public/assets/services/
+// ============================================
+
 export const servicesData: Record<string, ServiceData> = {
   "leasing-machineries-equipments": {
     slug: "leasing-machineries-equipments",
@@ -78,6 +84,7 @@ export const servicesData: Record<string, ServiceData> = {
     metaKeywords: "equipment leasing UAE, machinery rental Dubai, heavy equipment lease Abu Dhabi, construction equipment rental Sharjah",
     layoutType: "zigzag",
     icon: Settings,
+    image: "/assets/services/leasing-machineries.webp",
     overview: {
       title: "What is Equipment Leasing?",
       content: [
@@ -145,6 +152,7 @@ export const servicesData: Record<string, ServiceData> = {
     metaKeywords: "equipment operators UAE, crane operator hire Dubai, forklift operator Abu Dhabi, heavy machinery operator Sharjah",
     layoutType: "timeline",
     icon: Users,
+    image: "/assets/services/trained-operators.webp",
     overview: {
       title: "Expert Operators for Every Machine",
       content: [
@@ -212,6 +220,7 @@ export const servicesData: Record<string, ServiceData> = {
     metaKeywords: "equipment repair UAE, machinery maintenance Dubai, heavy equipment service Abu Dhabi, construction equipment repair Sharjah",
     layoutType: "cards-grid",
     icon: Wrench,
+    image: "/assets/services/equipment-repair.webp",
     overview: {
       title: "Keep Your Equipment Running at Peak Performance",
       content: [
@@ -279,6 +288,7 @@ export const servicesData: Record<string, ServiceData> = {
     metaKeywords: "quality equipment UAE, certified machinery Dubai, inspected equipment rental Abu Dhabi, industrial equipment Sharjah",
     layoutType: "comparison",
     icon: Shield,
+    image: "/assets/services/quality-assured.webp",
     overview: {
       title: "Equipment Quality You Can Trust",
       content: [
@@ -346,6 +356,7 @@ export const servicesData: Record<string, ServiceData> = {
     metaKeywords: "welding equipment rental UAE, cutting equipment Dubai, plasma cutter rental Abu Dhabi, industrial welding Sharjah",
     layoutType: "icon-heavy",
     icon: Hammer,
+    image: "/assets/services/welding-cutting.webp",
     overview: {
       title: "Professional Welding & Cutting Solutions",
       content: [
@@ -413,6 +424,7 @@ export const servicesData: Record<string, ServiceData> = {
     metaKeywords: "heavy machinery rental UAE, construction equipment Dubai, excavator rental Abu Dhabi, bulldozer hire Sharjah",
     layoutType: "split-hero",
     icon: HardHat,
+    image: "/assets/services/heavy-construction.webp",
     overview: {
       title: "Power for Your Biggest Projects",
       content: [
@@ -480,6 +492,7 @@ export const servicesData: Record<string, ServiceData> = {
     metaKeywords: "scaffolding rental UAE, scaffold hire Dubai, industrial scaffolding Abu Dhabi, construction scaffolding Sharjah",
     layoutType: "fullwidth-sections",
     icon: Building2,
+    image: "/assets/services/scaffolding.webp",
     overview: {
       title: "Safe Access Solutions for Every Project",
       content: [
@@ -547,6 +560,7 @@ export const servicesData: Record<string, ServiceData> = {
     metaKeywords: "equipment logistics UAE, operator support Dubai, construction logistics Abu Dhabi, site support services Sharjah",
     layoutType: "minimalist",
     icon: Truck,
+    image: "/assets/services/logistics-support.webp",
     overview: {
       title: "Your Complete Support Partner",
       content: [
@@ -614,6 +628,7 @@ export const servicesData: Record<string, ServiceData> = {
     metaKeywords: "equipment workshop UAE, machinery maintenance Dubai, heavy equipment repair Abu Dhabi, industrial workshop Sharjah",
     layoutType: "industrial",
     icon: Cog,
+    image: "/assets/services/workshop-maintenance.webp",
     overview: {
       title: "State-of-the-Art Workshop Facilities",
       content: [
