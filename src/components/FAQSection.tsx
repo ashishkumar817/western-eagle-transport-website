@@ -60,8 +60,8 @@ const FAQSection = () => {
 
       <div className="container-custom px-6">
         {/* Header */}
-        <div className="text-center mb-12 animate-on-scroll">
-          <p className="text-primary font-heading uppercase tracking-[0.2em] mb-4">
+        <div className="text-center mb-16 animate-on-scroll">
+          <p className="section-label">
             Got Questions?
           </p>
           <h2 className="heading-secondary text-foreground mb-4">

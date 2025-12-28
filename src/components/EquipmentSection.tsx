@@ -58,7 +58,7 @@ const EquipmentCard = ({ name, image, slug }: EquipmentCardProps) => {
       <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       
       <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
-        <h3 className="font-heading font-semibold text-sm md:text-base text-white uppercase tracking-wide">
+        <h3 className="font-heading font-medium text-sm md:text-base text-white">
           {name}
         </h3>
         
@@ -76,8 +76,8 @@ const EquipmentSection = () => {
   return (
     <section id="equipment" className="section-padding bg-background">
       <div className="container-custom px-6">
-        <div className="text-center mb-8 md:mb-12">
-          <span className="text-primary text-sm font-semibold uppercase tracking-wider">Our Fleet</span>
+        <div className="text-center mb-10 md:mb-16">
+          <span className="section-label">Our Fleet</span>
           <h2 className="heading-secondary text-foreground mb-4 mt-2">
             Equipment Categories
           </h2>

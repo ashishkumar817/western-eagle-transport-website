@@ -57,8 +57,8 @@ const ContactSection = () => {
     <section id="contact" className="section-padding bg-secondary">
       <div className="container-custom px-6">
         {/* Header */}
-        <div className="text-center mb-12">
-          <p className="text-primary font-heading uppercase tracking-[0.2em] mb-4">
+        <div className="text-center mb-16">
+          <p className="section-label">
             Get In Touch
           </p>
           <h2 className="heading-secondary text-foreground mb-4">Contact Us</h2>
@@ -150,7 +150,7 @@ const ContactSection = () => {
               <Button 
                 type="submit" 
                 size="lg" 
-                className="btn-primary w-full uppercase tracking-wider font-semibold"
+                className="btn-primary w-full"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}

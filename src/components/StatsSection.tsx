@@ -52,10 +52,10 @@ const StatItem = ({ value, label, suffix = "" }: StatItemProps) => {
 
   return (
     <div ref={ref} className="text-center">
-      <div className="font-heading font-bold text-5xl md:text-6xl text-primary mb-2">
+      <div className="font-heading font-semibold text-4xl md:text-5xl text-primary mb-3">
         {count}{suffix}
       </div>
-      <p className="text-foreground uppercase tracking-wider font-medium">
+      <p className="text-foreground text-sm font-medium">
         {label}
       </p>
     </div>
@@ -80,10 +80,10 @@ const StatsSection = () => {
                 <StatItem value={stat.value} label={stat.label} suffix={stat.suffix} />
               ) : (
                 <div className="text-center">
-                  <div className="font-heading font-bold text-5xl md:text-6xl text-primary mb-2">
+                  <div className="font-heading font-semibold text-4xl md:text-5xl text-primary mb-3">
                     UAE
                   </div>
-                  <p className="text-foreground uppercase tracking-wider font-medium">
+                  <p className="text-foreground text-sm font-medium">
                     {stat.label}
                   </p>
                 </div>
