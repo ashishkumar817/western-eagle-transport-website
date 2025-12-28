@@ -1,17 +1,5 @@
-import forkliftImg from "@/assets/equipment/forklift.webp";
-import craneImg from "@/assets/equipment/crane.webp";
-import excavatorImg from "@/assets/equipment/excavator.webp";
-import wheelLoaderImg from "@/assets/equipment/wheel-loader.webp";
-import backhoeImg from "@/assets/equipment/backhoe.webp";
-import telehandlerImg from "@/assets/equipment/telehandler.webp";
-import rollerImg from "@/assets/equipment/roller.webp";
-import manliftImg from "@/assets/equipment/manlift.webp";
-import scissorLiftImg from "@/assets/equipment/scissor-lift.webp";
-import generatorImg from "@/assets/equipment/generator.webp";
-import skidSteerImg from "@/assets/equipment/skid-steer.webp";
-import recoveryTruckImg from "@/assets/equipment/recovery-truck.webp";
-import compressorImg from "@/assets/equipment/compressor.webp";
-import busImg from "@/assets/equipment/bus.webp";
+// Equipment images - using public folder paths for easy replacement
+// To change images: replace the files in public/assets/equipment/variants/ folder
 
 export interface EquipmentVariant {
   name: string;
@@ -21,6 +9,7 @@ export interface EquipmentVariant {
   applications: string[];
   specifications: string[];
   brochure?: string;
+  image: string; // Variant-specific image path
 }
 
 export interface RelatedEquipment {
@@ -60,6 +49,11 @@ export interface EquipmentData {
   relatedEquipment?: RelatedEquipment[];
   image: string;
 }
+
+// ============================================
+// EQUIPMENT IMAGE PATHS - EASY TO UPDATE
+// All images are in public/assets/equipment/
+// ============================================
 
 export const equipmentData: Record<string, EquipmentData> = {
   forklift: {
@@ -104,14 +98,62 @@ export const equipmentData: Record<string, EquipmentData> = {
       flexibility: "Scale equipment up or down based on project demand. No long-term commitments—adjust as your requirements change."
     },
     variants: [
-      { name: "3 Ton Forklift for Rent", slug: "3-ton", capacity: "3 Ton", description: "Our 3-ton forklift rental is ideal for warehouses, industrial yards, and construction sites across Abu Dhabi, Dubai and the UAE. Our 3-ton forklifts are engineered to lift, transport, and stack heavy loads with ease. Suitable for both indoor and outdoor operations, they ensure high maneuverability, safety and fuel efficiency. Rent our 3-ton forklifts on a daily, weekly or monthly basis with 24/7 support. We offer fast delivery across Musaffah, Abu Dhabi, Dubai and other Emirates.", applications: ["Indoor warehousing", "Retail stockrooms", "Light manufacturing"], specifications: ["Lifting capacity: 3,000 kg", "Lift height: 3-6 meters", "Compact design for narrow aisles"] },
-      { name: "5 Ton Forklift for Rent", slug: "5-ton", capacity: "5 Ton", description: "Versatile 5-ton forklift suitable for medium-duty operations in warehouses and construction sites. Perfect for handling heavier pallets and construction materials with ease.", applications: ["Medium warehousing", "Construction sites", "Distribution centers"], specifications: ["Lifting capacity: 5,000 kg", "Lift height: 4-7 meters", "Diesel and electric options"] },
-      { name: "7 Ton Forklift for Rent", slug: "7-ton", capacity: "7 Ton", description: "Heavy-duty 7-ton forklift designed for demanding industrial applications and heavier loads. Ideal for steel yards, container handling, and major construction projects.", applications: ["Industrial facilities", "Heavy manufacturing", "Port operations"], specifications: ["Lifting capacity: 7,000 kg", "Lift height: 5-8 meters", "Enhanced stability system"] },
-      { name: "10 Ton Forklift for Rent", slug: "10-ton", capacity: "10 Ton", description: "Powerful 10-ton forklift for heavy industrial use, container handling, and major construction projects. Built for the most demanding lifting requirements.", applications: ["Container handling", "Heavy construction", "Steel industry"], specifications: ["Lifting capacity: 10,000 kg", "Lift height: 4-6 meters", "Reinforced mast and forks"] },
-      { name: "15 Ton Forklift for Rent", slug: "15-ton", capacity: "15 Ton", description: "High-capacity 15-ton forklift for extra-heavy loads in ports, shipyards, and large industrial facilities. Maximum power for maximum productivity.", applications: ["Port operations", "Shipyards", "Heavy industry"], specifications: ["Lifting capacity: 15,000 kg", "Lift height: 4-5 meters", "Heavy-duty chassis"] },
-      { name: "25 Ton Forklift for Rent", slug: "25-ton", capacity: "25 Ton", description: "Maximum capacity 25-ton forklift for the most demanding heavy-lift applications and mega projects. The ultimate solution for exceptional lifting needs.", applications: ["Mega construction projects", "Industrial plants", "Oil & gas facilities"], specifications: ["Lifting capacity: 25,000 kg", "Specialized lifting attachments", "Maximum stability design"] }
+      { 
+        name: "3 Ton Forklift for Rent", 
+        slug: "3-ton", 
+        capacity: "3 Ton", 
+        description: "Our 3-ton forklift rental is ideal for warehouses, industrial yards, and construction sites across Abu Dhabi, Dubai and the UAE. Our 3-ton forklifts are engineered to lift, transport, and stack heavy loads with ease. Suitable for both indoor and outdoor operations, they ensure high maneuverability, safety and fuel efficiency. Rent our 3-ton forklifts on a daily, weekly or monthly basis with 24/7 support. We offer fast delivery across Musaffah, Abu Dhabi, Dubai and other Emirates.", 
+        applications: ["Indoor warehousing", "Retail stockrooms", "Light manufacturing"], 
+        specifications: ["Lifting capacity: 3,000 kg", "Lift height: 3-6 meters", "Compact design for narrow aisles"],
+        image: "/assets/equipment/variants/forklift-3ton.webp"
+      },
+      { 
+        name: "5 Ton Forklift for Rent", 
+        slug: "5-ton", 
+        capacity: "5 Ton", 
+        description: "Versatile 5-ton forklift suitable for medium-duty operations in warehouses and construction sites. Perfect for handling heavier pallets and construction materials with ease.", 
+        applications: ["Medium warehousing", "Construction sites", "Distribution centers"], 
+        specifications: ["Lifting capacity: 5,000 kg", "Lift height: 4-7 meters", "Diesel and electric options"],
+        image: "/assets/equipment/variants/forklift-5ton.webp"
+      },
+      { 
+        name: "7 Ton Forklift for Rent", 
+        slug: "7-ton", 
+        capacity: "7 Ton", 
+        description: "Heavy-duty 7-ton forklift designed for demanding industrial applications and heavier loads. Ideal for steel yards, container handling, and major construction projects.", 
+        applications: ["Industrial facilities", "Heavy manufacturing", "Port operations"], 
+        specifications: ["Lifting capacity: 7,000 kg", "Lift height: 5-8 meters", "Enhanced stability system"],
+        image: "/assets/equipment/variants/forklift-7ton.webp"
+      },
+      { 
+        name: "10 Ton Forklift for Rent", 
+        slug: "10-ton", 
+        capacity: "10 Ton", 
+        description: "Powerful 10-ton forklift for heavy industrial use, container handling, and major construction projects. Built for the most demanding lifting requirements.", 
+        applications: ["Container handling", "Heavy construction", "Steel industry"], 
+        specifications: ["Lifting capacity: 10,000 kg", "Lift height: 4-6 meters", "Reinforced mast and forks"],
+        image: "/assets/equipment/variants/forklift-10ton.webp"
+      },
+      { 
+        name: "15 Ton Forklift for Rent", 
+        slug: "15-ton", 
+        capacity: "15 Ton", 
+        description: "High-capacity 15-ton forklift for extra-heavy loads in ports, shipyards, and large industrial facilities. Maximum power for maximum productivity.", 
+        applications: ["Port operations", "Shipyards", "Heavy industry"], 
+        specifications: ["Lifting capacity: 15,000 kg", "Lift height: 4-5 meters", "Heavy-duty chassis"],
+        image: "/assets/equipment/variants/forklift-15ton.webp"
+      },
+      { 
+        name: "25 Ton Forklift for Rent", 
+        slug: "25-ton", 
+        capacity: "25 Ton", 
+        description: "Maximum capacity 25-ton forklift for the most demanding heavy-lift applications and mega projects. The ultimate solution for exceptional lifting needs.", 
+        applications: ["Mega construction projects", "Industrial plants", "Oil & gas facilities"], 
+        specifications: ["Lifting capacity: 25,000 kg", "Specialized lifting attachments", "Maximum stability design"],
+        image: "/assets/equipment/variants/forklift-25ton.webp"
+      }
     ],
-    image: forkliftImg
+    image: "/assets/equipment/forklift.webp"
   },
   crane: {
     name: "Crane",
@@ -155,15 +197,71 @@ export const equipmentData: Record<string, EquipmentData> = {
       flexibility: "Construction projects often have varying lifting requirements throughout their lifecycle. Crane rental provides the flexibility to bring in 25-ton cranes for early work and scale up to 200-ton capacity for major lifts, then release equipment when no longer needed - optimizing your project budget at every phase."
     },
     variants: [
-      { name: "20 Ton Crane for Rent", slug: "20-ton", capacity: "20 Ton", description: "Compact 20-ton crane ideal for smaller construction sites and general lifting tasks. Perfect for residential and light commercial projects.", applications: ["Small construction", "Residential projects", "Light industrial"], specifications: ["Lifting capacity: 20 tons", "Boom length: up to 25m", "Quick setup time"] },
-      { name: "25 Ton Crane for Rent", slug: "25-ton", capacity: "25 Ton", description: "Versatile 25-ton crane for medium construction and industrial lifting requirements. Excellent balance of capacity and mobility.", applications: ["Medium construction", "Industrial lifting", "Infrastructure"], specifications: ["Lifting capacity: 25 tons", "Boom length: up to 30m", "All-terrain capability"] },
-      { name: "50 Ton Crane for Rent", slug: "50-ton", capacity: "50 Ton", description: "Heavy-duty 50-ton crane for substantial lifting operations and commercial construction projects.", applications: ["Commercial construction", "Heavy industrial", "Power plants"], specifications: ["Lifting capacity: 50 tons", "Boom length: up to 40m", "Enhanced stability"] },
-      { name: "75 Ton Crane for Rent", slug: "75-ton", capacity: "75 Ton", description: "Professional 75-ton crane for demanding lifting operations requiring greater capacity.", applications: ["Large construction", "Industrial installations", "Bridge works"], specifications: ["Lifting capacity: 75 tons", "Boom length: up to 50m", "Advanced outriggers"] },
-      { name: "100 Ton Crane for Rent", slug: "100-ton", capacity: "100 Ton", description: "High-capacity 100-ton crane for heavy construction and industrial installations. Major project capability.", applications: ["High-rise construction", "Heavy machinery", "Bridge works"], specifications: ["Lifting capacity: 100 tons", "Boom length: up to 60m", "Maximum reach"] },
-      { name: "150 Ton Crane for Rent", slug: "150-ton", capacity: "150 Ton", description: "Extra-heavy 150-ton crane for the most demanding lifting operations in oil & gas and mega projects.", applications: ["Mega projects", "Oil & gas", "Power generation"], specifications: ["Lifting capacity: 150 tons", "Extended boom options", "Heavy-duty outriggers"] },
-      { name: "200 Ton Crane for Rent", slug: "200-ton", capacity: "200 Ton", description: "Maximum capacity 200-ton crane for exceptional heavy-lift requirements and specialized industrial applications.", applications: ["Exceptional heavy lifts", "Industrial plants", "Major infrastructure"], specifications: ["Lifting capacity: 200 tons", "Maximum stability design", "Specialized rigging"] }
+      { 
+        name: "20 Ton Crane for Rent", 
+        slug: "20-ton", 
+        capacity: "20 Ton", 
+        description: "Compact 20-ton crane ideal for smaller construction sites and general lifting tasks. Perfect for residential and light commercial projects.", 
+        applications: ["Small construction", "Residential projects", "Light industrial"], 
+        specifications: ["Lifting capacity: 20 tons", "Boom length: up to 25m", "Quick setup time"],
+        image: "/assets/equipment/variants/crane-20ton.webp"
+      },
+      { 
+        name: "25 Ton Crane for Rent", 
+        slug: "25-ton", 
+        capacity: "25 Ton", 
+        description: "Versatile 25-ton crane for medium construction and industrial lifting requirements. Excellent balance of capacity and mobility.", 
+        applications: ["Medium construction", "Industrial lifting", "Infrastructure"], 
+        specifications: ["Lifting capacity: 25 tons", "Boom length: up to 30m", "All-terrain capability"],
+        image: "/assets/equipment/variants/crane-25ton.webp"
+      },
+      { 
+        name: "50 Ton Crane for Rent", 
+        slug: "50-ton", 
+        capacity: "50 Ton", 
+        description: "Heavy-duty 50-ton crane for substantial lifting operations and commercial construction projects.", 
+        applications: ["Commercial construction", "Heavy industrial", "Power plants"], 
+        specifications: ["Lifting capacity: 50 tons", "Boom length: up to 40m", "Enhanced stability"],
+        image: "/assets/equipment/variants/crane-50ton.webp"
+      },
+      { 
+        name: "75 Ton Crane for Rent", 
+        slug: "75-ton", 
+        capacity: "75 Ton", 
+        description: "Professional 75-ton crane for demanding lifting operations requiring greater capacity.", 
+        applications: ["Large construction", "Industrial installations", "Bridge works"], 
+        specifications: ["Lifting capacity: 75 tons", "Boom length: up to 50m", "Advanced outriggers"],
+        image: "/assets/equipment/variants/crane-75ton.webp"
+      },
+      { 
+        name: "100 Ton Crane for Rent", 
+        slug: "100-ton", 
+        capacity: "100 Ton", 
+        description: "High-capacity 100-ton crane for heavy construction and industrial installations. Major project capability.", 
+        applications: ["High-rise construction", "Heavy machinery", "Bridge works"], 
+        specifications: ["Lifting capacity: 100 tons", "Boom length: up to 60m", "Maximum reach"],
+        image: "/assets/equipment/variants/crane-100ton.webp"
+      },
+      { 
+        name: "150 Ton Crane for Rent", 
+        slug: "150-ton", 
+        capacity: "150 Ton", 
+        description: "Extra-heavy 150-ton crane for the most demanding lifting operations in oil & gas and mega projects.", 
+        applications: ["Mega projects", "Oil & gas", "Power generation"], 
+        specifications: ["Lifting capacity: 150 tons", "Extended boom options", "Heavy-duty outriggers"],
+        image: "/assets/equipment/variants/crane-150ton.webp"
+      },
+      { 
+        name: "200 Ton Crane for Rent", 
+        slug: "200-ton", 
+        capacity: "200 Ton", 
+        description: "Maximum capacity 200-ton crane for exceptional heavy-lift requirements and specialized industrial applications.", 
+        applications: ["Exceptional heavy lifts", "Industrial plants", "Major infrastructure"], 
+        specifications: ["Lifting capacity: 200 tons", "Maximum stability design", "Specialized rigging"],
+        image: "/assets/equipment/variants/crane-200ton.webp"
+      }
     ],
-    image: craneImg
+    image: "/assets/equipment/crane.webp"
   },
   excavator: {
     name: "Excavator",
@@ -207,11 +305,35 @@ export const equipmentData: Record<string, EquipmentData> = {
       flexibility: "Project requirements can change quickly in urban construction. Mini excavator rental allows you to access 2-ton machines for tight residential work, or scale up to 5-ton units for commercial sites. Rent by the day, week, or month based on your project timeline with no long-term commitment."
     },
     variants: [
-      { name: "2 Ton Mini Excavator for Rent", slug: "2-ton", capacity: "2 Ton", description: "Compact 2-ton mini excavator perfect for residential and light commercial work. Ideal for landscaping, utility trenching, and tight access excavation in Dubai, Abu Dhabi, and across the UAE.", applications: ["Residential projects", "Landscaping", "Utility work"], specifications: ["Operating weight: 2 tons", "Zero tail swing", "Rubber tracks"] },
-      { name: "3 Ton Mini Excavator for Rent", slug: "3-ton", capacity: "3 Ton", description: "Versatile 3-ton mini excavator for general small-scale excavation projects. Perfect for pool digging, foundation work, and drainage installations.", applications: ["General excavation", "Trenching", "Pool digging"], specifications: ["Operating weight: 3 tons", "Extendable arm option", "Multiple attachments"] },
-      { name: "5 Ton Mini Excavator for Rent", slug: "5-ton", capacity: "5 Ton", description: "Medium 5-ton excavator bridging compact and standard excavator capabilities. Enhanced digging force for commercial and infrastructure projects.", applications: ["Medium projects", "Commercial sites", "Drainage work"], specifications: ["Operating weight: 5 tons", "Enclosed cab", "Enhanced digging force"] }
+      { 
+        name: "2 Ton Mini Excavator for Rent", 
+        slug: "2-ton", 
+        capacity: "2 Ton", 
+        description: "Compact 2-ton mini excavator perfect for residential and light commercial work. Ideal for landscaping, utility trenching, and tight access excavation in Dubai, Abu Dhabi, and across the UAE.", 
+        applications: ["Residential projects", "Landscaping", "Utility work"], 
+        specifications: ["Operating weight: 2 tons", "Zero tail swing", "Rubber tracks"],
+        image: "/assets/equipment/variants/excavator-2ton.webp"
+      },
+      { 
+        name: "3 Ton Mini Excavator for Rent", 
+        slug: "3-ton", 
+        capacity: "3 Ton", 
+        description: "Versatile 3-ton mini excavator for general small-scale excavation projects. Perfect for pool digging, foundation work, and drainage installations.", 
+        applications: ["General excavation", "Trenching", "Pool digging"], 
+        specifications: ["Operating weight: 3 tons", "Extendable arm option", "Multiple attachments"],
+        image: "/assets/equipment/variants/excavator-3ton.webp"
+      },
+      { 
+        name: "5 Ton Mini Excavator for Rent", 
+        slug: "5-ton", 
+        capacity: "5 Ton", 
+        description: "Medium 5-ton excavator bridging compact and standard excavator capabilities. Enhanced digging force for commercial and infrastructure projects.", 
+        applications: ["Medium projects", "Commercial sites", "Drainage work"], 
+        specifications: ["Operating weight: 5 tons", "Enclosed cab", "Enhanced digging force"],
+        image: "/assets/equipment/variants/excavator-5ton.webp"
+      }
     ],
-    image: excavatorImg
+    image: "/assets/equipment/excavator.webp"
   },
   "wheel-loader": {
     name: "Wheel Loader",
@@ -257,15 +379,31 @@ export const equipmentData: Record<string, EquipmentData> = {
       flexibility: "Scale from CAT 950 to 966 based on project needs. No long-term commitments, storage costs, or resale hassles."
     },
     variants: [
-      { name: "950 CAT Wheel Loader for Rent", slug: "950", capacity: "950 Model", description: "The CAT 950 wheel loader delivers exceptional productivity for medium to large-scale construction and loading operations across the UAE. Renowned for its reliability, fuel efficiency, and comfortable operator environment, the 950 is the workhorse of choice for contractors, quarry operators, and logistics facilities. Features include a high-capacity bucket, advanced load-sensing hydraulics, and Caterpillar's proven powertrain technology.", applications: ["General construction sites", "Material handling yards", "Road works and infrastructure", "Aggregate loading operations"], specifications: ["Model: Caterpillar 950", "Operating weight: 17-18 tons", "Bucket capacity: 2.5-3.5 m³", "Engine: Cat C7.1 ACERT™", "Fuel efficient design"] },
-      { name: "966 CAT Wheel Loader for Rent", slug: "966", capacity: "966 Model", description: "The CAT 966 wheel loader represents the pinnacle of heavy-duty loading capability for demanding construction, quarry, and mining applications in the UAE. Delivering superior power, larger bucket capacity, and enhanced durability, the 966 handles the toughest loading challenges with ease. Ideal for large-scale earthmoving, aggregate operations, and high-volume material handling where productivity is paramount.", applications: ["Heavy construction projects", "Quarry and mining operations", "Large-scale aggregate loading", "Port and logistics centers"], specifications: ["Model: Caterpillar 966", "Operating weight: 23-25 tons", "Bucket capacity: 4.0-6.0 m³", "Engine: Cat C9.3 ACERT™", "Maximum productivity design"] }
+      { 
+        name: "950 CAT Wheel Loader for Rent", 
+        slug: "950", 
+        capacity: "950 Model", 
+        description: "The CAT 950 wheel loader delivers exceptional productivity for medium to large-scale construction and loading operations across the UAE. Renowned for its reliability, fuel efficiency, and comfortable operator environment, the 950 is the workhorse of choice for contractors, quarry operators, and logistics facilities. Features include a high-capacity bucket, advanced load-sensing hydraulics, and Caterpillar's proven powertrain technology.", 
+        applications: ["General construction sites", "Material handling yards", "Road works and infrastructure", "Aggregate loading operations"], 
+        specifications: ["Model: Caterpillar 950", "Operating weight: 17-18 tons", "Bucket capacity: 2.5-3.5 m³", "Engine: Cat C7.1 ACERT™", "Fuel efficient design"],
+        image: "/assets/equipment/variants/wheel-loader-950.webp"
+      },
+      { 
+        name: "966 CAT Wheel Loader for Rent", 
+        slug: "966", 
+        capacity: "966 Model", 
+        description: "The CAT 966 wheel loader represents the pinnacle of heavy-duty loading capability for demanding construction, quarry, and mining applications in the UAE. Delivering superior power, larger bucket capacity, and enhanced durability, the 966 handles the toughest loading challenges with ease. Ideal for large-scale earthmoving, aggregate operations, and high-volume material handling where productivity is paramount.", 
+        applications: ["Heavy construction projects", "Quarry and mining operations", "Large-scale aggregate loading", "Port and logistics centers"], 
+        specifications: ["Model: Caterpillar 966", "Operating weight: 23-25 tons", "Bucket capacity: 4.0-6.0 m³", "Engine: Cat C9.3 ACERT™", "Maximum productivity design"],
+        image: "/assets/equipment/variants/wheel-loader-966.webp"
+      }
     ],
     relatedEquipment: [
       { name: "Excavator for Rent", slug: "excavator" },
       { name: "Backhoe Loader for Rent", slug: "backhoe-loader" },
       { name: "Skid Steer Loader for Rent", slug: "skid-steer" }
     ],
-    image: wheelLoaderImg
+    image: "/assets/equipment/wheel-loader.webp"
   },
   "backhoe-loader": {
     name: "JCB Backhoe Loader",
@@ -311,14 +449,23 @@ export const equipmentData: Record<string, EquipmentData> = {
       flexibility: "Tackle trenching and loading with the same machine. Scale equipment based on project phases without long-term commitments."
     },
     variants: [
-      { name: "JCB 3CX Backhoe Loader for Rent", slug: "3cx", capacity: "3CX Model", description: "The JCB 3CX is the world's most popular and trusted backhoe loader, delivering exceptional versatility for construction, excavation, and material handling tasks across the UAE. Features include 4-wheel drive capability, extendable dipper option, multiple attachment compatibility, and the renowned JCB build quality that ensures reliability on demanding job sites.", applications: ["General construction sites", "Trenching and excavation", "Material loading and handling", "Road works and utilities"], specifications: ["Model: JCB 3CX", "4WD capability as standard", "Extendable dipper available", "Multiple attachment options", "Stage V compliant engine"], brochure: "/brochures/jcb-3cx.pdf" }
+      { 
+        name: "JCB 3CX Backhoe Loader for Rent", 
+        slug: "3cx", 
+        capacity: "3CX Model", 
+        description: "The JCB 3CX is the world's most popular and trusted backhoe loader, delivering exceptional versatility for construction, excavation, and material handling tasks across the UAE. Features include 4-wheel drive capability, extendable dipper option, multiple attachment compatibility, and the renowned JCB build quality that ensures reliability on demanding job sites.", 
+        applications: ["General construction sites", "Trenching and excavation", "Material loading and handling", "Road works and utilities"], 
+        specifications: ["Model: JCB 3CX", "4WD capability as standard", "Extendable dipper available", "Multiple attachment options", "Stage V compliant engine"], 
+        brochure: "/brochures/jcb-3cx.pdf",
+        image: "/assets/equipment/variants/backhoe-3cx.webp"
+      }
     ],
     relatedEquipment: [
       { name: "Wheel Loader for Rent", slug: "wheel-loader" },
       { name: "Mini Excavator for Rent", slug: "excavator" },
       { name: "Skid Steer Loader for Rent", slug: "skid-steer" }
     ],
-    image: backhoeImg
+    image: "/assets/equipment/backhoe.webp"
   },
   "boom-loader": {
     name: "Boom Loader",
@@ -362,10 +509,26 @@ export const equipmentData: Record<string, EquipmentData> = {
       flexibility: "Construction phases have varying reach requirements. Boom loader rental allows you to access 14-meter units for standard multi-story work and upgrade to 17-meter telehandlers for high-reach requirements, adjusting equipment to your project's specific material placement challenges."
     },
     variants: [
-      { name: "14m Boom Loader for Rent", slug: "14m", capacity: "14 Meters", description: "Extended 14-meter boom loader/telehandler for construction projects requiring height and reach. Perfect for multi-story construction and industrial material handling.", applications: ["Construction", "Industrial facilities", "Infrastructure"], specifications: ["Lift height: 14m", "Extended boom", "High capacity"] },
-      { name: "17m Boom Loader for Rent", slug: "17m", capacity: "17 Meters", description: "High-reach 17-meter boom loader for demanding projects requiring exceptional height. Maximum reach for the most challenging material placement tasks.", applications: ["High-reach projects", "Major construction", "Specialized applications"], specifications: ["Lift height: 17m", "Maximum reach", "Heavy-duty design"] }
+      { 
+        name: "14m Boom Loader for Rent", 
+        slug: "14m", 
+        capacity: "14 Meters", 
+        description: "Extended 14-meter boom loader/telehandler for construction projects requiring height and reach. Perfect for multi-story construction and industrial material handling.", 
+        applications: ["Construction", "Industrial facilities", "Infrastructure"], 
+        specifications: ["Lift height: 14m", "Extended boom", "High capacity"],
+        image: "/assets/equipment/variants/telehandler-14m.webp"
+      },
+      { 
+        name: "17m Boom Loader for Rent", 
+        slug: "17m", 
+        capacity: "17 Meters", 
+        description: "High-reach 17-meter boom loader for demanding projects requiring exceptional height. Maximum reach for the most challenging material placement tasks.", 
+        applications: ["High-reach projects", "Major construction", "Specialized applications"], 
+        specifications: ["Lift height: 17m", "Maximum reach", "Heavy-duty design"],
+        image: "/assets/equipment/variants/telehandler-17m.webp"
+      }
     ],
-    image: telehandlerImg
+    image: "/assets/equipment/telehandler.webp"
   },
   roller: {
     name: "Roller",
@@ -409,9 +572,18 @@ export const equipmentData: Record<string, EquipmentData> = {
       flexibility: "Different projects require different compaction approaches. Roller rental provides access to single drum rollers for asphalt work and various compaction equipment options, allowing you to match equipment to your specific road construction or site preparation requirements."
     },
     variants: [
-      { name: "Single Drum Roller for Rent", slug: "single-drum", capacity: "Single Drum", description: "Professional single drum vibratory roller for road construction and compaction work. Ideal for asphalt and sub-base compaction across construction projects in the UAE.", applications: ["Road construction", "Asphalt compaction", "General compaction"], specifications: ["Single drum design", "Vibratory compaction", "Water spray system"], brochure: "/brochures/roller.pdf" }
+      { 
+        name: "Single Drum Roller for Rent", 
+        slug: "single-drum", 
+        capacity: "Single Drum", 
+        description: "Professional single drum vibratory roller for road construction and compaction work. Ideal for asphalt and sub-base compaction across construction projects in the UAE.", 
+        applications: ["Road construction", "Asphalt compaction", "General compaction"], 
+        specifications: ["Single drum design", "Vibratory compaction", "Water spray system"], 
+        brochure: "/brochures/roller.pdf",
+        image: "/assets/equipment/variants/roller-single-drum.webp"
+      }
     ],
-    image: rollerImg
+    image: "/assets/equipment/roller.webp"
   },
   manlift: {
     name: "Manlift",
@@ -455,14 +627,68 @@ export const equipmentData: Record<string, EquipmentData> = {
       flexibility: "Elevated work requirements vary significantly across projects and phases. Manlift rental allows access to articulating boom lifts for complex access situations and telescopic manlifts for straight-up height requirements, matching equipment to your specific elevated access needs."
     },
     variants: [
-      { name: "Diesel E450AJ Articulated Manlift", slug: "e450aj", capacity: "E450AJ", description: "Diesel-powered E450AJ articulated manlift offering excellent outreach and maneuverability. Perfect for construction and maintenance tasks requiring flexible positioning at height.", applications: ["Construction", "Maintenance", "Installation work"], specifications: ["Articulating boom", "Diesel powered", "All-terrain capable"], brochure: "/brochures/manlift-e450aj.pdf" },
-      { name: "Diesel 600S Telescopic Manlift", slug: "600s", capacity: "600S", description: "Diesel 600S telescopic manlift providing exceptional straight-up height for demanding applications. Ideal for high-reach construction and industrial projects.", applications: ["High-reach projects", "Industrial facilities", "Construction"], specifications: ["Telescopic boom", "Maximum height", "Diesel powered"], brochure: "/brochures/manlift-600s.pdf" },
-      { name: "Diesel 600AJ Articulated Manlift", slug: "600aj", capacity: "600AJ", description: "Diesel 600AJ articulated boom lift with excellent reach and articulation. Designed for complex access requirements on construction sites.", applications: ["Construction", "Complex access", "Industrial maintenance"], specifications: ["Articulating boom", "Extended outreach", "Heavy-duty platform"], brochure: "/brochures/manlift-600aj.pdf" },
-      { name: "Diesel 660AJ Articulated Manlift", slug: "660aj", capacity: "660AJ", description: "Diesel 660AJ articulated boom lift with superior reach and articulation. Designed for complex access requirements on major construction sites.", applications: ["Major construction", "Complex access", "Industrial maintenance"], specifications: ["Articulating boom", "Extended outreach", "Heavy-duty platform"], brochure: "/brochures/manlift-660aj.pdf" },
-      { name: "Diesel 800AJ Articulated Manlift", slug: "800aj", capacity: "800AJ", description: "Diesel 800AJ high-capacity articulated manlift for exceptional height and reach. Perfect for tall structures and challenging access situations.", applications: ["Tall structures", "Exceptional heights", "Industrial stacks"], specifications: ["High-reach articulating boom", "Maximum platform capacity", "All-terrain tires"], brochure: "/brochures/manlift-800aj.pdf" },
-      { name: "Diesel 860AJ Telescopic Manlift", slug: "860aj", capacity: "860AJ", description: "Diesel 860AJ telescopic manlift offering maximum working height for the most demanding aerial work applications.", applications: ["Maximum height projects", "Special applications", "Industrial facilities"], specifications: ["Telescopic boom", "Maximum working height", "Heavy-duty construction"], brochure: "/brochures/manlift-860aj.pdf" }
+      { 
+        name: "Diesel E450AJ Articulated Manlift", 
+        slug: "e450aj", 
+        capacity: "E450AJ", 
+        description: "Diesel-powered E450AJ articulated manlift offering excellent outreach and maneuverability. Perfect for construction and maintenance tasks requiring flexible positioning at height.", 
+        applications: ["Construction", "Maintenance", "Installation work"], 
+        specifications: ["Articulating boom", "Diesel powered", "All-terrain capable"], 
+        brochure: "/brochures/manlift-e450aj.pdf",
+        image: "/assets/equipment/variants/manlift-e450aj.webp"
+      },
+      { 
+        name: "Diesel 600S Telescopic Manlift", 
+        slug: "600s", 
+        capacity: "600S", 
+        description: "Diesel 600S telescopic manlift providing exceptional straight-up height for demanding applications. Ideal for high-reach construction and industrial projects.", 
+        applications: ["High-reach projects", "Industrial facilities", "Construction"], 
+        specifications: ["Telescopic boom", "Maximum height", "Diesel powered"], 
+        brochure: "/brochures/manlift-600s.pdf",
+        image: "/assets/equipment/variants/manlift-600s.webp"
+      },
+      { 
+        name: "Diesel 600AJ Articulated Manlift", 
+        slug: "600aj", 
+        capacity: "600AJ", 
+        description: "Diesel 600AJ articulated boom lift with excellent reach and articulation. Designed for complex access requirements on construction sites.", 
+        applications: ["Construction", "Complex access", "Industrial maintenance"], 
+        specifications: ["Articulating boom", "Extended outreach", "Heavy-duty platform"], 
+        brochure: "/brochures/manlift-600aj.pdf",
+        image: "/assets/equipment/variants/manlift-600aj.webp"
+      },
+      { 
+        name: "Diesel 660AJ Articulated Manlift", 
+        slug: "660aj", 
+        capacity: "660AJ", 
+        description: "Diesel 660AJ articulated boom lift with superior reach and articulation. Designed for complex access requirements on major construction sites.", 
+        applications: ["Major construction", "Complex access", "Industrial maintenance"], 
+        specifications: ["Articulating boom", "Extended outreach", "Heavy-duty platform"], 
+        brochure: "/brochures/manlift-660aj.pdf",
+        image: "/assets/equipment/variants/manlift-660aj.webp"
+      },
+      { 
+        name: "Diesel 800AJ Articulated Manlift", 
+        slug: "800aj", 
+        capacity: "800AJ", 
+        description: "Diesel 800AJ high-capacity articulated manlift for exceptional height and reach. Perfect for tall structures and challenging access situations.", 
+        applications: ["Tall structures", "Exceptional heights", "Industrial stacks"], 
+        specifications: ["High-reach articulating boom", "Maximum platform capacity", "All-terrain tires"], 
+        brochure: "/brochures/manlift-800aj.pdf",
+        image: "/assets/equipment/variants/manlift-800aj.webp"
+      },
+      { 
+        name: "Diesel 860AJ Telescopic Manlift", 
+        slug: "860aj", 
+        capacity: "860AJ", 
+        description: "Diesel 860AJ telescopic manlift offering maximum working height for the most demanding aerial work applications.", 
+        applications: ["Maximum height projects", "Special applications", "Industrial facilities"], 
+        specifications: ["Telescopic boom", "Maximum working height", "Heavy-duty construction"], 
+        brochure: "/brochures/manlift-860aj.pdf",
+        image: "/assets/equipment/variants/manlift-860aj.webp"
+      }
     ],
-    image: manliftImg
+    image: "/assets/equipment/manlift.webp"
   },
   "scissor-lift": {
     name: "Scissor Lift",
@@ -506,12 +732,44 @@ export const equipmentData: Record<string, EquipmentData> = {
       flexibility: "Different environments require different scissor lift solutions. Rental allows access to electric scissor lifts for quiet indoor work and diesel rough terrain models for outdoor sites, with heights from 6 to 22 meters to match your specific elevated platform requirements."
     },
     variants: [
-      { name: "Electric Scissor Lift for Rent", slug: "electric", capacity: "Electric", description: "Electric scissor lift ideal for indoor warehouse and construction work. Zero emissions, quiet operation, perfect for enclosed spaces and retail environments.", applications: ["Indoor maintenance", "Retail fit-outs", "Warehouse work"], specifications: ["Electric powered", "Zero emissions", "Quiet operation"] },
-      { name: "Electric Scissor Lift 16m for Rent", slug: "16m", capacity: "16 Meters", description: "Electric 16-meter scissor lift for medium-height indoor and light outdoor applications. Perfect for installation work and building maintenance.", applications: ["Medium height work", "Installation", "Maintenance"], specifications: ["Working height: 16m", "Electric powered", "Large platform"] },
-      { name: "Electric Scissor Lift 22m for Rent", slug: "22m", capacity: "22 Meters", description: "High-reach 22-meter electric scissor lift for demanding indoor projects requiring maximum height with stable platform.", applications: ["High indoor work", "Large warehouses", "Industrial buildings"], specifications: ["Working height: 22m", "Electric powered", "Maximum indoor reach"] },
-      { name: "Diesel Scissor Lift for Rent", slug: "diesel", capacity: "Diesel", description: "Diesel-powered rough terrain scissor lift for outdoor construction sites. All-terrain capability with powerful engine for demanding conditions.", applications: ["Outdoor construction", "Rough terrain", "Building facades"], specifications: ["Diesel powered", "All-terrain tires", "Rough terrain capable"] }
+      { 
+        name: "Electric Scissor Lift for Rent", 
+        slug: "electric", 
+        capacity: "Electric", 
+        description: "Electric scissor lift ideal for indoor warehouse and construction work. Zero emissions, quiet operation, perfect for enclosed spaces and retail environments.", 
+        applications: ["Indoor maintenance", "Retail fit-outs", "Warehouse work"], 
+        specifications: ["Electric powered", "Zero emissions", "Quiet operation"],
+        image: "/assets/equipment/variants/scissor-lift-electric.webp"
+      },
+      { 
+        name: "Electric Scissor Lift 16m for Rent", 
+        slug: "16m", 
+        capacity: "16 Meters", 
+        description: "Electric 16-meter scissor lift for medium-height indoor and light outdoor applications. Perfect for installation work and building maintenance.", 
+        applications: ["Medium height work", "Installation", "Maintenance"], 
+        specifications: ["Working height: 16m", "Electric powered", "Large platform"],
+        image: "/assets/equipment/variants/scissor-lift-16m.webp"
+      },
+      { 
+        name: "Electric Scissor Lift 22m for Rent", 
+        slug: "22m", 
+        capacity: "22 Meters", 
+        description: "High-reach 22-meter electric scissor lift for demanding indoor projects requiring maximum height with stable platform.", 
+        applications: ["High indoor work", "Large warehouses", "Industrial buildings"], 
+        specifications: ["Working height: 22m", "Electric powered", "Maximum indoor reach"],
+        image: "/assets/equipment/variants/scissor-lift-22m.webp"
+      },
+      { 
+        name: "Diesel Scissor Lift for Rent", 
+        slug: "diesel", 
+        capacity: "Diesel", 
+        description: "Diesel-powered rough terrain scissor lift for outdoor construction sites. All-terrain capability with powerful engine for demanding conditions.", 
+        applications: ["Outdoor construction", "Rough terrain", "Building facades"], 
+        specifications: ["Diesel powered", "All-terrain tires", "Rough terrain capable"],
+        image: "/assets/equipment/variants/scissor-lift-diesel.webp"
+      }
     ],
-    image: scissorLiftImg
+    image: "/assets/equipment/scissor-lift.webp"
   },
   generator: {
     name: "Generator",
@@ -555,9 +813,17 @@ export const equipmentData: Record<string, EquipmentData> = {
       flexibility: "Power requirements vary by project phase, event size, and facility needs. Generator rental provides access to various capacities from portable units to large industrial generators, allowing you to scale power supply to match actual requirements without excess capacity costs."
     },
     variants: [
-      { name: "Generator for Rent", slug: "standard", capacity: "Various", description: "Professional diesel generators available for construction sites, events, and backup power applications. Various capacities available to match your specific power requirements across the UAE.", applications: ["Construction sites", "Events", "Backup power"], specifications: ["Various kVA options", "Diesel powered", "Low noise operation"] }
+      { 
+        name: "Generator for Rent", 
+        slug: "standard", 
+        capacity: "Various", 
+        description: "Professional diesel generators available for construction sites, events, and backup power applications. Various capacities available to match your specific power requirements across the UAE.", 
+        applications: ["Construction sites", "Events", "Backup power"], 
+        specifications: ["Various kVA options", "Diesel powered", "Low noise operation"],
+        image: "/assets/equipment/variants/generator-standard.webp"
+      }
     ],
-    image: generatorImg
+    image: "/assets/equipment/generator.webp"
   },
   "skid-steer": {
     name: "Skid Steer Loader",
@@ -601,9 +867,18 @@ export const equipmentData: Record<string, EquipmentData> = {
       flexibility: "Different tasks require different attachments and capabilities. Skid steer rental provides access to versatile Bobcat loaders that can switch between tasks simply by changing attachments, giving you the flexibility to handle varied site work without multiple specialized machines."
     },
     variants: [
-      { name: "Skid Steer Bobcat for Rent", slug: "bobcat", capacity: "Bobcat", description: "Versatile Bobcat skid steer loader for construction, landscaping, and material handling applications. Zero-turn maneuverability with multiple attachment compatibility.", applications: ["General construction", "Landscaping", "Material handling"], specifications: ["Zero-turn capable", "Multiple attachments", "Compact design"], brochure: "/brochures/skid-steer-bobcat.pdf" }
+      { 
+        name: "Skid Steer Bobcat for Rent", 
+        slug: "bobcat", 
+        capacity: "Bobcat", 
+        description: "Versatile Bobcat skid steer loader for construction, landscaping, and material handling applications. Zero-turn maneuverability with multiple attachment compatibility.", 
+        applications: ["General construction", "Landscaping", "Material handling"], 
+        specifications: ["Zero-turn capable", "Multiple attachments", "Compact design"], 
+        brochure: "/brochures/skid-steer-bobcat.pdf",
+        image: "/assets/equipment/variants/skid-steer-bobcat.webp"
+      }
     ],
-    image: skidSteerImg
+    image: "/assets/equipment/skid-steer.webp"
   },
   "recovery-truck": {
     name: "Recovery Truck",
@@ -647,9 +922,17 @@ export const equipmentData: Record<string, EquipmentData> = {
       flexibility: "Transport and recovery needs are unpredictable. Our 24/7 recovery truck availability ensures emergency breakdown response when needed, while scheduled services handle planned machinery transport and fleet vehicle relocation requirements across Dubai, Abu Dhabi, and throughout the UAE."
     },
     variants: [
-      { name: "10 Ton Recovery Truck for Rent", slug: "10-ton", capacity: "10 Ton", description: "Professional 10-ton recovery truck for vehicle recovery and machinery transport. Equipped with hydraulic systems, winches, and operated by experienced recovery professionals.", applications: ["Vehicle recovery", "Machinery transport", "Emergency towing"], specifications: ["10-ton capacity", "Hydraulic systems", "GPS tracked"] }
+      { 
+        name: "10 Ton Recovery Truck for Rent", 
+        slug: "10-ton", 
+        capacity: "10 Ton", 
+        description: "Professional 10-ton recovery truck for vehicle recovery and machinery transport. Equipped with hydraulic systems, winches, and operated by experienced recovery professionals.", 
+        applications: ["Vehicle recovery", "Machinery transport", "Emergency towing"], 
+        specifications: ["10-ton capacity", "Hydraulic systems", "GPS tracked"],
+        image: "/assets/equipment/variants/recovery-truck-10ton.webp"
+      }
     ],
-    image: recoveryTruckImg
+    image: "/assets/equipment/recovery-truck.webp"
   },
   compressor: {
     name: "Compressor",
@@ -693,9 +976,17 @@ export const equipmentData: Record<string, EquipmentData> = {
       flexibility: "Different applications require different air capacity. Compressor rental provides access to various CFM outputs matched to your specific pneumatic power requirements, whether powering construction tools, sandblasting operations, or spray painting systems across UAE project sites."
     },
     variants: [
-      { name: "Air Compressor for Rent", slug: "air-compressor", capacity: "Various CFM", description: "Professional air compressors available for construction and industrial applications. Various CFM capacities to power pneumatic tools, sandblasting, and spray painting operations.", applications: ["Construction", "Industrial applications", "Surface preparation"], specifications: ["Various CFM options", "Diesel powered", "Portable towable"] }
+      { 
+        name: "Air Compressor for Rent", 
+        slug: "air-compressor", 
+        capacity: "Various CFM", 
+        description: "Professional air compressors available for construction and industrial applications. Various CFM capacities to power pneumatic tools, sandblasting, and spray painting operations.", 
+        applications: ["Construction", "Industrial applications", "Surface preparation"], 
+        specifications: ["Various CFM options", "Diesel powered", "Portable towable"],
+        image: "/assets/equipment/variants/compressor-air.webp"
+      }
     ],
-    image: compressorImg
+    image: "/assets/equipment/compressor.webp"
   },
   "passenger-bus": {
     name: "Passenger Bus",
@@ -739,11 +1030,35 @@ export const equipmentData: Record<string, EquipmentData> = {
       flexibility: "Transport requirements vary from small group site visits to large workforce movements. Bus rental provides access to 14-seater mini buses for intimate groups, 34-seater coaches for medium requirements, and 66-seater buses for major workforce transport, matching capacity to your specific needs."
     },
     variants: [
-      { name: "14 Seater Passenger Bus for Rent", slug: "14-seater", capacity: "14 Seats", description: "Compact 14-seater passenger bus perfect for small groups, site visits, and short transfers. Air-conditioned comfort with professional driver.", applications: ["Small groups", "Site visits", "Short transfers"], specifications: ["14 passenger capacity", "AC equipped", "Compact design"] },
-      { name: "34 Seater Passenger Bus for Rent", slug: "34-seater", capacity: "34 Seats", description: "Medium capacity 34-seater bus for general staff transport and corporate needs. Comfortable seating with air conditioning for daily routes.", applications: ["Staff transport", "Medium groups", "Daily runs"], specifications: ["34 passenger capacity", "AC equipped", "Comfortable seating"] },
-      { name: "66 Seater Passenger Bus for Rent", slug: "66-seater", capacity: "66 Seats", description: "Large 66-seater bus for major workforce transport, events, and long-distance travel. Maximum capacity with full comfort features.", applications: ["Large workforce", "Major events", "Long distance"], specifications: ["66 passenger capacity", "Full AC", "Maximum comfort"] }
+      { 
+        name: "14 Seater Passenger Bus for Rent", 
+        slug: "14-seater", 
+        capacity: "14 Seats", 
+        description: "Compact 14-seater passenger bus perfect for small groups, site visits, and short transfers. Air-conditioned comfort with professional driver.", 
+        applications: ["Small groups", "Site visits", "Short transfers"], 
+        specifications: ["14 passenger capacity", "AC equipped", "Compact design"],
+        image: "/assets/equipment/variants/bus-14seater.webp"
+      },
+      { 
+        name: "34 Seater Passenger Bus for Rent", 
+        slug: "34-seater", 
+        capacity: "34 Seats", 
+        description: "Medium capacity 34-seater bus for general staff transport and corporate needs. Comfortable seating with air conditioning for daily routes.", 
+        applications: ["Staff transport", "Medium groups", "Daily runs"], 
+        specifications: ["34 passenger capacity", "AC equipped", "Comfortable seating"],
+        image: "/assets/equipment/variants/bus-34seater.webp"
+      },
+      { 
+        name: "66 Seater Passenger Bus for Rent", 
+        slug: "66-seater", 
+        capacity: "66 Seats", 
+        description: "Large 66-seater bus for major workforce transport, events, and long-distance travel. Maximum capacity with full comfort features.", 
+        applications: ["Large workforce", "Major events", "Long distance"], 
+        specifications: ["66 passenger capacity", "Full AC", "Maximum comfort"],
+        image: "/assets/equipment/variants/bus-66seater.webp"
+      }
     ],
-    image: busImg
+    image: "/assets/equipment/bus.webp"
   }
 };
 
