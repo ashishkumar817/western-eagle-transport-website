@@ -7,10 +7,13 @@ const HeroSection = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center pt-20"
     >
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
+      {/* Background Image - using img for LCP optimization */}
+      <img
+        src={heroBg}
+        alt=""
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 w-full h-full object-cover"
       />
       
       {/* Gradient Overlay - works for both light and dark */}
