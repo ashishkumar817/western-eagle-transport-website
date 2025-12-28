@@ -32,7 +32,7 @@ const Footer = forwardRef<HTMLElement, {}>((_props, ref) => {
 
   return (
     <footer ref={ref} className="bg-secondary border-t border-border">
-      <div className="container-custom section-padding">
+      <div className="container-custom px-6 section-padding">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Company Info */}
           <div className="lg:col-span-1">
@@ -165,7 +165,7 @@ const Footer = forwardRef<HTMLElement, {}>((_props, ref) => {
 
       {/* Copyright */}
       <div className="border-t border-border">
-        <div className="container-custom py-6">
+        <div className="container-custom px-6 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-sm">
               © {new Date().getFullYear()} Western Eagle Transport Company. All Rights Reserved.

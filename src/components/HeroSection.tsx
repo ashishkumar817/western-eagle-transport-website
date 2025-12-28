@@ -17,7 +17,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
 
       {/* Content */}
-      <div className="container-custom relative z-10 text-center py-20">
+      <div className="container-custom px-6 relative z-10 text-center py-20">
         <p className="text-primary font-heading uppercase tracking-[0.3em] mb-4 animate-fade-up">
           Welcome to
         </p>

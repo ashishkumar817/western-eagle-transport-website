@@ -75,7 +75,7 @@ const EquipmentCard = ({ name, image, slug }: EquipmentCardProps) => {
 const EquipmentSection = () => {
   return (
     <section id="equipment" className="section-padding bg-background">
-      <div className="container-custom">
+      <div className="container-custom px-6">
         <div className="text-center mb-8 md:mb-12">
           <span className="text-primary text-sm font-semibold uppercase tracking-wider">Our Fleet</span>
           <h2 className="heading-secondary text-foreground mb-4 mt-2">

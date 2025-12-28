@@ -58,7 +58,7 @@ const FAQSection = () => {
         </script>
       </Helmet>
 
-      <div className="container-custom">
+      <div className="container-custom px-6">
         {/* Header */}
         <div className="text-center mb-12 animate-on-scroll">
           <p className="text-primary font-heading uppercase tracking-[0.2em] mb-4">

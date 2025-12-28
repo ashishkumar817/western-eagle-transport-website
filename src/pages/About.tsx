@@ -38,7 +38,7 @@ const About = () => {
 
         {/* Hero Section */}
         <section className="pt-32 pb-16 bg-secondary">
-          <div className="container-custom">
+          <div className="container-custom px-6">
             <div className="text-center max-w-3xl mx-auto">
               <p className="text-primary font-heading uppercase tracking-[0.2em] mb-2">
                 About Us
@@ -55,7 +55,7 @@ const About = () => {
 
         {/* Main Content */}
         <section className="section-padding">
-          <div className="container-custom">
+          <div className="container-custom px-6">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Image */}
               <div className="relative">
@@ -130,7 +130,7 @@ const About = () => {
 
         {/* Features Section */}
         <section className="section-padding bg-secondary">
-          <div className="container-custom">
+          <div className="container-custom px-6">
             <div className="text-center mb-12">
               <h2 className="heading-secondary text-foreground mb-4">
                 Why Choose Western Eagle?

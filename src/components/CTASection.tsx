@@ -18,7 +18,7 @@ const CTASection = () => {
       <div className="absolute inset-0 bg-background/85" />
 
       {/* Content */}
-      <div className="container-custom relative z-10">
+      <div className="container-custom px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="heading-secondary text-foreground mb-4">
             Smarter & More Affordable Access to{" "}
