@@ -1,91 +1,17 @@
 import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Phone, MessageCircle, ArrowLeft, Check } from "lucide-react";
+import { Phone, MessageCircle, ArrowLeft, Check, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
-import { equipmentList } from "@/lib/data";
+import { getEquipmentBySlug } from "@/lib/equipmentData";
 
-const phoneNumber = "9108291462";
-
-const equipmentDetails: Record<string, { varieties: string[]; features: string[]; applications: string[] }> = {
-  forklift: {
-    varieties: ["Electric Forklift", "Diesel Forklift", "LPG Forklift", "Reach Truck", "Pallet Jack"],
-    features: ["High lifting capacity", "Ergonomic design", "Fuel efficient", "Easy maintenance"],
-    applications: ["Warehouses", "Construction sites", "Manufacturing plants", "Logistics centers"],
-  },
-  "wheel-loader": {
-    varieties: ["Compact Wheel Loader", "Medium Wheel Loader", "Large Wheel Loader", "Articulated Wheel Loader"],
-    features: ["Powerful engine", "Large bucket capacity", "All-terrain capability", "Operator comfort"],
-    applications: ["Construction", "Mining", "Quarries", "Material handling"],
-  },
-  "jcb-backhoe-3cx": {
-    varieties: ["JCB 3CX Standard", "JCB 3CX Sitemaster", "JCB 3CX Eco", "JCB 3CX Compact"],
-    features: ["Dual functionality", "4-wheel drive", "Extendable dipper", "High breakout force"],
-    applications: ["Excavation", "Trenching", "Loading", "Road construction"],
-  },
-  boomloader: {
-    varieties: ["Telescopic Handler", "Rotating Telehandler", "Compact Telehandler", "Heavy-Duty Telehandler"],
-    features: ["Extended reach", "High lifting height", "Multiple attachments", "Stability system"],
-    applications: ["Construction sites", "Agriculture", "Industrial work", "Warehousing"],
-  },
-  "mini-excavator": {
-    varieties: ["1-Ton Mini Excavator", "3-Ton Mini Excavator", "5-Ton Mini Excavator", "Zero Tail Swing"],
-    features: ["Compact size", "Easy transport", "Low fuel consumption", "Precise control"],
-    applications: ["Urban construction", "Landscaping", "Utilities", "Indoor demolition"],
-  },
-  cranes: {
-    varieties: ["Mobile Crane", "Tower Crane", "Crawler Crane", "All-Terrain Crane", "Rough Terrain Crane"],
-    features: ["High lifting capacity", "Long boom reach", "Safety systems", "GPS monitoring"],
-    applications: ["High-rise construction", "Industrial plants", "Infrastructure", "Heavy machinery installation"],
-  },
-  manlifts: {
-    varieties: ["Articulating Boom Lift", "Telescopic Boom Lift", "Spider Lift", "Truck-Mounted Lift"],
-    features: ["High working height", "360° rotation", "Safe work platform", "Easy controls"],
-    applications: ["Building maintenance", "Electrical work", "Tree trimming", "Film production"],
-  },
-  "scissor-lift": {
-    varieties: ["Electric Scissor Lift", "Diesel Scissor Lift", "Rough Terrain Scissor Lift", "Compact Scissor Lift"],
-    features: ["Stable platform", "Indoor/outdoor use", "Easy operation", "Safety rails"],
-    applications: ["Warehouse work", "Construction", "Maintenance", "Installation work"],
-  },
-  roller: {
-    varieties: ["Vibratory Roller", "Static Roller", "Pneumatic Roller", "Tandem Roller", "Single Drum Roller"],
-    features: ["High compaction force", "Variable frequency", "Water spray system", "Operator cabin"],
-    applications: ["Road construction", "Asphalt compaction", "Soil compaction", "Landscaping"],
-  },
-  "recovery-trucks-10-ton": {
-    varieties: ["Flatbed Recovery", "Wheel Lift Recovery", "Boom Recovery", "Integrated Tow Truck"],
-    features: ["10-ton capacity", "Hydraulic system", "Safety winch", "GPS tracking"],
-    applications: ["Vehicle recovery", "Machinery transport", "Emergency towing", "Fleet services"],
-  },
-  generators: {
-    varieties: ["Diesel Generator", "Portable Generator", "Industrial Generator", "Silent Generator"],
-    features: ["Reliable power output", "Fuel efficient", "Low noise", "Auto start"],
-    applications: ["Construction sites", "Events", "Emergency backup", "Industrial use"],
-  },
-  compressors: {
-    varieties: ["Portable Compressor", "Stationary Compressor", "Oil-Free Compressor", "High-Pressure Compressor"],
-    features: ["High CFM output", "Energy efficient", "Low maintenance", "Reliable performance"],
-    applications: ["Pneumatic tools", "Sandblasting", "Painting", "Industrial processes"],
-  },
-  "skid-steer-bobcat": {
-    varieties: ["Wheeled Skid Steer", "Tracked Skid Steer", "Compact Skid Steer", "Large Frame Skid Steer"],
-    features: ["Versatile attachments", "Compact size", "High maneuverability", "Powerful hydraulics"],
-    applications: ["Landscaping", "Construction", "Demolition", "Snow removal"],
-  },
-  "passenger-bus": {
-    varieties: ["25-Seater Bus", "35-Seater Bus", "50-Seater Bus", "Luxury Coach", "Mini Bus"],
-    features: ["AC equipped", "Comfortable seating", "Safety features", "Experienced drivers"],
-    applications: ["Staff transport", "Site visits", "Corporate events", "Tours"],
-  },
-};
+const phoneNumber = "971505567467";
 
 const EquipmentDetail = () => {
   const { slug } = useParams();
-  const equipment = equipmentList.find((e) => e.slug === slug);
-  const details = slug ? equipmentDetails[slug] : null;
+  const equipment = slug ? getEquipmentBySlug(slug) : null;
 
   if (!equipment) {
     return (
@@ -102,13 +28,27 @@ const EquipmentDetail = () => {
     );
   }
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: equipment.name,
+    description: equipment.metaDescription,
+    brand: { "@type": "Brand", name: "Western Eagle Transport" },
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "AED",
+      availability: "https://schema.org/InStock"
+    }
+  };
+
   return (
     <>
       <Helmet>
-        <title>{equipment.name} for Rent in UAE | Western Eagle Transport</title>
-        <meta name="description" content={`${equipment.description} Rent ${equipment.name} in Dubai, Abu Dhabi, Sharjah. Quality equipment, professional service.`} />
-        <meta name="keywords" content={`${equipment.name} rental, ${equipment.name} for rent UAE, heavy equipment rental Dubai`} />
+        <title>{equipment.heroTitle} | Western Eagle Transport</title>
+        <meta name="description" content={equipment.metaDescription} />
+        <meta name="keywords" content={`${equipment.name} rental, ${equipment.name} for rent UAE, heavy equipment rental Dubai, ${equipment.name} Abu Dhabi`} />
         <link rel="canonical" href={`https://westerneagle.ae/equipment/${slug}`} />
+        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
       
       <div className="min-h-screen bg-background">
@@ -122,90 +62,131 @@ const EquipmentDetail = () => {
               <Link to="/#equipment" className="inline-flex items-center text-primary hover:underline mb-6">
                 <ArrowLeft className="w-4 h-4 mr-2" /> Back to Equipment
               </Link>
-              <h1 className="heading-primary text-foreground mb-4">{equipment.name}</h1>
-              <p className="text-lg text-muted-foreground max-w-2xl">{equipment.description}</p>
+              <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-4">{equipment.heroTitle}</h1>
+              <p className="text-xl text-muted-foreground max-w-3xl mb-8">{equipment.heroSubtitle}</p>
               
-              <div className="flex flex-wrap gap-4 mt-8">
-                <Button className="btn-primary" asChild>
-                  <a href={`tel:+91${phoneNumber}`}>
-                    <Phone className="w-4 h-4 mr-2" /> Call for Quote
+              <div className="flex flex-wrap gap-4">
+                <Button className="btn-primary" size="lg" asChild>
+                  <a href={`tel:+${phoneNumber}`}>
+                    <Phone className="w-5 h-5 mr-2" /> Request Rental Quote
                   </a>
                 </Button>
-                <Button className="bg-green-600 hover:bg-green-700 text-white" asChild>
-                  <a href={`https://wa.me/91${phoneNumber}`} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="w-4 h-4 mr-2" /> WhatsApp Inquiry
+                <Button className="bg-green-600 hover:bg-green-700 text-white" size="lg" asChild>
+                  <a href={`https://wa.me/${phoneNumber}`} target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="w-5 h-5 mr-2" /> WhatsApp Inquiry
                   </a>
                 </Button>
               </div>
             </div>
           </section>
 
-          {/* Details Section */}
-          {details && (
-            <section className="section-padding">
-              <div className="container-custom px-4">
-                <div className="grid md:grid-cols-3 gap-8">
-                  {/* Varieties */}
-                  <div className="bg-card p-6 rounded-lg border border-border">
-                    <h2 className="heading-tertiary text-foreground mb-4">Available Varieties</h2>
-                    <ul className="space-y-3">
-                      {details.varieties.map((variety, index) => (
-                        <li key={index} className="flex items-center gap-2 text-muted-foreground">
-                          <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                          {variety}
-                        </li>
-                      ))}
-                    </ul>
+          {/* Overview Section */}
+          <section className="section-padding">
+            <div className="container-custom px-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">{equipment.overview.title}</h2>
+              <div className="grid lg:grid-cols-2 gap-12">
+                <div>
+                  <p className="text-muted-foreground text-lg leading-relaxed mb-6">{equipment.overview.description}</p>
+                  <div className="space-y-3">
+                    {equipment.overview.benefits.map((benefit, index) => (
+                      <div key={index} className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                        <span className="text-muted-foreground">{benefit}</span>
+                      </div>
+                    ))}
                   </div>
-
-                  {/* Features */}
-                  <div className="bg-card p-6 rounded-lg border border-border">
-                    <h2 className="heading-tertiary text-foreground mb-4">Key Features</h2>
-                    <ul className="space-y-3">
-                      {details.features.map((feature, index) => (
-                        <li key={index} className="flex items-center gap-2 text-muted-foreground">
-                          <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Applications */}
-                  <div className="bg-card p-6 rounded-lg border border-border">
-                    <h2 className="heading-tertiary text-foreground mb-4">Applications</h2>
-                    <ul className="space-y-3">
-                      {details.applications.map((app, index) => (
-                        <li key={index} className="flex items-center gap-2 text-muted-foreground">
-                          <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                          {app}
-                        </li>
-                      ))}
-                    </ul>
+                </div>
+                <div className="bg-card p-6 rounded-lg border border-border">
+                  <h3 className="text-xl font-semibold text-foreground mb-4">Industries Served</h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    {equipment.overview.industries.map((industry, index) => (
+                      <div key={index} className="flex items-center gap-2 text-muted-foreground">
+                        <ChevronRight className="w-4 h-4 text-primary" />
+                        {industry}
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
-            </section>
-          )}
+            </div>
+          </section>
 
-          {/* CTA Section */}
+          {/* Applications Section */}
+          <section className="section-padding bg-secondary">
+            <div className="container-custom px-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">{equipment.applications.title}</h2>
+              <p className="text-muted-foreground text-lg mb-8 max-w-3xl">{equipment.applications.description}</p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {equipment.applications.useCases.map((useCase, index) => (
+                  <div key={index} className="bg-card p-4 rounded-lg border border-border flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">{useCase}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Why Rent Section */}
+          <section className="section-padding">
+            <div className="container-custom px-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">Why Rent {equipment.name} from Western Eagle?</h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {equipment.whyRent.map((reason, index) => (
+                  <div key={index} className="flex items-start gap-3 p-4 bg-card rounded-lg border border-border">
+                    <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">{reason}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Available Options Section */}
+          <section className="section-padding bg-secondary">
+            <div className="container-custom px-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">Available {equipment.name} Options</h2>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {equipment.variants.map((variant) => (
+                  <Link
+                    key={variant.slug}
+                    to={`/equipment/${slug}/${variant.slug}`}
+                    className="bg-card rounded-lg border border-border overflow-hidden hover:border-primary transition-colors group"
+                  >
+                    <div className="aspect-video bg-muted flex items-center justify-center">
+                      <img src={equipment.image} alt={variant.name} className="w-full h-full object-cover" />
+                    </div>
+                    <div className="p-4">
+                      <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                        {variant.name} for Rent
+                      </h3>
+                      <p className="text-muted-foreground text-sm mt-2 line-clamp-2">{variant.description}</p>
+                      <span className="inline-flex items-center text-primary text-sm mt-3 font-medium">
+                        View Details <ChevronRight className="w-4 h-4 ml-1" />
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Need Help CTA Section */}
           <section className="bg-primary py-16">
             <div className="container-custom px-4 text-center">
-              <h2 className="heading-secondary text-primary-foreground mb-4">
-                Ready to Rent {equipment.name}?
-              </h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-4">Need Help Choosing?</h2>
               <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-                Get in touch with us for competitive pricing and reliable service across UAE.
+                Our equipment specialists are here to help you find the right {equipment.name.toLowerCase()} for your project. Get expert advice and competitive quotes.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>
-                  <a href={`tel:+91${phoneNumber}`}>
-                    <Phone className="w-4 h-4 mr-2" /> Call Now
+                <Button variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" size="lg" asChild>
+                  <a href={`tel:+${phoneNumber}`}>
+                    <Phone className="w-5 h-5 mr-2" /> Contact Our Team
                   </a>
                 </Button>
-                <Button className="bg-primary-foreground text-primary hover:bg-primary-foreground/90" asChild>
-                  <a href={`https://wa.me/91${phoneNumber}`} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="w-4 h-4 mr-2" /> WhatsApp
+                <Button className="bg-primary-foreground text-primary hover:bg-primary-foreground/90" size="lg" asChild>
+                  <a href={`https://wa.me/${phoneNumber}`} target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="w-5 h-5 mr-2" /> WhatsApp
                   </a>
                 </Button>
               </div>
