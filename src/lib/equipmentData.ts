@@ -30,6 +30,13 @@ export interface EquipmentData {
     useCases: string[];
   };
   whyRent: string[];
+  whyChoose: {
+    intro: string;
+    costEffective: string;
+    latestModels: string;
+    noMaintenance: string;
+    flexibility: string;
+  };
   variants: EquipmentVariant[];
   relatedEquipment?: RelatedEquipment[];
   image: string;
@@ -69,6 +76,13 @@ export const equipmentData: Record<string, EquipmentData> = {
       "Trained operators available on request",
       "24/7 technical support and breakdown assistance"
     ],
+    whyChoose: {
+      intro: "Abu Dhabi and Dubai are global hubs for logistics and construction. Whether you're managing a bustling warehouse or a construction site, forklift rental ensures you have the right material handling equipment to move goods efficiently and safely.",
+      costEffective: "Purchasing a forklift can be a significant investment, especially for businesses with seasonal or short-term needs. By opting for forklift rental in Abu Dhabi or Dubai, companies avoid the high initial purchase cost, ongoing maintenance expenses, and storage fees. Renting allows businesses to pay only for what they need when they need it, helping optimize budgets and maximize operational revenue.",
+      latestModels: "The forklift rental industry in UAE offers access to a wide range of modern forklifts from leading manufacturers like Toyota, Caterpillar, and Hyster. These are equipped with advanced technology including ergonomic controls, safety features, and fuel-efficient engines. Businesses that rent can use state-of-the-art equipment without worrying about maintenance or technological obsolescence.",
+      noMaintenance: "When renting forklifts, all maintenance and repairs are handled by Western Eagle. This eliminates downtime and ensures your team always works with well-maintained, operational machinery. Our forklift rental services include immediate technical support so any issues are resolved quickly, keeping your operations running smoothly.",
+      flexibility: "Forklift rental in Abu Dhabi offers flexibility, allowing businesses to scale the number of units based on project demand. Whether it's a large warehouse project requiring multiple units or a temporary construction site, our rental service provides the flexibility to adjust equipment count as required without long-term commitments."
+    },
     variants: [
       { name: "3 Ton Forklift for Rent", slug: "3-ton", capacity: "3 Ton", description: "Our 3-ton forklift rental is ideal for warehouses, industrial yards, and construction sites across Abu Dhabi, Dubai and the UAE. Our 3-ton forklifts are engineered to lift, transport, and stack heavy loads with ease. Suitable for both indoor and outdoor operations, they ensure high maneuverability, safety and fuel efficiency. Rent our 3-ton forklifts on a daily, weekly or monthly basis with 24/7 support. We offer fast delivery across Musaffah, Abu Dhabi, Dubai and other Emirates.", applications: ["Indoor warehousing", "Retail stockrooms", "Light manufacturing"], specifications: ["Lifting capacity: 3,000 kg", "Lift height: 3-6 meters", "Compact design for narrow aisles"] },
       { name: "5 Ton Forklift for Rent", slug: "5-ton", capacity: "5 Ton", description: "Versatile 5-ton forklift suitable for medium-duty operations in warehouses and construction sites. Perfect for handling heavier pallets and construction materials with ease.", applications: ["Medium warehousing", "Construction sites", "Distribution centers"], specifications: ["Lifting capacity: 5,000 kg", "Lift height: 4-7 meters", "Diesel and electric options"] },
@@ -112,6 +126,13 @@ export const equipmentData: Record<string, EquipmentData> = {
       "Insurance and liability coverage",
       "24/7 project support"
     ],
+    whyChoose: {
+      intro: "The UAE's booming construction and infrastructure sector demands precision heavy lifting solutions. Whether constructing high-rise towers in Dubai or industrial facilities in Abu Dhabi, crane rental ensures you have the lifting capacity to handle complex projects safely and efficiently.",
+      costEffective: "Owning a crane requires substantial capital investment plus ongoing costs for maintenance, storage, and certified operators. Crane rental in Abu Dhabi and Dubai eliminates these burdens. You pay only for the lifting capacity you need, when you need it, making large-scale lifting operations financially viable for projects of any size.",
+      latestModels: "Our crane fleet features the latest mobile cranes and all-terrain cranes from leading manufacturers, equipped with advanced load monitoring systems, GPS tracking, and modern safety features. Renting gives you access to cutting-edge lifting technology and precision controls without the burden of ownership.",
+      noMaintenance: "Every crane rental from Western Eagle includes full maintenance, safety certifications, and compliance documentation. Our maintenance team ensures all cranes meet rigorous safety standards, with certified operators who understand load dynamics and site-specific requirements for safe lifting operations.",
+      flexibility: "Construction projects often have varying lifting requirements throughout their lifecycle. Crane rental provides the flexibility to bring in 25-ton cranes for early work and scale up to 200-ton capacity for major lifts, then release equipment when no longer needed - optimizing your project budget at every phase."
+    },
     variants: [
       { name: "20 Ton Crane for Rent", slug: "20-ton", capacity: "20 Ton", description: "Compact 20-ton crane ideal for smaller construction sites and general lifting tasks. Perfect for residential and light commercial projects.", applications: ["Small construction", "Residential projects", "Light industrial"], specifications: ["Lifting capacity: 20 tons", "Boom length: up to 25m", "Quick setup time"] },
       { name: "25 Ton Crane for Rent", slug: "25-ton", capacity: "25 Ton", description: "Versatile 25-ton crane for medium construction and industrial lifting requirements. Excellent balance of capacity and mobility.", applications: ["Medium construction", "Industrial lifting", "Infrastructure"], specifications: ["Lifting capacity: 25 tons", "Boom length: up to 30m", "All-terrain capability"] },
@@ -156,6 +177,13 @@ export const equipmentData: Record<string, EquipmentData> = {
       "Full maintenance included",
       "Operator training available"
     ],
+    whyChoose: {
+      intro: "Urban construction in Dubai and Abu Dhabi often requires excavation in confined spaces where standard excavators cannot operate. Mini excavator rental provides the compact power needed for residential projects, utility installations, and landscaping work throughout the UAE.",
+      costEffective: "For landscaping contractors, plumbers, and small construction projects, purchasing a mini excavator may not be economically justified. Mini excavator rental offers access to precision digging power without the purchase cost, allowing you to take on excavation work profitably while maintaining competitive pricing for your clients.",
+      latestModels: "Our mini excavator fleet features zero tail swing designs and rubber tracks that protect finished surfaces. Advanced hydraulic systems deliver smooth, precise control for detailed work near existing structures, utilities, and landscaping. Modern enclosed cabs provide operator comfort for extended work sessions.",
+      noMaintenance: "Mini excavators require regular maintenance to ensure reliable operation of complex hydraulic systems. When you rent from Western Eagle, all servicing is handled by our technicians. You receive a job-ready machine with tracked maintenance history and responsive support if any issues arise on site.",
+      flexibility: "Project requirements can change quickly in urban construction. Mini excavator rental allows you to access 2-ton machines for tight residential work, or scale up to 5-ton units for commercial sites. Rent by the day, week, or month based on your project timeline with no long-term commitment."
+    },
     variants: [
       { name: "2 Ton Mini Excavator for Rent", slug: "2-ton", capacity: "2 Ton", description: "Compact 2-ton mini excavator perfect for residential and light commercial work. Ideal for landscaping, utility trenching, and tight access excavation in Dubai, Abu Dhabi, and across the UAE.", applications: ["Residential projects", "Landscaping", "Utility work"], specifications: ["Operating weight: 2 tons", "Zero tail swing", "Rubber tracks"] },
       { name: "3 Ton Mini Excavator for Rent", slug: "3-ton", capacity: "3 Ton", description: "Versatile 3-ton mini excavator for general small-scale excavation projects. Perfect for pool digging, foundation work, and drainage installations.", applications: ["General excavation", "Trenching", "Pool digging"], specifications: ["Operating weight: 3 tons", "Extendable arm option", "Multiple attachments"] },
@@ -196,6 +224,13 @@ export const equipmentData: Record<string, EquipmentData> = {
       "Skilled operators available",
       "Comprehensive breakdown support"
     ],
+    whyChoose: {
+      intro: "Wheel loaders are workhorses of construction and material handling across the UAE. From loading aggregate at quarries to moving materials at busy construction sites in Dubai and Abu Dhabi, wheel loader rental provides the heavy-duty loading power your operations demand.",
+      costEffective: "CAT wheel loaders represent significant capital investment. Wheel loader rental eliminates upfront costs and avoids the depreciation that affects owned equipment. For construction companies managing multiple project sites, renting provides access to loading capacity where and when needed without tying up capital.",
+      latestModels: "Our wheel loader fleet includes CAT 950 and 966 models featuring powerful engines, high-capacity buckets, and comfortable air-conditioned cabs. These machines deliver maximum productivity with fuel-efficient operation and advanced hydraulic systems for smooth, responsive control during loading operations.",
+      noMaintenance: "Wheel loaders operate in demanding conditions that require regular maintenance of engines, transmissions, and hydraulic systems. Western Eagle handles all maintenance, ensuring you receive machines in peak operating condition. Our technical team provides responsive support to minimize any downtime on your site.",
+      flexibility: "Construction project phases have varying loading requirements. Wheel loader rental allows you to bring in CAT 950 loaders for general material handling and upgrade to more powerful 966 models for heavy aggregate loading, adjusting capacity to match your project demands without equipment ownership complications."
+    },
     variants: [
       { name: "950 CAT Wheel Loader for Rent", slug: "950", capacity: "950 Model", description: "CAT 950 wheel loader offering excellent productivity for medium-sized construction and loading operations. Known for reliability, fuel efficiency, and operator comfort.", applications: ["General construction", "Material handling", "Road works"], specifications: ["Model: CAT 950", "High bucket capacity", "Fuel efficient engine"] },
       { name: "966 CAT Wheel Loader for Rent", slug: "966", capacity: "966 Model", description: "CAT 966 wheel loader delivering superior power and capacity for demanding construction and quarry applications. Maximum productivity for large-scale operations.", applications: ["Heavy construction", "Quarries", "Large-scale loading"], specifications: ["Model: CAT 966", "Maximum bucket capacity", "Heavy-duty construction"] }
@@ -235,6 +270,13 @@ export const equipmentData: Record<string, EquipmentData> = {
       "Full service support included",
       "Flexible rental options"
     ],
+    whyChoose: {
+      intro: "The JCB backhoe loader is the ultimate versatile construction machine, combining excavator digging power with front loader material handling. For contractors across Dubai and Abu Dhabi, backhoe rental provides two machines in one for maximum efficiency on mixed-task construction sites.",
+      costEffective: "A single JCB 3CX can replace separate excavator and loader equipment, significantly reducing rental costs and site logistics. Backhoe loader rental in the UAE provides this dual-capability machine without the purchase investment, helping contractors bid competitively while maintaining profitability on diverse construction projects.",
+      latestModels: "Our JCB 3CX backhoe loaders feature powerful engines, extended dipper options, and the smooth controls that make JCB the world leader in backhoe design. Modern cabs offer excellent visibility and comfort, while 4WD capability ensures mobility across challenging terrain on construction sites.",
+      noMaintenance: "JCB backhoe loaders are complex machines requiring specialist maintenance knowledge. Western Eagle handles all servicing with genuine parts and experienced technicians. You receive a reliable machine ready for work, with responsive support ensuring any issues are addressed quickly to minimize project delays.",
+      flexibility: "Construction projects often involve varied tasks from trenching and excavation to loading and material handling. JCB backhoe rental gives you the flexibility to tackle all these tasks with a single machine, simplifying equipment logistics and reducing the number of operators required on site."
+    },
     variants: [
       { name: "JCB 3CX Backhoe Loader for Rent", slug: "3cx", capacity: "3CX Model", description: "Standard JCB 3CX backhoe loader for general construction and excavation work. The world's most popular backhoe loader with proven reliability and versatility.", applications: ["General construction", "Excavation", "Loading"], specifications: ["Model: JCB 3CX", "4WD capability", "Multiple attachments available"] }
     ],
@@ -278,6 +320,13 @@ export const equipmentData: Record<string, EquipmentData> = {
       "Quick deployment",
       "Flexible rental terms"
     ],
+    whyChoose: {
+      intro: "Modern construction in Dubai and Abu Dhabi frequently requires placing materials at heights and distances beyond standard forklift capabilities. Boom loader rental provides the extended reach and lifting power to efficiently handle materials on multi-story construction sites and industrial facilities.",
+      costEffective: "Telehandlers combine forklift and crane capabilities in one machine, reducing the need for multiple equipment rentals. Boom loader rental in the UAE eliminates the significant capital outlay of purchasing while providing access to extended reach capability exactly when your project demands it.",
+      latestModels: "Our boom loader fleet features modern telehandlers with telescopic booms reaching 14 to 17 meters. These machines offer advanced hydraulic systems for smooth, precise material placement, comfortable cabs with excellent visibility, and multiple attachment options including forks, buckets, and lifting hooks.",
+      noMaintenance: "Boom loaders have complex telescopic and hydraulic systems requiring specialized maintenance expertise. Western Eagle ensures all telehandlers receive comprehensive servicing, delivering reliable machines ready for demanding work. Our technical support minimizes downtime if any issues arise during your rental period.",
+      flexibility: "Construction phases have varying reach requirements. Boom loader rental allows you to access 14-meter units for standard multi-story work and upgrade to 17-meter telehandlers for high-reach requirements, adjusting equipment to your project's specific material placement challenges."
+    },
     variants: [
       { name: "14m Boom Loader for Rent", slug: "14m", capacity: "14 Meters", description: "Extended 14-meter boom loader/telehandler for construction projects requiring height and reach. Perfect for multi-story construction and industrial material handling.", applications: ["Construction", "Industrial facilities", "Infrastructure"], specifications: ["Lift height: 14m", "Extended boom", "High capacity"] },
       { name: "17m Boom Loader for Rent", slug: "17m", capacity: "17 Meters", description: "High-reach 17-meter boom loader for demanding projects requiring exceptional height. Maximum reach for the most challenging material placement tasks.", applications: ["High-reach projects", "Major construction", "Specialized applications"], specifications: ["Lift height: 17m", "Maximum reach", "Heavy-duty design"] }
@@ -317,6 +366,13 @@ export const equipmentData: Record<string, EquipmentData> = {
       "Experienced operators available",
       "Flexible rental terms"
     ],
+    whyChoose: {
+      intro: "Road construction and infrastructure development across the UAE demands professional compaction equipment. Roller rental provides access to vibratory compactors essential for achieving specification-compliant asphalt and sub-base compaction on roads, parking areas, and construction sites.",
+      costEffective: "Road rollers are specialized equipment typically needed only during specific construction phases. Roller rental eliminates the capital investment of purchasing compaction equipment, allowing road contractors to access professional compactors for project-specific needs without long-term ownership costs.",
+      latestModels: "Our roller fleet features modern vibratory compactors with variable frequency vibration, efficient water spray systems, and comfortable operator stations. These machines deliver consistent, high-quality compaction results essential for durable road surfaces and stable foundations.",
+      noMaintenance: "Road rollers require regular maintenance of vibration systems, engine components, and water spray equipment. Western Eagle handles all servicing, ensuring you receive well-maintained compactors ready for demanding work. Our support team responds quickly to any equipment issues on your project site.",
+      flexibility: "Different projects require different compaction approaches. Roller rental provides access to single drum rollers for asphalt work and various compaction equipment options, allowing you to match equipment to your specific road construction or site preparation requirements."
+    },
     variants: [
       { name: "Single Drum Roller for Rent", slug: "single-drum", capacity: "Single Drum", description: "Professional single drum vibratory roller for road construction and compaction work. Ideal for asphalt and sub-base compaction across construction projects in the UAE.", applications: ["Road construction", "Asphalt compaction", "General compaction"], specifications: ["Single drum design", "Vibratory compaction", "Water spray system"] }
     ],
@@ -355,6 +411,13 @@ export const equipmentData: Record<string, EquipmentData> = {
       "Flexible rental terms",
       "Comprehensive training support"
     ],
+    whyChoose: {
+      intro: "Construction, maintenance, and industrial work across Dubai and Abu Dhabi frequently requires safe access to elevated positions. Manlift rental provides boom lifts and aerial work platforms that deliver workers safely to height with the flexibility to navigate around obstacles.",
+      costEffective: "Aerial work platforms represent significant investment and require regular safety certifications. Manlift rental in the UAE eliminates purchase costs while providing access to certified, well-maintained boom lifts that meet all safety requirements for elevated work at construction sites and facilities.",
+      latestModels: "Our manlift fleet includes articulating boom lifts for navigating obstacles and telescopic boom lifts for maximum height reach. Modern diesel-powered units feature stable platforms, safety harness attachment points, emergency descent systems, and comfortable controls for all-day elevated work.",
+      noMaintenance: "Boom lifts require rigorous safety inspections and maintenance of hydraulic systems, platforms, and safety features. Western Eagle ensures every manlift meets stringent safety standards before delivery. Our support team provides responsive assistance to keep your elevated work operations running safely.",
+      flexibility: "Elevated work requirements vary significantly across projects and phases. Manlift rental allows access to articulating boom lifts for complex access situations and telescopic manlifts for straight-up height requirements, matching equipment to your specific elevated access needs."
+    },
     variants: [
       { name: "Diesel E450AJ Articulated Manlift", slug: "e450aj", capacity: "E450AJ", description: "Diesel-powered E450AJ articulated manlift offering excellent outreach and maneuverability. Perfect for construction and maintenance tasks requiring flexible positioning at height.", applications: ["Construction", "Maintenance", "Installation work"], specifications: ["Articulating boom", "Diesel powered", "All-terrain capable"] },
       { name: "Diesel 600S Telescopic Manlift", slug: "600s", capacity: "600S", description: "Diesel 600S telescopic manlift providing exceptional straight-up height for demanding applications. Ideal for high-reach construction and industrial projects.", applications: ["High-reach projects", "Industrial facilities", "Construction"], specifications: ["Telescopic boom", "Maximum height", "Diesel powered"] },
@@ -397,6 +460,13 @@ export const equipmentData: Record<string, EquipmentData> = {
       "Maintenance included",
       "Flexible rental periods"
     ],
+    whyChoose: {
+      intro: "Indoor construction, warehouse operations, and maintenance work across the UAE frequently require stable elevated platforms. Scissor lift rental provides large, secure work platforms that accommodate multiple workers and equipment for efficient elevated work in warehouses, factories, and construction sites.",
+      costEffective: "Scissor lifts are the most economical access solution for vertical elevation needs. Scissor lift rental in Dubai and Abu Dhabi provides access to quality platforms without capital investment, making elevated work financially viable for projects ranging from warehouse fit-outs to building maintenance.",
+      latestModels: "Our scissor lift fleet includes electric models for zero-emission indoor use and diesel-powered rough terrain units for outdoor construction. Heights range from standard to 22 meters, all featuring large platforms with guardrails, non-slip surfaces, and intuitive controls for safe, productive elevated work.",
+      noMaintenance: "Scissor lifts require regular maintenance of hydraulic systems, electrical components, and safety features. Western Eagle handles all servicing and safety certifications, ensuring every scissor lift meets operational and safety standards. You receive ready-to-work equipment with responsive support throughout your rental.",
+      flexibility: "Different environments require different scissor lift solutions. Rental allows access to electric scissor lifts for quiet indoor work and diesel rough terrain models for outdoor sites, with heights from 6 to 22 meters to match your specific elevated platform requirements."
+    },
     variants: [
       { name: "Electric Scissor Lift for Rent", slug: "electric", capacity: "Electric", description: "Electric scissor lift ideal for indoor warehouse and construction work. Zero emissions, quiet operation, perfect for enclosed spaces and retail environments.", applications: ["Indoor maintenance", "Retail fit-outs", "Warehouse work"], specifications: ["Electric powered", "Zero emissions", "Quiet operation"] },
       { name: "Electric Scissor Lift 16m for Rent", slug: "16m", capacity: "16 Meters", description: "Electric 16-meter scissor lift for medium-height indoor and light outdoor applications. Perfect for installation work and building maintenance.", applications: ["Medium height work", "Installation", "Maintenance"], specifications: ["Working height: 16m", "Electric powered", "Large platform"] },
@@ -438,6 +508,13 @@ export const equipmentData: Record<string, EquipmentData> = {
       "24/7 emergency support",
       "Flexible rental terms"
     ],
+    whyChoose: {
+      intro: "Reliable power is essential for construction sites, outdoor events, and facilities across the UAE. Generator rental provides dependable temporary and backup power solutions, ensuring your operations continue uninterrupted whether powering a remote construction site or backing up critical facilities.",
+      costEffective: "Generator ownership involves significant capital investment plus ongoing fuel management, maintenance, and storage costs. Generator rental in Abu Dhabi and Dubai eliminates these burdens, providing power capacity matched to your requirements without the complications of ownership.",
+      latestModels: "Our generator fleet features modern diesel generators with fuel-efficient engines, low-noise enclosures, and reliable performance. These units are regularly serviced and tested to ensure dependable power delivery for construction sites, events, and critical backup applications across the UAE.",
+      noMaintenance: "Generators require regular maintenance, load testing, and fuel system care to ensure reliable operation when needed. Western Eagle handles all servicing and delivers generators tested and ready for immediate use. Our 24/7 support ensures rapid response to any power issues.",
+      flexibility: "Power requirements vary by project phase, event size, and facility needs. Generator rental provides access to various capacities from portable units to large industrial generators, allowing you to scale power supply to match actual requirements without excess capacity costs."
+    },
     variants: [
       { name: "Generator for Rent", slug: "standard", capacity: "Various", description: "Professional diesel generators available for construction sites, events, and backup power applications. Various capacities available to match your specific power requirements across the UAE.", applications: ["Construction sites", "Events", "Backup power"], specifications: ["Various kVA options", "Diesel powered", "Low noise operation"] }
     ],
@@ -476,6 +553,13 @@ export const equipmentData: Record<string, EquipmentData> = {
       "Full maintenance included",
       "Operator training available"
     ],
+    whyChoose: {
+      intro: "Compact construction, landscaping, and site preparation work across Dubai and Abu Dhabi demands versatile, maneuverable equipment. Skid steer rental provides powerful, zero-turn machines that excel in tight spaces where larger equipment cannot operate efficiently.",
+      costEffective: "Bobcat skid steers can perform the work of multiple machines through attachment versatility. Skid steer rental eliminates the purchase cost while providing access to compact power for landscaping, demolition, grading, and material handling tasks that would otherwise require larger, more expensive equipment.",
+      latestModels: "Our skid steer fleet features Bobcat loaders with powerful hydraulics, zero-turn maneuverability, and compatibility with numerous attachments including buckets, augers, breakers, and graders. Modern enclosed cabs protect operators while delivering the power and control needed for demanding work.",
+      noMaintenance: "Skid steers work hard in challenging conditions and require regular hydraulic system and attachment maintenance. Western Eagle handles all servicing, ensuring you receive machines in peak operating condition. Our support team responds quickly to keep your compact equipment working productively.",
+      flexibility: "Different tasks require different attachments and capabilities. Skid steer rental provides access to versatile Bobcat loaders that can switch between tasks simply by changing attachments, giving you the flexibility to handle varied site work without multiple specialized machines."
+    },
     variants: [
       { name: "Skid Steer Bobcat for Rent", slug: "bobcat", capacity: "Bobcat", description: "Versatile Bobcat skid steer loader for construction, landscaping, and material handling applications. Zero-turn maneuverability with multiple attachment compatibility.", applications: ["General construction", "Landscaping", "Material handling"], specifications: ["Zero-turn capable", "Multiple attachments", "Compact design"] }
     ],
@@ -514,6 +598,13 @@ export const equipmentData: Record<string, EquipmentData> = {
       "Insurance compliant",
       "Competitive rates"
     ],
+    whyChoose: {
+      intro: "Vehicle breakdowns, accident recovery, and heavy machinery transport across the UAE require professional recovery capabilities. Recovery truck rental provides 10-ton recovery vehicles operated by experienced professionals for safe, efficient vehicle recovery and equipment transport services.",
+      costEffective: "Maintaining dedicated recovery trucks involves significant fleet costs and requires specialized operators. Recovery truck services from Western Eagle provide professional vehicle recovery and machinery transport without the overhead of fleet ownership, available when you need them across the UAE.",
+      latestModels: "Our recovery trucks feature modern 10-ton lifting capacity, hydraulic recovery systems, safety winches, and GPS tracking for real-time visibility. Each truck is fully equipped for professional vehicle recovery and heavy machinery transport operations across all UAE roads and construction sites.",
+      noMaintenance: "Recovery trucks require specialized maintenance of hydraulic systems, winches, and transport equipment. Western Eagle ensures every recovery vehicle is professionally maintained and operated by trained recovery specialists who understand safe recovery techniques for all vehicle and machinery types.",
+      flexibility: "Transport and recovery needs are unpredictable. Our 24/7 recovery truck availability ensures emergency breakdown response when needed, while scheduled services handle planned machinery transport and fleet vehicle relocation requirements across Dubai, Abu Dhabi, and throughout the UAE."
+    },
     variants: [
       { name: "10 Ton Recovery Truck for Rent", slug: "10-ton", capacity: "10 Ton", description: "Professional 10-ton recovery truck for vehicle recovery and machinery transport. Equipped with hydraulic systems, winches, and operated by experienced recovery professionals.", applications: ["Vehicle recovery", "Machinery transport", "Emergency towing"], specifications: ["10-ton capacity", "Hydraulic systems", "GPS tracked"] }
     ],
@@ -552,6 +643,13 @@ export const equipmentData: Record<string, EquipmentData> = {
       "Technical support",
       "Flexible rental periods"
     ],
+    whyChoose: {
+      intro: "Construction, sandblasting, painting, and industrial operations across Dubai and Abu Dhabi require reliable compressed air power. Compressor rental provides portable air compressor units that power pneumatic tools and equipment essential for efficient construction and industrial operations.",
+      costEffective: "Industrial air compressors require significant capital investment and specialized maintenance. Compressor rental in the UAE provides access to high CFM output when needed without ownership costs, allowing contractors to power pneumatic operations profitably on projects of any scale.",
+      latestModels: "Our compressor fleet features portable diesel-powered air compressors delivering high CFM output for demanding applications. Modern units offer fuel-efficient operation, reliable performance, and the capacity to power multiple pneumatic tools simultaneously on construction and industrial sites.",
+      noMaintenance: "Air compressors require regular maintenance of engines, air systems, and filtration to ensure clean, reliable compressed air delivery. Western Eagle handles all servicing, delivering compressors in peak operating condition with complete air system support including hoses and fittings.",
+      flexibility: "Different applications require different air capacity. Compressor rental provides access to various CFM outputs matched to your specific pneumatic power requirements, whether powering construction tools, sandblasting operations, or spray painting systems across UAE project sites."
+    },
     variants: [
       { name: "Air Compressor for Rent", slug: "air-compressor", capacity: "Various CFM", description: "Professional air compressors available for construction and industrial applications. Various CFM capacities to power pneumatic tools, sandblasting, and spray painting operations.", applications: ["Construction", "Industrial applications", "Surface preparation"], specifications: ["Various CFM options", "Diesel powered", "Portable towable"] }
     ],
@@ -590,6 +688,13 @@ export const equipmentData: Record<string, EquipmentData> = {
       "UAE-wide coverage",
       "Reliable service"
     ],
+    whyChoose: {
+      intro: "Construction sites, corporate facilities, and events across Dubai and Abu Dhabi require reliable group transportation. Passenger bus rental provides comfortable, air-conditioned buses with professional drivers for staff transport, site visits, and group movement throughout the UAE.",
+      costEffective: "Operating a bus fleet requires significant investment in vehicles, drivers, insurance, and maintenance. Passenger bus rental eliminates these overheads while providing reliable group transport exactly when needed, whether for daily staff movements or special corporate events.",
+      latestModels: "Our passenger bus fleet ranges from compact 14-seater mini buses to large 66-seater coaches, all featuring comfortable air-conditioned seating, modern safety features, and well-maintained interiors. Every bus meets UAE transport regulations and safety standards for passenger comfort and security.",
+      noMaintenance: "Passenger buses require regular mechanical servicing, safety inspections, and interior maintenance. Western Eagle handles all vehicle maintenance and provides experienced, licensed drivers who ensure safe, punctual transport services for your staff and group transportation needs.",
+      flexibility: "Transport requirements vary from small group site visits to large workforce movements. Bus rental provides access to 14-seater mini buses for intimate groups, 34-seater coaches for medium requirements, and 66-seater buses for major workforce transport, matching capacity to your specific needs."
+    },
     variants: [
       { name: "14 Seater Passenger Bus for Rent", slug: "14-seater", capacity: "14 Seats", description: "Compact 14-seater passenger bus perfect for small groups, site visits, and short transfers. Air-conditioned comfort with professional driver.", applications: ["Small groups", "Site visits", "Short transfers"], specifications: ["14 passenger capacity", "AC equipped", "Compact design"] },
       { name: "34 Seater Passenger Bus for Rent", slug: "34-seater", capacity: "34 Seats", description: "Medium capacity 34-seater bus for general staff transport and corporate needs. Comfortable seating with air conditioning for daily routes.", applications: ["Staff transport", "Medium groups", "Daily runs"], specifications: ["34 passenger capacity", "AC equipped", "Comfortable seating"] },
