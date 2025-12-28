@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import { blogPosts } from "@/lib/data";
 
-const phoneNumber = "9108291462";
+const phoneNumber = "971505567467";
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -99,12 +99,12 @@ const BlogPost = () => {
                 <p className="text-muted-foreground mb-6">Contact us for a free consultation and quote.</p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <Button className="btn-primary" asChild>
-                    <a href={`tel:+91${phoneNumber}`}>
+                    <a href={`tel:+${phoneNumber}`}>
                       <Phone className="w-4 h-4 mr-2" /> Call Now
                     </a>
                   </Button>
                   <Button className="bg-green-600 hover:bg-green-700 text-white" asChild>
-                    <a href={`https://wa.me/91${phoneNumber}`} target="_blank" rel="noopener noreferrer">
+                    <a href={`https://wa.me/${phoneNumber}`} target="_blank" rel="noopener noreferrer">
                       <MessageCircle className="w-4 h-4 mr-2" /> WhatsApp
                     </a>
                   </Button>
