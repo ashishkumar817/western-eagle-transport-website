@@ -29,7 +29,7 @@ const AboutSection = () => {
 
           {/* Content */}
           <div>
-            <p className="text-primary font-heading uppercase tracking-[0.2em] mb-2">
+            <p className="section-label">
               About Us
             </p>
             <h2 className="heading-secondary text-foreground mb-6">

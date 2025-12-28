@@ -19,8 +19,8 @@ const GallerySection = () => {
     <section id="gallery" className="section-padding bg-secondary">
       <div className="container-custom px-6">
         {/* Header */}
-        <div className="text-center mb-12">
-          <p className="text-primary font-heading uppercase tracking-[0.2em] mb-2">
+        <div className="text-center mb-16">
+          <p className="section-label">
             Our Work
           </p>
           <h2 className="heading-secondary text-foreground mb-4">
@@ -45,7 +45,7 @@ const GallerySection = () => {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-2">
-                <span className="text-white font-heading uppercase tracking-wide text-xs md:text-sm text-center leading-tight">
+                <span className="text-white font-heading text-xs md:text-sm text-center leading-relaxed">
                   {image.alt}
                 </span>
               </div>

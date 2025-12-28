@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -127,17 +127,24 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body antialiased;
+    @apply bg-background text-foreground font-body antialiased leading-relaxed;
+    line-height: 1.7;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-bold tracking-wide;
+    @apply font-heading font-semibold tracking-tight;
+    line-height: 1.2;
+  }
+
+  p {
+    @apply text-muted-foreground leading-relaxed;
+    line-height: 1.7;
   }
 }
 
 @layer components {
   .section-padding {
-    @apply py-16 md:py-24 px-4 md:px-8;
+    @apply py-20 md:py-28 lg:py-32 px-4 md:px-8;
   }
 
   .container-custom {
@@ -145,15 +152,19 @@
   }
 
   .heading-primary {
-    @apply text-4xl md:text-5xl lg:text-6xl font-heading font-bold uppercase tracking-wider;
+    @apply text-4xl md:text-5xl lg:text-6xl font-heading font-semibold uppercase tracking-tight;
   }
 
   .heading-secondary {
-    @apply text-3xl md:text-4xl font-heading font-bold uppercase tracking-wide;
+    @apply text-2xl md:text-3xl lg:text-4xl font-heading font-semibold tracking-tight;
   }
 
   .heading-tertiary {
-    @apply text-xl md:text-2xl font-heading font-semibold uppercase tracking-wide;
+    @apply text-lg md:text-xl font-heading font-medium tracking-normal;
+  }
+
+  .section-label {
+    @apply text-primary text-sm font-medium tracking-wide mb-3;
   }
 
   .text-gradient {
@@ -161,23 +172,23 @@
   }
 
   .card-equipment {
-    @apply bg-card rounded-lg overflow-hidden transition-all duration-300 hover:shadow-gold hover:-translate-y-2;
+    @apply bg-card rounded-xl overflow-hidden transition-all duration-300 hover:shadow-gold hover:-translate-y-1;
   }
 
   .btn-primary {
-    @apply bg-primary text-primary-foreground font-heading font-semibold uppercase tracking-wider px-8 py-3 rounded transition-all duration-300 hover:shadow-gold hover:bg-gold-dark;
+    @apply bg-primary text-primary-foreground font-medium px-8 py-3 rounded-lg transition-all duration-300 hover:shadow-gold hover:bg-gold-dark;
   }
 
   .btn-outline {
-    @apply border-2 border-primary text-primary font-heading font-semibold uppercase tracking-wider px-8 py-3 rounded transition-all duration-300 hover:bg-primary hover:text-primary-foreground;
+    @apply border-2 border-primary text-primary font-medium px-8 py-3 rounded-lg transition-all duration-300 hover:bg-primary hover:text-primary-foreground;
   }
 
   .feature-icon {
-    @apply w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground;
+    @apply w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground;
   }
 
   .nav-link {
-    @apply text-foreground/80 font-medium uppercase text-sm tracking-wide transition-colors duration-300 hover:text-primary relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full;
+    @apply text-foreground/80 font-medium text-sm transition-colors duration-300 hover:text-primary relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full;
   }
 }
 

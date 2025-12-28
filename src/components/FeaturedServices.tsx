@@ -25,8 +25,8 @@ const FeaturedServices = () => {
     <section id="services" className="section-padding bg-background">
       <div className="container-custom px-6">
         {/* Header */}
-        <div className="text-center mb-8 md:mb-12">
-          <p className="text-primary font-heading uppercase tracking-[0.2em] mb-2">
+        <div className="text-center mb-10 md:mb-16">
+          <p className="section-label">
             What We Offer
           </p>
           <h2 className="heading-secondary text-foreground mb-4">
@@ -52,7 +52,7 @@ const FeaturedServices = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
-                <h3 className="font-heading font-semibold text-xs sm:text-sm md:text-base text-white uppercase tracking-wide">
+                <h3 className="font-heading font-medium text-xs sm:text-sm md:text-base text-white">
                   {service.name}
                 </h3>
               </div>

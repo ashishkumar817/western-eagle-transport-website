@@ -18,27 +18,23 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="container-custom px-6 relative z-10 text-center py-20">
-        <p className="text-primary font-heading uppercase tracking-[0.3em] mb-4 animate-fade-up">
-          Welcome to
+        <p className="text-white/80 dark:text-muted-foreground text-sm md:text-base font-medium tracking-wide mb-6 animate-fade-up">
+          Western Eagle Transport Company
         </p>
         
-        <h1 className="heading-primary text-white dark:text-foreground mb-2 animate-fade-up delay-100">
-          Heavy Equipment
+        <h1 className="heading-primary text-white dark:text-foreground mb-4 animate-fade-up delay-100">
+          Heavy Equipment <span className="text-primary">Rental Company</span>
         </h1>
         
-        <h1 className="heading-primary text-primary mb-8 animate-fade-up delay-200">
-          Rental Company
-        </h1>
-        
-        <p className="text-xl md:text-2xl text-white/90 dark:text-muted-foreground max-w-2xl mx-auto mb-4 animate-fade-up delay-300">
+        <p className="text-lg md:text-xl text-white/90 dark:text-muted-foreground max-w-2xl mx-auto mb-4 font-light animate-fade-up delay-200">
           Powering Projects with Reliable Machinery
         </p>
         
-        <p className="text-white/70 dark:text-muted-foreground mb-10 animate-fade-up delay-400">
+        <p className="text-white/60 dark:text-muted-foreground text-sm mb-10 animate-fade-up delay-300">
           Serving UAE – Dubai – Abu Dhabi – Sharjah
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up delay-500">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up delay-400">
           <Button 
             size="lg" 
             className="btn-primary"

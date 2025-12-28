@@ -12,7 +12,7 @@ const FeatureCard = ({ icon: Icon, title, description }: FeatureCardProps) => {
       <div className="feature-icon mb-4">
         <Icon className="w-8 h-8" />
       </div>
-      <h3 className="font-heading font-semibold text-lg uppercase tracking-wide text-foreground mb-3">
+      <h3 className="font-heading font-medium text-lg text-foreground mb-3">
         {title}
       </h3>
       <p className="text-muted-foreground text-sm leading-relaxed">
@@ -60,8 +60,8 @@ const WhyChooseUs = () => {
     <section className="section-padding bg-secondary">
       <div className="container-custom px-6">
         {/* Header */}
-        <div className="text-center mb-12">
-          <p className="text-primary font-heading uppercase tracking-[0.2em] mb-2">
+        <div className="text-center mb-16">
+          <p className="section-label">
             Why Us
           </p>
           <h2 className="heading-secondary text-foreground mb-4">
