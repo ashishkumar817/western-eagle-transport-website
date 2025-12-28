@@ -13,7 +13,6 @@ const phoneNumber = "971505567467";
 const BlogPost = () => {
   const { slug } = useParams();
   const post = blogPosts.find((p) => p.slug === slug);
-  const todayDate = format(new Date(), "MMMM d, yyyy");
   
   // Get recent posts excluding current post
   const recentPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 3);
@@ -33,12 +32,14 @@ const BlogPost = () => {
     );
   }
 
+  const formattedDate = format(new Date(post.date), "MMMM d, yyyy");
+
   return (
     <>
       <Helmet>
         <title>{post.title} | Western Eagle Transport Blog</title>
         <meta name="description" content={post.excerpt} />
-        <meta name="keywords" content="heavy equipment rental, construction equipment UAE, equipment tips" />
+        <meta name="keywords" content="heavy equipment rental, construction equipment UAE, equipment tips, Abu Dhabi" />
         <link rel="canonical" href={`https://westerneagle.ae/blog/${slug}`} />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
@@ -56,15 +57,7 @@ const BlogPost = () => {
                 <ArrowLeft className="w-4 h-4 mr-2" /> Back to Blog
               </Link>
               
-              <header className="mb-8">
-                <div className="flex items-center gap-2 text-muted-foreground text-sm mb-4">
-                  <Calendar className="w-4 h-4" />
-                  {todayDate}
-                </div>
-                <h1 className="heading-primary text-foreground mb-4">{post.title}</h1>
-                <p className="text-xl text-muted-foreground">{post.excerpt}</p>
-              </header>
-
+              {/* Featured Image */}
               <div className="aspect-video bg-muted rounded-lg overflow-hidden mb-8">
                 <img
                   src={post.image}
@@ -73,30 +66,65 @@ const BlogPost = () => {
                 />
               </div>
 
+              <header className="mb-8">
+                <span className="inline-block bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded mb-4">
+                  Blog Post
+                </span>
+                <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
+                  {post.excerpt}
+                </h1>
+                <div className="flex items-center gap-2 text-muted-foreground text-sm">
+                  <Calendar className="w-4 h-4" />
+                  {formattedDate}
+                </div>
+              </header>
+
               <div className="prose prose-invert max-w-none">
-                <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                  At Western Eagle Transport Company, we are committed to providing the best heavy equipment rental services in the UAE. With over 10 years of experience in the industry, we understand the unique needs of construction projects in Dubai, Abu Dhabi, and Sharjah.
-                </p>
+                {/* Intro Paragraphs */}
+                {post.content.intro.map((paragraph, index) => (
+                  <p key={index} className="text-muted-foreground text-lg leading-relaxed mb-6">
+                    {paragraph}
+                  </p>
+                ))}
                 
-                <h2 className="heading-secondary text-foreground mt-8 mb-4">Why Choose Professional Equipment Rental</h2>
-                <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                  Renting heavy equipment offers numerous advantages over purchasing. It allows you to access the latest machinery without the burden of maintenance, storage, and depreciation costs. Our fleet is regularly serviced and inspected to ensure optimal performance on your job site.
-                </p>
+                {/* Content Sections */}
+                {post.content.sections.map((section, sectionIndex) => (
+                  <div key={sectionIndex} className="mt-10">
+                    <h2 className="font-heading text-2xl font-bold text-foreground mb-4">
+                      {section.title}
+                    </h2>
+                    
+                    {section.paragraphs?.map((paragraph, pIndex) => (
+                      <p key={pIndex} className="text-muted-foreground text-lg leading-relaxed mb-4">
+                        {paragraph}
+                      </p>
+                    ))}
+                    
+                    {section.bullets && (
+                      <ul className="list-disc list-inside space-y-2 mb-4 text-muted-foreground">
+                        {section.bullets.map((bullet, bIndex) => (
+                          <li key={bIndex} className="text-lg leading-relaxed">
+                            <span className="text-primary">•</span> {bullet}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                ))}
 
-                <h2 className="heading-secondary text-foreground mt-8 mb-4">Our Commitment to Quality</h2>
-                <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                  Every piece of equipment in our fleet undergoes rigorous quality checks. We provide trained operators who are certified to handle complex machinery safely and efficiently. Our 24/7 support ensures that any issues are resolved quickly to minimize downtime.
-                </p>
-
-                <h2 className="heading-secondary text-foreground mt-8 mb-4">Get Started Today</h2>
-                <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                  Whether you need excavators, cranes, forklifts, or any other heavy equipment, Western Eagle Transport Company has you covered. Contact us today for competitive rates and reliable service.
-                </p>
+                {/* Conclusion */}
+                <div className="mt-10 pt-6 border-t border-border">
+                  {post.content.conclusion.map((paragraph, index) => (
+                    <p key={index} className="text-muted-foreground text-lg leading-relaxed mb-6">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
               </div>
 
               {/* CTA */}
               <div className="bg-card p-8 rounded-lg border border-border mt-12 text-center">
-                <h3 className="heading-tertiary text-foreground mb-4">Need Equipment for Your Project?</h3>
+                <h3 className="font-heading text-2xl font-bold text-foreground mb-4">Need Equipment for Your Project?</h3>
                 <p className="text-muted-foreground mb-6">Contact us for a free consultation and quote.</p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <Button className="btn-primary" asChild>
@@ -115,7 +143,7 @@ const BlogPost = () => {
               {/* Recent Posts Section */}
               {recentPosts.length > 0 && (
                 <div className="mt-16">
-                  <h3 className="heading-secondary text-foreground mb-8">Recent Posts</h3>
+                  <h3 className="font-heading text-2xl font-bold text-foreground mb-8">Recent Posts</h3>
                   <div className="grid md:grid-cols-3 gap-6">
                     {recentPosts.map((recentPost) => (
                       <Link 
@@ -133,7 +161,7 @@ const BlogPost = () => {
                         <div className="p-4">
                           <div className="flex items-center gap-2 text-muted-foreground text-xs mb-2">
                             <Calendar className="w-3 h-3" />
-                            {todayDate}
+                            {format(new Date(recentPost.date), "MMMM d, yyyy")}
                           </div>
                           <h4 className="font-heading font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-2">
                             {recentPost.title}
