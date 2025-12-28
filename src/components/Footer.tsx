@@ -37,7 +37,7 @@ const Footer = forwardRef<HTMLElement, {}>((_props, ref) => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <img src={logo} alt="Western Eagle Transport Company" className="h-20 w-auto" />
+              <img src={logo} alt="Western Eagle Transport Company" width={101} height={80} loading="lazy" className="h-20 w-auto" />
             </div>
             <p className="text-muted-foreground mb-4 text-sm">
               Your trusted partner for heavy equipment rental across UAE.
