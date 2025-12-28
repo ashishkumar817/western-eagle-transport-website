@@ -12,12 +12,15 @@ export interface RelatedEquipment {
   slug: string;
 }
 
+export type LayoutType = 'default' | 'image-stats' | 'fullwidth-image' | 'split-panels' | 'centered-minimal';
+
 export interface EquipmentData {
   name: string;
   slug: string;
   heroTitle: string;
   heroSubtitle: string;
   metaDescription: string;
+  layoutType: LayoutType;
   overview: {
     title: string;
     description: string;
@@ -49,6 +52,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     heroTitle: "Forklift Rental in UAE",
     heroSubtitle: "Reliable Forklift Rental Services in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent high-quality forklifts in UAE. Western Eagle offers 3 to 25 ton forklifts with trained operators. Serving Dubai, Abu Dhabi, Sharjah.",
+    layoutType: "default",
     overview: {
       title: "Overview",
       description: "Forklifts are essential material handling equipment designed to lift, move, and stack heavy loads efficiently. Our fleet includes electric, diesel, and LPG-powered forklifts suitable for warehouses, construction sites, manufacturing plants, and logistics centers across the UAE. Each forklift is meticulously maintained to ensure optimal performance, safety, and reliability for your operations. Whether you need to handle palletized goods, construction materials, or heavy machinery, our forklifts deliver the power and precision required for demanding industrial applications.",
@@ -99,6 +103,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     heroTitle: "Crane Rental in UAE",
     heroSubtitle: "Professional Crane Rental Services in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent mobile cranes from 20 to 200 ton capacity in UAE. Western Eagle provides lifting solutions for construction & industrial projects.",
+    layoutType: "image-stats",
     overview: {
       title: "Overview",
       description: "Cranes are indispensable lifting equipment for construction, infrastructure, and industrial projects requiring precise heavy lifting capabilities. Our crane fleet includes mobile cranes, all-terrain cranes, and specialized lifting solutions ranging from 20 to 200 tons capacity. Each crane is equipped with advanced safety systems, GPS monitoring, and operated by certified professionals. We serve high-rise construction, bridge building, industrial plant installation, and heavy machinery handling across the UAE.",
@@ -150,6 +155,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     heroTitle: "Excavator Rental in UAE",
     heroSubtitle: "Mini Excavator Rental Services in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent mini excavators from 2 to 5 tons in UAE. Western Eagle provides compact excavators for urban construction, landscaping & utility work.",
+    layoutType: "fullwidth-image",
     overview: {
       title: "Overview",
       description: "Mini excavators are compact, versatile machines designed for excavation work in confined spaces, urban areas, and projects where larger equipment cannot access. Our mini excavator fleet ranges from 2-ton to 5-ton machines, featuring zero tail swing designs for work in tight spaces. These machines are perfect for trenching, landscaping, utility installation, and light demolition. Despite their compact size, they deliver impressive digging power and precision control.",
@@ -197,6 +203,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     heroTitle: "Wheel Loader for Rent in UAE",
     heroSubtitle: "Premium CAT Wheel Loader Rental Services with Fast Delivery Across Dubai, Abu Dhabi, Sharjah & All Emirates",
     metaDescription: "Rent CAT 950 & 966 wheel loaders in UAE. Western Eagle Transport offers reliable wheel loader rental with operators for construction, quarries & infrastructure. 24/7 support.",
+    layoutType: "default",
     overview: {
       title: "Overview",
       description: "A wheel loader is a heavy construction machine engineered for loading, transporting, and stockpiling materials such as soil, gravel, sand, aggregate, and debris. Distinguished by their articulated steering, large front-mounted bucket, and robust rubber tires, wheel loaders offer exceptional mobility and versatility across construction sites, quarries, warehouses, and industrial facilities. At Western Eagle Transport, we provide top-tier CAT wheel loaders including the industry-renowned 950 and 966 models, each delivering outstanding fuel efficiency, powerful hydraulic systems, and operator comfort that maximizes productivity on demanding UAE projects.",
@@ -250,6 +257,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     heroTitle: "JCB Backhoe 3CX for Rent in UAE",
     heroSubtitle: "Versatile JCB 3CX Backhoe Loader Rental with Expert Support Across Dubai, Abu Dhabi, Sharjah & All Emirates",
     metaDescription: "Rent JCB 3CX backhoe loaders in UAE. Western Eagle Transport provides versatile backhoe rental for excavation, loading, trenching & construction across Dubai, Abu Dhabi.",
+    layoutType: "default",
     overview: {
       title: "Overview",
       description: "The JCB 3CX backhoe loader is the world's most iconic and versatile construction machine, ingeniously combining a front-end loader with a rear-mounted excavator in a single, highly maneuverable unit. This dual-functionality makes the 3CX an indispensable workhorse on construction sites where space is limited and multiple tasks need to be performed efficiently. The rear excavator arm handles digging, trenching, and demolition work, while the front loader bucket manages material loading, grading, and site clearance. At Western Eagle Transport, we maintain a premium fleet of JCB 3CX backhoe loaders equipped with 4-wheel drive, extendable dippers, and multiple attachment options to handle virtually any construction challenge.",
@@ -302,6 +310,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     heroTitle: "Boom Loader Rental in UAE",
     heroSubtitle: "Telehandler & Boom Loader Rental Services in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent 14m and 17m telehandlers and boom loaders in UAE. Western Eagle offers telescopic handlers for construction & industrial applications.",
+    layoutType: "split-panels",
     overview: {
       title: "Overview",
       description: "Boom loaders, also known as telehandlers, are versatile machines combining the capabilities of a forklift and crane with extended reach. Our telehandler fleet features telescopic booms that can reach heights and distances beyond traditional forklifts. These machines are essential for construction sites requiring material placement at height or across obstacles. With various attachments including forks, buckets, and lifting hooks, boom loaders adapt to numerous material handling tasks.",
@@ -348,6 +357,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     heroTitle: "Roller Rental in UAE",
     heroSubtitle: "Professional Road Roller Rental Services in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent single drum rollers and vibratory compactors in UAE. Western Eagle provides road construction equipment for asphalt & soil compaction.",
+    layoutType: "fullwidth-image",
     overview: {
       title: "Overview",
       description: "Road rollers and compactors are essential equipment for road construction, asphalt laying, and ground compaction projects. Our roller fleet includes vibratory rollers, tandem rollers, and single drum compactors in various sizes. These machines deliver precise compaction for road surfaces, parking areas, and construction site preparation. All rollers feature variable frequency vibration, water spray systems, and comfortable operator cabins for efficient, quality compaction work.",
@@ -393,6 +403,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     heroTitle: "Manlift Rental in UAE",
     heroSubtitle: "Safe Manlift Rental Services in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent diesel articulated and telescopic manlifts in UAE. Western Eagle offers aerial work platforms for construction, maintenance & industrial work.",
+    layoutType: "split-panels",
     overview: {
       title: "Overview",
       description: "Manlifts, also known as boom lifts or aerial work platforms, provide safe elevated access for workers performing tasks at height. Our fleet includes articulating boom lifts and telescopic boom lifts with various working heights. These machines are essential for building maintenance, electrical work, facade installation, and any task requiring safe access to elevated positions. All equipment features safety harness attachment points, emergency descent systems, and stable platforms.",
@@ -442,6 +453,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     heroTitle: "Scissor Lift Rental in UAE",
     heroSubtitle: "Versatile Scissor Lift Rental Services in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent electric & diesel scissor lifts in UAE from 6m to 22m. Western Eagle offers indoor and rough terrain scissor lifts for construction & warehouse work.",
+    layoutType: "split-panels",
     overview: {
       title: "Overview",
       description: "Scissor lifts provide stable vertical elevation platforms for construction, maintenance, and warehouse operations. Our fleet includes electric scissor lifts for indoor use and rough terrain diesel scissor lifts for outdoor construction sites. These platforms offer larger work areas than boom lifts, making them ideal for tasks requiring multiple workers or extensive equipment at height. All scissor lifts feature safety guardrails, non-slip platforms, and emergency descent capabilities.",
@@ -490,6 +502,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     heroTitle: "Generator Rental in UAE",
     heroSubtitle: "Reliable Generator Rental Services in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent diesel generators in UAE for construction, events & emergency backup. Western Eagle provides power solutions across Dubai, Abu Dhabi & Sharjah.",
+    layoutType: "image-stats",
     overview: {
       title: "Overview",
       description: "Generators provide essential backup and primary power solutions for construction sites, events, industrial facilities, and emergency situations. Our generator fleet offers reliable power delivery when you need it most. All generators are fuel-efficient, low-noise, and regularly maintained to ensure dependable performance. We provide complete power solutions including cabling, distribution boards, and fuel management.",
@@ -535,6 +548,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     heroTitle: "Skid Steer Loader Rental in UAE",
     heroSubtitle: "Versatile Bobcat Skid Steer Rental in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent Bobcat skid steer loaders in UAE. Western Eagle offers wheeled and tracked skid steers for construction, landscaping & demolition work.",
+    layoutType: "centered-minimal",
     overview: {
       title: "Overview",
       description: "Bobcat skid steer loaders are compact, highly maneuverable machines perfect for construction, landscaping, and material handling in tight spaces. Our fleet includes wheeled and tracked skid steers, compatible with dozens of attachments including buckets, augers, breakers, and graders. These machines excel where larger equipment cannot access, delivering impressive power in a compact package. Zero-turn capability makes them ideal for indoor and urban work.",
@@ -580,6 +594,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     heroTitle: "Recovery Truck Rental in UAE",
     heroSubtitle: "Professional 10 Ton Recovery Truck Rental in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent 10 ton recovery trucks in UAE. Western Eagle provides vehicle recovery, towing & machinery transport services across UAE.",
+    layoutType: "centered-minimal",
     overview: {
       title: "Overview",
       description: "Our 10-ton recovery trucks provide professional vehicle recovery, towing, and machinery transport services across the UAE. Equipped with hydraulic systems, safety winches, and GPS tracking, these trucks handle everything from car breakdowns to heavy machinery transport. Each recovery truck is operated by experienced professionals trained in safe recovery techniques. We provide 24/7 emergency recovery services alongside scheduled transport operations.",
@@ -625,6 +640,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     heroTitle: "Compressor Rental in UAE",
     heroSubtitle: "Industrial Air Compressor Rental Services in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent air compressors in UAE for construction & industrial applications. Western Eagle provides pneumatic tool power across Dubai, Abu Dhabi & Sharjah.",
+    layoutType: "fullwidth-image",
     overview: {
       title: "Overview",
       description: "Air compressors are essential for powering pneumatic tools, sandblasting equipment, painting systems, and various industrial processes. Our compressor fleet includes portable towable units for construction sites and larger stationary compressors for industrial applications. All compressors deliver high CFM output, reliable performance, and energy-efficient operation. We provide complete compressed air solutions including hoses, fittings, and technical support.",
@@ -670,6 +686,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     heroTitle: "Passenger Bus Rental in UAE",
     heroSubtitle: "Comfortable Passenger Bus Rental in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent passenger buses in UAE from 14 to 66 seaters. Western Eagle provides staff transport & corporate event transportation services.",
+    layoutType: "image-stats",
     overview: {
       title: "Overview",
       description: "Passenger buses provide comfortable, reliable transportation for staff, construction workers, and groups across the UAE. Our bus fleet includes various sizes from mini buses to large coaches, all equipped with air conditioning, comfortable seating, and safety features. Experienced drivers ensure safe, punctual transport for daily staff movements, site visits, corporate events, and special occasions. All buses are regularly maintained and comply with UAE transport regulations.",
