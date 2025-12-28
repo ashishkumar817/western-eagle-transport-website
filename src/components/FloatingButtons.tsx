@@ -24,7 +24,7 @@ const FloatingButtons = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const phoneNumber = "+971505567467";
+  const phoneNumber = "971505567467";
 
   return (
     <div className="fixed bottom-6 right-4 z-50 flex flex-col gap-2">
@@ -45,7 +45,7 @@ const FloatingButtons = () => {
         className="w-11 h-11 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-md animate-fade-in"
         aria-label="Call us"
       >
-        <a href={`tel:${phoneNumber}`}>
+        <a href={`tel:+${phoneNumber}`}>
           <Phone className="w-5 h-5" />
         </a>
       </Button>
@@ -57,7 +57,7 @@ const FloatingButtons = () => {
         aria-label="WhatsApp"
       >
         <a
-          href="https://wa.me/971505567467"
+          href={`https://wa.me/${phoneNumber}`}
           target="_blank"
           rel="noopener noreferrer"
         >

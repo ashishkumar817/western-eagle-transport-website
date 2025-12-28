@@ -11,7 +11,7 @@ import excavatorImg from "@/assets/equipment/excavator.webp";
 import craneImg from "@/assets/equipment/crane.webp";
 import forkliftImg from "@/assets/equipment/forklift.webp";
 
-const phoneNumber = "9108291462";
+const phoneNumber = "971505567467";
 
 const serviceImages: Record<string, string> = {
   "leasing-machineries-equipments": excavatorImg,
@@ -79,12 +79,12 @@ const ServiceDetail = () => {
                 <p className="text-lg text-white/80 mb-8">{service.heroSubtitle}</p>
                 <div className="flex flex-wrap gap-4">
                   <Button className="btn-primary" asChild>
-                    <a href={`tel:+91${phoneNumber}`}>
+                    <a href={`tel:+${phoneNumber}`}>
                       <Phone className="w-4 h-4 mr-2" /> Call Now
                     </a>
                   </Button>
                   <Button className="bg-green-600 hover:bg-green-700 text-white" asChild>
-                    <a href={`https://wa.me/91${phoneNumber}`} target="_blank" rel="noopener noreferrer">
+                    <a href={`https://wa.me/${phoneNumber}`} target="_blank" rel="noopener noreferrer">
                       <MessageCircle className="w-4 h-4 mr-2" /> WhatsApp Inquiry
                     </a>
                   </Button>
@@ -255,12 +255,12 @@ const ServiceDetail = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button className="bg-background text-foreground hover:bg-background/90 border border-background" asChild>
-                  <a href={`tel:+91${phoneNumber}`}>
+                  <a href={`tel:+${phoneNumber}`}>
                     <Phone className="w-4 h-4 mr-2" /> Call Now
                   </a>
                 </Button>
                 <Button className="bg-green-600 hover:bg-green-700 text-white border-0" asChild>
-                  <a href={`https://wa.me/91${phoneNumber}`} target="_blank" rel="noopener noreferrer">
+                  <a href={`https://wa.me/${phoneNumber}`} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="w-4 h-4 mr-2" /> WhatsApp
                   </a>
                 </Button>
