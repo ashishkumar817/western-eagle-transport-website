@@ -5,6 +5,7 @@ export interface EquipmentVariant {
   description: string;
   applications: string[];
   specifications: string[];
+  brochure?: string;
 }
 
 export interface RelatedEquipment {
@@ -295,7 +296,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       flexibility: "Construction phases demand different equipment configurations. JCB backhoe rental gives you the flexibility to tackle trenching one day and material loading the next with the same machine. Scale your equipment count up or down based on project phases, return equipment when the job is done, and avoid the long-term commitment of equipment ownership."
     },
     variants: [
-      { name: "JCB 3CX Backhoe Loader for Rent", slug: "3cx", capacity: "3CX Model", description: "The JCB 3CX is the world's most popular and trusted backhoe loader, delivering exceptional versatility for construction, excavation, and material handling tasks across the UAE. Features include 4-wheel drive capability, extendable dipper option, multiple attachment compatibility, and the renowned JCB build quality that ensures reliability on demanding job sites.", applications: ["General construction sites", "Trenching and excavation", "Material loading and handling", "Road works and utilities"], specifications: ["Model: JCB 3CX", "4WD capability as standard", "Extendable dipper available", "Multiple attachment options", "Stage V compliant engine"] }
+      { name: "JCB 3CX Backhoe Loader for Rent", slug: "3cx", capacity: "3CX Model", description: "The JCB 3CX is the world's most popular and trusted backhoe loader, delivering exceptional versatility for construction, excavation, and material handling tasks across the UAE. Features include 4-wheel drive capability, extendable dipper option, multiple attachment compatibility, and the renowned JCB build quality that ensures reliability on demanding job sites.", applications: ["General construction sites", "Trenching and excavation", "Material loading and handling", "Road works and utilities"], specifications: ["Model: JCB 3CX", "4WD capability as standard", "Extendable dipper available", "Multiple attachment options", "Stage V compliant engine"], brochure: "/brochures/jcb-3cx.pdf" }
     ],
     relatedEquipment: [
       { name: "Wheel Loader for Rent", slug: "wheel-loader" },
@@ -393,7 +394,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       flexibility: "Different projects require different compaction approaches. Roller rental provides access to single drum rollers for asphalt work and various compaction equipment options, allowing you to match equipment to your specific road construction or site preparation requirements."
     },
     variants: [
-      { name: "Single Drum Roller for Rent", slug: "single-drum", capacity: "Single Drum", description: "Professional single drum vibratory roller for road construction and compaction work. Ideal for asphalt and sub-base compaction across construction projects in the UAE.", applications: ["Road construction", "Asphalt compaction", "General compaction"], specifications: ["Single drum design", "Vibratory compaction", "Water spray system"] }
+      { name: "Single Drum Roller for Rent", slug: "single-drum", capacity: "Single Drum", description: "Professional single drum vibratory roller for road construction and compaction work. Ideal for asphalt and sub-base compaction across construction projects in the UAE.", applications: ["Road construction", "Asphalt compaction", "General compaction"], specifications: ["Single drum design", "Vibratory compaction", "Water spray system"], brochure: "/brochures/roller.pdf" }
     ],
     image: "/src/assets/equipment/roller.webp"
   },
@@ -439,11 +440,12 @@ export const equipmentData: Record<string, EquipmentData> = {
       flexibility: "Elevated work requirements vary significantly across projects and phases. Manlift rental allows access to articulating boom lifts for complex access situations and telescopic manlifts for straight-up height requirements, matching equipment to your specific elevated access needs."
     },
     variants: [
-      { name: "Diesel E450AJ Articulated Manlift", slug: "e450aj", capacity: "E450AJ", description: "Diesel-powered E450AJ articulated manlift offering excellent outreach and maneuverability. Perfect for construction and maintenance tasks requiring flexible positioning at height.", applications: ["Construction", "Maintenance", "Installation work"], specifications: ["Articulating boom", "Diesel powered", "All-terrain capable"] },
-      { name: "Diesel 600S Telescopic Manlift", slug: "600s", capacity: "600S", description: "Diesel 600S telescopic manlift providing exceptional straight-up height for demanding applications. Ideal for high-reach construction and industrial projects.", applications: ["High-reach projects", "Industrial facilities", "Construction"], specifications: ["Telescopic boom", "Maximum height", "Diesel powered"] },
-      { name: "Diesel 660AJ Articulated Manlift", slug: "660aj", capacity: "660AJ", description: "Diesel 660AJ articulated boom lift with superior reach and articulation. Designed for complex access requirements on major construction sites.", applications: ["Major construction", "Complex access", "Industrial maintenance"], specifications: ["Articulating boom", "Extended outreach", "Heavy-duty platform"] },
-      { name: "Diesel E800AJ Articulated Manlift", slug: "e800aj", capacity: "E800AJ", description: "Diesel E800AJ high-capacity articulated manlift for exceptional height and reach. Perfect for tall structures and challenging access situations.", applications: ["Tall structures", "Exceptional heights", "Industrial stacks"], specifications: ["High-reach articulating boom", "Maximum platform capacity", "All-terrain tires"] },
-      { name: "Diesel E860AJ Telescopic Manlift", slug: "e860aj", capacity: "E860AJ", description: "Diesel E860AJ telescopic manlift offering maximum working height for the most demanding aerial work applications.", applications: ["Maximum height projects", "Special applications", "Industrial facilities"], specifications: ["Telescopic boom", "Maximum working height", "Heavy-duty construction"] }
+      { name: "Diesel E450AJ Articulated Manlift", slug: "e450aj", capacity: "E450AJ", description: "Diesel-powered E450AJ articulated manlift offering excellent outreach and maneuverability. Perfect for construction and maintenance tasks requiring flexible positioning at height.", applications: ["Construction", "Maintenance", "Installation work"], specifications: ["Articulating boom", "Diesel powered", "All-terrain capable"], brochure: "/brochures/manlift-e450aj.pdf" },
+      { name: "Diesel 600S Telescopic Manlift", slug: "600s", capacity: "600S", description: "Diesel 600S telescopic manlift providing exceptional straight-up height for demanding applications. Ideal for high-reach construction and industrial projects.", applications: ["High-reach projects", "Industrial facilities", "Construction"], specifications: ["Telescopic boom", "Maximum height", "Diesel powered"], brochure: "/brochures/manlift-600s.pdf" },
+      { name: "Diesel 600AJ Articulated Manlift", slug: "600aj", capacity: "600AJ", description: "Diesel 600AJ articulated boom lift with excellent reach and articulation. Designed for complex access requirements on construction sites.", applications: ["Construction", "Complex access", "Industrial maintenance"], specifications: ["Articulating boom", "Extended outreach", "Heavy-duty platform"], brochure: "/brochures/manlift-600aj.pdf" },
+      { name: "Diesel 660AJ Articulated Manlift", slug: "660aj", capacity: "660AJ", description: "Diesel 660AJ articulated boom lift with superior reach and articulation. Designed for complex access requirements on major construction sites.", applications: ["Major construction", "Complex access", "Industrial maintenance"], specifications: ["Articulating boom", "Extended outreach", "Heavy-duty platform"], brochure: "/brochures/manlift-660aj.pdf" },
+      { name: "Diesel 800AJ Articulated Manlift", slug: "800aj", capacity: "800AJ", description: "Diesel 800AJ high-capacity articulated manlift for exceptional height and reach. Perfect for tall structures and challenging access situations.", applications: ["Tall structures", "Exceptional heights", "Industrial stacks"], specifications: ["High-reach articulating boom", "Maximum platform capacity", "All-terrain tires"], brochure: "/brochures/manlift-800aj.pdf" },
+      { name: "Diesel 860AJ Telescopic Manlift", slug: "860aj", capacity: "860AJ", description: "Diesel 860AJ telescopic manlift offering maximum working height for the most demanding aerial work applications.", applications: ["Maximum height projects", "Special applications", "Industrial facilities"], specifications: ["Telescopic boom", "Maximum working height", "Heavy-duty construction"], brochure: "/brochures/manlift-860aj.pdf" }
     ],
     image: "/src/assets/equipment/manlift.webp"
   },
@@ -584,7 +586,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       flexibility: "Different tasks require different attachments and capabilities. Skid steer rental provides access to versatile Bobcat loaders that can switch between tasks simply by changing attachments, giving you the flexibility to handle varied site work without multiple specialized machines."
     },
     variants: [
-      { name: "Skid Steer Bobcat for Rent", slug: "bobcat", capacity: "Bobcat", description: "Versatile Bobcat skid steer loader for construction, landscaping, and material handling applications. Zero-turn maneuverability with multiple attachment compatibility.", applications: ["General construction", "Landscaping", "Material handling"], specifications: ["Zero-turn capable", "Multiple attachments", "Compact design"] }
+      { name: "Skid Steer Bobcat for Rent", slug: "bobcat", capacity: "Bobcat", description: "Versatile Bobcat skid steer loader for construction, landscaping, and material handling applications. Zero-turn maneuverability with multiple attachment compatibility.", applications: ["General construction", "Landscaping", "Material handling"], specifications: ["Zero-turn capable", "Multiple attachments", "Compact design"], brochure: "/brochures/skid-steer-bobcat.pdf" }
     ],
     image: "/src/assets/equipment/skid-steer.webp"
   },
