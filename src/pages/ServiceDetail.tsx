@@ -65,9 +65,9 @@ const ServiceDetail = () => {
           <section className="relative min-h-[60vh] flex items-center">
             <div className="absolute inset-0">
               <img src={heroImage} alt={service.name} className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/60" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/50" />
             </div>
-            <div className="container-custom px-4 relative z-10 py-16">
+            <div className="container-custom px-4 relative z-10 py-16 pr-20 md:pr-4">
               <Link to="/#services" className="inline-flex items-center text-primary hover:underline mb-6 text-sm">
                 <ArrowLeft className="w-4 h-4 mr-2" /> Back to Services
               </Link>
@@ -75,8 +75,8 @@ const ServiceDetail = () => {
                 <div className="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
                   <IconComponent className="w-8 h-8 text-primary" />
                 </div>
-                <h1 className="heading-primary text-foreground mb-6">{service.heroTitle}</h1>
-                <p className="text-lg text-muted-foreground mb-8">{service.heroSubtitle}</p>
+                <h1 className="heading-primary text-white mb-6">{service.heroTitle}</h1>
+                <p className="text-lg text-white/80 mb-8">{service.heroSubtitle}</p>
                 <div className="flex flex-wrap gap-4">
                   <Button className="btn-primary" asChild>
                     <a href={`tel:+91${phoneNumber}`}>
@@ -143,7 +143,7 @@ const ServiceDetail = () => {
 
           {/* Why Choose Us */}
           <section className="section-padding bg-secondary">
-            <div className="container-custom px-4">
+            <div className="container-custom px-4 pr-20 md:pr-4">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <h2 className="heading-secondary text-foreground mb-6">{service.whyChooseUs.title}</h2>
@@ -158,7 +158,7 @@ const ServiceDetail = () => {
                 </div>
                 <div className="relative">
                   <img src={heroImage} alt={service.name} className="rounded-lg shadow-lg" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent rounded-lg" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-lg" />
                 </div>
               </div>
             </div>

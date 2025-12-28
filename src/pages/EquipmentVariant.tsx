@@ -218,12 +218,12 @@ const EquipmentVariant = () => {
                 Get competitive pricing and fast delivery across Dubai, Abu Dhabi, Sharjah and all UAE locations. Contact our equipment specialists today.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" size="lg" asChild>
+                <Button variant="outline" className="border-2 border-foreground bg-background text-foreground hover:bg-foreground hover:text-background" size="lg" asChild>
                   <a href={`tel:+${phoneNumber}`}>
                     <Phone className="w-5 h-5 mr-2" /> Contact Our Team
                   </a>
                 </Button>
-                <Button className="bg-primary-foreground text-primary hover:bg-primary-foreground/90" size="lg" asChild>
+                <Button className="bg-green-600 hover:bg-green-700 text-white" size="lg" asChild>
                   <a href={`https://wa.me/${phoneNumber}`} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="w-5 h-5 mr-2" /> WhatsApp
                   </a>

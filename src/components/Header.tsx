@@ -31,8 +31,8 @@ const Header = () => {
           <Link to="/" className="flex items-center gap-2 md:gap-3 flex-shrink-0">
             <img src={logo} alt="Western Eagle Transport Company" className="h-10 md:h-14 w-auto" />
             <div>
-              <p className="font-heading font-bold text-xs sm:text-sm md:text-lg text-foreground leading-tight">WESTERN EAGLE</p>
-              <p className="text-[8px] sm:text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider hidden sm:block">Transport Company</p>
+              <p className="font-heading font-bold text-[10px] xs:text-xs sm:text-sm md:text-lg text-foreground leading-tight">WESTERN EAGLE</p>
+              <p className="text-[7px] xs:text-[8px] sm:text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider">Transport Company</p>
             </div>
           </Link>
 
