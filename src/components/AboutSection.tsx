@@ -1,7 +1,7 @@
 import { Phone, Truck, Shield, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import aboutImage from "@/assets/about-equipment.jpg";
+import aboutImage from "@/assets/about-equipment.webp";
 
 const AboutSection = () => {
   const highlights = [
@@ -22,6 +22,7 @@ const AboutSection = () => {
                 src={aboutImage}
                 alt="Heavy Equipment in Action"
                 className="w-full h-[400px] lg:h-[500px] object-cover"
+                loading="lazy"
               />
             </div>
           </div>

@@ -77,7 +77,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       { name: "15 Ton Forklift for Rent", slug: "15-ton", capacity: "15 Ton", description: "High-capacity 15-ton forklift for extra-heavy loads in ports, shipyards, and large industrial facilities. Maximum power for maximum productivity.", applications: ["Port operations", "Shipyards", "Heavy industry"], specifications: ["Lifting capacity: 15,000 kg", "Lift height: 4-5 meters", "Heavy-duty chassis"] },
       { name: "25 Ton Forklift for Rent", slug: "25-ton", capacity: "25 Ton", description: "Maximum capacity 25-ton forklift for the most demanding heavy-lift applications and mega projects. The ultimate solution for exceptional lifting needs.", applications: ["Mega construction projects", "Industrial plants", "Oil & gas facilities"], specifications: ["Lifting capacity: 25,000 kg", "Specialized lifting attachments", "Maximum stability design"] }
     ],
-    image: "/src/assets/equipment/forklift.jpg"
+    image: "/src/assets/equipment/forklift.webp"
   },
   crane: {
     name: "Crane",
@@ -121,7 +121,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       { name: "150 Ton Crane for Rent", slug: "150-ton", capacity: "150 Ton", description: "Extra-heavy 150-ton crane for the most demanding lifting operations in oil & gas and mega projects.", applications: ["Mega projects", "Oil & gas", "Power generation"], specifications: ["Lifting capacity: 150 tons", "Extended boom options", "Heavy-duty outriggers"] },
       { name: "200 Ton Crane for Rent", slug: "200-ton", capacity: "200 Ton", description: "Maximum capacity 200-ton crane for exceptional heavy-lift requirements and specialized industrial applications.", applications: ["Exceptional heavy lifts", "Industrial plants", "Major infrastructure"], specifications: ["Lifting capacity: 200 tons", "Maximum stability design", "Specialized rigging"] }
     ],
-    image: "/src/assets/equipment/crane.jpg"
+    image: "/src/assets/equipment/crane.webp"
   },
   excavator: {
     name: "Excavator",
@@ -161,7 +161,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       { name: "3 Ton Mini Excavator for Rent", slug: "3-ton", capacity: "3 Ton", description: "Versatile 3-ton mini excavator for general small-scale excavation projects. Perfect for pool digging, foundation work, and drainage installations.", applications: ["General excavation", "Trenching", "Pool digging"], specifications: ["Operating weight: 3 tons", "Extendable arm option", "Multiple attachments"] },
       { name: "5 Ton Mini Excavator for Rent", slug: "5-ton", capacity: "5 Ton", description: "Medium 5-ton excavator bridging compact and standard excavator capabilities. Enhanced digging force for commercial and infrastructure projects.", applications: ["Medium projects", "Commercial sites", "Drainage work"], specifications: ["Operating weight: 5 tons", "Enclosed cab", "Enhanced digging force"] }
     ],
-    image: "/src/assets/equipment/excavator.jpg"
+    image: "/src/assets/equipment/excavator.webp"
   },
   "wheel-loader": {
     name: "Wheel Loader",
@@ -200,7 +200,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       { name: "950 CAT Wheel Loader for Rent", slug: "950", capacity: "950 Model", description: "CAT 950 wheel loader offering excellent productivity for medium-sized construction and loading operations. Known for reliability, fuel efficiency, and operator comfort.", applications: ["General construction", "Material handling", "Road works"], specifications: ["Model: CAT 950", "High bucket capacity", "Fuel efficient engine"] },
       { name: "966 CAT Wheel Loader for Rent", slug: "966", capacity: "966 Model", description: "CAT 966 wheel loader delivering superior power and capacity for demanding construction and quarry applications. Maximum productivity for large-scale operations.", applications: ["Heavy construction", "Quarries", "Large-scale loading"], specifications: ["Model: CAT 966", "Maximum bucket capacity", "Heavy-duty construction"] }
     ],
-    image: "/src/assets/equipment/wheel-loader.jpg"
+    image: "/src/assets/equipment/wheel-loader.webp"
   },
   "backhoe-loader": {
     name: "JCB Backhoe Loader",
@@ -243,7 +243,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       { name: "Skid Steer Loader for Rent", slug: "skid-steer" },
       { name: "Excavator for Rent", slug: "excavator" }
     ],
-    image: "/src/assets/equipment/backhoe.jpg"
+    image: "/src/assets/equipment/backhoe.webp"
   },
   "boom-loader": {
     name: "Boom Loader",
@@ -282,7 +282,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       { name: "14m Boom Loader for Rent", slug: "14m", capacity: "14 Meters", description: "Extended 14-meter boom loader/telehandler for construction projects requiring height and reach. Perfect for multi-story construction and industrial material handling.", applications: ["Construction", "Industrial facilities", "Infrastructure"], specifications: ["Lift height: 14m", "Extended boom", "High capacity"] },
       { name: "17m Boom Loader for Rent", slug: "17m", capacity: "17 Meters", description: "High-reach 17-meter boom loader for demanding projects requiring exceptional height. Maximum reach for the most challenging material placement tasks.", applications: ["High-reach projects", "Major construction", "Specialized applications"], specifications: ["Lift height: 17m", "Maximum reach", "Heavy-duty design"] }
     ],
-    image: "/src/assets/equipment/boom-lift.jpg"
+    image: "/src/assets/equipment/telehandler.webp"
   },
   roller: {
     name: "Roller",
@@ -320,7 +320,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     variants: [
       { name: "Single Drum Roller for Rent", slug: "single-drum", capacity: "Single Drum", description: "Professional single drum vibratory roller for road construction and compaction work. Ideal for asphalt and sub-base compaction across construction projects in the UAE.", applications: ["Road construction", "Asphalt compaction", "General compaction"], specifications: ["Single drum design", "Vibratory compaction", "Water spray system"] }
     ],
-    image: "/src/assets/equipment/excavator.jpg"
+    image: "/src/assets/equipment/roller.webp"
   },
   manlift: {
     name: "Manlift",
@@ -362,7 +362,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       { name: "Diesel E800AJ Articulated Manlift", slug: "e800aj", capacity: "E800AJ", description: "Diesel E800AJ high-capacity articulated manlift for exceptional height and reach. Perfect for tall structures and challenging access situations.", applications: ["Tall structures", "Exceptional heights", "Industrial stacks"], specifications: ["High-reach articulating boom", "Maximum platform capacity", "All-terrain tires"] },
       { name: "Diesel E860AJ Telescopic Manlift", slug: "e860aj", capacity: "E860AJ", description: "Diesel E860AJ telescopic manlift offering maximum working height for the most demanding aerial work applications.", applications: ["Maximum height projects", "Special applications", "Industrial facilities"], specifications: ["Telescopic boom", "Maximum working height", "Heavy-duty construction"] }
     ],
-    image: "/src/assets/equipment/boom-lift.jpg"
+    image: "/src/assets/equipment/manlift.webp"
   },
   "scissor-lift": {
     name: "Scissor Lift",
@@ -403,7 +403,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       { name: "Electric Scissor Lift 22m for Rent", slug: "22m", capacity: "22 Meters", description: "High-reach 22-meter electric scissor lift for demanding indoor projects requiring maximum height with stable platform.", applications: ["High indoor work", "Large warehouses", "Industrial buildings"], specifications: ["Working height: 22m", "Electric powered", "Maximum indoor reach"] },
       { name: "Diesel Scissor Lift for Rent", slug: "diesel", capacity: "Diesel", description: "Diesel-powered rough terrain scissor lift for outdoor construction sites. All-terrain capability with powerful engine for demanding conditions.", applications: ["Outdoor construction", "Rough terrain", "Building facades"], specifications: ["Diesel powered", "All-terrain tires", "Rough terrain capable"] }
     ],
-    image: "/src/assets/equipment/scissor-lift.jpg"
+    image: "/src/assets/equipment/scissor-lift.webp"
   },
   generator: {
     name: "Generator",
@@ -441,7 +441,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     variants: [
       { name: "Generator for Rent", slug: "standard", capacity: "Various", description: "Professional diesel generators available for construction sites, events, and backup power applications. Various capacities available to match your specific power requirements across the UAE.", applications: ["Construction sites", "Events", "Backup power"], specifications: ["Various kVA options", "Diesel powered", "Low noise operation"] }
     ],
-    image: "/src/assets/equipment/generator.jpg"
+    image: "/src/assets/equipment/generator.webp"
   },
   "skid-steer": {
     name: "Skid Steer Loader",
@@ -479,7 +479,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     variants: [
       { name: "Skid Steer Bobcat for Rent", slug: "bobcat", capacity: "Bobcat", description: "Versatile Bobcat skid steer loader for construction, landscaping, and material handling applications. Zero-turn maneuverability with multiple attachment compatibility.", applications: ["General construction", "Landscaping", "Material handling"], specifications: ["Zero-turn capable", "Multiple attachments", "Compact design"] }
     ],
-    image: "/src/assets/equipment/skid-steer.jpg"
+    image: "/src/assets/equipment/skid-steer.webp"
   },
   "recovery-truck": {
     name: "Recovery Truck",
@@ -517,7 +517,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     variants: [
       { name: "10 Ton Recovery Truck for Rent", slug: "10-ton", capacity: "10 Ton", description: "Professional 10-ton recovery truck for vehicle recovery and machinery transport. Equipped with hydraulic systems, winches, and operated by experienced recovery professionals.", applications: ["Vehicle recovery", "Machinery transport", "Emergency towing"], specifications: ["10-ton capacity", "Hydraulic systems", "GPS tracked"] }
     ],
-    image: "/src/assets/equipment/bus.jpg"
+    image: "/src/assets/equipment/recovery-truck.webp"
   },
   compressor: {
     name: "Compressor",
@@ -555,7 +555,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     variants: [
       { name: "Air Compressor for Rent", slug: "air-compressor", capacity: "Various CFM", description: "Professional air compressors available for construction and industrial applications. Various CFM capacities to power pneumatic tools, sandblasting, and spray painting operations.", applications: ["Construction", "Industrial applications", "Surface preparation"], specifications: ["Various CFM options", "Diesel powered", "Portable towable"] }
     ],
-    image: "/src/assets/equipment/generator.jpg"
+    image: "/src/assets/equipment/compressor.webp"
   },
   "passenger-bus": {
     name: "Passenger Bus",
@@ -595,7 +595,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       { name: "34 Seater Passenger Bus for Rent", slug: "34-seater", capacity: "34 Seats", description: "Medium capacity 34-seater bus for general staff transport and corporate needs. Comfortable seating with air conditioning for daily routes.", applications: ["Staff transport", "Medium groups", "Daily runs"], specifications: ["34 passenger capacity", "AC equipped", "Comfortable seating"] },
       { name: "66 Seater Passenger Bus for Rent", slug: "66-seater", capacity: "66 Seats", description: "Large 66-seater bus for major workforce transport, events, and long-distance travel. Maximum capacity with full comfort features.", applications: ["Large workforce", "Major events", "Long distance"], specifications: ["66 passenger capacity", "Full AC", "Maximum comfort"] }
     ],
-    image: "/src/assets/equipment/bus.jpg"
+    image: "/src/assets/equipment/bus.webp"
   }
 };
 
