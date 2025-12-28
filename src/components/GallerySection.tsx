@@ -1,18 +1,14 @@
-import excavatorImg from "@/assets/equipment/excavator.webp";
-import craneImg from "@/assets/equipment/crane.webp";
-import forkliftImg from "@/assets/equipment/forklift.webp";
-import wheelLoaderImg from "@/assets/equipment/wheel-loader.webp";
-import boomLiftImg from "@/assets/equipment/boom-lift.webp";
-import backhoeImg from "@/assets/equipment/backhoe.webp";
-
 const GallerySection = () => {
+  // ============================================
+  // GALLERY IMAGE PATHS - Add your images to public/assets/gallery/
+  // ============================================
   const images = [
-    { src: excavatorImg, alt: "Excavator in action" },
-    { src: craneImg, alt: "Mobile crane" },
-    { src: forkliftImg, alt: "Forklift operation" },
-    { src: wheelLoaderImg, alt: "Wheel loader" },
-    { src: boomLiftImg, alt: "Boom lift platform" },
-    { src: backhoeImg, alt: "Backhoe loader" },
+    { src: "/assets/gallery/gallery-1.webp", alt: "Excavator in action" },
+    { src: "/assets/gallery/gallery-2.webp", alt: "Mobile crane" },
+    { src: "/assets/gallery/gallery-3.webp", alt: "Forklift operation" },
+    { src: "/assets/gallery/gallery-4.webp", alt: "Wheel loader" },
+    { src: "/assets/gallery/gallery-5.webp", alt: "Boom lift platform" },
+    { src: "/assets/gallery/gallery-6.webp", alt: "Backhoe loader" },
   ];
 
   return (
