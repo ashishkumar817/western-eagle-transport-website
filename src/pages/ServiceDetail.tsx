@@ -254,12 +254,12 @@ const ServiceDetail = () => {
                 Contact our team for professional service and competitive pricing across Dubai, Abu Dhabi, Sharjah, and all Emirates.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>
+                <Button className="bg-background text-foreground hover:bg-background/90 border border-background" asChild>
                   <a href={`tel:+91${phoneNumber}`}>
                     <Phone className="w-4 h-4 mr-2" /> Call Now
                   </a>
                 </Button>
-                <Button className="bg-primary-foreground text-primary hover:bg-primary-foreground/90" asChild>
+                <Button className="bg-green-600 hover:bg-green-700 text-white border-0" asChild>
                   <a href={`https://wa.me/91${phoneNumber}`} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="w-4 h-4 mr-2" /> WhatsApp
                   </a>

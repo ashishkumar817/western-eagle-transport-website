@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 import { Phone, MessageCircle, ArrowLeft, Check, MapPin, Clock, Wrench, TrendingUp, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -10,9 +11,10 @@ interface FullwidthImageLayoutProps {
   phoneNumber: string;
 }
 
-const FullwidthImageLayout = ({ equipment, slug, phoneNumber }: FullwidthImageLayoutProps) => {
-  return (
-    <>
+const FullwidthImageLayout = forwardRef<HTMLDivElement, FullwidthImageLayoutProps>(
+  ({ equipment, slug, phoneNumber }, ref) => {
+    return (
+      <div ref={ref}>
       {/* Hero - Text Centered Over Image */}
       <section className="relative min-h-[70vh] flex items-center justify-center">
         <div className="absolute inset-0">
@@ -236,8 +238,10 @@ const FullwidthImageLayout = ({ equipment, slug, phoneNumber }: FullwidthImageLa
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
-};
+});
+
+FullwidthImageLayout.displayName = "FullwidthImageLayout";
 
 export default FullwidthImageLayout;

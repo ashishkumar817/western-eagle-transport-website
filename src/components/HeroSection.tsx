@@ -49,7 +49,7 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             variant="outline" 
-            className="btn-outline"
+            className="btn-outline border-2 border-white text-white hover:bg-white hover:text-primary"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Get a Quote

@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 import { Phone, MessageCircle, ArrowLeft, Check, MapPin, Clock, Wrench, TrendingUp, Shield, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -10,9 +11,10 @@ interface SplitPanelsLayoutProps {
   phoneNumber: string;
 }
 
-const SplitPanelsLayout = ({ equipment, slug, phoneNumber }: SplitPanelsLayoutProps) => {
-  return (
-    <>
+const SplitPanelsLayout = forwardRef<HTMLDivElement, SplitPanelsLayoutProps>(
+  ({ equipment, slug, phoneNumber }, ref) => {
+    return (
+      <div ref={ref}>
       {/* Hero - Split Screen */}
       <section className="min-h-[90vh] grid lg:grid-cols-2">
         {/* Left - Content */}
@@ -240,8 +242,10 @@ const SplitPanelsLayout = ({ equipment, slug, phoneNumber }: SplitPanelsLayoutPr
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
-};
+});
+
+SplitPanelsLayout.displayName = "SplitPanelsLayout";
 
 export default SplitPanelsLayout;
