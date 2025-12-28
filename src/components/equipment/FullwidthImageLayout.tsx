@@ -23,7 +23,7 @@ const FullwidthImageLayout = forwardRef<HTMLDivElement, FullwidthImageLayoutProp
             alt={equipment.name}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/40" />
         </div>
         
         <div className="container-custom px-4 relative z-10 text-center py-20">
@@ -33,10 +33,10 @@ const FullwidthImageLayout = forwardRef<HTMLDivElement, FullwidthImageLayoutProp
             </Link>
           </nav>
           
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-foreground mb-6 leading-tight max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight max-w-4xl mx-auto">
             {equipment.heroTitle}
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed max-w-2xl mx-auto">
             {equipment.heroSubtitle}
           </p>
           

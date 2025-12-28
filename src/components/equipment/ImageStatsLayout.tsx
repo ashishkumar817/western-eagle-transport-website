@@ -30,7 +30,7 @@ const ImageStatsLayout = forwardRef<HTMLDivElement, ImageStatsLayoutProps>(
             alt={equipment.name}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/50" />
         </div>
         
         <div className="container-custom px-4 relative z-10 py-20">
@@ -41,10 +41,10 @@ const ImageStatsLayout = forwardRef<HTMLDivElement, ImageStatsLayoutProps>(
           </nav>
           
           <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               {equipment.heroTitle}
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-xl text-white/80 mb-8 leading-relaxed">
               {equipment.heroSubtitle}
             </p>
             
@@ -64,10 +64,10 @@ const ImageStatsLayout = forwardRef<HTMLDivElement, ImageStatsLayoutProps>(
             {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {stats.map((stat, index) => (
-                <div key={index} className="bg-card/80 backdrop-blur-sm p-4 rounded-xl border border-border text-center">
+                <div key={index} className="bg-black/50 backdrop-blur-sm p-4 rounded-xl border border-white/20 text-center">
                   <stat.icon className="w-6 h-6 text-primary mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-foreground">{stat.value}</div>
-                  <div className="text-xs text-muted-foreground">{stat.label}</div>
+                  <div className="text-2xl font-bold text-white">{stat.value}</div>
+                  <div className="text-xs text-white/70">{stat.label}</div>
                 </div>
               ))}
             </div>
