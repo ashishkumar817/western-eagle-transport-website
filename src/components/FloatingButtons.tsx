@@ -32,7 +32,7 @@ const FloatingButtons = () => {
         <Button
           onClick={scrollToTop}
           size="icon"
-          className="w-10 h-10 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground text-foreground shadow-md transition-all duration-300 animate-fade-in"
+          className="w-10 h-10 rounded-full bg-gray-200 dark:bg-muted hover:bg-primary hover:text-primary-foreground text-gray-700 dark:text-foreground shadow-md transition-all duration-300 animate-fade-in"
           aria-label="Scroll to top"
         >
           <ArrowUp className="w-4 h-4" />

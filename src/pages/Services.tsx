@@ -65,9 +65,9 @@ const Services = () => {
                       alt={service.name}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
-                      <h3 className="font-heading font-semibold text-sm md:text-base text-foreground uppercase tracking-wide">
+                      <h3 className="font-heading font-semibold text-sm md:text-base text-white uppercase tracking-wide">
                         {service.name}
                       </h3>
                     </div>
