@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { servicesList } from "@/lib/data";
-import excavatorImg from "@/assets/equipment/excavator.jpg";
-import forkliftImg from "@/assets/equipment/forklift.jpg";
-import wheelLoaderImg from "@/assets/equipment/wheel-loader.jpg";
-import craneImg from "@/assets/equipment/crane.jpg";
-import generatorImg from "@/assets/equipment/generator.jpg";
-import boomLiftImg from "@/assets/equipment/boom-lift.jpg";
+import excavatorImg from "@/assets/equipment/excavator.webp";
+import forkliftImg from "@/assets/equipment/forklift.webp";
+import wheelLoaderImg from "@/assets/equipment/wheel-loader.webp";
+import craneImg from "@/assets/equipment/crane.webp";
+import generatorImg from "@/assets/equipment/generator.webp";
+import boomLiftImg from "@/assets/equipment/boom-lift.webp";
 
 const serviceImages: Record<string, string> = {
   "leasing-machineries-equipments": excavatorImg,
