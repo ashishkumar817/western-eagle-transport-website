@@ -7,9 +7,13 @@
     <!-- Preconnect to critical origins for faster font loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    
+    <!-- Preload critical fonts for FCP optimization -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" /></noscript>
+    
+    <!-- Preload hero image for LCP -->
     <link rel="preload" as="image" href="/src/assets/hero-bg.webp" type="image/webp" />
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <title>Western Eagle Transport Company | Heavy Equipment Rental UAE</title>
