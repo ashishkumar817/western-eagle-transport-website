@@ -13,8 +13,8 @@ const HeroSection = () => {
         style={{ backgroundImage: `url(${heroBg})` }}
       />
       
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+      {/* Gradient Overlay - works for both light and dark */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80 dark:from-background/80 dark:via-background/60 dark:to-background" />
 
       {/* Content */}
       <div className="container-custom px-6 relative z-10 text-center py-20">
@@ -22,7 +22,7 @@ const HeroSection = () => {
           Welcome to
         </p>
         
-        <h1 className="heading-primary text-foreground mb-2 animate-fade-up delay-100">
+        <h1 className="heading-primary text-white dark:text-foreground mb-2 animate-fade-up delay-100">
           Heavy Equipment
         </h1>
         
@@ -30,11 +30,11 @@ const HeroSection = () => {
           Rental Company
         </h1>
         
-        <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-4 animate-fade-up delay-300">
+        <p className="text-xl md:text-2xl text-white/90 dark:text-muted-foreground max-w-2xl mx-auto mb-4 animate-fade-up delay-300">
           Powering Projects with Reliable Machinery
         </p>
         
-        <p className="text-muted-foreground mb-10 animate-fade-up delay-400">
+        <p className="text-white/70 dark:text-muted-foreground mb-10 animate-fade-up delay-400">
           Serving UAE – Dubai – Abu Dhabi – Sharjah
         </p>
         
@@ -49,7 +49,7 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             variant="outline" 
-            className="btn-outline border-2 border-white text-white hover:bg-white hover:text-primary"
+            className="border-2 border-white text-white hover:bg-white hover:text-primary dark:border-white dark:text-white"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Get a Quote
