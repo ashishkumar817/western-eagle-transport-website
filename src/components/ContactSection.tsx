@@ -58,6 +58,10 @@ const ContactSection = () => {
       <div className="container-custom">
         {/* Header */}
         <div className="text-center mb-12">
+          <p className="text-primary font-heading uppercase tracking-[0.2em] mb-4">
+            Get In Touch
+          </p>
+          <h2 className="heading-secondary text-foreground mb-4">Contact Us</h2>
           <p className="text-muted-foreground italic text-lg">
             Have questions about our equipment or services? Reach out to us today.
           </p>
@@ -66,7 +70,7 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Contact Form */}
           <div className="bg-card p-8 rounded-lg border border-border animate-on-scroll">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center justify-center gap-3 mb-6">
               <MessageSquare className="w-6 h-6 text-primary" />
               <h3 className="heading-tertiary text-foreground">
                 Get Enquiry
@@ -89,7 +93,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <label className="block text-sm text-foreground mb-2">
-                    Email Address
+                    Email Address <span className="text-red-500">*</span>
                   </label>
                   <Input
                     name="email"
@@ -97,6 +101,7 @@ const ContactSection = () => {
                     placeholder="john@example.com"
                     value={formData.email}
                     onChange={handleChange}
+                    required
                     className="bg-muted border-border"
                   />
                 </div>
