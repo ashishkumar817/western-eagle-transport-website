@@ -131,58 +131,46 @@ const EquipmentDetail = () => {
                 Why Choose {equipment.name} Rental Service?
               </h2>
               <p className="text-muted-foreground text-lg text-center max-w-4xl mx-auto mb-12">
-                Abu Dhabi is a global hub for heavy machinery and equipment services. Whether you're managing a bustling warehouse or a construction site, {equipment.name.toLowerCase()} rental in Dubai ensures you have the right equipment to handle your material handling needs efficiently.
+                {equipment.whyChoose.intro}
               </p>
               
               <div className="grid md:grid-cols-2 gap-8">
-                {/* Cost-Effective Solution */}
                 <div className="bg-card p-6 rounded-lg border border-border">
                   <div className="flex items-start gap-4">
                     <span className="text-primary font-bold text-2xl">1.</span>
                     <div>
                       <h3 className="text-xl font-semibold text-foreground mb-3">Cost-Effective Solution</h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {equipment.name} rental can be a significant investment especially for businesses with short-term needs. By opting for {equipment.name.toLowerCase()} rental in Abu Dhabi, companies can avoid the high initial purchase cost, maintenance expense, and storage fees. Renting allows businesses to pay only for what they need when they need it, helping them optimize their budget and maximize their revenue.
-                      </p>
+                      <p className="text-muted-foreground leading-relaxed">{equipment.whyChoose.costEffective}</p>
                     </div>
                   </div>
                 </div>
                 
-                {/* Latest Models */}
                 <div className="bg-card p-6 rounded-lg border border-border">
                   <div className="flex items-start gap-4">
                     <span className="text-primary font-bold text-2xl">2.</span>
                     <div>
                       <h3 className="text-xl font-semibold text-foreground mb-3">Access to the Latest Models and Technology</h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        The rental industry in UAE offers access to a wide range of modern {equipment.name.toLowerCase()} equipped with advanced technology, ensuring optimal performance and safety. Businesses that rent can use any of our state of the art equipment without having to worry about maintenance or technological obsolescence.
-                      </p>
+                      <p className="text-muted-foreground leading-relaxed">{equipment.whyChoose.latestModels}</p>
                     </div>
                   </div>
                 </div>
                 
-                {/* No Maintenance */}
                 <div className="bg-card p-6 rounded-lg border border-border">
                   <div className="flex items-start gap-4">
                     <span className="text-primary font-bold text-2xl">3.</span>
                     <div>
                       <h3 className="text-xl font-semibold text-foreground mb-3">No Maintenance Hassles</h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        When renting {equipment.name.toLowerCase()}, the responsibility for maintenance and repairs rests on the rental company. This eliminates downtime and ensures your team is always working with well-maintained operational machinery. Additionally, many {equipment.name.toLowerCase()} rental services offer immediate support so you can resolve any issues quickly.
-                      </p>
+                      <p className="text-muted-foreground leading-relaxed">{equipment.whyChoose.noMaintenance}</p>
                     </div>
                   </div>
                 </div>
                 
-                {/* Flexibility */}
                 <div className="bg-card p-6 rounded-lg border border-border">
                   <div className="flex items-start gap-4">
                     <span className="text-primary font-bold text-2xl">4.</span>
                     <div>
                       <h3 className="text-xl font-semibold text-foreground mb-3">Flexibility to Scale Up or Down</h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {equipment.name} rental in Abu Dhabi offers flexibility, allowing businesses to scale the number of units they need based on project demand. Whether it's a large construction project or a temporary warehousing solution, our rental service provides the flexibility to adjust equipment count as required.
-                      </p>
+                      <p className="text-muted-foreground leading-relaxed">{equipment.whyChoose.flexibility}</p>
                     </div>
                   </div>
                 </div>

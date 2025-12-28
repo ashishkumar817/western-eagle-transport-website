@@ -38,24 +38,18 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
-            <Link to="/" className="text-white hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">Home</Link>
-            <a href="/#about" className="text-white hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">About Us</a>
+            <Link to="/" className="text-foreground hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">Home</Link>
+            <Link to="/#about" className="text-foreground hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">About Us</Link>
             
             {/* Equipment Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <a 
-                  href="/#equipment" 
-                  className="text-white hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide flex items-center gap-1 focus:outline-none cursor-pointer"
-                  onClick={(e) => {
-                    if (window.location.pathname === '/') {
-                      e.preventDefault();
-                      document.getElementById('equipment')?.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
+                <Link 
+                  to="/#equipment" 
+                  className="text-foreground hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide flex items-center gap-1 focus:outline-none cursor-pointer"
                 >
                   Equipment <ChevronDown className="w-4 h-4" />
-                </a>
+                </Link>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background/95 backdrop-blur-sm border-border/50 w-56 max-h-96 overflow-y-auto p-1 rounded-none shadow-xl">
                 {equipmentList.map((item, index) => (
@@ -76,18 +70,12 @@ const Header = () => {
             {/* Services Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <a 
-                  href="/#services" 
-                  className="text-white hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide flex items-center gap-1 focus:outline-none cursor-pointer"
-                  onClick={(e) => {
-                    if (window.location.pathname === '/') {
-                      e.preventDefault();
-                      document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
+                <Link 
+                  to="/#services" 
+                  className="text-foreground hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide flex items-center gap-1 focus:outline-none cursor-pointer"
                 >
                   Services <ChevronDown className="w-4 h-4" />
-                </a>
+                </Link>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background/95 backdrop-blur-sm border-border/50 w-72 max-h-96 overflow-y-auto p-1 rounded-none shadow-xl">
                 {servicesList.map((item, index) => (
@@ -105,9 +93,9 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
             
-            <a href="/#gallery" className="text-white hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">Gallery</a>
-            <Link to="/blog" className="text-white hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">Blog</Link>
-            <a href="/#contact" className="text-white hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">Contact</a>
+            <Link to="/#gallery" className="text-foreground hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">Gallery</Link>
+            <Link to="/blog" className="text-foreground hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">Blog</Link>
+            <Link to="/#contact" className="text-foreground hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">Contact</Link>
           </nav>
 
           {/* CTA Buttons & Theme Toggle */}
@@ -148,9 +136,9 @@ const Header = () => {
             <Link to="/" className="nav-link py-2" onClick={() => setIsMenuOpen(false)}>
               Home
             </Link>
-            <a href="/#about" className="nav-link py-2" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/#about" className="nav-link py-2" onClick={() => setIsMenuOpen(false)}>
               About Us
-            </a>
+            </Link>
             
             {/* Mobile Equipment */}
             <details className="group">
@@ -190,15 +178,15 @@ const Header = () => {
               </div>
             </details>
             
-            <a href="/#gallery" className="nav-link py-2" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/#gallery" className="nav-link py-2" onClick={() => setIsMenuOpen(false)}>
               Gallery
-            </a>
+            </Link>
             <Link to="/blog" className="nav-link py-2" onClick={() => setIsMenuOpen(false)}>
               Blogs
             </Link>
-            <a href="/#contact" className="nav-link py-2" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/#contact" className="nav-link py-2" onClick={() => setIsMenuOpen(false)}>
               Contact
-            </a>
+            </Link>
             
             <div className="flex gap-3 pt-4 border-t border-border">
               <Button variant="outline" size="sm" className="gap-2 flex-1" asChild>
