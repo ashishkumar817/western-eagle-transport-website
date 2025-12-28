@@ -5,26 +5,20 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { servicesList } from "@/lib/data";
 import { Button } from "@/components/ui/button";
-import excavatorImg from "@/assets/equipment/excavator.webp";
-import forkliftImg from "@/assets/equipment/forklift.webp";
-import wheelLoaderImg from "@/assets/equipment/wheel-loader.webp";
-import craneImg from "@/assets/equipment/crane.webp";
-import generatorImg from "@/assets/equipment/generator.webp";
-import boomLiftImg from "@/assets/equipment/boom-lift.webp";
-import scissorLiftImg from "@/assets/equipment/scissor-lift.webp";
-import backhoeImg from "@/assets/equipment/backhoe.webp";
-import skidSteerImg from "@/assets/equipment/skid-steer.webp";
 
+// ============================================
+// SERVICE IMAGE PATHS - Add your images to public/assets/services/
+// ============================================
 const serviceImages: Record<string, string> = {
-  "leasing-machineries-equipments": excavatorImg,
-  "supply-trained-operators": forkliftImg,
-  "equipment-repair-maintenance": wheelLoaderImg,
-  "quality-assured-equipment": craneImg,
-  "welding-cutting-equipment": generatorImg,
-  "heavy-duty-construction": boomLiftImg,
-  "scaffolding": scissorLiftImg,
-  "logistic-operator-support": backhoeImg,
-  "workshop-maintenance": skidSteerImg,
+  "leasing-machineries-equipments": "/assets/services/leasing-machineries.webp",
+  "supply-trained-operators": "/assets/services/trained-operators.webp",
+  "equipment-repair-maintenance": "/assets/services/repair-maintenance.webp",
+  "quality-assured-equipment": "/assets/services/quality-assured.webp",
+  "welding-cutting-equipment": "/assets/services/welding-cutting.webp",
+  "heavy-duty-construction": "/assets/services/heavy-duty-construction.webp",
+  "scaffolding": "/assets/services/scaffolding.webp",
+  "logistic-operator-support": "/assets/services/logistic-support.webp",
+  "workshop-maintenance": "/assets/services/workshop-maintenance.webp",
 };
 
 const Services = () => {
@@ -61,7 +55,7 @@ const Services = () => {
                     className="group relative overflow-hidden rounded-lg aspect-[4/3] block"
                   >
                     <img
-                      src={serviceImages[service.slug] || excavatorImg}
+                      src={serviceImages[service.slug] || "/assets/services/default.webp"}
                       alt={service.name}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />

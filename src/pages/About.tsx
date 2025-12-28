@@ -5,7 +5,11 @@ import FloatingButtons from "@/components/FloatingButtons";
 import { Helmet } from "react-helmet-async";
 import { CheckCircle, Shield, Users, Award, Truck, Clock, Phone, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import aboutImage from "@/assets/about-equipment.webp";
+
+// ============================================
+// ABOUT IMAGE PATH - Add your image to public/assets/
+// ============================================
+const aboutImage = "/assets/about-equipment.webp";
 
 const About = () => {
   const features = [

@@ -1,5 +1,9 @@
 import { Button } from "@/components/ui/button";
-import ctaBg from "@/assets/cta-bg.webp";
+
+// ============================================
+// CTA BACKGROUND IMAGE PATH - Add your image to public/assets/
+// ============================================
+const ctaBgImage = "/assets/cta-bg.webp";
 
 const CTASection = () => {
   const scrollToContact = () => {
@@ -11,7 +15,7 @@ const CTASection = () => {
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${ctaBg})` }}
+        style={{ backgroundImage: `url(${ctaBgImage})` }}
       />
       
       {/* Overlay */}

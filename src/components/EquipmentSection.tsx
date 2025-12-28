@@ -1,37 +1,25 @@
 import { Link } from "react-router-dom";
 import { equipmentList } from "@/lib/data";
 import { ArrowRight } from "lucide-react";
-import excavatorImg from "@/assets/equipment/excavator.webp";
-import forkliftImg from "@/assets/equipment/forklift.webp";
-import wheelLoaderImg from "@/assets/equipment/wheel-loader.webp";
-import craneImg from "@/assets/equipment/crane.webp";
-import boomLiftImg from "@/assets/equipment/boom-lift.webp";
-import scissorLiftImg from "@/assets/equipment/scissor-lift.webp";
-import generatorImg from "@/assets/equipment/generator.webp";
-import skidSteerImg from "@/assets/equipment/skid-steer.webp";
-import backhoeImg from "@/assets/equipment/backhoe.webp";
-import busImg from "@/assets/equipment/bus.webp";
-import rollerImg from "@/assets/equipment/roller.webp";
-import recoveryTruckImg from "@/assets/equipment/recovery-truck.webp";
-import compressorImg from "@/assets/equipment/compressor.webp";
-import manliftImg from "@/assets/equipment/manlift.webp";
-import telehandlerImg from "@/assets/equipment/telehandler.webp";
 
+// ============================================
+// EQUIPMENT IMAGE PATHS - Add your images to public/assets/equipment/
+// ============================================
 const equipmentImages: Record<string, string> = {
-  "forklift": forkliftImg,
-  "wheel-loader": wheelLoaderImg,
-  "backhoe-loader": backhoeImg,
-  "boom-loader": telehandlerImg,
-  "excavator": excavatorImg,
-  "crane": craneImg,
-  "manlift": manliftImg,
-  "scissor-lift": scissorLiftImg,
-  "roller": rollerImg,
-  "recovery-truck": recoveryTruckImg,
-  "generator": generatorImg,
-  "compressor": compressorImg,
-  "skid-steer": skidSteerImg,
-  "passenger-bus": busImg,
+  "forklift": "/assets/equipment/forklift.webp",
+  "wheel-loader": "/assets/equipment/wheel-loader.webp",
+  "backhoe-loader": "/assets/equipment/backhoe.webp",
+  "boom-loader": "/assets/equipment/telehandler.webp",
+  "excavator": "/assets/equipment/excavator.webp",
+  "crane": "/assets/equipment/crane.webp",
+  "manlift": "/assets/equipment/manlift.webp",
+  "scissor-lift": "/assets/equipment/scissor-lift.webp",
+  "roller": "/assets/equipment/roller.webp",
+  "recovery-truck": "/assets/equipment/recovery-truck.webp",
+  "generator": "/assets/equipment/generator.webp",
+  "compressor": "/assets/equipment/compressor.webp",
+  "skid-steer": "/assets/equipment/skid-steer.webp",
+  "passenger-bus": "/assets/equipment/bus.webp",
 };
 
 interface EquipmentCardProps {
@@ -91,7 +79,7 @@ const EquipmentSection = () => {
             <EquipmentCard 
               key={item.slug} 
               name={item.name} 
-              image={equipmentImages[item.slug] || excavatorImg} 
+              image={equipmentImages[item.slug] || "/assets/equipment/excavator.webp"} 
               slug={item.slug} 
             />
           ))}

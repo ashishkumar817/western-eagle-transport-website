@@ -1,7 +1,11 @@
 import { Phone, Truck, Shield, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import aboutImage from "@/assets/about-equipment.webp";
+
+// ============================================
+// ABOUT IMAGE PATH - Add your image to public/assets/
+// ============================================
+const aboutImage = "/assets/about-equipment.webp";
 
 const AboutSection = () => {
   const highlights = [
