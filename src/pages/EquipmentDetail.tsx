@@ -1,12 +1,12 @@
 import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Phone, MessageCircle, ArrowLeft, Check, ChevronRight } from "lucide-react";
+import { Phone, MessageCircle, ArrowLeft, Check, ChevronRight, MapPin, Clock, Wrench, TrendingUp, Shield, Building2, Factory, HardHat, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import EquipmentVariantCard from "@/components/EquipmentVariantCard";
-import { getEquipmentBySlug } from "@/lib/equipmentData";
+import { getEquipmentBySlug, equipmentData } from "@/lib/equipmentData";
 
 const phoneNumber = "971505567467";
 
@@ -42,12 +42,15 @@ const EquipmentDetail = () => {
     }
   };
 
+  // Get related equipment for display
+  const relatedEquipment = equipment.relatedEquipment || [];
+
   return (
     <>
       <Helmet>
         <title>{equipment.heroTitle} | Western Eagle Transport</title>
         <meta name="description" content={equipment.metaDescription} />
-        <meta name="keywords" content={`${equipment.name} rental, ${equipment.name} for rent UAE, heavy equipment rental Dubai, ${equipment.name} Abu Dhabi`} />
+        <meta name="keywords" content={`${equipment.name} rental, ${equipment.name} for rent UAE, ${equipment.name} rental Dubai, ${equipment.name} rental Abu Dhabi, heavy equipment rental UAE, ${equipment.name} hire`} />
         <link rel="canonical" href={`https://westerneagle.ae/equipment/${slug}`} />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
@@ -57,41 +60,74 @@ const EquipmentDetail = () => {
         <FloatingButtons />
         
         <main className="pt-28">
-          {/* Hero Section with Background */}
-          <section className="relative bg-secondary py-16 md:py-24 overflow-hidden">
-            <div className="absolute inset-0 opacity-10">
+          {/* Hero Section */}
+          <section className="relative bg-gradient-to-br from-secondary via-secondary to-background py-20 md:py-28 overflow-hidden">
+            <div className="absolute inset-0 opacity-5">
               <img src={equipment.image} alt="" className="w-full h-full object-cover" />
             </div>
+            <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/95 to-transparent" />
+            
             <div className="container-custom px-4 relative z-10">
-              <nav className="mb-6">
-                <Link to="/#equipment" className="inline-flex items-center text-primary hover:underline">
-                  <ArrowLeft className="w-4 h-4 mr-2" /> Home / {equipment.name}
+              <nav className="mb-8">
+                <Link to="/#equipment" className="inline-flex items-center text-primary hover:underline text-sm font-medium">
+                  <ArrowLeft className="w-4 h-4 mr-2" /> Back to Equipment
                 </Link>
               </nav>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">{equipment.heroTitle}</h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mb-8">{equipment.heroSubtitle}</p>
               
-              <div className="flex flex-wrap gap-4">
-                <Button className="btn-primary" size="lg" asChild>
-                  <a href={`tel:+${phoneNumber}`}>
-                    <Phone className="w-5 h-5 mr-2" /> Request Rental Quote
-                  </a>
-                </Button>
-                <Button className="bg-green-600 hover:bg-green-700 text-white" size="lg" asChild>
-                  <a href={`https://wa.me/${phoneNumber}`} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="w-5 h-5 mr-2" /> WhatsApp Inquiry
-                  </a>
-                </Button>
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+                    {equipment.heroTitle}
+                  </h1>
+                  <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
+                    {equipment.heroSubtitle}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-4 mb-8">
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <MapPin className="w-5 h-5 text-primary" />
+                      <span>Dubai, Abu Dhabi & All UAE</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <Clock className="w-5 h-5 text-primary" />
+                      <span>24/7 Support</span>
+                    </div>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-4">
+                    <Button className="btn-primary" size="lg" asChild>
+                      <a href={`tel:+${phoneNumber}`}>
+                        <Phone className="w-5 h-5 mr-2" /> Get Free Quote
+                      </a>
+                    </Button>
+                    <Button className="bg-green-600 hover:bg-green-700 text-white" size="lg" asChild>
+                      <a href={`https://wa.me/${phoneNumber}`} target="_blank" rel="noopener noreferrer">
+                        <MessageCircle className="w-5 h-5 mr-2" /> WhatsApp Now
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+                
+                <div className="relative hidden lg:block">
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border/50">
+                    <img 
+                      src={equipment.image} 
+                      alt={equipment.name}
+                      className="w-full h-auto object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  </div>
+                </div>
               </div>
             </div>
           </section>
 
-          {/* Main Content Section - Image + Text */}
+          {/* Overview Section */}
           <section className="section-padding">
             <div className="container-custom px-4">
               <div className="grid lg:grid-cols-2 gap-12 items-start">
-                {/* Equipment Image */}
-                <div className="relative rounded-lg overflow-hidden shadow-xl">
+                {/* Equipment Image - Mobile */}
+                <div className="lg:hidden relative rounded-xl overflow-hidden shadow-xl border border-border/50">
                   <img 
                     src={equipment.image} 
                     alt={equipment.name}
@@ -99,77 +135,140 @@ const EquipmentDetail = () => {
                   />
                 </div>
                 
-                {/* Equipment Description */}
                 <div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">{equipment.name} Rental</h2>
-                  <p className="text-muted-foreground text-lg leading-relaxed mb-6">{equipment.overview.description}</p>
-                  <p className="text-muted-foreground leading-relaxed mb-8">
-                    If your company is looking for a cost-effective and efficient solution, {equipment.name.toLowerCase()} rental in Abu Dhabi and Dubai offers a flexible, budget-friendly alternative to purchasing these machines outright.
-                  </p>
+                  <span className="text-primary font-semibold text-sm uppercase tracking-wider">Overview</span>
+                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 mt-2">
+                    What is a {equipment.name}?
+                  </h2>
+                  <div className="prose prose-lg max-w-none">
+                    <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                      {equipment.overview.description}
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed mb-6">
+                      Whether you're managing a construction site in Dubai, running warehouse operations in Abu Dhabi, or handling industrial projects across the UAE, our {equipment.name.toLowerCase()} rental service provides the equipment you need with the flexibility your business demands. We serve clients across Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, and Umm Al Quwain.
+                    </p>
+                  </div>
                   
-                  <div className="flex flex-wrap gap-4">
-                    <Button className="btn-primary" asChild>
-                      <a href={`tel:+${phoneNumber}`}>
-                        <Phone className="w-5 h-5 mr-2" /> Call Now
-                      </a>
-                    </Button>
-                    <Button className="bg-green-600 hover:bg-green-700 text-white" asChild>
-                      <a href={`https://wa.me/${phoneNumber}`} target="_blank" rel="noopener noreferrer">
-                        <MessageCircle className="w-5 h-5 mr-2" /> WhatsApp
-                      </a>
-                    </Button>
+                  {/* Key Benefits */}
+                  <div className="mt-8">
+                    <h3 className="text-xl font-semibold text-foreground mb-4">Key Benefits</h3>
+                    <div className="grid gap-3">
+                      {equipment.overview.benefits.map((benefit, index) => (
+                        <div key={index} className="flex items-start gap-3">
+                          <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                          <span className="text-muted-foreground">{benefit}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Industries Served */}
+                <div className="bg-card p-8 rounded-xl border border-border">
+                  <h3 className="text-xl font-semibold text-foreground mb-6">Industries We Serve</h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    {equipment.overview.industries.map((industry, index) => (
+                      <div key={index} className="flex items-center gap-3 p-3 bg-secondary/50 rounded-lg">
+                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                          {index % 6 === 0 && <Building2 className="w-5 h-5 text-primary" />}
+                          {index % 6 === 1 && <Factory className="w-5 h-5 text-primary" />}
+                          {index % 6 === 2 && <HardHat className="w-5 h-5 text-primary" />}
+                          {index % 6 === 3 && <Truck className="w-5 h-5 text-primary" />}
+                          {index % 6 === 4 && <Wrench className="w-5 h-5 text-primary" />}
+                          {index % 6 === 5 && <Shield className="w-5 h-5 text-primary" />}
+                        </div>
+                        <span className="text-sm font-medium text-foreground">{industry}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* Why Choose Section */}
+          {/* Applications Section */}
           <section className="section-padding bg-secondary">
             <div className="container-custom px-4">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">
-                Why Choose {equipment.name} Rental Service?
-              </h2>
-              <p className="text-muted-foreground text-lg text-center max-w-4xl mx-auto mb-12">
-                {equipment.whyChoose.intro}
-              </p>
+              <div className="text-center mb-12">
+                <span className="text-primary font-semibold text-sm uppercase tracking-wider">Applications</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 mt-2">
+                  Real-World Use Cases
+                </h2>
+                <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+                  {equipment.applications.description}
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {equipment.applications.useCases.map((useCase, index) => (
+                  <div key={index} className="bg-card p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 group">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                      <span className="text-primary font-bold text-lg">{String(index + 1).padStart(2, '0')}</span>
+                    </div>
+                    <p className="text-foreground font-medium">{useCase}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Why Rent from Western Eagle Section */}
+          <section className="section-padding">
+            <div className="container-custom px-4">
+              <div className="text-center mb-12">
+                <span className="text-primary font-semibold text-sm uppercase tracking-wider">Why Choose Us</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 mt-2">
+                  Why Rent {equipment.name} from Western Eagle?
+                </h2>
+                <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
+                  {equipment.whyChoose.intro}
+                </p>
+              </div>
               
               <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-card p-6 rounded-lg border border-border">
+                <div className="bg-card p-8 rounded-xl border border-border hover:shadow-xl transition-all duration-300">
                   <div className="flex items-start gap-4">
-                    <span className="text-primary font-bold text-2xl">1.</span>
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <TrendingUp className="w-7 h-7 text-primary" />
+                    </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-foreground mb-3">Cost-Effective Solution</h3>
+                      <h3 className="text-xl font-bold text-foreground mb-3">Cost-Effective Solution</h3>
                       <p className="text-muted-foreground leading-relaxed">{equipment.whyChoose.costEffective}</p>
                     </div>
                   </div>
                 </div>
                 
-                <div className="bg-card p-6 rounded-lg border border-border">
+                <div className="bg-card p-8 rounded-xl border border-border hover:shadow-xl transition-all duration-300">
                   <div className="flex items-start gap-4">
-                    <span className="text-primary font-bold text-2xl">2.</span>
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Shield className="w-7 h-7 text-primary" />
+                    </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-foreground mb-3">Access to the Latest Models and Technology</h3>
+                      <h3 className="text-xl font-bold text-foreground mb-3">Latest Models & Technology</h3>
                       <p className="text-muted-foreground leading-relaxed">{equipment.whyChoose.latestModels}</p>
                     </div>
                   </div>
                 </div>
                 
-                <div className="bg-card p-6 rounded-lg border border-border">
+                <div className="bg-card p-8 rounded-xl border border-border hover:shadow-xl transition-all duration-300">
                   <div className="flex items-start gap-4">
-                    <span className="text-primary font-bold text-2xl">3.</span>
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Wrench className="w-7 h-7 text-primary" />
+                    </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-foreground mb-3">No Maintenance Hassles</h3>
+                      <h3 className="text-xl font-bold text-foreground mb-3">No Maintenance Hassles</h3>
                       <p className="text-muted-foreground leading-relaxed">{equipment.whyChoose.noMaintenance}</p>
                     </div>
                   </div>
                 </div>
                 
-                <div className="bg-card p-6 rounded-lg border border-border">
+                <div className="bg-card p-8 rounded-xl border border-border hover:shadow-xl transition-all duration-300">
                   <div className="flex items-start gap-4">
-                    <span className="text-primary font-bold text-2xl">4.</span>
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-7 h-7 text-primary" />
+                    </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-foreground mb-3">Flexibility to Scale Up or Down</h3>
+                      <h3 className="text-xl font-bold text-foreground mb-3">UAE-Wide Coverage</h3>
                       <p className="text-muted-foreground leading-relaxed">{equipment.whyChoose.flexibility}</p>
                     </div>
                   </div>
@@ -178,94 +277,20 @@ const EquipmentDetail = () => {
             </div>
           </section>
 
-          {/* Industries Served */}
-          <section className="section-padding">
-            <div className="container-custom px-4">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">
-                {equipment.name} Rental in Abu Dhabi - A Perfect Fit for Dynamic Businesses
-              </h2>
-              <p className="text-muted-foreground text-lg text-center max-w-4xl mx-auto mb-12">
-                As one of the largest and most diverse commercial hubs in the Middle East, Dubai attracts numerous businesses across various industries, including logistics, manufacturing, retail, and construction. Whether you're managing a bustling warehouse or a construction site, {equipment.name.toLowerCase()} rental ensures you have the right equipment to handle your material handling needs efficiently.
-              </p>
-              
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {equipment.applications.useCases.map((useCase, index) => (
-                  <div key={index} className="bg-card p-4 rounded-lg border border-border flex items-start gap-3">
-                    <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">{useCase}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Experience the Advantages */}
+          {/* Available Options Section */}
           <section className="section-padding bg-secondary">
             <div className="container-custom px-4">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">
-                Experience the Advantages of {equipment.name} Rental
-              </h2>
-              <p className="text-muted-foreground text-lg text-center max-w-4xl mx-auto mb-12">
-                Our extensive assortment of {equipment.name.toLowerCase()} for rent features a variety of renowned manufacturers and specifications. Our {equipment.name.toLowerCase()} are equipped with the latest technology, ensuring optimal performance and efficiency for your operations. We provide quality equipment with regular maintenance and inspections, providing you with equipment that follows the highest safety standards.
-              </p>
+              <div className="text-center mb-12">
+                <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Fleet</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 mt-2">
+                  Available {equipment.name} Options
+                </h2>
+                <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+                  Choose from our premium selection of {equipment.name.toLowerCase()} equipment, each maintained to the highest standards and ready for immediate deployment across the UAE.
+                </p>
+              </div>
               
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {equipment.whyRent.map((reason, index) => (
-                  <div key={index} className="flex items-start gap-3 p-4 bg-card rounded-lg border border-border">
-                    <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">{reason}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Why Us Section */}
-          <section className="section-padding">
-            <div className="container-custom px-4">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 text-center">
-                Why {equipment.name} is Your One-Stop Solution for Material Handling Equipment?
-              </h2>
-              <div className="bg-card p-8 rounded-lg border border-border">
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Our services extend across Dubai and Abu Dhabi, covering the entire UAE. No matter where your project is located, we will always be ready to help you. Whether you need multiple {equipment.name.toLowerCase()} for a small medium-sized facility or want inventory operators available for your work, our team at Western Eagle Transport makes the {equipment.name.toLowerCase()} rental in the UAE a cost-effective choice for your business.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  You can be sure that you will get {equipment.name.toLowerCase()} that are well-maintained and consistently function because of our dedication to quality and dependability. At Western Eagle Transport, we put a high focus on customer satisfaction. We guarantee that your rental experience surpasses your expectations; we go above and beyond.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* Contact Us CTA */}
-          <section className="bg-primary py-16">
-            <div className="container-custom px-4 text-center">
-              <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-4">Contact Us Now!</h2>
-              <p className="text-primary-foreground/80 mb-8 max-w-3xl mx-auto">
-                Ready to elevate your material handling capabilities? Choose Western Eagle Transport for reliable {equipment.name} Rental in Dubai & Abu Dhabi. Explore our diverse range of {equipment.name.toLowerCase()}, request a quote and experience the difference of working with a trusted partner in equipment rental.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" size="lg" asChild>
-                  <a href={`tel:+${phoneNumber}`}>
-                    <Phone className="w-5 h-5 mr-2" /> Contact Our Team
-                  </a>
-                </Button>
-                <Button className="bg-primary-foreground text-primary hover:bg-primary-foreground/90" size="lg" asChild>
-                  <a href={`https://wa.me/${phoneNumber}`} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="w-5 h-5 mr-2" /> WhatsApp
-                  </a>
-                </Button>
-              </div>
-            </div>
-          </section>
-
-          {/* Available Options Section */}
-          <section className="section-padding bg-background">
-            <div className="container-custom px-4">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
-                Available {equipment.name} Options
-              </h2>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {equipment.variants.map((variant) => (
                   <EquipmentVariantCard
                     key={variant.slug}
@@ -275,6 +300,69 @@ const EquipmentDetail = () => {
                     image={equipment.image}
                   />
                 ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Related Equipment Section - Only show if related equipment exists */}
+          {relatedEquipment.length > 0 && (
+            <section className="section-padding">
+              <div className="container-custom px-4">
+                <div className="text-center mb-10">
+                  <span className="text-primary font-semibold text-sm uppercase tracking-wider">Related Equipment</span>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-2">
+                    You May Also Need
+                  </h2>
+                </div>
+                
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {relatedEquipment.map((related) => {
+                    const relatedData = equipmentData[related.slug];
+                    return (
+                      <Link
+                        key={related.slug}
+                        to={`/equipment/${related.slug}`}
+                        className="group bg-card p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300"
+                      >
+                        <div className="flex items-center justify-between">
+                          <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                            {related.name}
+                          </h3>
+                          <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                        </div>
+                        {relatedData && (
+                          <p className="text-sm text-muted-foreground mt-2 line-clamp-2">
+                            {relatedData.heroSubtitle}
+                          </p>
+                        )}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* CTA Section */}
+          <section className="bg-gradient-to-r from-primary to-primary/80 py-20">
+            <div className="container-custom px-4 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+                Ready to Rent {equipment.name}?
+              </h2>
+              <p className="text-primary-foreground/90 text-lg mb-8 max-w-3xl mx-auto">
+                Get in touch with Western Eagle Transport today for competitive rates, fast delivery, and reliable equipment. We serve Dubai, Abu Dhabi, Sharjah, and all Emirates across the UAE.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-semibold" size="lg" asChild>
+                  <a href={`tel:+${phoneNumber}`}>
+                    <Phone className="w-5 h-5 mr-2" /> Call: +971 50 556 7467
+                  </a>
+                </Button>
+                <Button className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold" size="lg" asChild>
+                  <a href={`https://wa.me/${phoneNumber}`} target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="w-5 h-5 mr-2" /> WhatsApp Us
+                  </a>
+                </Button>
               </div>
             </div>
           </section>
