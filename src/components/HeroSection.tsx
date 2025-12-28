@@ -39,10 +39,19 @@ const HeroSection = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up delay-500">
-          <Button size="lg" className="btn-primary">
+          <Button 
+            size="lg" 
+            className="btn-primary"
+            onClick={() => document.getElementById('equipment')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             View Equipment
           </Button>
-          <Button size="lg" variant="outline" className="btn-outline">
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="btn-outline"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             Get a Quote
           </Button>
         </div>
