@@ -7,7 +7,7 @@ const SupportCTA = () => {
 
   return (
     <section className="py-16 bg-primary">
-      <div className="container-custom">
+      <div className="container-custom px-6 md:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
             <h2 className="font-heading font-bold text-2xl md:text-3xl uppercase tracking-wide text-primary-foreground mb-2">
