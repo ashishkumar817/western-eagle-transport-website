@@ -5,8 +5,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import { blogPosts } from "@/lib/data";
+import { format } from "date-fns";
 
 const Blog = () => {
+  const todayDate = format(new Date(), "MMMM d, yyyy");
+
   return (
     <>
       <Helmet>
@@ -50,11 +53,7 @@ const Blog = () => {
                     <div className="p-6">
                       <div className="flex items-center gap-2 text-muted-foreground text-sm mb-3">
                         <Calendar className="w-4 h-4" />
-                        {new Date(post.date).toLocaleDateString("en-US", {
-                          year: "numeric",
-                          month: "long",
-                          day: "numeric",
-                        })}
+                        {todayDate}
                       </div>
                       <h2 className="heading-tertiary text-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors">
                         {post.title}

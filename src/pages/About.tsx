@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
@@ -106,10 +107,12 @@ const About = () => {
                   <Button 
                     size="lg" 
                     className="btn-primary"
-                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                    asChild
                   >
-                    <Phone className="w-5 h-5 mr-2" />
-                    Contact Us
+                    <Link to="/#contact">
+                      <Phone className="w-5 h-5 mr-2" />
+                      Contact Us
+                    </Link>
                   </Button>
                   <Button 
                     size="lg" 

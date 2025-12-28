@@ -1,17 +1,22 @@
 import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Calendar, ArrowLeft, Phone, MessageCircle } from "lucide-react";
+import { Calendar, ArrowLeft, Phone, MessageCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import { blogPosts } from "@/lib/data";
+import { format } from "date-fns";
 
 const phoneNumber = "971505567467";
 
 const BlogPost = () => {
   const { slug } = useParams();
   const post = blogPosts.find((p) => p.slug === slug);
+  const todayDate = format(new Date(), "MMMM d, yyyy");
+  
+  // Get recent posts excluding current post
+  const recentPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 3);
 
   if (!post) {
     return (
@@ -54,11 +59,7 @@ const BlogPost = () => {
               <header className="mb-8">
                 <div className="flex items-center gap-2 text-muted-foreground text-sm mb-4">
                   <Calendar className="w-4 h-4" />
-                  {new Date(post.date).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
+                  {todayDate}
                 </div>
                 <h1 className="heading-primary text-foreground mb-4">{post.title}</h1>
                 <p className="text-xl text-muted-foreground">{post.excerpt}</p>
@@ -110,6 +111,45 @@ const BlogPost = () => {
                   </Button>
                 </div>
               </div>
+
+              {/* Recent Posts Section */}
+              {recentPosts.length > 0 && (
+                <div className="mt-16">
+                  <h3 className="heading-secondary text-foreground mb-8">Recent Posts</h3>
+                  <div className="grid md:grid-cols-3 gap-6">
+                    {recentPosts.map((recentPost) => (
+                      <Link 
+                        key={recentPost.id} 
+                        to={`/blog/${recentPost.slug}`}
+                        className="group bg-card border border-border rounded-lg overflow-hidden hover:border-primary transition-all duration-300"
+                      >
+                        <div className="aspect-video bg-muted overflow-hidden">
+                          <img
+                            src={recentPost.image}
+                            alt={recentPost.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                        <div className="p-4">
+                          <div className="flex items-center gap-2 text-muted-foreground text-xs mb-2">
+                            <Calendar className="w-3 h-3" />
+                            {todayDate}
+                          </div>
+                          <h4 className="font-heading font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-2">
+                            {recentPost.title}
+                          </h4>
+                          <p className="text-muted-foreground text-sm line-clamp-2 mb-3">
+                            {recentPost.excerpt}
+                          </p>
+                          <span className="inline-flex items-center text-primary text-sm font-medium group-hover:gap-2 transition-all">
+                            Read More <ArrowRight className="w-4 h-4 ml-1" />
+                          </span>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </article>
         </main>

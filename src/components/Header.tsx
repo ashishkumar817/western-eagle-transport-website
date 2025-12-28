@@ -26,8 +26,8 @@ const Header = () => {
           <Link to="/" className="flex items-center gap-2 md:gap-3 flex-shrink-0">
             <img src={logo} alt="Western Eagle Transport Company" className="h-10 md:h-14 w-auto" />
             <div>
-              <p className="font-heading font-bold text-[10px] xs:text-xs sm:text-sm md:text-lg text-foreground leading-tight">WESTERN EAGLE</p>
-              <p className="text-[7px] xs:text-[8px] sm:text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider">Transport Company</p>
+              <p className="font-heading font-bold text-sm sm:text-base md:text-lg text-foreground leading-tight">WESTERN EAGLE</p>
+              <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider">Transport Company</p>
             </div>
           </Link>
 
@@ -96,13 +96,19 @@ const Header = () => {
           {/* Phone Numbers & Theme Toggle */}
           <div className="hidden md:flex items-center gap-4">
             <ThemeToggle />
-            <a href={`tel:+${phoneNumber1}`} className="flex items-center gap-2 text-foreground hover:text-primary transition-colors text-sm font-medium">
-              <Phone className="w-4 h-4" />
-              <span>+971 50 556 7467</span>
+            <a 
+              href={`tel:+${phoneNumber1}`} 
+              className="group flex items-center gap-2 text-foreground hover:text-primary transition-all duration-300 text-sm font-medium"
+            >
+              <Phone className="w-4 h-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
+              <span className="relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">+971 50 556 7467</span>
             </a>
-            <a href={`tel:+${phoneNumber2}`} className="flex items-center gap-2 text-foreground hover:text-primary transition-colors text-sm font-medium">
-              <Phone className="w-4 h-4" />
-              <span>+971 56 588 1099</span>
+            <a 
+              href={`tel:+${phoneNumber2}`} 
+              className="group flex items-center gap-2 text-foreground hover:text-primary transition-all duration-300 text-sm font-medium"
+            >
+              <Phone className="w-4 h-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
+              <span className="relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">+971 56 588 1099</span>
             </a>
           </div>
 
@@ -180,12 +186,18 @@ const Header = () => {
             </Link>
             
             <div className="flex flex-col gap-2 pt-4 border-t border-border">
-              <a href={`tel:+${phoneNumber1}`} className="flex items-center gap-2 text-foreground hover:text-primary transition-colors text-sm font-medium py-2">
-                <Phone className="w-4 h-4" />
+              <a 
+                href={`tel:+${phoneNumber1}`} 
+                className="group flex items-center gap-2 text-foreground hover:text-primary transition-all duration-300 text-sm font-medium py-2"
+              >
+                <Phone className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
                 <span>+971 50 556 7467</span>
               </a>
-              <a href={`tel:+${phoneNumber2}`} className="flex items-center gap-2 text-foreground hover:text-primary transition-colors text-sm font-medium py-2">
-                <Phone className="w-4 h-4" />
+              <a 
+                href={`tel:+${phoneNumber2}`} 
+                className="group flex items-center gap-2 text-foreground hover:text-primary transition-all duration-300 text-sm font-medium py-2"
+              >
+                <Phone className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
                 <span>+971 56 588 1099</span>
               </a>
             </div>
