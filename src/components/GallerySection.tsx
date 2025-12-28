@@ -1,9 +1,9 @@
-import excavatorImg from "@/assets/equipment/excavator.jpg";
-import craneImg from "@/assets/equipment/crane.jpg";
-import forkliftImg from "@/assets/equipment/forklift.jpg";
-import wheelLoaderImg from "@/assets/equipment/wheel-loader.jpg";
-import boomLiftImg from "@/assets/equipment/boom-lift.jpg";
-import backhoeImg from "@/assets/equipment/backhoe.jpg";
+import excavatorImg from "@/assets/equipment/excavator.webp";
+import craneImg from "@/assets/equipment/crane.webp";
+import forkliftImg from "@/assets/equipment/forklift.webp";
+import wheelLoaderImg from "@/assets/equipment/wheel-loader.webp";
+import boomLiftImg from "@/assets/equipment/boom-lift.webp";
+import backhoeImg from "@/assets/equipment/backhoe.webp";
 
 const GallerySection = () => {
   const images = [
@@ -42,6 +42,7 @@ const GallerySection = () => {
                 src={image.src}
                 alt={image.alt}
                 className="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <span className="text-foreground font-heading uppercase tracking-wide">

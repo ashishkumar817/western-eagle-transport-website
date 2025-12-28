@@ -1,30 +1,35 @@
 import { Link } from "react-router-dom";
 import { equipmentList } from "@/lib/data";
 import { ArrowRight } from "lucide-react";
-import excavatorImg from "@/assets/equipment/excavator.jpg";
-import forkliftImg from "@/assets/equipment/forklift.jpg";
-import wheelLoaderImg from "@/assets/equipment/wheel-loader.jpg";
-import craneImg from "@/assets/equipment/crane.jpg";
-import boomLiftImg from "@/assets/equipment/boom-lift.jpg";
-import scissorLiftImg from "@/assets/equipment/scissor-lift.jpg";
-import generatorImg from "@/assets/equipment/generator.jpg";
-import skidSteerImg from "@/assets/equipment/skid-steer.jpg";
-import backhoeImg from "@/assets/equipment/backhoe.jpg";
-import busImg from "@/assets/equipment/bus.jpg";
+import excavatorImg from "@/assets/equipment/excavator.webp";
+import forkliftImg from "@/assets/equipment/forklift.webp";
+import wheelLoaderImg from "@/assets/equipment/wheel-loader.webp";
+import craneImg from "@/assets/equipment/crane.webp";
+import boomLiftImg from "@/assets/equipment/boom-lift.webp";
+import scissorLiftImg from "@/assets/equipment/scissor-lift.webp";
+import generatorImg from "@/assets/equipment/generator.webp";
+import skidSteerImg from "@/assets/equipment/skid-steer.webp";
+import backhoeImg from "@/assets/equipment/backhoe.webp";
+import busImg from "@/assets/equipment/bus.webp";
+import rollerImg from "@/assets/equipment/roller.webp";
+import recoveryTruckImg from "@/assets/equipment/recovery-truck.webp";
+import compressorImg from "@/assets/equipment/compressor.webp";
+import manliftImg from "@/assets/equipment/manlift.webp";
+import telehandlerImg from "@/assets/equipment/telehandler.webp";
 
 const equipmentImages: Record<string, string> = {
   "forklift": forkliftImg,
   "wheel-loader": wheelLoaderImg,
   "backhoe-loader": backhoeImg,
-  "boom-loader": boomLiftImg,
+  "boom-loader": telehandlerImg,
   "excavator": excavatorImg,
   "crane": craneImg,
-  "manlift": boomLiftImg,
+  "manlift": manliftImg,
   "scissor-lift": scissorLiftImg,
-  "roller": wheelLoaderImg,
-  "recovery-truck": busImg,
+  "roller": rollerImg,
+  "recovery-truck": recoveryTruckImg,
   "generator": generatorImg,
-  "compressor": generatorImg,
+  "compressor": compressorImg,
   "skid-steer": skidSteerImg,
   "passenger-bus": busImg,
 };
@@ -45,6 +50,7 @@ const EquipmentCard = ({ name, image, slug }: EquipmentCardProps) => {
         src={image}
         alt={name}
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        loading="lazy"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent transition-opacity duration-300" />
       

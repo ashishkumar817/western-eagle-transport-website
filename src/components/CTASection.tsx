@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import ctaBg from "@/assets/cta-bg.jpg";
+import ctaBg from "@/assets/cta-bg.webp";
 
 const CTASection = () => {
   const scrollToContact = () => {
