@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { equipmentList } from "@/lib/data";
+import { ArrowRight } from "lucide-react";
 import excavatorImg from "@/assets/equipment/excavator.jpg";
 import forkliftImg from "@/assets/equipment/forklift.jpg";
 import wheelLoaderImg from "@/assets/equipment/wheel-loader.jpg";
@@ -14,17 +15,17 @@ import busImg from "@/assets/equipment/bus.jpg";
 const equipmentImages: Record<string, string> = {
   "forklift": forkliftImg,
   "wheel-loader": wheelLoaderImg,
-  "jcb-backhoe-3cx": backhoeImg,
-  "boomloader": boomLiftImg,
-  "mini-excavator": excavatorImg,
-  "cranes": craneImg,
-  "manlifts": boomLiftImg,
+  "backhoe-loader": backhoeImg,
+  "boom-loader": boomLiftImg,
+  "excavator": excavatorImg,
+  "crane": craneImg,
+  "manlift": boomLiftImg,
   "scissor-lift": scissorLiftImg,
   "roller": wheelLoaderImg,
-  "recovery-trucks-10-ton": busImg,
-  "generators": generatorImg,
-  "compressors": generatorImg,
-  "skid-steer-bobcat": skidSteerImg,
+  "recovery-truck": busImg,
+  "generator": generatorImg,
+  "compressor": generatorImg,
+  "skid-steer": skidSteerImg,
   "passenger-bus": busImg,
 };
 
@@ -45,11 +46,21 @@ const EquipmentCard = ({ name, image, slug }: EquipmentCardProps) => {
         alt={name}
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent transition-opacity duration-300" />
+      
+      {/* Hover overlay */}
+      <div className="absolute inset-0 bg-background/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      
       <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
         <h3 className="font-heading font-semibold text-sm md:text-base text-foreground uppercase tracking-wide">
           {name}
         </h3>
+        
+        {/* View Options - visible on hover */}
+        <div className="flex items-center gap-1 mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <span className="text-primary text-xs md:text-sm font-medium">View Options</span>
+          <ArrowRight className="w-3 h-3 md:w-4 md:h-4 text-primary" />
+        </div>
       </div>
     </Link>
   );
@@ -60,7 +71,8 @@ const EquipmentSection = () => {
     <section id="equipment" className="section-padding bg-background">
       <div className="container-custom">
         <div className="text-center mb-8 md:mb-12">
-          <h2 className="heading-secondary text-foreground mb-4">
+          <span className="text-primary text-sm font-semibold uppercase tracking-wider">Our Fleet</span>
+          <h2 className="heading-secondary text-foreground mb-4 mt-2">
             Equipment Categories
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base px-4">
