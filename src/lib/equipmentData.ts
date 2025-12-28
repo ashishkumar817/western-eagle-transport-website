@@ -194,96 +194,105 @@ export const equipmentData: Record<string, EquipmentData> = {
   "wheel-loader": {
     name: "Wheel Loader",
     slug: "wheel-loader",
-    heroTitle: "Wheel Loader Rental in UAE",
-    heroSubtitle: "Powerful Wheel Loader Rental Services in Dubai, Abu Dhabi & Sharjah",
-    metaDescription: "Rent CAT wheel loaders 950 and 966 in UAE. Western Eagle provides heavy-duty wheel loaders for construction & material handling. Fast delivery.",
+    heroTitle: "Wheel Loader for Rent in UAE",
+    heroSubtitle: "Premium CAT Wheel Loader Rental Services with Fast Delivery Across Dubai, Abu Dhabi, Sharjah & All Emirates",
+    metaDescription: "Rent CAT 950 & 966 wheel loaders in UAE. Western Eagle Transport offers reliable wheel loader rental with operators for construction, quarries & infrastructure. 24/7 support.",
     overview: {
       title: "Overview",
-      description: "Wheel loaders are versatile heavy equipment designed for loading, moving, and transporting materials across construction sites, quarries, and industrial facilities. Our wheel loader fleet features powerful CAT engines, large bucket capacities, and excellent all-terrain mobility. These machines excel at moving large quantities of soil, gravel, sand, and construction debris efficiently. With articulated steering and robust construction, our wheel loaders provide the power and maneuverability needed for demanding UAE construction and infrastructure projects.",
-      industries: ["Construction", "Mining & Quarrying", "Landscaping", "Infrastructure Development", "Waste Management", "Agriculture"],
-      benefits: ["High bucket capacity for maximum productivity", "All-terrain mobility and excellent traction", "Powerful CAT engines for heavy-duty operations", "Comfortable operator cabin with AC", "Low maintenance and reliable performance"]
+      description: "A wheel loader is a heavy construction machine engineered for loading, transporting, and stockpiling materials such as soil, gravel, sand, aggregate, and debris. Distinguished by their articulated steering, large front-mounted bucket, and robust rubber tires, wheel loaders offer exceptional mobility and versatility across construction sites, quarries, warehouses, and industrial facilities. At Western Eagle Transport, we provide top-tier CAT wheel loaders including the industry-renowned 950 and 966 models, each delivering outstanding fuel efficiency, powerful hydraulic systems, and operator comfort that maximizes productivity on demanding UAE projects.",
+      industries: ["Construction & Civil Engineering", "Mining & Quarry Operations", "Landscaping & Land Development", "Infrastructure & Road Works", "Waste Management & Recycling", "Agriculture & Farming"],
+      benefits: ["High bucket capacity for maximum loading efficiency", "Excellent all-terrain mobility and traction control", "Powerful CAT engines delivering superior torque", "Air-conditioned operator cabin for comfort", "Fuel-efficient operation reducing project costs", "Quick attachment changes for versatility"]
     },
     applications: {
       title: "Applications",
-      description: "Wheel loaders are essential for material handling and loading operations across UAE construction and industrial sectors.",
+      description: "Wheel loaders are indispensable for material handling, site preparation, and loading operations across diverse industries in the UAE's dynamic construction and infrastructure sectors.",
       useCases: [
-        "Loading trucks with aggregate materials",
-        "Moving and stockpiling construction materials",
-        "Site preparation and land clearing",
-        "Snow and debris removal operations",
-        "Material handling in quarries and mines",
-        "Supporting road construction projects"
+        "Loading dump trucks with aggregate, sand, and gravel",
+        "Stockpiling and managing construction materials on site",
+        "Site clearance, leveling, and land preparation",
+        "Moving bulk materials in quarries and mining operations",
+        "Loading and unloading at ports and logistics centers",
+        "Road construction base preparation and asphalt handling",
+        "Snow and debris removal for emergency response",
+        "Agricultural material handling and farm operations"
       ]
     },
     whyRent: [
-      "Avoid high purchase costs and depreciation",
-      "Access to latest CAT wheel loader technology",
-      "Maintenance and servicing included",
-      "Flexible rental periods as needed",
-      "Rapid deployment across UAE locations",
-      "Skilled operators available",
-      "Comprehensive breakdown support"
+      "Eliminate high upfront purchase and depreciation costs",
+      "Access latest CAT technology without ownership burden",
+      "All maintenance, repairs, and servicing included",
+      "Flexible daily, weekly, and monthly rental terms",
+      "Rapid equipment deployment across all UAE Emirates",
+      "Experienced certified operators available on request",
+      "24/7 breakdown support and technical assistance"
     ],
     whyChoose: {
-      intro: "Wheel loaders are workhorses of construction and material handling across the UAE. From loading aggregate at quarries to moving materials at busy construction sites in Dubai and Abu Dhabi, wheel loader rental provides the heavy-duty loading power your operations demand.",
-      costEffective: "CAT wheel loaders represent significant capital investment. Wheel loader rental eliminates upfront costs and avoids the depreciation that affects owned equipment. For construction companies managing multiple project sites, renting provides access to loading capacity where and when needed without tying up capital.",
-      latestModels: "Our wheel loader fleet includes CAT 950 and 966 models featuring powerful engines, high-capacity buckets, and comfortable air-conditioned cabs. These machines deliver maximum productivity with fuel-efficient operation and advanced hydraulic systems for smooth, responsive control during loading operations.",
-      noMaintenance: "Wheel loaders operate in demanding conditions that require regular maintenance of engines, transmissions, and hydraulic systems. Western Eagle handles all maintenance, ensuring you receive machines in peak operating condition. Our technical team provides responsive support to minimize any downtime on your site.",
-      flexibility: "Construction project phases have varying loading requirements. Wheel loader rental allows you to bring in CAT 950 loaders for general material handling and upgrade to more powerful 966 models for heavy aggregate loading, adjusting capacity to match your project demands without equipment ownership complications."
+      intro: "The UAE's construction boom demands reliable, high-performance loading equipment. From major infrastructure developments in Dubai to industrial projects in Abu Dhabi's Musaffah industrial zone, wheel loader rental from Western Eagle Transport provides the heavy-duty loading capability your operations require without the financial burden of equipment ownership.",
+      costEffective: "Purchasing a CAT wheel loader represents a substantial capital investment of hundreds of thousands of dirhams, plus ongoing costs for maintenance, storage, insurance, and eventual depreciation. By choosing wheel loader rental in the UAE, construction companies, contractors, and project managers can access premium loading equipment on a pay-as-you-use basis. This preserves capital for core business operations while ensuring you always have the right equipment capacity for each project phase.",
+      latestModels: "Our wheel loader fleet features the CAT 950 and CAT 966 models—industry benchmarks for reliability and productivity. These machines incorporate Caterpillar's latest technology including advanced hydraulic systems for smooth operation, fuel-efficient engines that reduce running costs, and spacious air-conditioned cabs with excellent visibility. When you rent from Western Eagle, you get access to well-maintained, modern equipment that maximizes operator productivity and minimizes fuel consumption.",
+      noMaintenance: "Wheel loaders operate in harsh conditions that demand regular maintenance of engines, transmissions, hydraulic systems, and undercarriage components. When you rent from Western Eagle Transport, all maintenance, servicing, and repairs are our responsibility. Our skilled technicians ensure each machine is delivered in peak operating condition, and our 24/7 support hotline guarantees rapid response if any issues arise during your rental period.",
+      flexibility: "Project requirements fluctuate throughout construction phases. Wheel loader rental provides the flexibility to scale equipment up or down based on actual needs. Start with a CAT 950 for general material handling, then upgrade to the more powerful 966 for heavy aggregate loading during peak periods. When the project phase ends, simply return the equipment—no long-term commitments, no storage costs, no resale hassles."
     },
     variants: [
-      { name: "950 CAT Wheel Loader for Rent", slug: "950", capacity: "950 Model", description: "CAT 950 wheel loader offering excellent productivity for medium-sized construction and loading operations. Known for reliability, fuel efficiency, and operator comfort.", applications: ["General construction", "Material handling", "Road works"], specifications: ["Model: CAT 950", "High bucket capacity", "Fuel efficient engine"] },
-      { name: "966 CAT Wheel Loader for Rent", slug: "966", capacity: "966 Model", description: "CAT 966 wheel loader delivering superior power and capacity for demanding construction and quarry applications. Maximum productivity for large-scale operations.", applications: ["Heavy construction", "Quarries", "Large-scale loading"], specifications: ["Model: CAT 966", "Maximum bucket capacity", "Heavy-duty construction"] }
+      { name: "950 CAT Wheel Loader for Rent", slug: "950", capacity: "950 Model", description: "The CAT 950 wheel loader delivers exceptional productivity for medium to large-scale construction and loading operations across the UAE. Renowned for its reliability, fuel efficiency, and comfortable operator environment, the 950 is the workhorse of choice for contractors, quarry operators, and logistics facilities. Features include a high-capacity bucket, advanced load-sensing hydraulics, and Caterpillar's proven powertrain technology.", applications: ["General construction sites", "Material handling yards", "Road works and infrastructure", "Aggregate loading operations"], specifications: ["Model: Caterpillar 950", "Operating weight: 17-18 tons", "Bucket capacity: 2.5-3.5 m³", "Engine: Cat C7.1 ACERT™", "Fuel efficient design"] },
+      { name: "966 CAT Wheel Loader for Rent", slug: "966", capacity: "966 Model", description: "The CAT 966 wheel loader represents the pinnacle of heavy-duty loading capability for demanding construction, quarry, and mining applications in the UAE. Delivering superior power, larger bucket capacity, and enhanced durability, the 966 handles the toughest loading challenges with ease. Ideal for large-scale earthmoving, aggregate operations, and high-volume material handling where productivity is paramount.", applications: ["Heavy construction projects", "Quarry and mining operations", "Large-scale aggregate loading", "Port and logistics centers"], specifications: ["Model: Caterpillar 966", "Operating weight: 23-25 tons", "Bucket capacity: 4.0-6.0 m³", "Engine: Cat C9.3 ACERT™", "Maximum productivity design"] }
+    ],
+    relatedEquipment: [
+      { name: "Excavator for Rent", slug: "excavator" },
+      { name: "Backhoe Loader for Rent", slug: "backhoe-loader" },
+      { name: "Skid Steer Loader for Rent", slug: "skid-steer" }
     ],
     image: "/src/assets/equipment/wheel-loader.webp"
   },
   "backhoe-loader": {
     name: "JCB Backhoe Loader",
     slug: "backhoe-loader",
-    heroTitle: "JCB Backhoe Loader Rental in UAE",
-    heroSubtitle: "Versatile JCB 3CX Backhoe Rental Services in Dubai, Abu Dhabi & Sharjah",
-    metaDescription: "Rent JCB 3CX backhoe loaders in UAE. Western Eagle offers versatile backhoes for excavation, loading & construction tasks across UAE.",
+    heroTitle: "JCB Backhoe 3CX for Rent in UAE",
+    heroSubtitle: "Versatile JCB 3CX Backhoe Loader Rental with Expert Support Across Dubai, Abu Dhabi, Sharjah & All Emirates",
+    metaDescription: "Rent JCB 3CX backhoe loaders in UAE. Western Eagle Transport provides versatile backhoe rental for excavation, loading, trenching & construction across Dubai, Abu Dhabi.",
     overview: {
       title: "Overview",
-      description: "The JCB 3CX backhoe loader is the world's most versatile construction machine, combining a front loader and rear excavator in one unit. This dual-functionality makes it ideal for a wide range of construction tasks from digging and trenching to loading and material handling. Our JCB 3CX fleet features 4-wheel drive, extendable dippers, and multiple attachment options. These machines are workhorses on construction sites, offering excellent value through their versatility.",
-      industries: ["Construction", "Road Works", "Utilities", "Landscaping", "Agriculture", "Municipal Works"],
-      benefits: ["Dual-function: loader and excavator", "4-wheel drive capability", "Extendable dipper option", "Multiple attachment compatibility", "Excellent mobility and versatility"]
+      description: "The JCB 3CX backhoe loader is the world's most iconic and versatile construction machine, ingeniously combining a front-end loader with a rear-mounted excavator in a single, highly maneuverable unit. This dual-functionality makes the 3CX an indispensable workhorse on construction sites where space is limited and multiple tasks need to be performed efficiently. The rear excavator arm handles digging, trenching, and demolition work, while the front loader bucket manages material loading, grading, and site clearance. At Western Eagle Transport, we maintain a premium fleet of JCB 3CX backhoe loaders equipped with 4-wheel drive, extendable dippers, and multiple attachment options to handle virtually any construction challenge.",
+      industries: ["Construction & Building Sites", "Road & Highway Works", "Utility Installation Projects", "Landscaping & Site Development", "Agricultural Operations", "Municipal & Government Works"],
+      benefits: ["Two machines in one: loader and excavator combined", "Exceptional 4-wheel drive mobility on any terrain", "Extendable dipper for increased reach", "Compatible with multiple attachments", "Compact footprint for tight job sites", "Lower operating costs than separate machines"]
     },
     applications: {
       title: "Applications",
-      description: "The JCB 3CX excels in applications requiring both loading and excavation capabilities.",
+      description: "The JCB 3CX backhoe loader excels in applications requiring both excavation precision and material handling capability, making it the contractor's first choice for mixed-task construction sites.",
       useCases: [
-        "Trenching for utilities and drainage",
-        "Loading trucks with excavated material",
-        "Site clearance and preparation",
-        "Road construction and repair",
-        "Foundation excavation",
-        "Agricultural and farm work"
+        "Trenching for water, sewer, and utility lines",
+        "Loading excavated material onto trucks",
+        "Foundation excavation for buildings and structures",
+        "Site clearance, grading, and land preparation",
+        "Road construction, repair, and maintenance",
+        "Demolition and debris removal operations",
+        "Agricultural digging and farm construction",
+        "Emergency response and municipal works"
       ]
     },
     whyRent: [
-      "Versatile machine replaces multiple units",
-      "Cost-effective for mixed tasks",
-      "Well-maintained JCB equipment",
-      "Experienced operators available",
-      "Quick deployment across UAE",
-      "Full service support included",
-      "Flexible rental options"
+      "Replace two machines with one versatile unit",
+      "Significantly reduce equipment and operator costs",
+      "Premium JCB equipment fully maintained",
+      "Experienced operators available on request",
+      "Fast deployment to any location in UAE",
+      "Complete service and breakdown support",
+      "Flexible daily, weekly, monthly rental options"
     ],
     whyChoose: {
-      intro: "The JCB backhoe loader is the ultimate versatile construction machine, combining excavator digging power with front loader material handling. For contractors across Dubai and Abu Dhabi, backhoe rental provides two machines in one for maximum efficiency on mixed-task construction sites.",
-      costEffective: "A single JCB 3CX can replace separate excavator and loader equipment, significantly reducing rental costs and site logistics. Backhoe loader rental in the UAE provides this dual-capability machine without the purchase investment, helping contractors bid competitively while maintaining profitability on diverse construction projects.",
-      latestModels: "Our JCB 3CX backhoe loaders feature powerful engines, extended dipper options, and the smooth controls that make JCB the world leader in backhoe design. Modern cabs offer excellent visibility and comfort, while 4WD capability ensures mobility across challenging terrain on construction sites.",
-      noMaintenance: "JCB backhoe loaders are complex machines requiring specialist maintenance knowledge. Western Eagle handles all servicing with genuine parts and experienced technicians. You receive a reliable machine ready for work, with responsive support ensuring any issues are addressed quickly to minimize project delays.",
-      flexibility: "Construction projects often involve varied tasks from trenching and excavation to loading and material handling. JCB backhoe rental gives you the flexibility to tackle all these tasks with a single machine, simplifying equipment logistics and reducing the number of operators required on site."
+      intro: "Contractors and construction companies across Dubai, Abu Dhabi, and the UAE trust the JCB backhoe loader for its unmatched versatility. Whether you're digging trenches, loading trucks, clearing sites, or performing precision excavation work, the 3CX delivers two machines' capability in one compact package—saving you money, time, and site logistics headaches.",
+      costEffective: "Renting separate excavator and loader equipment doubles your rental costs, transport fees, and operator requirements. The JCB 3CX backhoe loader rental from Western Eagle Transport eliminates this redundancy. One machine, one operator, one rental fee—yet you get full excavation and loading capability. For contractors bidding on mixed-task projects, this cost efficiency translates directly into competitive pricing and improved profit margins.",
+      latestModels: "Our JCB 3CX fleet features the latest generation backhoe loaders with powerful Stage V engines, smooth EcoMAX technology, and the precise controls that have made JCB the global leader in backhoe design. Extended dipper options provide exceptional reach, while modern ROPS/FOPS cabs offer operator protection and all-day comfort with excellent visibility from every angle.",
+      noMaintenance: "Backhoe loaders are complex machines with hydraulic, mechanical, and electrical systems that require expert maintenance. When you rent from Western Eagle Transport, our certified technicians handle all servicing using genuine JCB parts. You receive a reliable, job-ready machine with our 24/7 support guarantee—any issues are addressed rapidly to minimize your project downtime.",
+      flexibility: "Construction phases demand different equipment configurations. JCB backhoe rental gives you the flexibility to tackle trenching one day and material loading the next with the same machine. Scale your equipment count up or down based on project phases, return equipment when the job is done, and avoid the long-term commitment of equipment ownership."
     },
     variants: [
-      { name: "JCB 3CX Backhoe Loader for Rent", slug: "3cx", capacity: "3CX Model", description: "Standard JCB 3CX backhoe loader for general construction and excavation work. The world's most popular backhoe loader with proven reliability and versatility.", applications: ["General construction", "Excavation", "Loading"], specifications: ["Model: JCB 3CX", "4WD capability", "Multiple attachments available"] }
+      { name: "JCB 3CX Backhoe Loader for Rent", slug: "3cx", capacity: "3CX Model", description: "The JCB 3CX is the world's most popular and trusted backhoe loader, delivering exceptional versatility for construction, excavation, and material handling tasks across the UAE. Features include 4-wheel drive capability, extendable dipper option, multiple attachment compatibility, and the renowned JCB build quality that ensures reliability on demanding job sites.", applications: ["General construction sites", "Trenching and excavation", "Material loading and handling", "Road works and utilities"], specifications: ["Model: JCB 3CX", "4WD capability as standard", "Extendable dipper available", "Multiple attachment options", "Stage V compliant engine"] }
     ],
     relatedEquipment: [
       { name: "Wheel Loader for Rent", slug: "wheel-loader" },
-      { name: "Skid Steer Loader for Rent", slug: "skid-steer" },
-      { name: "Excavator for Rent", slug: "excavator" }
+      { name: "Mini Excavator for Rent", slug: "excavator" },
+      { name: "Skid Steer Loader for Rent", slug: "skid-steer" }
     ],
     image: "/src/assets/equipment/backhoe.webp"
   },
