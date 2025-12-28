@@ -7,23 +7,23 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import { getServiceData, getAllServices } from "@/lib/serviceData";
-import excavatorImg from "@/assets/equipment/excavator.webp";
-import craneImg from "@/assets/equipment/crane.webp";
-import forkliftImg from "@/assets/equipment/forklift.webp";
+
+// ============================================
+// SERVICE IMAGE PATHS - Add your images to public/assets/services/
+// ============================================
+const serviceImages: Record<string, string> = {
+  "leasing-machineries-equipments": "/assets/services/leasing-machineries.webp",
+  "supply-trained-operators": "/assets/services/trained-operators.webp",
+  "equipment-repair-maintenance": "/assets/services/repair-maintenance.webp",
+  "quality-assured-equipment": "/assets/services/quality-assured.webp",
+  "welding-cutting-equipment": "/assets/services/welding-cutting.webp",
+  "heavy-duty-construction": "/assets/services/heavy-duty-construction.webp",
+  "scaffolding": "/assets/services/scaffolding.webp",
+  "logistic-operator-support": "/assets/services/logistic-support.webp",
+  "workshop-maintenance": "/assets/services/workshop-maintenance.webp",
+};
 
 const phoneNumber = "971505567467";
-
-const serviceImages: Record<string, string> = {
-  "leasing-machineries-equipments": excavatorImg,
-  "supply-trained-operators": forkliftImg,
-  "equipment-repair-maintenance": craneImg,
-  "quality-assured-equipment": excavatorImg,
-  "welding-cutting-equipment": craneImg,
-  "heavy-duty-construction": excavatorImg,
-  "scaffolding": forkliftImg,
-  "logistic-operator-support": craneImg,
-  "workshop-maintenance": forkliftImg,
-};
 
 const ServiceDetail = () => {
   const { slug } = useParams();
@@ -45,7 +45,7 @@ const ServiceDetail = () => {
   }
 
   const IconComponent = service.icon;
-  const heroImage = serviceImages[slug || ""] || excavatorImg;
+  const heroImage = serviceImages[slug || ""] || "/assets/services/default.webp";
 
   return (
     <>

@@ -1,5 +1,9 @@
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-bg.webp";
+
+// ============================================
+// HERO IMAGE PATH - Add your image to public/assets/
+// ============================================
+const heroImage = "/assets/hero-bg.webp";
 
 const HeroSection = () => {
   return (
@@ -9,7 +13,7 @@ const HeroSection = () => {
     >
       {/* Background Image - using img for LCP optimization */}
       <img
-        src={heroBg}
+        src={heroImage}
         alt=""
         fetchPriority="high"
         decoding="async"
