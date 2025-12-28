@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from "@/hooks/useTheme";
 import Index from "./pages/Index";
+import About from "./pages/About";
 import EquipmentDetail from "./pages/EquipmentDetail";
 import ServiceDetail from "./pages/ServiceDetail";
 import Services from "./pages/Services";
@@ -25,6 +26,7 @@ const App = () => (
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
               <Route path="/equipment/:slug" element={<EquipmentDetail />} />
               <Route path="/services/:slug" element={<ServiceDetail />} />
               <Route path="/services" element={<Services />} />
