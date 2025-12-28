@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/hooks/useTheme";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import EquipmentDetail from "./pages/EquipmentDetail";
+import EquipmentVariant from "./pages/EquipmentVariant";
 import ServiceDetail from "./pages/ServiceDetail";
 import Services from "./pages/Services";
 import Blog from "./pages/Blog";
@@ -28,6 +29,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
               <Route path="/equipment/:slug" element={<EquipmentDetail />} />
+              <Route path="/equipment/:slug/:variantSlug" element={<EquipmentVariant />} />
               <Route path="/services/:slug" element={<ServiceDetail />} />
               <Route path="/services" element={<Services />} />
               <Route path="/blog" element={<Blog />} />
