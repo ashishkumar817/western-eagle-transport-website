@@ -8,14 +8,12 @@ import { blogPosts } from "@/lib/data";
 import { format } from "date-fns";
 
 const Blog = () => {
-  const todayDate = format(new Date(), "MMMM d, yyyy");
-
   return (
     <>
       <Helmet>
         <title>Blog | Heavy Equipment Rental Insights | Western Eagle Transport</title>
-        <meta name="description" content="Read the latest articles on heavy equipment rental, construction machinery, and industry insights from Western Eagle Transport Company UAE." />
-        <meta name="keywords" content="heavy equipment blog, construction machinery articles, equipment rental tips UAE" />
+        <meta name="description" content="Stay updated with the latest news, tips, and insights about heavy equipment rental and transport services." />
+        <meta name="keywords" content="heavy equipment blog, construction machinery articles, equipment rental tips UAE, Abu Dhabi" />
         <link rel="canonical" href="https://westerneagle.ae/blog" />
       </Helmet>
       
@@ -27,9 +25,12 @@ const Blog = () => {
           {/* Hero Section */}
           <section className="bg-secondary py-16 md:py-20">
             <div className="container-custom px-4 text-center">
-              <h1 className="heading-primary text-foreground mb-4">Our Blog</h1>
+              <span className="inline-block text-primary text-sm font-medium mb-3">Our Blog</span>
+              <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-4">
+                Latest News & Insights
+              </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Industry insights, equipment guides, and expert tips for construction professionals.
+                Stay updated with the latest news, tips, and insights about heavy equipment rental and transport services.
               </p>
             </div>
           </section>
@@ -53,9 +54,9 @@ const Blog = () => {
                     <div className="p-6">
                       <div className="flex items-center gap-2 text-muted-foreground text-sm mb-3">
                         <Calendar className="w-4 h-4" />
-                        {todayDate}
+                        {format(new Date(post.date), "MMMM d, yyyy")}
                       </div>
-                      <h2 className="heading-tertiary text-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors">
+                      <h2 className="font-heading text-xl font-bold text-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors">
                         {post.title}
                       </h2>
                       <p className="text-muted-foreground mb-4 line-clamp-3">{post.excerpt}</p>
