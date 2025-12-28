@@ -1,6 +1,10 @@
 import { Button } from "@/components/ui/button";
 
 const SupportCTA = () => {
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="py-16 bg-primary">
       <div className="container-custom">
@@ -18,12 +22,14 @@ const SupportCTA = () => {
               size="lg"
               variant="outline"
               className="border-2 border-background bg-transparent text-background font-semibold hover:bg-background hover:text-primary"
+              onClick={scrollToContact}
             >
               Get Quick Support
             </Button>
             <Button
               size="lg"
               className="bg-background text-primary font-semibold hover:bg-background/90"
+              onClick={scrollToContact}
             >
               Request a Quote
             </Button>

@@ -1,4 +1,4 @@
-import { Package, Users, Settings, Shield, Truck, Headphones } from "lucide-react";
+import { Package, Users, Settings, Shield, Truck, Headphones, Award } from "lucide-react";
 
 interface FeatureCardProps {
   icon: React.ElementType;
@@ -67,9 +67,20 @@ const WhyChooseUs = () => {
           <h2 className="heading-secondary text-foreground mb-4">
             Your Trusted Equipment Partner
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
             We're dedicated to providing reliable heavy equipment and exceptional service to power your projects across the UAE.
           </p>
+          
+          {/* ICV Certification Badge */}
+          <div className="inline-flex items-center gap-3 p-4 bg-primary/10 rounded-lg border border-primary/20">
+            <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+              <Award className="w-5 h-5 text-primary-foreground" />
+            </div>
+            <div className="text-left">
+              <p className="font-semibold text-foreground text-sm">ICV Certified (UAE)</p>
+              <p className="text-xs text-muted-foreground">Compliant with the UAE In-Country Value Program</p>
+            </div>
+          </div>
         </div>
 
         {/* Features Grid */}
