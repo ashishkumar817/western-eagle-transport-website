@@ -25,14 +25,14 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-lg">
-      <div className="container-custom">
-        <div className="flex items-center justify-between h-20">
+      <div className="container-custom px-4">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Western Eagle Transport Company" className="h-14 w-auto" />
+          <Link to="/" className="flex items-center gap-2 md:gap-3 flex-shrink-0">
+            <img src={logo} alt="Western Eagle Transport Company" className="h-10 md:h-14 w-auto" />
             <div className="hidden sm:block">
-              <p className="font-heading font-bold text-lg text-foreground leading-tight">WESTERN EAGLE</p>
-              <p className="text-xs text-muted-foreground uppercase tracking-wider">Transport Company</p>
+              <p className="font-heading font-bold text-sm md:text-lg text-foreground leading-tight">WESTERN EAGLE</p>
+              <p className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider">Transport Company</p>
             </div>
           </Link>
 
@@ -116,14 +116,14 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex lg:hidden items-center gap-2">
+          <div className="flex lg:hidden items-center gap-1">
             <ThemeToggle />
             <button
-              className="p-2 text-foreground"
+              className="p-1.5 text-foreground"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>

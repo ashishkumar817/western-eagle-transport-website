@@ -1,9 +1,10 @@
+import { forwardRef } from "react";
 import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.webp";
 import { equipmentList, servicesList } from "@/lib/data";
 
-const Footer = () => {
+const Footer = forwardRef<HTMLElement, {}>((_props, ref) => {
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
@@ -30,7 +31,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-secondary border-t border-border">
+    <footer ref={ref} className="bg-secondary border-t border-border">
       <div className="container-custom section-padding">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Company Info */}
@@ -177,6 +178,8 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+});
+
+Footer.displayName = "Footer";
 
 export default Footer;

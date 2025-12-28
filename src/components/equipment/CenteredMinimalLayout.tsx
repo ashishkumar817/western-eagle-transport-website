@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 import { Phone, MessageCircle, ArrowLeft, Check, MapPin, Wrench, TrendingUp, Shield, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -10,9 +11,10 @@ interface CenteredMinimalLayoutProps {
   phoneNumber: string;
 }
 
-const CenteredMinimalLayout = ({ equipment, slug, phoneNumber }: CenteredMinimalLayoutProps) => {
-  return (
-    <>
+const CenteredMinimalLayout = forwardRef<HTMLDivElement, CenteredMinimalLayoutProps>(
+  ({ equipment, slug, phoneNumber }, ref) => {
+    return (
+      <div ref={ref}>
       {/* Hero - Minimal Centered */}
       <section className="min-h-[80vh] flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -219,8 +221,10 @@ const CenteredMinimalLayout = ({ equipment, slug, phoneNumber }: CenteredMinimal
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
-};
+});
+
+CenteredMinimalLayout.displayName = "CenteredMinimalLayout";
 
 export default CenteredMinimalLayout;

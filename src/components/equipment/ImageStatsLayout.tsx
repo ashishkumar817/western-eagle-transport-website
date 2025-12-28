@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 import { Phone, MessageCircle, ArrowLeft, Check, MapPin, Clock, Shield, Award, Users, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -10,7 +11,8 @@ interface ImageStatsLayoutProps {
   phoneNumber: string;
 }
 
-const ImageStatsLayout = ({ equipment, slug, phoneNumber }: ImageStatsLayoutProps) => {
+const ImageStatsLayout = forwardRef<HTMLDivElement, ImageStatsLayoutProps>(
+  ({ equipment, slug, phoneNumber }, ref) => {
   const stats = [
     { icon: Users, value: "500+", label: "Happy Clients" },
     { icon: Truck, value: "24/7", label: "Support" },
@@ -19,7 +21,7 @@ const ImageStatsLayout = ({ equipment, slug, phoneNumber }: ImageStatsLayoutProp
   ];
 
   return (
-    <>
+    <div ref={ref}>
       {/* Hero with Large Image & Stats */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
@@ -219,8 +221,10 @@ const ImageStatsLayout = ({ equipment, slug, phoneNumber }: ImageStatsLayoutProp
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
-};
+});
+
+ImageStatsLayout.displayName = "ImageStatsLayout";
 
 export default ImageStatsLayout;

@@ -1,3 +1,18 @@
+import forkliftImg from "@/assets/equipment/forklift.webp";
+import craneImg from "@/assets/equipment/crane.webp";
+import excavatorImg from "@/assets/equipment/excavator.webp";
+import wheelLoaderImg from "@/assets/equipment/wheel-loader.webp";
+import backhoeImg from "@/assets/equipment/backhoe.webp";
+import telehandlerImg from "@/assets/equipment/telehandler.webp";
+import rollerImg from "@/assets/equipment/roller.webp";
+import manliftImg from "@/assets/equipment/manlift.webp";
+import scissorLiftImg from "@/assets/equipment/scissor-lift.webp";
+import generatorImg from "@/assets/equipment/generator.webp";
+import skidSteerImg from "@/assets/equipment/skid-steer.webp";
+import recoveryTruckImg from "@/assets/equipment/recovery-truck.webp";
+import compressorImg from "@/assets/equipment/compressor.webp";
+import busImg from "@/assets/equipment/bus.webp";
+
 export interface EquipmentVariant {
   name: string;
   slug: string;
@@ -82,11 +97,11 @@ export const equipmentData: Record<string, EquipmentData> = {
       "24/7 technical support and breakdown assistance"
     ],
     whyChoose: {
-      intro: "Abu Dhabi and Dubai are global hubs for logistics and construction. Whether you're managing a bustling warehouse or a construction site, forklift rental ensures you have the right material handling equipment to move goods efficiently and safely.",
-      costEffective: "Purchasing a forklift can be a significant investment, especially for businesses with seasonal or short-term needs. By opting for forklift rental in Abu Dhabi or Dubai, companies avoid the high initial purchase cost, ongoing maintenance expenses, and storage fees. Renting allows businesses to pay only for what they need when they need it, helping optimize budgets and maximize operational revenue.",
-      latestModels: "The forklift rental industry in UAE offers access to a wide range of modern forklifts from leading manufacturers like Toyota, Caterpillar, and Hyster. These are equipped with advanced technology including ergonomic controls, safety features, and fuel-efficient engines. Businesses that rent can use state-of-the-art equipment without worrying about maintenance or technological obsolescence.",
-      noMaintenance: "When renting forklifts, all maintenance and repairs are handled by Western Eagle. This eliminates downtime and ensures your team always works with well-maintained, operational machinery. Our forklift rental services include immediate technical support so any issues are resolved quickly, keeping your operations running smoothly.",
-      flexibility: "Forklift rental in Abu Dhabi offers flexibility, allowing businesses to scale the number of units based on project demand. Whether it's a large warehouse project requiring multiple units or a temporary construction site, our rental service provides the flexibility to adjust equipment count as required without long-term commitments."
+      intro: "Abu Dhabi and Dubai are global hubs for logistics and construction. Forklift rental ensures efficient material handling for your operations.",
+      costEffective: "Avoid high purchase costs and maintenance expenses. Rent only what you need, when you need it—optimizing budgets and maximizing revenue.",
+      latestModels: "Access modern forklifts from Toyota, Caterpillar, and Hyster with advanced controls, safety features, and fuel-efficient engines.",
+      noMaintenance: "All maintenance and repairs are handled by Western Eagle, eliminating downtime and ensuring reliable, job-ready equipment.",
+      flexibility: "Scale equipment up or down based on project demand. No long-term commitments—adjust as your requirements change."
     },
     variants: [
       { name: "3 Ton Forklift for Rent", slug: "3-ton", capacity: "3 Ton", description: "Our 3-ton forklift rental is ideal for warehouses, industrial yards, and construction sites across Abu Dhabi, Dubai and the UAE. Our 3-ton forklifts are engineered to lift, transport, and stack heavy loads with ease. Suitable for both indoor and outdoor operations, they ensure high maneuverability, safety and fuel efficiency. Rent our 3-ton forklifts on a daily, weekly or monthly basis with 24/7 support. We offer fast delivery across Musaffah, Abu Dhabi, Dubai and other Emirates.", applications: ["Indoor warehousing", "Retail stockrooms", "Light manufacturing"], specifications: ["Lifting capacity: 3,000 kg", "Lift height: 3-6 meters", "Compact design for narrow aisles"] },
@@ -96,7 +111,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       { name: "15 Ton Forklift for Rent", slug: "15-ton", capacity: "15 Ton", description: "High-capacity 15-ton forklift for extra-heavy loads in ports, shipyards, and large industrial facilities. Maximum power for maximum productivity.", applications: ["Port operations", "Shipyards", "Heavy industry"], specifications: ["Lifting capacity: 15,000 kg", "Lift height: 4-5 meters", "Heavy-duty chassis"] },
       { name: "25 Ton Forklift for Rent", slug: "25-ton", capacity: "25 Ton", description: "Maximum capacity 25-ton forklift for the most demanding heavy-lift applications and mega projects. The ultimate solution for exceptional lifting needs.", applications: ["Mega construction projects", "Industrial plants", "Oil & gas facilities"], specifications: ["Lifting capacity: 25,000 kg", "Specialized lifting attachments", "Maximum stability design"] }
     ],
-    image: "/src/assets/equipment/forklift.webp"
+    image: forkliftImg
   },
   crane: {
     name: "Crane",
@@ -148,7 +163,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       { name: "150 Ton Crane for Rent", slug: "150-ton", capacity: "150 Ton", description: "Extra-heavy 150-ton crane for the most demanding lifting operations in oil & gas and mega projects.", applications: ["Mega projects", "Oil & gas", "Power generation"], specifications: ["Lifting capacity: 150 tons", "Extended boom options", "Heavy-duty outriggers"] },
       { name: "200 Ton Crane for Rent", slug: "200-ton", capacity: "200 Ton", description: "Maximum capacity 200-ton crane for exceptional heavy-lift requirements and specialized industrial applications.", applications: ["Exceptional heavy lifts", "Industrial plants", "Major infrastructure"], specifications: ["Lifting capacity: 200 tons", "Maximum stability design", "Specialized rigging"] }
     ],
-    image: "/src/assets/equipment/crane.webp"
+    image: craneImg
   },
   excavator: {
     name: "Excavator",
@@ -196,7 +211,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       { name: "3 Ton Mini Excavator for Rent", slug: "3-ton", capacity: "3 Ton", description: "Versatile 3-ton mini excavator for general small-scale excavation projects. Perfect for pool digging, foundation work, and drainage installations.", applications: ["General excavation", "Trenching", "Pool digging"], specifications: ["Operating weight: 3 tons", "Extendable arm option", "Multiple attachments"] },
       { name: "5 Ton Mini Excavator for Rent", slug: "5-ton", capacity: "5 Ton", description: "Medium 5-ton excavator bridging compact and standard excavator capabilities. Enhanced digging force for commercial and infrastructure projects.", applications: ["Medium projects", "Commercial sites", "Drainage work"], specifications: ["Operating weight: 5 tons", "Enclosed cab", "Enhanced digging force"] }
     ],
-    image: "/src/assets/equipment/excavator.webp"
+    image: excavatorImg
   },
   "wheel-loader": {
     name: "Wheel Loader",
@@ -235,11 +250,11 @@ export const equipmentData: Record<string, EquipmentData> = {
       "24/7 breakdown support and technical assistance"
     ],
     whyChoose: {
-      intro: "The UAE's construction boom demands reliable, high-performance loading equipment. From major infrastructure developments in Dubai to industrial projects in Abu Dhabi's Musaffah industrial zone, wheel loader rental from Western Eagle Transport provides the heavy-duty loading capability your operations require without the financial burden of equipment ownership.",
-      costEffective: "Purchasing a CAT wheel loader represents a substantial capital investment of hundreds of thousands of dirhams, plus ongoing costs for maintenance, storage, insurance, and eventual depreciation. By choosing wheel loader rental in the UAE, construction companies, contractors, and project managers can access premium loading equipment on a pay-as-you-use basis. This preserves capital for core business operations while ensuring you always have the right equipment capacity for each project phase.",
-      latestModels: "Our wheel loader fleet features the CAT 950 and CAT 966 models—industry benchmarks for reliability and productivity. These machines incorporate Caterpillar's latest technology including advanced hydraulic systems for smooth operation, fuel-efficient engines that reduce running costs, and spacious air-conditioned cabs with excellent visibility. When you rent from Western Eagle, you get access to well-maintained, modern equipment that maximizes operator productivity and minimizes fuel consumption.",
-      noMaintenance: "Wheel loaders operate in harsh conditions that demand regular maintenance of engines, transmissions, hydraulic systems, and undercarriage components. When you rent from Western Eagle Transport, all maintenance, servicing, and repairs are our responsibility. Our skilled technicians ensure each machine is delivered in peak operating condition, and our 24/7 support hotline guarantees rapid response if any issues arise during your rental period.",
-      flexibility: "Project requirements fluctuate throughout construction phases. Wheel loader rental provides the flexibility to scale equipment up or down based on actual needs. Start with a CAT 950 for general material handling, then upgrade to the more powerful 966 for heavy aggregate loading during peak periods. When the project phase ends, simply return the equipment—no long-term commitments, no storage costs, no resale hassles."
+      intro: "The UAE's construction boom demands reliable loading equipment. Wheel loader rental provides heavy-duty capability without ownership burden.",
+      costEffective: "Access premium CAT loaders on a pay-as-you-use basis. Preserve capital while ensuring you have the right equipment for each phase.",
+      latestModels: "Our CAT 950 and 966 models feature advanced hydraulics, fuel-efficient engines, and air-conditioned cabs for maximum productivity.",
+      noMaintenance: "All maintenance and servicing handled by our technicians. 24/7 support ensures rapid response to any issues.",
+      flexibility: "Scale from CAT 950 to 966 based on project needs. No long-term commitments, storage costs, or resale hassles."
     },
     variants: [
       { name: "950 CAT Wheel Loader for Rent", slug: "950", capacity: "950 Model", description: "The CAT 950 wheel loader delivers exceptional productivity for medium to large-scale construction and loading operations across the UAE. Renowned for its reliability, fuel efficiency, and comfortable operator environment, the 950 is the workhorse of choice for contractors, quarry operators, and logistics facilities. Features include a high-capacity bucket, advanced load-sensing hydraulics, and Caterpillar's proven powertrain technology.", applications: ["General construction sites", "Material handling yards", "Road works and infrastructure", "Aggregate loading operations"], specifications: ["Model: Caterpillar 950", "Operating weight: 17-18 tons", "Bucket capacity: 2.5-3.5 m³", "Engine: Cat C7.1 ACERT™", "Fuel efficient design"] },
@@ -250,7 +265,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       { name: "Backhoe Loader for Rent", slug: "backhoe-loader" },
       { name: "Skid Steer Loader for Rent", slug: "skid-steer" }
     ],
-    image: "/src/assets/equipment/wheel-loader.webp"
+    image: wheelLoaderImg
   },
   "backhoe-loader": {
     name: "JCB Backhoe Loader",
@@ -289,11 +304,11 @@ export const equipmentData: Record<string, EquipmentData> = {
       "Flexible daily, weekly, monthly rental options"
     ],
     whyChoose: {
-      intro: "Contractors and construction companies across Dubai, Abu Dhabi, and the UAE trust the JCB backhoe loader for its unmatched versatility. Whether you're digging trenches, loading trucks, clearing sites, or performing precision excavation work, the 3CX delivers two machines' capability in one compact package—saving you money, time, and site logistics headaches.",
-      costEffective: "Renting separate excavator and loader equipment doubles your rental costs, transport fees, and operator requirements. The JCB 3CX backhoe loader rental from Western Eagle Transport eliminates this redundancy. One machine, one operator, one rental fee—yet you get full excavation and loading capability. For contractors bidding on mixed-task projects, this cost efficiency translates directly into competitive pricing and improved profit margins.",
-      latestModels: "Our JCB 3CX fleet features the latest generation backhoe loaders with powerful Stage V engines, smooth EcoMAX technology, and the precise controls that have made JCB the global leader in backhoe design. Extended dipper options provide exceptional reach, while modern ROPS/FOPS cabs offer operator protection and all-day comfort with excellent visibility from every angle.",
-      noMaintenance: "Backhoe loaders are complex machines with hydraulic, mechanical, and electrical systems that require expert maintenance. When you rent from Western Eagle Transport, our certified technicians handle all servicing using genuine JCB parts. You receive a reliable, job-ready machine with our 24/7 support guarantee—any issues are addressed rapidly to minimize your project downtime.",
-      flexibility: "Construction phases demand different equipment configurations. JCB backhoe rental gives you the flexibility to tackle trenching one day and material loading the next with the same machine. Scale your equipment count up or down based on project phases, return equipment when the job is done, and avoid the long-term commitment of equipment ownership."
+      intro: "The JCB 3CX delivers two machines in one—saving money, time, and logistics headaches on mixed-task projects.",
+      costEffective: "One machine, one operator, one rental fee for full excavation and loading capability. Improved profit margins for contractors.",
+      latestModels: "Latest JCB 3CX with Stage V engines, EcoMAX technology, extended dipper options, and modern ROPS/FOPS cabs.",
+      noMaintenance: "Certified technicians handle all servicing with genuine JCB parts. 24/7 support minimizes project downtime.",
+      flexibility: "Tackle trenching and loading with the same machine. Scale equipment based on project phases without long-term commitments."
     },
     variants: [
       { name: "JCB 3CX Backhoe Loader for Rent", slug: "3cx", capacity: "3CX Model", description: "The JCB 3CX is the world's most popular and trusted backhoe loader, delivering exceptional versatility for construction, excavation, and material handling tasks across the UAE. Features include 4-wheel drive capability, extendable dipper option, multiple attachment compatibility, and the renowned JCB build quality that ensures reliability on demanding job sites.", applications: ["General construction sites", "Trenching and excavation", "Material loading and handling", "Road works and utilities"], specifications: ["Model: JCB 3CX", "4WD capability as standard", "Extendable dipper available", "Multiple attachment options", "Stage V compliant engine"], brochure: "/brochures/jcb-3cx.pdf" }
@@ -303,7 +318,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       { name: "Mini Excavator for Rent", slug: "excavator" },
       { name: "Skid Steer Loader for Rent", slug: "skid-steer" }
     ],
-    image: "/src/assets/equipment/backhoe.webp"
+    image: backhoeImg
   },
   "boom-loader": {
     name: "Boom Loader",
@@ -350,7 +365,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       { name: "14m Boom Loader for Rent", slug: "14m", capacity: "14 Meters", description: "Extended 14-meter boom loader/telehandler for construction projects requiring height and reach. Perfect for multi-story construction and industrial material handling.", applications: ["Construction", "Industrial facilities", "Infrastructure"], specifications: ["Lift height: 14m", "Extended boom", "High capacity"] },
       { name: "17m Boom Loader for Rent", slug: "17m", capacity: "17 Meters", description: "High-reach 17-meter boom loader for demanding projects requiring exceptional height. Maximum reach for the most challenging material placement tasks.", applications: ["High-reach projects", "Major construction", "Specialized applications"], specifications: ["Lift height: 17m", "Maximum reach", "Heavy-duty design"] }
     ],
-    image: "/src/assets/equipment/telehandler.webp"
+    image: telehandlerImg
   },
   roller: {
     name: "Roller",
@@ -396,7 +411,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     variants: [
       { name: "Single Drum Roller for Rent", slug: "single-drum", capacity: "Single Drum", description: "Professional single drum vibratory roller for road construction and compaction work. Ideal for asphalt and sub-base compaction across construction projects in the UAE.", applications: ["Road construction", "Asphalt compaction", "General compaction"], specifications: ["Single drum design", "Vibratory compaction", "Water spray system"], brochure: "/brochures/roller.pdf" }
     ],
-    image: "/src/assets/equipment/roller.webp"
+    image: rollerImg
   },
   manlift: {
     name: "Manlift",
@@ -447,7 +462,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       { name: "Diesel 800AJ Articulated Manlift", slug: "800aj", capacity: "800AJ", description: "Diesel 800AJ high-capacity articulated manlift for exceptional height and reach. Perfect for tall structures and challenging access situations.", applications: ["Tall structures", "Exceptional heights", "Industrial stacks"], specifications: ["High-reach articulating boom", "Maximum platform capacity", "All-terrain tires"], brochure: "/brochures/manlift-800aj.pdf" },
       { name: "Diesel 860AJ Telescopic Manlift", slug: "860aj", capacity: "860AJ", description: "Diesel 860AJ telescopic manlift offering maximum working height for the most demanding aerial work applications.", applications: ["Maximum height projects", "Special applications", "Industrial facilities"], specifications: ["Telescopic boom", "Maximum working height", "Heavy-duty construction"], brochure: "/brochures/manlift-860aj.pdf" }
     ],
-    image: "/src/assets/equipment/manlift.webp"
+    image: manliftImg
   },
   "scissor-lift": {
     name: "Scissor Lift",
@@ -496,7 +511,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       { name: "Electric Scissor Lift 22m for Rent", slug: "22m", capacity: "22 Meters", description: "High-reach 22-meter electric scissor lift for demanding indoor projects requiring maximum height with stable platform.", applications: ["High indoor work", "Large warehouses", "Industrial buildings"], specifications: ["Working height: 22m", "Electric powered", "Maximum indoor reach"] },
       { name: "Diesel Scissor Lift for Rent", slug: "diesel", capacity: "Diesel", description: "Diesel-powered rough terrain scissor lift for outdoor construction sites. All-terrain capability with powerful engine for demanding conditions.", applications: ["Outdoor construction", "Rough terrain", "Building facades"], specifications: ["Diesel powered", "All-terrain tires", "Rough terrain capable"] }
     ],
-    image: "/src/assets/equipment/scissor-lift.webp"
+    image: scissorLiftImg
   },
   generator: {
     name: "Generator",
@@ -542,7 +557,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     variants: [
       { name: "Generator for Rent", slug: "standard", capacity: "Various", description: "Professional diesel generators available for construction sites, events, and backup power applications. Various capacities available to match your specific power requirements across the UAE.", applications: ["Construction sites", "Events", "Backup power"], specifications: ["Various kVA options", "Diesel powered", "Low noise operation"] }
     ],
-    image: "/src/assets/equipment/generator.webp"
+    image: generatorImg
   },
   "skid-steer": {
     name: "Skid Steer Loader",
@@ -588,7 +603,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     variants: [
       { name: "Skid Steer Bobcat for Rent", slug: "bobcat", capacity: "Bobcat", description: "Versatile Bobcat skid steer loader for construction, landscaping, and material handling applications. Zero-turn maneuverability with multiple attachment compatibility.", applications: ["General construction", "Landscaping", "Material handling"], specifications: ["Zero-turn capable", "Multiple attachments", "Compact design"], brochure: "/brochures/skid-steer-bobcat.pdf" }
     ],
-    image: "/src/assets/equipment/skid-steer.webp"
+    image: skidSteerImg
   },
   "recovery-truck": {
     name: "Recovery Truck",
@@ -634,7 +649,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     variants: [
       { name: "10 Ton Recovery Truck for Rent", slug: "10-ton", capacity: "10 Ton", description: "Professional 10-ton recovery truck for vehicle recovery and machinery transport. Equipped with hydraulic systems, winches, and operated by experienced recovery professionals.", applications: ["Vehicle recovery", "Machinery transport", "Emergency towing"], specifications: ["10-ton capacity", "Hydraulic systems", "GPS tracked"] }
     ],
-    image: "/src/assets/equipment/recovery-truck.webp"
+    image: recoveryTruckImg
   },
   compressor: {
     name: "Compressor",
@@ -680,7 +695,7 @@ export const equipmentData: Record<string, EquipmentData> = {
     variants: [
       { name: "Air Compressor for Rent", slug: "air-compressor", capacity: "Various CFM", description: "Professional air compressors available for construction and industrial applications. Various CFM capacities to power pneumatic tools, sandblasting, and spray painting operations.", applications: ["Construction", "Industrial applications", "Surface preparation"], specifications: ["Various CFM options", "Diesel powered", "Portable towable"] }
     ],
-    image: "/src/assets/equipment/compressor.webp"
+    image: compressorImg
   },
   "passenger-bus": {
     name: "Passenger Bus",
@@ -728,7 +743,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       { name: "34 Seater Passenger Bus for Rent", slug: "34-seater", capacity: "34 Seats", description: "Medium capacity 34-seater bus for general staff transport and corporate needs. Comfortable seating with air conditioning for daily routes.", applications: ["Staff transport", "Medium groups", "Daily runs"], specifications: ["34 passenger capacity", "AC equipped", "Comfortable seating"] },
       { name: "66 Seater Passenger Bus for Rent", slug: "66-seater", capacity: "66 Seats", description: "Large 66-seater bus for major workforce transport, events, and long-distance travel. Maximum capacity with full comfort features.", applications: ["Large workforce", "Major events", "Long distance"], specifications: ["66 passenger capacity", "Full AC", "Maximum comfort"] }
     ],
-    image: "/src/assets/equipment/bus.webp"
+    image: busImg
   }
 };
 
