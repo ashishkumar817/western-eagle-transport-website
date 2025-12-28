@@ -72,7 +72,7 @@ const StatsSection = () => {
 
   return (
     <section className="py-16 bg-charcoal border-y border-border">
-      <div className="container-custom">
+      <div className="container-custom px-6">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div key={stat.label}>

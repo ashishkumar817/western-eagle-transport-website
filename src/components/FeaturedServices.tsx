@@ -23,7 +23,7 @@ const FeaturedServices = () => {
 
   return (
     <section id="services" className="section-padding bg-background">
-      <div className="container-custom">
+      <div className="container-custom px-6">
         {/* Header */}
         <div className="text-center mb-8 md:mb-12">
           <p className="text-primary font-heading uppercase tracking-[0.2em] mb-2">

@@ -13,7 +13,7 @@ const AboutSection = () => {
 
   return (
     <section id="about" className="section-padding bg-secondary">
-      <div className="container-custom">
+      <div className="container-custom px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image */}
           <div className="relative animate-on-scroll">
