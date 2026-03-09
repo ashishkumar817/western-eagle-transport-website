@@ -68,7 +68,7 @@ const StatsSection = () => {
     { value: "10", suffix: "+", label: "Years Experience" },
     { value: "100", suffix: "+", label: "Equipment Fleet" },
     { value: "500", suffix: "+", label: "Happy Clients" },
-    { value: "", suffix: "", label: "Trusted Across UAE" },
+    { value: "", suffix: "", label: "Wide Coverage" },
   ];
 
   return (

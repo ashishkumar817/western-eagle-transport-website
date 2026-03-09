@@ -40,7 +40,7 @@ const BlogPost = () => {
         <title>{post.title} | Western Eagle Transport Blog</title>
         <meta name="description" content={post.excerpt} />
         <meta name="keywords" content="heavy equipment rental, construction equipment UAE, equipment tips, Abu Dhabi" />
-        <link rel="canonical" href={`https://westerneagle.ae/blog/${slug}`} />
+        <link rel="canonical" href={`westerneagletransportllc.com/blog/${slug}`} />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:type" content="article" />
@@ -101,10 +101,11 @@ const BlogPost = () => {
                     ))}
                     
                     {section.bullets && (
-                      <ul className="list-disc list-inside space-y-2 mb-4 text-muted-foreground">
+                      <ul className="space-y-2 mb-4">
                         {section.bullets.map((bullet, bIndex) => (
-                          <li key={bIndex} className="text-lg leading-relaxed">
-                            <span className="text-primary">•</span> {bullet}
+                          <li key={bIndex} className="flex items-start gap-2 text-lg text-muted-foreground">
+                            <span className="text-primary mt-1">•</span>
+                            <span>{bullet}</span>
                           </li>
                         ))}
                       </ul>

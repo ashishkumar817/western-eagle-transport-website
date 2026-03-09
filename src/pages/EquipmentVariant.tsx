@@ -51,7 +51,7 @@ const EquipmentVariant = () => {
         <title>{variant.name} for Rent in UAE | Western Eagle Transport</title>
         <meta name="description" content={`${variant.description} Rent ${variant.name} in Dubai, Abu Dhabi, Sharjah. Professional service, competitive rates.`} />
         <meta name="keywords" content={`${variant.name} rental UAE, ${variant.capacity} ${equipment.name} for rent Dubai, heavy equipment rental Abu Dhabi`} />
-        <link rel="canonical" href={`https://westerneagle.ae/equipment/${slug}/${variantSlug}`} />
+        <link rel="canonical" href={`https://westerneagletransportllc.com/equipment/${slug}/${variantSlug}`} />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
       
@@ -72,7 +72,7 @@ const EquipmentVariant = () => {
                 </Link>
               </nav>
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
-                {variant.name} for Rent in UAE
+                {variant.name} 
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mb-8">
                 Professional {variant.capacity} {equipment.name.toLowerCase()} rental services across Dubai, Abu Dhabi & Sharjah

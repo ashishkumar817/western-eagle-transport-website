@@ -1,16 +1,20 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 // ============================================
 // HERO IMAGE PATH - Add your image to public/assets/
 // ============================================
 const heroImage = "/assets/hero-bg.webp";
 
+
+
 const HeroSection = () => {
   return (
     <section
-      id="home"
-      className="relative min-h-screen flex items-center justify-center pt-20"
-    >
+  id="home"
+  className="relative min-h-[100svh] flex items-center justify-center pt-16 sm:pt-20"
+>
+
       {/* Background Image - using img for LCP optimization */}
       <img
         src={heroImage}
@@ -25,8 +29,8 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="container-custom px-6 relative z-10 text-center py-12 md:py-20">
-        <p className="text-white/50 dark:text-muted-foreground/60 text-xs md:text-base font-medium tracking-wide mb-3 md:mb-6 animate-fade-up">
-          Western Eagle Transport Company
+        <p className="text-white/80 md:text-white/60 text-xs md:text-base font-medium tracking-wide mb-2 md:mb-4 animate-fade-up">
+          Western Eagle Transport LLC
         </p>
         
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white dark:text-foreground mb-3 md:mb-4 animate-fade-up delay-100 leading-tight">
@@ -34,11 +38,11 @@ const HeroSection = () => {
           <span className="text-primary block md:inline">Rental Company</span>
         </h1>
         
-        <p className="text-base md:text-xl text-white/90 dark:text-muted-foreground max-w-2xl mx-auto mb-2 md:mb-4 font-light animate-fade-up delay-200">
+<p className="text-white/75 md:text-white/60 text-xs md:text-sm mb-6 md:mb-10 animate-fade-up delay-300">
           Powering Projects with Reliable Machinery
         </p>
         
-        <p className="text-white/50 dark:text-muted-foreground/60 text-xs md:text-sm mb-6 md:mb-10 animate-fade-up delay-300">
+<p className="text-white/75 md:text-white/60 text-xs md:text-sm mb-6 md:mb-10 animate-fade-up delay-300">
           Serving UAE – Dubai – Abu Dhabi – Sharjah
         </p>
         
@@ -54,7 +58,14 @@ const HeroSection = () => {
             size="lg" 
             variant="outline" 
             className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-primary"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => {
+  const el = document.getElementById("contact");
+  if (el) {
+    const y = el.getBoundingClientRect().top + window.pageYOffset - 80;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+}}
+
           >
             Get a Quote
           </Button>

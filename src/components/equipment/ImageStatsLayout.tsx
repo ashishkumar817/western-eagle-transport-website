@@ -16,7 +16,7 @@ const ImageStatsLayout = forwardRef<HTMLDivElement, ImageStatsLayoutProps>(
   const stats = [
     { icon: Users, value: "500+", label: "Happy Clients" },
     { icon: Truck, value: "24/7", label: "Support" },
-    { icon: Award, value: "15+", label: "Years Experience" },
+    { icon: Award, value: "10+", label: "Years Experience" },
     { icon: Shield, value: "100%", label: "Safety Certified" },
   ];
 
@@ -35,7 +35,7 @@ const ImageStatsLayout = forwardRef<HTMLDivElement, ImageStatsLayoutProps>(
         
         <div className="container-custom px-4 relative z-10 py-20">
           <nav className="mb-8">
-            <Link to="/#equipment" className="inline-flex items-center text-primary hover:underline text-sm font-medium">
+            <Link to="/equipment" className="inline-flex items-center text-primary hover:underline text-sm font-medium">
               <ArrowLeft className="w-4 h-4 mr-2" /> Back to Equipment
             </Link>
           </nav>
@@ -215,7 +215,7 @@ const ImageStatsLayout = forwardRef<HTMLDivElement, ImageStatsLayoutProps>(
                 name={variant.name}
                 slug={variant.slug}
                 parentSlug={slug}
-                image={equipment.image}
+                image={variant.image}
               />
             ))}
           </div>

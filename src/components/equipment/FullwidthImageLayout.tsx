@@ -28,7 +28,7 @@ const FullwidthImageLayout = forwardRef<HTMLDivElement, FullwidthImageLayoutProp
         
         <div className="container-custom px-4 relative z-10 text-center py-20">
           <nav className="mb-8">
-            <Link to="/#equipment" className="inline-flex items-center text-primary hover:underline text-sm font-medium justify-center">
+            <Link to="/equipment" className="inline-flex items-center text-primary hover:underline text-sm font-medium justify-center">
               <ArrowLeft className="w-4 h-4 mr-2" /> Back to Equipment
             </Link>
           </nav>
@@ -232,7 +232,7 @@ const FullwidthImageLayout = forwardRef<HTMLDivElement, FullwidthImageLayoutProp
                 name={variant.name}
                 slug={variant.slug}
                 parentSlug={slug}
-                image={equipment.image}
+                image={variant.image}
               />
             ))}
           </div>

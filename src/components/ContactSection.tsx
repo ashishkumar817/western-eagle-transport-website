@@ -54,22 +54,32 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="section-padding bg-secondary">
+    <section
+  id="contact"
+  className="pt-24 pb-12 sm:pt-32 sm:pb-20 bg-secondary"
+>
+
       <div className="container-custom px-6">
         {/* Header */}
-        <div className="text-center mb-16">
+       <div className="text-center mb-10 sm:mb-14">
           <p className="section-label">
             Get In Touch
           </p>
-          <h2 className="heading-secondary text-foreground mb-4">Contact Us</h2>
-          <p className="text-muted-foreground italic text-lg">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading text-foreground mb-3">
+  Contact Us
+</h2>
+
+<p className="text-muted-foreground italic text-sm sm:text-base">
+
             Have questions about our equipment or services? Reach out to us today.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+       <div className="grid lg:grid-cols-2 gap-8">
+
           {/* Contact Form */}
-          <div className="bg-card p-8 rounded-lg border border-border animate-on-scroll">
+          <div className="bg-card p-6 sm:p-8 rounded-lg border border-border order-1 lg:order-none">
+
             <div className="flex items-center justify-center gap-3 mb-6">
               <MessageSquare className="w-6 h-6 text-primary" />
               <h3 className="heading-tertiary text-foreground">
@@ -159,11 +169,11 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Info & Map */}
-          <div className="space-y-6">
+          <div className="space-y-6 order-2 lg:order-none">
             {/* Contact Cards */}
             <div className="grid sm:grid-cols-2 gap-4">
               {/* Address */}
-              <div className="bg-card p-5 rounded-lg border border-border animate-on-scroll flex items-start gap-4">
+              <div className="bg-card p-5 rounded-lg border border-border flex items-start gap-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-6 h-6 text-primary" />
                 </div>
@@ -176,7 +186,7 @@ const ContactSection = () => {
               </div>
 
               {/* Phone */}
-              <div className="bg-card p-5 rounded-lg border border-border animate-on-scroll flex items-start gap-4">
+<div className="bg-card p-5 rounded-lg border border-border flex items-start gap-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Phone className="w-6 h-6 text-primary" />
                 </div>
@@ -192,7 +202,7 @@ const ContactSection = () => {
               </div>
 
               {/* Email */}
-              <div className="bg-card p-5 rounded-lg border border-border animate-on-scroll flex items-start gap-4">
+<div className="bg-card p-5 rounded-lg border border-border flex items-start gap-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
@@ -205,7 +215,7 @@ const ContactSection = () => {
               </div>
 
               {/* Working Hours */}
-              <div className="bg-card p-5 rounded-lg border border-border animate-on-scroll flex items-start gap-4">
+<div className="bg-card p-5 rounded-lg border border-border flex items-start gap-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Clock className="w-6 h-6 text-primary" />
                 </div>
@@ -219,28 +229,30 @@ const ContactSection = () => {
             </div>
 
             {/* Map */}
-            <div className="animate-on-scroll">
-              <div className="flex items-center gap-2 mb-4 justify-center">
-                <MapPin className="w-5 h-5 text-primary" />
-                <h3 className="heading-tertiary text-foreground">Our Location</h3>
+              <div>
+                <div className="flex items-center gap-2 mb-4 justify-center">
+                  <MapPin className="w-5 h-5 text-primary" />
+                  <h3 className="heading-tertiary text-foreground">Our Location</h3>
+                </div>
+
+                <div className="bg-card rounded-lg border border-border overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3635.0258213263446!2d54.471253875354506!3d24.345593178268913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e405eeee92e83%3A0xec5e3e72ef2bb44c!2sElite%20Business%20Zone%20Investment!5e0!3m2!1sen!2sin!4v1766849313822!5m2!1sen!2sin"
+                    className="w-full h-64 sm:h-80"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Western Eagle Transport Location"
+                  />
+                </div>
               </div>
-              <div className="bg-card rounded-lg border border-border overflow-hidden">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3635.0258213263446!2d54.471253875354506!3d24.345593178268913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e405eeee92e83%3A0xec5e3e72ef2bb44c!2sElite%20Business%20Zone%20Investment!5e0!3m2!1sen!2sin!4v1766849313822!5m2!1sen!2sin" 
-                  width="100%" 
-                  height="280" 
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Western Eagle Transport Location"
-                  className="w-full"
-                />
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
+      <center><h2>Contact Heavy Equipment Rental Company in Abu Dhabi</h2></center>
+
     </section>
   );
 };

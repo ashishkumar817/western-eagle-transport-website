@@ -1,21 +1,13 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { servicesList } from "@/lib/data";
+import { serviceImages } from "@/lib/serviceImages";
+
 
 // ============================================
 // SERVICE IMAGE PATHS - Add your images to public/assets/services/
 // ============================================
-const serviceImages: Record<string, string> = {
-  "leasing-machineries-equipments": "/assets/services/leasing-machineries.webp",
-  "supply-trained-operators": "/assets/services/trained-operators.webp",
-  "equipment-repair-maintenance": "/assets/services/repair-maintenance.webp",
-  "quality-assured-equipment": "/assets/services/quality-assured.webp",
-  "welding-cutting-equipment": "/assets/services/welding-cutting.webp",
-  "heavy-duty-construction": "/assets/services/heavy-duty-construction.webp",
-  "scaffolding": "/assets/services/scaffolding.webp",
-  "logistic-operator-support": "/assets/services/logistic-support.webp",
-  "workshop-maintenance": "/assets/services/workshop-maintenance.webp",
-};
+
 
 const FeaturedServices = () => {
   // Show only first 6 services
@@ -46,7 +38,7 @@ const FeaturedServices = () => {
               className="group relative overflow-hidden rounded-lg aspect-[4/3] block animate-on-scroll"
             >
               <img
-                src={serviceImages[service.slug] || "/assets/services/default.webp"}
+                src={serviceImages[service.slug]}
                 alt={service.name}
                 loading="lazy"
                 width={280}

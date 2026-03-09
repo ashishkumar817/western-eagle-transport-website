@@ -15,8 +15,10 @@ import { getEquipmentBySlug, equipmentData } from "@/lib/equipmentData";
 const phoneNumber = "971505567467";
 
 const EquipmentDetail = () => {
-  const { slug } = useParams();
-  const equipment = slug ? getEquipmentBySlug(slug) : null;
+  
+  const { slug } = useParams<{ slug: string }>();
+const equipment = slug ? getEquipmentBySlug(slug) : undefined;
+
 
   if (!equipment) {
     return (
@@ -24,8 +26,8 @@ const EquipmentDetail = () => {
         <Header />
         <main className="pt-32 pb-20 text-center">
           <h1 className="heading-secondary text-foreground">Equipment Not Found</h1>
-          <Link to="/" className="text-primary hover:underline mt-4 inline-block">
-            Go back to home
+          <Link to="/equipment" className="text-primary mt-4">
+             Go back to Equipment
           </Link>
         </main>
         <Footer />
@@ -45,6 +47,22 @@ const EquipmentDetail = () => {
       availability: "https://schema.org/InStock"
     }
   };
+
+  const faqSchema =
+  equipment.faq && equipment.faq.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: equipment.faq.map((item) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.a
+          }
+        }))
+      }
+    : null;
 
   const relatedEquipment = equipment.relatedEquipment || [];
 
@@ -69,8 +87,14 @@ const EquipmentDetail = () => {
         <title>{equipment.heroTitle} | Western Eagle Transport</title>
         <meta name="description" content={equipment.metaDescription} />
         <meta name="keywords" content={`${equipment.name} rental, ${equipment.name} for rent UAE, ${equipment.name} rental Dubai, ${equipment.name} rental Abu Dhabi, heavy equipment rental UAE, ${equipment.name} hire`} />
-        <link rel="canonical" href={`https://westerneagle.ae/equipment/${slug}`} />
+        <link rel="canonical" href={`https://westerneagletransportllc.com/equipment/${slug}`} />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+        {faqSchema && (
+  <script type="application/ld+json">
+    {`${JSON.stringify(faqSchema)}`}
+  </script>
+)}
+
       </Helmet>
       
       <div className="min-h-screen bg-background">
@@ -78,10 +102,70 @@ const EquipmentDetail = () => {
         <FloatingButtons />
         
         <main className="pt-28">
+          
           {renderLayout()}
+
+                      {/* Local SEO Content Section */}
+            {equipment?.seoContent && (
+  <section className="section-padding bg-background border-t border-border">
+    <div className="container-custom max-w-5xl">
+
+      <h2 className="heading-secondary mb-8">
+        {equipment.seoContent.h2}
+      </h2>
+
+      <div className="space-y-10">
+        {equipment.seoContent.sections.map((section, i) => (
+          <div key={i}>
+            <h3 className="text-xl font-semibold mb-4">
+              {section.title}
+            </h3>
+            <div className="space-y-3 text-muted-foreground leading-relaxed">
+              {section.content.map((text, j) => (
+                <p key={j}>{text}</p>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+  
+)}
+{/* FAQ Section */}
+{equipment?.faq && equipment.faq.length > 0 && (
+  <section className="section-padding bg-secondary border-t border-border">
+    <div className="container-custom max-w-4xl mx-auto">
+
+      <h2 className="heading-secondary mb-8">
+        Frequently Asked Questions
+      </h2>
+
+      <div className="space-y-6">
+        {equipment.faq.map((item, index) => (
+          <div
+            key={index}
+            className="bg-card p-6 rounded-xl border border-border"
+          >
+            <h3 className="text-lg font-semibold text-foreground mb-2">
+              {item.q}
+            </h3>
+            <p className="text-muted-foreground leading-relaxed">
+              {item.a}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+)}
+
 
           {/* CTA Section - Common for all layouts */}
           <section className="bg-gradient-to-r from-primary to-primary/80 py-20">
+          
             <div className="container-custom px-4 text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
                 Ready to Rent {equipment.name}?
@@ -102,6 +186,7 @@ const EquipmentDetail = () => {
                 </Button>
               </div>
             </div>
+            
           </section>
         </main>
         
@@ -113,6 +198,7 @@ const EquipmentDetail = () => {
 
 // Default Layout Component (for forklift, wheel-loader, backhoe-loader)
 const DefaultLayout = ({ equipment, slug, phoneNumber, relatedEquipment }: any) => {
+  
   return (
     <>
       {/* Hero Section */}
@@ -124,7 +210,7 @@ const DefaultLayout = ({ equipment, slug, phoneNumber, relatedEquipment }: any) 
         
         <div className="container-custom px-4 relative z-10">
           <nav className="mb-8">
-            <Link to="/#equipment" className="inline-flex items-center text-primary hover:underline text-sm font-medium">
+            <Link to="/equipment" className="inline-flex items-center text-primary hover:underline text-sm font-medium">
               <ArrowLeft className="w-4 h-4 mr-2" /> Back to Equipment
             </Link>
           </nav>
@@ -346,51 +432,55 @@ const DefaultLayout = ({ equipment, slug, phoneNumber, relatedEquipment }: any) 
                 name={variant.name}
                 slug={variant.slug}
                 parentSlug={slug}
-                image={equipment.image}
+                image={variant.image}
               />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Related Equipment */}
-      {relatedEquipment.length > 0 && (
-        <section className="section-padding">
-          <div className="container-custom px-4">
-            <div className="text-center mb-10">
-              <span className="text-primary font-semibold text-sm uppercase tracking-wider">Related Equipment</span>
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-2">
-                You May Also Need
-              </h2>
-            </div>
-            
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {relatedEquipment.map((related: any) => {
-                const relatedData = equipmentData[related.slug];
-                return (
-                  <Link
-                    key={related.slug}
-                    to={`/equipment/${related.slug}`}
-                    className="group bg-card p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300"
-                  >
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                        {related.name}
-                      </h3>
-                      <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
-                    </div>
-                    {relatedData && (
-                      <p className="text-sm text-muted-foreground mt-2 line-clamp-2">
-                        {relatedData.heroSubtitle}
-                      </p>
-                    )}
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      )}
+      
+      {/* ✅ Related Equipment Section */}
+{relatedEquipment && relatedEquipment.length > 0 && (
+  <section className="section-padding bg-background border-t">
+    <div className="container-custom px-4">
+
+      <div className="text-center mb-12">
+        <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+          Related Equipment
+        </span>
+
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
+          Explore Other Rental Options
+        </h2>
+
+        <p className="text-muted-foreground max-w-2xl mx-auto mt-3">
+          Customers who rent {equipment.name} also frequently request these machines.
+        </p>
+      </div>
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {relatedEquipment.map((item: any, index: number) => (
+          <Link
+            key={index}
+            to={`/equipment/${item.slug}`}
+            className="group bg-card border border-border rounded-xl p-6 hover:border-primary/60 hover:shadow-lg transition-all"
+          >
+            <h3 className="text-lg font-semibold text-foreground group-hover:text-primary">
+              {item.name}
+            </h3>
+
+            <p className="text-muted-foreground text-sm mt-2">
+              View details and rental availability →
+            </p>
+          </Link>
+        ))}
+      </div>
+
+    </div>
+  </section>
+)}
+
     </>
   );
 };

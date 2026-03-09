@@ -14,7 +14,7 @@ const Blog = () => {
         <title>Blog | Heavy Equipment Rental Insights | Western Eagle Transport</title>
         <meta name="description" content="Stay updated with the latest news, tips, and insights about heavy equipment rental and transport services." />
         <meta name="keywords" content="heavy equipment blog, construction machinery articles, equipment rental tips UAE, Abu Dhabi" />
-        <link rel="canonical" href="https://westerneagle.ae/blog" />
+        <link rel="canonical" href="https://westerneagletransportllc.com/blog" />
       </Helmet>
       
       <div className="min-h-screen bg-background">

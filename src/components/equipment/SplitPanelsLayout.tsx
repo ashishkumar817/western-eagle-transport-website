@@ -16,17 +16,17 @@ const SplitPanelsLayout = forwardRef<HTMLDivElement, SplitPanelsLayoutProps>(
     return (
       <div ref={ref}>
       {/* Hero - Split Screen */}
-      <section className="min-h-[90vh] grid lg:grid-cols-2">
+      <section className="min-h-[70vh] lg:min-h-[90vh] grid lg:grid-cols-2">
         {/* Left - Content */}
         <div className="bg-secondary flex items-center p-8 md:p-16 order-2 lg:order-1">
           <div>
             <nav className="mb-8">
-              <Link to="/#equipment" className="inline-flex items-center text-primary hover:underline text-sm font-medium">
+              <Link to="/equipment" className="inline-flex items-center text-primary hover:underline text-sm font-medium">
                 <ArrowLeft className="w-4 h-4 mr-2" /> Back to Equipment
               </Link>
             </nav>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
               {equipment.heroTitle}
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
@@ -154,10 +154,10 @@ const SplitPanelsLayout = forwardRef<HTMLDivElement, SplitPanelsLayoutProps>(
       </section>
 
       {/* Split Image Break */}
-      <section className="grid md:grid-cols-2 h-96">
+      <section className="grid md:grid-cols-2 min-h-[24rem] relative z-0">
         <div className="bg-primary p-12 flex items-center justify-center">
           <div className="text-center">
-            <p className="text-6xl font-bold text-primary-foreground">15+</p>
+            <p className="text-6xl font-bold text-primary-foreground">10+</p>
             <p className="text-primary-foreground/80 mt-2">Years of Excellence</p>
           </div>
         </div>
@@ -220,7 +220,8 @@ const SplitPanelsLayout = forwardRef<HTMLDivElement, SplitPanelsLayoutProps>(
       </section>
 
       {/* Available Options */}
-      <section className="section-padding bg-secondary">
+      {/* Available Options */}
+      <section className="section-padding bg-secondary mt-12 md:mt-24 relative z-10">
         <div className="container-custom px-4">
           <div className="text-center mb-12">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Fleet</span>
@@ -236,7 +237,7 @@ const SplitPanelsLayout = forwardRef<HTMLDivElement, SplitPanelsLayoutProps>(
                 name={variant.name}
                 slug={variant.slug}
                 parentSlug={slug}
-                image={equipment.image}
+                image={variant.image}
               />
             ))}
           </div>

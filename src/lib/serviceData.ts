@@ -118,7 +118,7 @@ export const servicesData: Record<string, ServiceData> = {
     whyChooseUs: {
       title: "Why Lease from Western Eagle?",
       points: [
-        "20+ years of equipment leasing experience in UAE",
+        "10+ years of equipment leasing experience in UAE",
         "Fleet of 500+ well-maintained machines",
         "24/7 breakdown support across all Emirates",
         "Competitive rates with no hidden charges",
@@ -129,7 +129,6 @@ export const servicesData: Record<string, ServiceData> = {
     faqs: [
       { question: "What types of equipment can I lease from Western Eagle?", answer: "We offer leasing for excavators, wheel loaders, cranes, forklifts, manlifts, generators, compressors, and a complete range of construction and industrial equipment." },
       { question: "Is maintenance included in the lease?", answer: "Yes, all our standard leases include preventive maintenance, routine servicing, and emergency breakdown support at no additional cost." },
-      { question: "What is the minimum lease duration?", answer: "Our minimum lease term is one month, with discounted rates for longer commitments of 6 months or more." },
       { question: "Do you provide equipment operators with leased machinery?", answer: "Yes, we offer trained and certified operators as an optional add-on service with any equipment lease." },
       { question: "Can I lease equipment for projects outside Dubai?", answer: "Absolutely. We serve all Emirates including Abu Dhabi, Sharjah, Ajman, RAK, Fujairah, and UAQ with consistent service quality." },
       { question: "What happens if the equipment breaks down?", answer: "Our 24/7 support team will dispatch a technician immediately. If repairs cannot be completed on-site within 4 hours, we provide a replacement machine." }
@@ -266,7 +265,7 @@ export const servicesData: Record<string, ServiceData> = {
       { question: "What brands of equipment do you service?", answer: "We service all major brands including Caterpillar, Komatsu, JCB, Volvo, Hitachi, Liebherr, and more. Our technicians are trained on multiple equipment platforms." },
       { question: "Do you offer preventive maintenance contracts?", answer: "Yes, we offer customized preventive maintenance agreements that include scheduled servicing, inspections, and priority emergency response at discounted rates." },
       { question: "Can you repair equipment at our job site?", answer: "Yes, our mobile service units can perform most repairs on-site. Only major overhauls requiring specialized equipment are done at our workshop." },
-      { question: "What is your warranty on repairs?", answer: "We provide a minimum 90-day warranty on all repairs and replaced parts, with extended warranties available for major component replacements." },
+      
       { question: "How quickly can you get spare parts?", answer: "We maintain extensive parts inventory for common items. For specialized parts, we leverage our supplier network for expedited delivery, typically within 24-72 hours." },
       { question: "Do you provide equipment inspection services?", answer: "Yes, we offer comprehensive pre-purchase inspections, annual safety inspections, and condition assessment reports for equipment fleets." }
     ],
@@ -399,7 +398,7 @@ export const servicesData: Record<string, ServiceData> = {
       ]
     },
     faqs: [
-      { question: "What welding processes do you support?", answer: "We provide equipment for MIG (GMAW), TIG (GTAW), stick (SMAW), flux-cored, and submerged arc welding, plus plasma and oxy-fuel cutting." },
+      
       { question: "Do you supply welding consumables?", answer: "Yes, we stock a wide range of electrodes, welding wire, shielding gases, and cutting consumables for purchase alongside equipment rentals." },
       { question: "Can you provide certified welders?", answer: "Yes, we can supply certified welders for various welding codes and specifications as part of our manpower services." },
       { question: "Is operator training available?", answer: "We offer training programs covering equipment operation, safety procedures, and welding techniques. Training can be conducted at your site or our facility." },
@@ -467,7 +466,7 @@ export const servicesData: Record<string, ServiceData> = {
       ]
     },
     faqs: [
-      { question: "What is your largest excavator?", answer: "We have excavators up to 80 tons capacity. For larger requirements, we can source equipment through our partner network." },
+      
       { question: "Do you provide equipment for road construction?", answer: "Yes, we offer complete road construction packages including graders, rollers, pavers, and material transport equipment." },
       { question: "Can you supply equipment for a 2-year project?", answer: "Absolutely. We specialize in long-term project support with dedicated equipment allocations, competitive pricing, and priority maintenance." },
       { question: "Is GPS tracking available?", answer: "Yes, all our heavy equipment is GPS-enabled for location tracking, operating hours monitoring, and productivity analysis." },
@@ -675,7 +674,6 @@ export const servicesData: Record<string, ServiceData> = {
       { question: "How long does a typical repair take?", answer: "Minor repairs are often completed same-day. Standard services take 1-3 days. Major overhauls are scheduled based on scope but typically 1-2 weeks." },
       { question: "Can you pick up equipment from my site?", answer: "Yes, we offer equipment transport services for workshop repairs. Pickup and delivery can be included in your repair quote." },
       { question: "Do you provide loaner equipment during repairs?", answer: "For major repairs with extended timelines, we can arrange loaner equipment to minimize your operational disruption." },
-      { question: "What warranty do you offer on repairs?", answer: "Standard repairs carry a 90-day warranty. Major component rebuilds and overhauls carry extended warranties up to 12 months." },
       { question: "Can you service equipment from other rental companies?", answer: "Yes, we provide third-party maintenance and repair services for equipment fleet owners and other rental companies." }
     ],
     relatedServices: [

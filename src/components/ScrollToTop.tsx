@@ -5,17 +5,19 @@ const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    if (hash) {
-      // Wait for the page to render, then scroll to the element
-      setTimeout(() => {
+    // If hash exists, scroll ONLY on home page
+    if (hash && pathname === "/") {
+      requestAnimationFrame(() => {
         const element = document.getElementById(hash.slice(1));
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
         }
-      }, 100);
-    } else {
-      window.scrollTo(0, 0);
+      });
+      return;
     }
+
+    // Normal route change → scroll to top
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, [pathname, hash]);
 
   return null;

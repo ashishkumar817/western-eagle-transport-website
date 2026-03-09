@@ -27,7 +27,7 @@ const CenteredMinimalLayout = forwardRef<HTMLDivElement, CenteredMinimalLayoutPr
         
         <div className="container-custom px-4 relative z-10 text-center py-20">
           <nav className="mb-12">
-            <Link to="/#equipment" className="inline-flex items-center text-primary hover:underline text-sm font-medium">
+            <Link to="/equipment" className="inline-flex items-center text-primary hover:underline text-sm font-medium">
               <ArrowLeft className="w-4 h-4 mr-2" /> Back to Equipment
             </Link>
           </nav>
@@ -215,7 +215,7 @@ const CenteredMinimalLayout = forwardRef<HTMLDivElement, CenteredMinimalLayoutPr
                 name={variant.name}
                 slug={variant.slug}
                 parentSlug={slug}
-                image={equipment.image}
+                image={variant.image}
               />
             ))}
           </div>
