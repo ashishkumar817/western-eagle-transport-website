@@ -34,7 +34,7 @@ const About = () => {
       <Helmet>
         <title>About Us | Western Eagle Transport Company</title>
         <meta name="description" content="Learn about Western Eagle Transport Company - UAE's trusted heavy equipment rental partner. ICV certified, modern fleet, professional service." />
-        <link rel="canonical" href="https://westerneagle.ae/about" />
+        <link rel="canonical" href="https://westerneagletransportllc.com/about" />
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -113,7 +113,7 @@ const About = () => {
                     className="btn-primary"
                     asChild
                   >
-                    <Link to="/#contact">
+                    <Link to="/contact">
                       <Phone className="w-5 h-5 mr-2" />
                       Contact Us
                     </Link>

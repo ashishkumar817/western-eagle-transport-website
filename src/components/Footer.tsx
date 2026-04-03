@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin, Shield } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram,Linkedin, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.webp";
 import { equipmentList, servicesList } from "@/lib/data";
@@ -8,9 +8,10 @@ const Footer = forwardRef<HTMLElement, {}>((_props, ref) => {
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
-    { name: "Equipment", href: "/#equipment" },
+    { name: "Equipment", href: "/equipment" },
     { name: "Services", href: "/services" },
-    { name: "Contact", href: "/#contact" },
+    { name: "Contact", href: "/contact" },
+    { name: "Blog", href: "/blog" },
   ];
 
   const equipment = equipmentList.slice(0, 5).map((item) => ({
@@ -24,10 +25,12 @@ const Footer = forwardRef<HTMLElement, {}>((_props, ref) => {
   }));
 
   const socialLinks = [
-    { icon: Facebook, href: "#" },
-    { icon: Twitter, href: "#" },
-    { icon: Instagram, href: "#" },
-    { icon: Linkedin, href: "#" },
+    { icon: Facebook, href: "https://www.facebook.com/share/19A411vwWW/" },
+    
+    { icon: Instagram, href: "https://www.instagram.com/westerneagletransportllc?igsh=bWVoYzYwNWRzMDhh" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/western-eagle-transport-6894853a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { icon: Mail, href: "mailto:sales@westerneagletransportllc.com" },
+    { icon: Phone, href: "tel:+971505567467" },
   ];
 
   return (

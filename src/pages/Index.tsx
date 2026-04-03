@@ -21,11 +21,11 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Western Eagle Transport Company | Heavy Equipment Rental UAE</title>
+        <title>Western Eagle Transport LLC| Heavy Equipment Rental UAE</title>
         <meta name="description" content="Western Eagle Transport Company offers heavy equipment rental in UAE - Dubai, Abu Dhabi, Sharjah. Excavators, cranes, forklifts, generators & more. Call now!" />
         <meta name="keywords" content="heavy equipment rental UAE, construction equipment Dubai, crane rental Abu Dhabi, forklift rental Sharjah, excavator rental" />
-        <link rel="canonical" href="https://westerneagle.ae/" />
-        <meta property="og:title" content="Western Eagle Transport Company | Heavy Equipment Rental UAE" />
+        <link rel="canonical" href="https://westerneagletransportllc.com/" />
+        <meta property="og:title" content="Western Eagle Transport LLC | Heavy Equipment Rental UAE" />
         <meta property="og:description" content="Professional heavy equipment rental services in UAE. Modern fleet, trained operators, competitive pricing." />
         <meta property="og:type" content="website" />
       </Helmet>

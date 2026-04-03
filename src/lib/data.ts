@@ -1,18 +1,74 @@
 export const equipmentList = [
-  { name: "Forklift", slug: "forklift", description: "Industrial forklifts for material handling and warehouse operations." },
-  { name: "Wheel Loader", slug: "wheel-loader", description: "Heavy-duty wheel loaders for construction and loading operations." },
-  { name: "JCB Backhoe Loader", slug: "backhoe-loader", description: "Versatile JCB Backhoe 3CX for excavation and loading tasks." },
-  { name: "Boom Loader", slug: "boom-loader", description: "Telehandlers and boomloaders for reaching high and extended areas." },
-  { name: "Excavator", slug: "excavator", description: "Compact mini excavators for tight spaces and small projects." },
-  { name: "Crane", slug: "crane", description: "Mobile and tower cranes for heavy lifting operations." },
-  { name: "Manlift", slug: "manlift", description: "Aerial work platforms for elevated work access." },
-  { name: "Scissor Lift", slug: "scissor-lift", description: "Scissor lifts for vertical elevation in construction and maintenance." },
-  { name: "Roller", slug: "roller", description: "Road rollers and compactors for road construction." },
-  { name: "Recovery Truck", slug: "recovery-truck", description: "10-ton recovery trucks for vehicle recovery and towing." },
-  { name: "Generator", slug: "generator", description: "Power generators for construction sites and events." },
-  { name: "Compressor", slug: "compressor", description: "Air compressors for pneumatic tools and industrial use." },
-  { name: "Skid Steer Loader", slug: "skid-steer", description: "Bobcat skid steer loaders for versatile construction tasks." },
-  { name: "Passenger Bus", slug: "passenger-bus", description: "Passenger buses for staff and workforce transportation." },
+  {
+    name: "Forklift Rental",
+    slug: "forklift-rental-abu-dhabi",
+    description: "Forklift rental in Abu Dhabi for warehouses, construction sites, and industrial material handling."
+  },
+  {
+    name: "Wheel Loader Rental",
+    slug: "wheel-loader-rental-abu-dhabi",
+    description: "Heavy-duty wheel loader rental in Abu Dhabi for construction and earthmoving projects."
+  },
+  {
+    name: "JCB Backhoe Loader Rental",
+    slug: "jcb-backhoe-loader-rental-abu-dhabi",
+    description: "JCB backhoe loader rental in Abu Dhabi for excavation and loading work."
+  },
+  {
+    name: "Boom Loader Rental",
+    slug: "boom-loader-rental-abu-dhabi",
+    description: "Boom loader and telehandler rental in Abu Dhabi for high-reach operations."
+  },
+  {
+    name: "Excavator Rental",
+    slug: "excavator-rental-abu-dhabi",
+    description: "Excavator rental in Abu Dhabi for digging, demolition, and construction projects."
+  },
+  {
+    name: "Crane Rental",
+    slug: "crane-rental-abu-dhabi",
+    description: "Mobile and tower crane rental in Abu Dhabi for heavy lifting operations."
+  },
+  {
+    name: "Manlift Rental",
+    slug: "manlift-rental-abu-dhabi",
+    description: "Manlift rental in Abu Dhabi for safe aerial work access."
+  },
+  {
+    name: "Scissor Lift Rental",
+    slug: "scissor-lift-rental-abu-dhabi",
+    description: "Scissor lift rental in Abu Dhabi for vertical elevation work."
+  },
+  {
+    name: "Road Roller Rental",
+    slug: "road-roller-rental-abu-dhabi",
+    description: "Road roller rental in Abu Dhabi for compaction and road construction."
+  },
+  {
+    name: "Recovery Truck Rental",
+    slug: "recovery-truck-rental-abu-dhabi",
+    description: "Recovery truck rental in Abu Dhabi for towing and vehicle recovery."
+  },
+  {
+    name: "Generator Rental",
+    slug: "generator-rental-abu-dhabi",
+    description: "Power generator rental in Abu Dhabi for construction sites and events."
+  },
+  {
+    name: "Air Compressor Rental",
+    slug: "air-compressor-rental-abu-dhabi",
+    description: "Air compressor rental in Abu Dhabi for pneumatic tools and industrial use."
+  },
+  {
+    name: "Skid Steer Loader Rental",
+    slug: "skid-steer-loader-rental-abu-dhabi",
+    description: "Skid steer loader rental in Abu Dhabi for compact construction tasks."
+  },
+  {
+    name: "Passenger Bus Rental",
+    slug: "passenger-bus-rental-abu-dhabi",
+    description: "Passenger bus rental in Abu Dhabi for staff and workforce transportation."
+  }
 ];
 
 export const servicesList = [
@@ -52,7 +108,7 @@ export const blogPosts: BlogPost[] = [
     slug: "forklift-rental-abu-dhabi-benefits-applications-cost-savings",
     excerpt: "Discover why forklift rental in Abu Dhabi is a cost-effective solution for construction, warehouses, and logistics. Learn about benefits, applications, and rental advantages.",
     date: "2025-12-25",
-    image: "/assets/equipment/forklift.webp",
+    image: "/assets/equipment/blog1.webp",
     content: {
       intro: [
         "Forklifts play a crucial role in Abu Dhabi's rapidly growing industrial, construction, and logistics sectors. From warehouses and distribution centers to large-scale construction sites, forklifts help businesses move, stack, and transport heavy loads efficiently and safely.",
@@ -109,7 +165,7 @@ export const blogPosts: BlogPost[] = [
     slug: "telehandler-safety-tips-construction-sites-abu-dhabi",
     excerpt: "Learn essential telehandler safety tips to ensure secure lifting and material handling operations on construction sites in Abu Dhabi.",
     date: "2025-12-25",
-    image: "/assets/equipment/telehandler.webp",
+    image: "/assets/equipment/blog2.webp",
     content: {
       intro: [
         "Telehandlers are powerful and versatile machines widely used on construction sites in Abu Dhabi for lifting, placing, and transporting materials. Due to their extended reach and lifting capacity, telehandlers require strict safety practices to prevent accidents and ensure compliance with site regulations.",
@@ -165,7 +221,7 @@ export const blogPosts: BlogPost[] = [
     slug: "forklift-maintenance-tips-reliable-operations-abu-dhabi",
     excerpt: "Essential forklift maintenance tips to ensure safety, efficiency, and longer equipment life in Abu Dhabi's demanding working conditions.",
     date: "2025-12-25",
-    image: "/assets/equipment/forklift.webp",
+    image: "/assets/equipment/blog3.webp",
     content: {
       intro: [
         "Forklifts are among the most frequently used machines in warehouses, logistics centers, and construction sites across Abu Dhabi. Due to continuous operation and exposure to dust, heat, and heavy loads, proper maintenance is essential to ensure safety, reliability, and uninterrupted performance.",
@@ -217,7 +273,7 @@ export const blogPosts: BlogPost[] = [
     slug: "how-to-choose-right-heavy-equipment-rent-abu-dhabi",
     excerpt: "A practical guide to selecting the right heavy equipment rental in Abu Dhabi based on project needs, site conditions, and budget.",
     date: "2025-12-25",
-    image: "/assets/equipment/excavator.webp",
+    image: "/assets/equipment/blog4.webp",
     content: {
       intro: [
         "Selecting the right heavy equipment is a critical decision that directly impacts project efficiency, safety, and cost. In Abu Dhabi's fast-paced construction and industrial environment, using the wrong equipment can lead to delays, increased expenses, and operational risks.",
@@ -268,7 +324,7 @@ export const blogPosts: BlogPost[] = [
     slug: "wheel-loader-rental-abu-dhabi-uses-benefits-advantages",
     excerpt: "Looking for wheel loader rental in Abu Dhabi? Learn about applications, benefits, and why renting wheel loaders is the smart choice for construction and industrial projects.",
     date: "2025-12-25",
-    image: "/assets/equipment/wheel-loader.webp",
+    image: "/assets/equipment/blog5.webp",
     content: {
       intro: [
         "Wheel loaders are essential machines in Abu Dhabi's construction, infrastructure, and industrial sectors. Known for their strength, versatility, and efficiency, wheel loaders are widely used for material handling, earthmoving, and loading operations.",
@@ -327,7 +383,7 @@ export const blogPosts: BlogPost[] = [
     slug: "heavy-equipment-rental-abu-dhabi-renting-better-than-buying",
     excerpt: "Explore why heavy equipment rental in Abu Dhabi is the preferred choice for construction and industrial businesses looking to reduce costs and increase flexibility.",
     date: "2025-12-25",
-    image: "/assets/equipment/crane.webp",
+    image: "/assets/equipment/blog6.webp",
     content: {
       intro: [
         "Renting heavy equipment provides practical advantages over ownership, especially for project-based operations.",

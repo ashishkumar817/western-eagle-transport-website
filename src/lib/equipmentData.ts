@@ -1,6 +1,7 @@
 // Equipment images - using public folder paths for easy replacement
 // To change images: replace the files in public/assets/equipment/ folder
 
+
 export interface EquipmentVariant {
   name: string;
   slug: string;
@@ -45,6 +46,19 @@ export interface EquipmentData {
     noMaintenance: string;
     flexibility: string;
   };
+  
+  seoContent?: {
+  h2: string;
+  sections: {
+    title: string;
+    content: string[];
+  }[];
+};
+faq?: {
+  q: string;
+  a: string;
+}[];
+
   variants: EquipmentVariant[];
   relatedEquipment?: RelatedEquipment[];
   image: string;
@@ -57,11 +71,12 @@ export interface EquipmentData {
 
 export const equipmentData: Record<string, EquipmentData> = {
   forklift: {
-    name: "Forklift",
-    slug: "forklift",
+    name: "Forklift Rental in Abu Dhabi",
+    slug: "forklift-rental-abu-dhabi",
     heroTitle: "Forklift Rental in UAE",
     heroSubtitle: "Reliable Forklift Rental Services in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent high-quality forklifts in UAE. Western Eagle offers 3 to 25 ton forklifts with trained operators. Serving Dubai, Abu Dhabi, Sharjah.",
+    
     layoutType: "default",
     overview: {
       title: "Overview",
@@ -97,10 +112,85 @@ export const equipmentData: Record<string, EquipmentData> = {
       noMaintenance: "All maintenance and repairs are handled by Western Eagle, eliminating downtime and ensuring reliable, job-ready equipment.",
       flexibility: "Scale equipment up or down based on project demand. No long-term commitments—adjust as your requirements change."
     },
+    seoContent: {
+  h2: "Forklift Rental in Abu Dhabi, Mussafah, Dubai & UAE",
+  sections: [
+    {
+      title: "Professional Forklift Rental Services in Abu Dhabi",
+      content: [
+        "Western Eagle Transport LLC provides reliable forklift rental services across Abu Dhabi, Mussafah, Dubai, Sharjah, and all major industrial zones in the UAE.",
+        "Forklifts play a critical role in material handling, warehouse logistics, construction supply movement, and industrial yard operations where efficiency and safety are essential.",
+        "Our fleet includes diesel forklifts for outdoor heavy-duty work, electric forklifts for indoor warehouse environments, and LPG forklifts for flexible site operations.",
+        "Whether you need a short-term forklift rental for urgent unloading work or a long-term rental contract for ongoing warehouse operations, we offer flexible daily, weekly, and monthly solutions."
+      ]
+    },
+
+    {
+      title: "Forklift Rental Applications Across UAE Industries",
+      content: [
+        "Forklift rentals are widely used in warehouses and logistics centers for pallet movement, container unloading, and inventory stacking operations.",
+        "Construction companies rely on forklifts for transporting cement pallets, scaffolding materials, steel components, and heavy equipment across job sites.",
+        "Industrial facilities in Mussafah and ICAD use forklifts for loading operations, factory material transfer, and plant maintenance support.",
+        "Ports and shipping yards in Abu Dhabi and Dubai require high-capacity forklifts for heavy cargo handling and container logistics."
+      ]
+    },
+
+    {
+      title: "Forklift Capacities Available – 3 Ton to 25 Ton",
+      content: [
+        "Western Eagle Transport offers forklift rental options from compact 3-ton forklifts up to heavy-duty 25-ton forklifts for demanding industrial lifting requirements.",
+        "3–5 ton forklifts are ideal for warehouse storage, distribution centers, and retail stock movement.",
+        "7–10 ton forklifts support medium-to-heavy industrial yards, construction projects, and container handling tasks.",
+        "15–25 ton forklifts are best suited for ports, oil & gas facilities, steel yards, shipyards, and mega infrastructure projects requiring extreme lifting capacity."
+      ]
+    },
+
+    {
+      title: "Forklift Rental Service Areas Across UAE",
+      content: [
+        "We provide fast forklift delivery and rental support across Abu Dhabi City, Mussafah Industrial Area, ICAD, Khalifa City, Yas Island, and Al Raha.",
+        "Our equipment is also available in Dubai Industrial City, Jebel Ali Free Zone, Sharjah Industrial Area, Ajman, Ras Al Khaimah, and Al Ain.",
+        "With Western Eagle’s logistics network, customers receive rapid mobilization, on-site support, and reliable equipment availability anywhere in the UAE."
+      ]
+    },
+
+    {
+      title: "Why Choose Western Eagle for Forklift Rental?",
+      content: [
+        "Flexible rental plans with competitive pricing for daily, weekly, and monthly requirements.",
+        "Modern forklifts maintained to UAE safety standards with regular inspections and servicing.",
+        "Fast delivery across Abu Dhabi, Dubai, Sharjah, and all UAE industrial zones.",
+        "Certified forklift operators available on request for safe and efficient site operations.",
+        "24/7 technical support and breakdown assistance to minimize downtime on critical projects.",
+        "Trusted by contractors, logistics companies, warehouses, and industrial clients across the UAE."
+      ]
+    }
+  ]
+  
+},
+faq: [
+  {
+    q: "How much does forklift rental cost in Abu Dhabi?",
+    a: "Forklift rental pricing depends on capacity, rental duration, and whether an operator is required. Contact Western Eagle Transport for a fast quotation."
+  },
+  {
+    q: "Do you provide forklift rental with operator?",
+    a: "Yes, we provide certified and experienced forklift operators for warehouses, construction sites, and industrial projects across UAE."
+  },
+  {
+    q: "Do you deliver forklifts outside Mussafah?",
+    a: "Yes, we deliver forklifts across Abu Dhabi, Dubai, Sharjah, Al Ain, Jebel Ali, and all major UAE industrial zones."
+  },
+  {
+    q: "What forklift capacities are available for rent?",
+    a: "We provide forklift rentals from 3 ton up to 25 ton for warehouses, logistics yards, ports, and heavy industries."
+  }
+],
+
     variants: [
       { 
         name: "3 Ton Forklift for Rent", 
-        slug: "3-ton", 
+        slug: "3-ton-forklift-for-rent", 
         capacity: "3 Ton", 
         description: "Our 3-ton forklift rental is ideal for warehouses, industrial yards, and construction sites across Abu Dhabi, Dubai and the UAE. Our 3-ton forklifts are engineered to lift, transport, and stack heavy loads with ease. Suitable for both indoor and outdoor operations, they ensure high maneuverability, safety and fuel efficiency. Rent our 3-ton forklifts on a daily, weekly or monthly basis with 24/7 support. We offer fast delivery across Musaffah, Abu Dhabi, Dubai and other Emirates.", 
         applications: ["Indoor warehousing", "Retail stockrooms", "Light manufacturing"], 
@@ -109,7 +199,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       },
       { 
         name: "5 Ton Forklift for Rent", 
-        slug: "5-ton", 
+        slug: "5-ton-forklift-for-rent", 
         capacity: "5 Ton", 
         description: "Versatile 5-ton forklift suitable for medium-duty operations in warehouses and construction sites. Perfect for handling heavier pallets and construction materials with ease.", 
         applications: ["Medium warehousing", "Construction sites", "Distribution centers"], 
@@ -118,7 +208,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       },
       { 
         name: "7 Ton Forklift for Rent", 
-        slug: "7-ton", 
+        slug: "7-ton-forklift-for-rent", 
         capacity: "7 Ton", 
         description: "Heavy-duty 7-ton forklift designed for demanding industrial applications and heavier loads. Ideal for steel yards, container handling, and major construction projects.", 
         applications: ["Industrial facilities", "Heavy manufacturing", "Port operations"], 
@@ -127,7 +217,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       },
       { 
         name: "10 Ton Forklift for Rent", 
-        slug: "10-ton", 
+        slug: "10-ton-forklift-for-rent", 
         capacity: "10 Ton", 
         description: "Powerful 10-ton forklift for heavy industrial use, container handling, and major construction projects. Built for the most demanding lifting requirements.", 
         applications: ["Container handling", "Heavy construction", "Steel industry"], 
@@ -136,7 +226,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       },
       { 
         name: "15 Ton Forklift for Rent", 
-        slug: "15-ton", 
+        slug: "15-ton-forklift-for-rent", 
         capacity: "15 Ton", 
         description: "High-capacity 15-ton forklift for extra-heavy loads in ports, shipyards, and large industrial facilities. Maximum power for maximum productivity.", 
         applications: ["Port operations", "Shipyards", "Heavy industry"], 
@@ -145,7 +235,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       },
       { 
         name: "25 Ton Forklift for Rent", 
-        slug: "25-ton", 
+        slug: "25-ton-forklift-for-rent", 
         capacity: "25 Ton", 
         description: "Maximum capacity 25-ton forklift for the most demanding heavy-lift applications and mega projects. The ultimate solution for exceptional lifting needs.", 
         applications: ["Mega construction projects", "Industrial plants", "Oil & gas facilities"], 
@@ -153,11 +243,16 @@ export const equipmentData: Record<string, EquipmentData> = {
         image: "/assets/equipment/forklift-25ton.webp"
       }
     ],
+    relatedEquipment: [
+      { name: "Wheel Loader for Rent", slug: "wheel-loader-rental-abu-dhabi" },
+      { name: "Backhoe Loader for Rent", slug: "jcb-backhoe-loader-rental-abu-dhabi" },
+      { name: "Boom Loader for Rent", slug: "boom-loader-rental-abu-dhabi" }
+    ],
     image: "/assets/equipment/forklift.webp"
   },
   crane: {
-    name: "Crane",
-    slug: "crane",
+    name: "Crane Rental in Abu Dhabi",
+    slug: "crane-rental-abu-dhabi",
     heroTitle: "Crane Rental in UAE",
     heroSubtitle: "Professional Crane Rental Services in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent mobile cranes from 20 to 200 ton capacity in UAE. Western Eagle provides lifting solutions for construction & industrial projects.",
@@ -196,10 +291,63 @@ export const equipmentData: Record<string, EquipmentData> = {
       noMaintenance: "Every crane rental from Western Eagle includes full maintenance, safety certifications, and compliance documentation. Our maintenance team ensures all cranes meet rigorous safety standards, with certified operators who understand load dynamics and site-specific requirements for safe lifting operations.",
       flexibility: "Construction projects often have varying lifting requirements throughout their lifecycle. Crane rental provides the flexibility to bring in 25-ton cranes for early work and scale up to 200-ton capacity for major lifts, then release equipment when no longer needed - optimizing your project budget at every phase."
     },
+    seoContent: {
+  h2: "Crane Rental in Abu Dhabi, Mussafah & UAE",
+  sections: [
+    {
+      title: "Professional Crane Rental Services in Abu Dhabi",
+      content: [
+        "Western Eagle Transport LLC provides reliable and professional crane rental services in Abu Dhabi, Mussafah, Dubai, Sharjah, and across the UAE.",
+        "Our fleet includes mobile cranes, hydraulic cranes, and heavy-duty lifting solutions suitable for construction, industrial, and infrastructure projects.",
+        "All cranes are maintained to international safety standards and supplied with experienced operators for safe lifting operations."
+      ]
+    },
+    {
+      title: "Crane Rental Applications in Mussafah & Industrial Areas",
+      content: [
+        "Crane rental services in Abu Dhabi and Mussafah are widely used for steel structure erection, equipment installation, plant shutdowns, and heavy material handling.",
+        "Industrial zones such as ICAD, KIZAD, Khalifa Port, and logistics yards rely on cranes for precise lifting and transport of oversized loads.",
+        "Our cranes support infrastructure development, high-rise construction, and industrial projects requiring maximum safety and load control."
+      ]
+    },
+    {
+      title: "Why Choose Western Eagle for Crane Rental in UAE",
+      content: [
+        "Wide range of cranes from 20 ton to 200 ton capacities.",
+        "Fast mobilization and delivery across Abu Dhabi, Mussafah, Dubai, and all Emirates.",
+        "Flexible rental plans available daily, weekly, and monthly based on project needs.",
+        "Certified crane operators, lifting supervisors, and full safety compliance documents.",
+        "24/7 technical support, breakdown assistance, and on-site service support."
+      ]
+    },
+    {
+      title: "Crane Rental Coverage Across UAE",
+      content: [
+        "Western Eagle Transport serves crane rental requirements in Abu Dhabi, Mussafah, ICAD, Khalifa City, Dubai, Jebel Ali, Sharjah Industrial Area, and nearby regions.",
+        "We ensure timely equipment delivery and professional lifting support for construction contractors, industrial clients, and infrastructure developers across the UAE."
+      ]
+    }
+  ]
+},
+faq: [
+  {
+    q: "How much does crane rental cost in Abu Dhabi?",
+    a: "Crane rental pricing depends on tonnage, rental duration, site requirements, and operator needs. Contact Western Eagle for a fast quotation."
+  },
+  {
+    q: "Do you provide crane rental with operator in Mussafah?",
+    a: "Yes, we provide certified crane operators and lifting supervisors for projects in Mussafah, ICAD, KIZAD, and across UAE."
+  },
+  {
+    q: "What crane capacities are available for rent?",
+    a: "We offer crane rental from 20 ton to 200 ton capacities for construction, industrial lifting, and infrastructure projects."
+  }
+],
+
     variants: [
       { 
         name: "20 Ton Crane for Rent", 
-        slug: "20-ton", 
+        slug: "20-ton-crane-for-rent", 
         capacity: "20 Ton", 
         description: "Compact 20-ton crane ideal for smaller construction sites and general lifting tasks. Perfect for residential and light commercial projects.", 
         applications: ["Small construction", "Residential projects", "Light industrial"], 
@@ -208,7 +356,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       },
       { 
         name: "25 Ton Crane for Rent", 
-        slug: "25-ton", 
+        slug: "25-ton-crane-for-rent", 
         capacity: "25 Ton", 
         description: "Versatile 25-ton crane for medium construction and industrial lifting requirements. Excellent balance of capacity and mobility.", 
         applications: ["Medium construction", "Industrial lifting", "Infrastructure"], 
@@ -217,7 +365,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       },
       { 
         name: "50 Ton Crane for Rent", 
-        slug: "50-ton", 
+        slug: "50-ton-crane-for-rent", 
         capacity: "50 Ton", 
         description: "Heavy-duty 50-ton crane for substantial lifting operations and commercial construction projects.", 
         applications: ["Commercial construction", "Heavy industrial", "Power plants"], 
@@ -226,7 +374,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       },
       { 
         name: "75 Ton Crane for Rent", 
-        slug: "75-ton", 
+        slug: "75-ton-crane-for-rent", 
         capacity: "75 Ton", 
         description: "Professional 75-ton crane for demanding lifting operations requiring greater capacity.", 
         applications: ["Large construction", "Industrial installations", "Bridge works"], 
@@ -235,7 +383,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       },
       { 
         name: "100 Ton Crane for Rent", 
-        slug: "100-ton", 
+        slug: "100-ton-crane-for-rent", 
         capacity: "100 Ton", 
         description: "High-capacity 100-ton crane for heavy construction and industrial installations. Major project capability.", 
         applications: ["High-rise construction", "Heavy machinery", "Bridge works"], 
@@ -244,7 +392,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       },
       { 
         name: "150 Ton Crane for Rent", 
-        slug: "150-ton", 
+        slug: "150-ton-crane-for-rent", 
         capacity: "150 Ton", 
         description: "Extra-heavy 150-ton crane for the most demanding lifting operations in oil & gas and mega projects.", 
         applications: ["Mega projects", "Oil & gas", "Power generation"], 
@@ -253,7 +401,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       },
       { 
         name: "200 Ton Crane for Rent", 
-        slug: "200-ton", 
+        slug: "200-ton-crane-for-rent", 
         capacity: "200 Ton", 
         description: "Maximum capacity 200-ton crane for exceptional heavy-lift requirements and specialized industrial applications.", 
         applications: ["Exceptional heavy lifts", "Industrial plants", "Major infrastructure"], 
@@ -261,11 +409,16 @@ export const equipmentData: Record<string, EquipmentData> = {
         image: "/assets/equipment/crane-200ton.webp"
       }
     ],
+    relatedEquipment: [
+      { name: "Wheel Loader for Rent", slug: "wheel-loader-rental-abu-dhabi" },
+      { name: "Backhoe Loader for Rent", slug: "jcb-backhoe-loader-rental-abu-dhabi" },
+      { name: "Boom Loader for Rent", slug: "boom-loader-rental-abu-dhabi" }
+    ],
     image: "/assets/equipment/crane.webp"
   },
   excavator: {
-    name: "Excavator",
-    slug: "excavator",
+    name: "Excavator Rental in Abu Dhabi",
+    slug: "excavator-rental-abu-dhabi",
     heroTitle: "Excavator Rental in UAE",
     heroSubtitle: "Mini Excavator Rental Services in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent mini excavators from 2 to 5 tons in UAE. Western Eagle provides compact excavators for urban construction, landscaping & utility work.",
@@ -304,10 +457,64 @@ export const equipmentData: Record<string, EquipmentData> = {
       noMaintenance: "Mini excavators require regular maintenance to ensure reliable operation of complex hydraulic systems. When you rent from Western Eagle, all servicing is handled by our technicians. You receive a job-ready machine with tracked maintenance history and responsive support if any issues arise on site.",
       flexibility: "Project requirements can change quickly in urban construction. Mini excavator rental allows you to access 2-ton machines for tight residential work, or scale up to 5-ton units for commercial sites. Rent by the day, week, or month based on your project timeline with no long-term commitment."
     },
+    seoContent: {
+  h2: "Excavator Rental in Abu Dhabi, Mussafah & UAE",
+  sections: [
+    {
+      title: "Reliable Excavator Rental Services in Abu Dhabi",
+      content: [
+        "Western Eagle Transport LLC provides professional excavator rental services in Abu Dhabi, Mussafah, Dubai, Sharjah, and across the UAE.",
+        "Our excavators are ideal for construction, trenching, demolition, earthmoving, and large-scale infrastructure development projects.",
+        "We supply modern, well-maintained excavator fleets with flexible daily, weekly, and monthly rental plans to match project requirements."
+      ]
+    },
+    {
+      title: "Excavator Rental Applications in Mussafah & Industrial Areas",
+      content: [
+        "Excavator rental services in Abu Dhabi and Mussafah are widely used for foundation excavation, pipeline installation, road construction, and land clearing projects.",
+        "Industrial zones such as ICAD, KIZAD, Khalifa Port, and logistics yards require excavators for heavy digging, material removal, and site preparation work.",
+        "Our machines deliver high digging power, fuel efficiency, and operational safety for demanding UAE job sites."
+      ]
+    },
+    {
+      title: "Why Choose Western Eagle for Excavator Rental in UAE",
+      content: [
+        "Wide range of excavators from compact mini excavators to heavy-duty models.",
+        "Fast delivery and mobilization across Abu Dhabi, Mussafah, Dubai, and all Emirates.",
+        "Flexible rental terms available daily, weekly, and monthly for short or long projects.",
+        "Certified excavator operators available on request with safety compliance support.",
+        "24/7 technical assistance, breakdown support, and on-site service reliability."
+      ]
+    },
+    {
+      title: "Excavator Rental Coverage Across UAE",
+      content: [
+        "Western Eagle Transport supports excavator rental needs in Abu Dhabi, Mussafah, ICAD, Khalifa City, Al Ain, Dubai, Jebel Ali, and Sharjah Industrial Areas.",
+        "We ensure timely delivery, professional support, and dependable machines for contractors, industrial clients, and infrastructure projects throughout the UAE."
+      ]
+    }
+  ]
+},
+faq: [
+  {
+    q: "How much does excavator rental cost in Abu Dhabi?",
+    a: "Excavator rental pricing depends on machine size, rental duration, and whether an operator is required. Contact Western Eagle for a quick quotation."
+  },
+  {
+    q: "Do you provide excavator rental services in Mussafah?",
+    a: "Yes, we provide excavator rental in Mussafah, ICAD, KIZAD, Khalifa City, and across Abu Dhabi with fast delivery."
+  },
+  {
+    q: "What excavator sizes are available for rent?",
+    a: "We offer compact mini excavators and heavy-duty excavators suitable for trenching, demolition, and large-scale earthmoving projects."
+  }
+],
+
+    
     variants: [
       { 
         name: "2 Ton Mini Excavator for Rent", 
-        slug: "2-ton", 
+        slug: "2-ton-mini-excavator-for-rent", 
         capacity: "2 Ton", 
         description: "Compact 2-ton mini excavator perfect for residential and light commercial work. Ideal for landscaping, utility trenching, and tight access excavation in Dubai, Abu Dhabi, and across the UAE.", 
         applications: ["Residential projects", "Landscaping", "Utility work"], 
@@ -316,7 +523,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       },
       { 
         name: "3 Ton Mini Excavator for Rent", 
-        slug: "3-ton", 
+        slug: "3-ton-mini-excavator-for-rent", 
         capacity: "3 Ton", 
         description: "Versatile 3-ton mini excavator for general small-scale excavation projects. Perfect for pool digging, foundation work, and drainage installations.", 
         applications: ["General excavation", "Trenching", "Pool digging"], 
@@ -325,7 +532,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       },
       { 
         name: "5 Ton Mini Excavator for Rent", 
-        slug: "5-ton", 
+        slug: "5-ton-mini-excavator-for-rent", 
         capacity: "5 Ton", 
         description: "Medium 5-ton excavator bridging compact and standard excavator capabilities. Enhanced digging force for commercial and infrastructure projects.", 
         applications: ["Medium projects", "Commercial sites", "Drainage work"], 
@@ -333,11 +540,16 @@ export const equipmentData: Record<string, EquipmentData> = {
         image: "/assets/equipment/excavator-5ton.webp"
       }
     ],
+    relatedEquipment: [
+      { name: "Crane for Rent", slug: "crane-rental-abu-dhabi" },
+      { name: "Forklift for Rent", slug: "forklift-rental-abu-dhabi" },
+      { name: "Boom Loader for Rent", slug: "boom-loader-rental-abu-dhabi" }
+    ],
     image: "/assets/equipment/excavator.webp"
   },
   "wheel-loader": {
-    name: "Wheel Loader",
-    slug: "wheel-loader",
+    name: "Wheel Loader Rental in Abu Dhabi",
+    slug: "wheel-loader-rental-abu-dhabi",
     heroTitle: "Wheel Loader for Rent in UAE",
     heroSubtitle: "Premium CAT Wheel Loader Rental Services with Fast Delivery Across Dubai, Abu Dhabi, Sharjah & All Emirates",
     metaDescription: "Rent CAT 950 & 966 wheel loaders in UAE. Western Eagle Transport offers reliable wheel loader rental with operators for construction, quarries & infrastructure. 24/7 support.",
@@ -378,10 +590,64 @@ export const equipmentData: Record<string, EquipmentData> = {
       noMaintenance: "All maintenance and servicing handled by our technicians. 24/7 support ensures rapid response to any issues.",
       flexibility: "Scale from CAT 950 to 966 based on project needs. No long-term commitments, storage costs, or resale hassles."
     },
+    seoContent: {
+  h2: "Wheel Loader Rental in Abu Dhabi, Mussafah & UAE",
+  sections: [
+    {
+      title: "Professional Wheel Loader Rental Services in Abu Dhabi",
+      content: [
+        "Western Eagle Transport LLC provides reliable wheel loader rental services in Abu Dhabi, Mussafah, Dubai, Sharjah, and across the UAE.",
+        "Our heavy-duty CAT wheel loaders are designed for high-performance earthmoving, material handling, stockpiling, and construction site operations.",
+        "We offer flexible daily, weekly, and monthly wheel loader rental plans with fast delivery and 24/7 technical support for contractors and industrial clients."
+      ]
+    },
+    {
+      title: "Wheel Loader Applications in Mussafah & Industrial Areas",
+      content: [
+        "Wheel loader rentals in Abu Dhabi and Mussafah are widely used for loading aggregate, sand, gravel, and debris across construction and infrastructure projects.",
+        "Industrial areas such as ICAD, KIZAD, Khalifa Port, and logistics yards rely on wheel loaders for bulk material transport and heavy loading operations.",
+        "Wheel loaders are essential for quarries, waste management facilities, road construction sites, and industrial material yards throughout the UAE."
+      ]
+    },
+    {
+      title: "Why Choose Western Eagle for Wheel Loader Rental in UAE",
+      content: [
+        "Premium CAT wheel loader fleet including models like CAT 950 and CAT 966.",
+        "Fast mobilization and delivery across Abu Dhabi, Mussafah, Dubai, and all Emirates.",
+        "Flexible rental options available daily, weekly, and monthly based on project requirements.",
+        "Certified operators available on request to ensure safe and productive site operations.",
+        "24/7 breakdown assistance, maintenance support, and technical service availability."
+      ]
+    },
+    {
+      title: "Wheel Loader Rental Coverage Across UAE",
+      content: [
+        "Western Eagle Transport supports wheel loader rental requirements in Abu Dhabi, Mussafah, ICAD, Khalifa City, Al Ain, Dubai, Jebel Ali, and Sharjah Industrial Areas.",
+        "We ensure reliable equipment delivery, professional support, and cost-effective rental solutions for contractors, infrastructure developers, and industrial operations across the UAE."
+      ]
+    }
+  ]
+},
+faq: [
+  {
+    q: "How much does wheel loader rental cost in Abu Dhabi?",
+    a: "Wheel loader rental pricing depends on model size, rental duration, and operator requirements. Contact Western Eagle for competitive rates in Abu Dhabi and Mussafah."
+  },
+  {
+    q: "Do you provide wheel loader rental services in Mussafah?",
+    a: "Yes, we supply CAT wheel loaders across Mussafah, ICAD, KIZAD, Khalifa City, and all UAE industrial zones with fast delivery."
+  },
+  {
+    q: "Which wheel loader models are available for rent?",
+    a: "We offer CAT wheel loader rentals including CAT 950 and CAT 966 models, suitable for construction, quarry, and industrial loading projects."
+  }
+],
+
+    
     variants: [
       { 
         name: "950 CAT Wheel Loader for Rent", 
-        slug: "950", 
+        slug: "950-wheel-loader-for-rent", 
         capacity: "950 Model", 
         description: "The CAT 950 wheel loader delivers exceptional productivity for medium to large-scale construction and loading operations across the UAE. Renowned for its reliability, fuel efficiency, and comfortable operator environment, the 950 is the workhorse of choice for contractors, quarry operators, and logistics facilities. Features include a high-capacity bucket, advanced load-sensing hydraulics, and Caterpillar's proven powertrain technology.", 
         applications: ["General construction sites", "Material handling yards", "Road works and infrastructure", "Aggregate loading operations"], 
@@ -390,7 +656,7 @@ export const equipmentData: Record<string, EquipmentData> = {
       },
       { 
         name: "966 CAT Wheel Loader for Rent", 
-        slug: "966", 
+        slug: "966-wheel-loader-for-rent", 
         capacity: "966 Model", 
         description: "The CAT 966 wheel loader represents the pinnacle of heavy-duty loading capability for demanding construction, quarry, and mining applications in the UAE. Delivering superior power, larger bucket capacity, and enhanced durability, the 966 handles the toughest loading challenges with ease. Ideal for large-scale earthmoving, aggregate operations, and high-volume material handling where productivity is paramount.", 
         applications: ["Heavy construction projects", "Quarry and mining operations", "Large-scale aggregate loading", "Port and logistics centers"], 
@@ -399,15 +665,15 @@ export const equipmentData: Record<string, EquipmentData> = {
       }
     ],
     relatedEquipment: [
-      { name: "Excavator for Rent", slug: "excavator" },
-      { name: "Backhoe Loader for Rent", slug: "backhoe-loader" },
-      { name: "Skid Steer Loader for Rent", slug: "skid-steer" }
+      { name: "Crane for Rent", slug: "crane-rental-abu-dhabi" },
+      { name: "Manlift for Rent", slug: "manlift-rental-abu-dhabi" },
+      { name: "Skid Steer Loader for Rent", slug: "skid-steer-loader-rental-abu-dhabi" }
     ],
     image: "/assets/equipment/wheel-loader.webp"
   },
   "backhoe-loader": {
-    name: "JCB Backhoe Loader",
-    slug: "backhoe-loader",
+    name: "JCB Backhoe Loader Rental in Abu Dhabi",
+    slug: "jcb-backhoe-loader-rental-abu-dhabi",
     heroTitle: "JCB Backhoe 3CX for Rent in UAE",
     heroSubtitle: "Versatile JCB 3CX Backhoe Loader Rental with Expert Support Across Dubai, Abu Dhabi, Sharjah & All Emirates",
     metaDescription: "Rent JCB 3CX backhoe loaders in UAE. Western Eagle Transport provides versatile backhoe rental for excavation, loading, trenching & construction across Dubai, Abu Dhabi.",
@@ -448,10 +714,65 @@ export const equipmentData: Record<string, EquipmentData> = {
       noMaintenance: "Certified technicians handle all servicing with genuine JCB parts. 24/7 support minimizes project downtime.",
       flexibility: "Tackle trenching and loading with the same machine. Scale equipment based on project phases without long-term commitments."
     },
+seoContent: {
+  h2: "JCB Backhoe Loader Rental in Abu Dhabi, Mussafah & UAE",
+  sections: [
+    {
+      title: "Professional JCB Backhoe Loader Rental Services",
+      content: [
+        "Western Eagle Transport LLC provides professional JCB backhoe loader rental services in Abu Dhabi, Mussafah, Dubai, and all UAE regions.",
+        "JCB backhoe loaders are among the most versatile machines, combining excavation and loading capabilities into one powerful unit.",
+        "Our fleet is ideal for contractors working in infrastructure development, roadworks, utility trenching, and industrial projects."
+      ]
+    },
+    {
+      title: "Applications of JCB Backhoe Loaders in Mussafah",
+      content: [
+        "In Mussafah Industrial Area, JCB backhoe loaders are widely used for drainage projects, pipeline excavation, landscaping, and material transport.",
+        "They are especially useful in areas requiring compact maneuverability along with heavy digging performance.",
+        "Western Eagle ensures fast equipment mobilization across Mussafah, ICAD, and nearby construction zones."
+      ]
+    },
+    {
+      title: "Why Choose Western Eagle Transport for JCB Rental?",
+      content: [
+        "Flexible rental packages: daily, weekly, and long-term contracts.",
+        "Certified operators and 24/7 technical support included on request.",
+        "Well-maintained equipment that meets UAE construction and safety standards.",
+        "Fast delivery to Abu Dhabi city, Mussafah, Dubai, and Sharjah."
+      ]
+    }
+  ]
+},
+faq: [
+  {
+    q: "How much does JCB backhoe loader rental cost in Abu Dhabi?",
+    a: "JCB backhoe loader rental pricing depends on rental duration, project location, and operator requirement. Western Eagle Transport offers competitive daily, weekly, and monthly rates across Abu Dhabi and Mussafah."
+  },
+  {
+    q: "Do you provide JCB backhoe loader rental in Mussafah?",
+    a: "Yes, Western Eagle Transport provides fast delivery of JCB backhoe loaders to Mussafah Industrial Area, ICAD, and all Abu Dhabi regions."
+  },
+  {
+    q: "Can I rent a JCB backhoe loader with an operator?",
+    a: "Yes, we offer certified and experienced operators for all JCB backhoe loader rentals to ensure safety and maximum productivity on-site."
+  },
+  {
+    q: "What projects require a JCB backhoe loader?",
+    a: "Backhoe loaders are widely used for trench digging, foundation excavation, drainage works, landscaping, and road construction projects."
+  },
+  {
+    q: "How quickly can you deliver a JCB backhoe loader?",
+    a: "Western Eagle can deliver JCB backhoe loaders within a few hours across Abu Dhabi, Mussafah, and nearby industrial zones depending on availability."
+  }
+],
+
+
+
     variants: [
       { 
         name: "JCB 3CX Backhoe Loader for Rent", 
-        slug: "3cx", 
+        slug: "3cx-backhoe-for-rent", 
         capacity: "3CX Model", 
         description: "The JCB 3CX is the world's most popular and trusted backhoe loader, delivering exceptional versatility for construction, excavation, and material handling tasks across the UAE. Features include 4-wheel drive capability, extendable dipper option, multiple attachment compatibility, and the renowned JCB build quality that ensures reliability on demanding job sites.", 
         applications: ["General construction sites", "Trenching and excavation", "Material loading and handling", "Road works and utilities"], 
@@ -461,15 +782,15 @@ export const equipmentData: Record<string, EquipmentData> = {
       }
     ],
     relatedEquipment: [
-      { name: "Wheel Loader for Rent", slug: "wheel-loader" },
-      { name: "Mini Excavator for Rent", slug: "excavator" },
-      { name: "Skid Steer Loader for Rent", slug: "skid-steer" }
+      { name: "Wheel Loader for Rent", slug: "wheel-loader-rental-abu-dhabi" },
+      { name: "Mini Excavator for Rent", slug: "excavator-rental-abu-dhabi" },
+      { name: "Skid Steer Loader for Rent", slug: "skid-steer-loader-rental-abu-dhabi" }
     ],
     image: "/assets/equipment/backhoe.webp"
   },
   "boom-loader": {
-    name: "Boom Loader",
-    slug: "boom-loader",
+    name: "Boom Loader Rental in Abu Dhabi",
+    slug: "boom-loader-rental-abu-dhabi",
     heroTitle: "Boom Loader Rental in UAE",
     heroSubtitle: "Telehandler & Boom Loader Rental Services in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent 14m and 17m telehandlers and boom loaders in UAE. Western Eagle offers telescopic handlers for construction & industrial applications.",
@@ -508,6 +829,69 @@ export const equipmentData: Record<string, EquipmentData> = {
       noMaintenance: "Boom loaders have complex telescopic and hydraulic systems requiring specialized maintenance expertise. Western Eagle ensures all telehandlers receive comprehensive servicing, delivering reliable machines ready for demanding work. Our technical support minimizes downtime if any issues arise during your rental period.",
       flexibility: "Construction phases have varying reach requirements. Boom loader rental allows you to access 14-meter units for standard multi-story work and upgrade to 17-meter telehandlers for high-reach requirements, adjusting equipment to your project's specific material placement challenges."
     },
+    seoContent: {
+  h2: "Boom Loader Rental in Abu Dhabi & Mussafah (Telehandler Hire UAE)",
+  sections: [
+    {
+      title: "Professional Boom Loader Rental Services in Abu Dhabi",
+      content: [
+        "Western Eagle Transport LLC provides reliable boom loader rental services in Abu Dhabi, Mussafah, Dubai, and across the UAE.",
+        "Boom loaders, also called telehandlers or telescopic handlers, are essential for lifting and placing heavy materials at height on construction and industrial sites.",
+        "Our fleet includes modern boom loaders suitable for infrastructure, warehousing, logistics, and high-rise building projects."
+      ]
+    },
+
+    {
+      title: "Boom Loader Applications Across Mussafah & UAE",
+      content: [
+        "Boom loader rentals in Abu Dhabi and Mussafah are widely used for lifting steel structures, transporting pallets, and site material handling.",
+        "Telehandlers are ideal for multi-story construction projects, warehouse operations, ports, and industrial yards.",
+        "With multiple attachments such as forks, buckets, and lifting hooks, boom loaders provide unmatched flexibility for contractors."
+      ]
+    },
+
+    {
+      title: "Why Choose Western Eagle for Telehandler Rental?",
+      content: [
+        "Flexible daily, weekly, and monthly boom loader rental plans tailored to project needs.",
+        "Fast delivery across Abu Dhabi, Mussafah, ICAD, Dubai, Sharjah, and all Emirates.",
+        "Certified operators available with 24/7 technical support and breakdown assistance."
+      ]
+    },
+
+    {
+      title: "Affordable Boom Loader Rental Solutions",
+      content: [
+        "Renting a boom loader is more cost-effective than purchasing expensive telehandler equipment.",
+        "Western Eagle ensures all machines are well-maintained, safety-certified, and job-ready for demanding UAE construction environments.",
+        "Contact us today for fast quotation and boom loader availability in Abu Dhabi and Mussafah."
+      ]
+    }
+  ]
+},
+faq: [
+  {
+    q: "Do you provide boom loader rental in Mussafah?",
+    a: "Yes, Western Eagle Transport provides boom loader and telehandler rental services across Mussafah Industrial Area, ICAD, Abu Dhabi, and all UAE regions."
+  },
+  {
+    q: "What is a boom loader used for?",
+    a: "Boom loaders (telehandlers) are used for lifting and placing materials at height, moving pallets, handling steel structures, and supporting construction and industrial projects."
+  },
+  {
+    q: "Can I rent a telehandler with an operator?",
+    a: "Yes, we provide certified operators on request to ensure safe and efficient boom loader operation on-site."
+  },
+  {
+    q: "What boom loader sizes are available?",
+    a: "Western Eagle offers telehandlers with different reach capacities including 14m and 17m boom loaders for rent in Abu Dhabi and Mussafah."
+  },
+  {
+    q: "How fast can you deliver a boom loader in Abu Dhabi?",
+    a: "We offer fast same-day delivery across Abu Dhabi, Mussafah, and nearby industrial zones depending on equipment availability."
+  }
+],
+
     variants: [
       { 
         name: "14m Boom Loader for Rent", 
@@ -528,11 +912,16 @@ export const equipmentData: Record<string, EquipmentData> = {
         image: "/assets/equipment/telehandler-17m.webp"
       }
     ],
+    relatedEquipment: [
+      { name: "Road Roller Rental", slug: "road-roller-rental-abu-dhabi" },
+      { name: "Manlift Rental", slug: "manlift-rental-abu-dhabi" },
+      { name: "Scissor Lift Rental", slug: "scissor-lift-rental-abu-dhabi" }
+    ],
     image: "/assets/equipment/telehandler.webp"
   },
   roller: {
-    name: "Roller",
-    slug: "roller",
+    name: "Road Roller Rental in Abu Dhabi",
+    slug: "road-roller-rental-abu-dhabi",
     heroTitle: "Roller Rental in UAE",
     heroSubtitle: "Professional Road Roller Rental Services in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent single drum rollers and vibratory compactors in UAE. Western Eagle provides road construction equipment for asphalt & soil compaction.",
@@ -571,10 +960,74 @@ export const equipmentData: Record<string, EquipmentData> = {
       noMaintenance: "Road rollers require regular maintenance of vibration systems, engine components, and water spray equipment. Western Eagle handles all servicing, ensuring you receive well-maintained compactors ready for demanding work. Our support team responds quickly to any equipment issues on your project site.",
       flexibility: "Different projects require different compaction approaches. Roller rental provides access to single drum rollers for asphalt work and various compaction equipment options, allowing you to match equipment to your specific road construction or site preparation requirements."
     },
+    seoContent: {
+  h2: "Road Roller Rental in Abu Dhabi & Mussafah (Compactor Hire UAE)",
+  sections: [
+    {
+      title: "Professional Road Roller Rental Services in Abu Dhabi",
+      content: [
+        "Western Eagle Transport LLC provides professional road roller rental services in Abu Dhabi, Mussafah, Dubai, and across the UAE.",
+        "Road rollers are essential machines used for asphalt compaction, soil stabilization, and surface preparation in infrastructure and road construction projects.",
+        "Our fleet includes modern vibratory rollers and heavy compaction equipment suitable for highways, industrial zones, and civil engineering works."
+      ]
+    },
+
+    {
+      title: "Road Roller Applications Across Mussafah & UAE",
+      content: [
+        "Road roller rental services in Abu Dhabi and Mussafah are widely used for road works, parking areas, industrial yard compaction, and large-scale infrastructure projects.",
+        "Single drum rollers ensure stable ground preparation before asphalt laying, while vibratory compactors deliver uniform density for long-lasting pavement surfaces.",
+        "Contractors working in Mussafah Industrial Area, ICAD, and nearby development zones rely on rollers for efficient site compaction operations."
+      ]
+    },
+
+    {
+      title: "Why Choose Western Eagle for Road Roller Rental?",
+      content: [
+        "Flexible daily, weekly, and monthly road roller rental plans tailored to your project requirements.",
+        "Fast delivery across Abu Dhabi, Mussafah, Dubai, Sharjah, and all Emirates.",
+        "Modern well-maintained compaction equipment meeting UAE safety and construction standards.",
+        "Experienced operators available on request with 24/7 technical support and breakdown assistance."
+      ]
+    },
+
+    {
+      title: "Affordable Compactor & Road Roller Rental Solutions",
+      content: [
+        "Renting a road roller is a cost-effective alternative to purchasing expensive compaction machinery, especially for project-based work.",
+        "Western Eagle Transport ensures reliable performance, reduced downtime, and efficient compaction results for every construction and infrastructure project.",
+        "Contact us today for road roller availability and competitive rental pricing in Abu Dhabi and Mussafah."
+      ]
+    }
+  ]
+},
+faq: [
+  {
+    q: "Do you provide road roller rental in Mussafah?",
+    a: "Yes, Western Eagle Transport offers fast road roller rental delivery across Mussafah Industrial Area, Abu Dhabi city, ICAD, and all UAE regions."
+  },
+  {
+    q: "What is a road roller used for?",
+    a: "Road rollers are used for compacting soil, gravel, and asphalt surfaces in road construction, infrastructure development, and industrial yard preparation."
+  },
+  {
+    q: "Which road roller types are available for rent?",
+    a: "We supply single drum vibratory rollers and heavy compaction rollers suitable for asphalt paving, highways, and construction projects across the UAE."
+  },
+  {
+    q: "Can I rent a road roller with an operator?",
+    a: "Yes, certified operators are available on request to ensure safe and professional roller operation on-site."
+  },
+  {
+    q: "How quickly can you deliver a road roller in Abu Dhabi?",
+    a: "Western Eagle provides same-day delivery across Abu Dhabi, Mussafah, and surrounding industrial zones depending on equipment availability."
+  }
+],
+
     variants: [
       { 
         name: "Single Drum Roller for Rent", 
-        slug: "single-drum", 
+        slug: "single-drum-roller-for-rent", 
         capacity: "Single Drum", 
         description: "Professional single drum vibratory roller for road construction and compaction work. Ideal for asphalt and sub-base compaction across construction projects in the UAE.", 
         applications: ["Road construction", "Asphalt compaction", "General compaction"], 
@@ -583,11 +1036,16 @@ export const equipmentData: Record<string, EquipmentData> = {
         image: "/assets/equipment/roller-single-drum.webp"
       }
     ],
+    relatedEquipment: [
+      { name: "Recovery Truck for Rent", slug: "recovery-truck-rental-abu-dhabi" },
+      { name: "Generator for Rent", slug: "generator-rental-abu-dhabi" },
+      { name: "Compressor for Rent", slug: "air-compressor-rental-abu-dhabi" }
+    ],
     image: "/assets/equipment/roller.webp"
   },
   manlift: {
-    name: "Manlift",
-    slug: "manlift",
+    name: "Manlift Rental in Abu Dhabi",
+    slug: "manlift-rental-abu-dhabi",
     heroTitle: "Manlift Rental in UAE",
     heroSubtitle: "Safe Manlift Rental Services in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent diesel articulated and telescopic manlifts in UAE. Western Eagle offers aerial work platforms for construction, maintenance & industrial work.",
@@ -626,6 +1084,71 @@ export const equipmentData: Record<string, EquipmentData> = {
       noMaintenance: "Boom lifts require rigorous safety inspections and maintenance of hydraulic systems, platforms, and safety features. Western Eagle ensures every manlift meets stringent safety standards before delivery. Our support team provides responsive assistance to keep your elevated work operations running safely.",
       flexibility: "Elevated work requirements vary significantly across projects and phases. Manlift rental allows access to articulating boom lifts for complex access situations and telescopic manlifts for straight-up height requirements, matching equipment to your specific elevated access needs."
     },
+
+    seoContent: {
+  h2: "Manlift Rental in Abu Dhabi & Mussafah (Boom Lift Hire UAE)",
+  sections: [
+    {
+      title: "Professional Manlift Rental Services in Abu Dhabi",
+      content: [
+        "Western Eagle Transport LLC provides reliable manlift rental services in Abu Dhabi, Mussafah, Dubai, Sharjah, and across the UAE.",
+        "Manlifts, also known as boom lifts or aerial work platforms, are essential for safe access at height in construction, industrial maintenance, and facility operations.",
+        "Our fleet includes modern articulated and telescopic manlifts designed for stability, safety, and efficient elevated work."
+      ]
+    },
+
+    {
+      title: "Manlift Applications Across Mussafah & UAE",
+      content: [
+        "Manlift rental services in Abu Dhabi and Mussafah are widely used for building maintenance, façade installation, electrical works, warehouse operations, and industrial shutdown projects.",
+        "Boom lifts provide excellent outreach and maneuverability, making them ideal for working around obstacles at construction and industrial sites.",
+        "Contractors in Mussafah Industrial Area, ICAD, and nearby development zones rely on aerial platforms for safe working-at-height solutions."
+      ]
+    },
+
+    {
+      title: "Why Choose Western Eagle for Manlift Rental?",
+      content: [
+        "Wide range of boom lifts and manlifts with different working heights and outreach capabilities.",
+        "Flexible daily, weekly, and monthly manlift rental plans tailored to your project needs.",
+        "Fast delivery across Abu Dhabi, Mussafah, Dubai, Sharjah, and all Emirates.",
+        "Certified operators available on request with 24/7 technical support and breakdown assistance."
+      ]
+    },
+
+    {
+      title: "Affordable Boom Lift & Aerial Work Platform Rental Solutions",
+      content: [
+        "Renting a manlift is a cost-effective alternative to purchasing expensive access equipment, especially for project-based construction and maintenance work.",
+        "Western Eagle ensures all manlifts are safety-certified, well-maintained, and ready for demanding UAE job sites.",
+        "Contact us today for competitive pricing and immediate availability of manlift rentals in Abu Dhabi and Mussafah."
+      ]
+    }
+  ]
+},
+faq: [
+  {
+    q: "Do you provide manlift rental in Mussafah?",
+    a: "Yes, Western Eagle Transport provides fast manlift rental delivery across Mussafah Industrial Area, ICAD, Abu Dhabi city, and all UAE regions."
+  },
+  {
+    q: "What is a manlift used for?",
+    a: "Manlifts are used for working safely at height in construction, maintenance, façade installation, electrical works, warehouse operations, and industrial projects."
+  },
+  {
+    q: "Which types of manlifts are available for rent?",
+    a: "We offer articulated boom lifts, telescopic boom lifts, and diesel manlifts with various working heights suitable for indoor and outdoor job sites."
+  },
+  {
+    q: "Can I rent a manlift with an operator?",
+    a: "Yes, certified and experienced operators are available on request for safe and efficient manlift operation."
+  },
+  {
+    q: "How quickly can you deliver a manlift in Abu Dhabi?",
+    a: "Western Eagle offers same-day delivery across Abu Dhabi, Mussafah, Dubai, and nearby industrial zones depending on equipment availability."
+  }
+],
+
     variants: [
       { 
         name: "Diesel E450AJ Articulated Manlift", 
@@ -688,11 +1211,16 @@ export const equipmentData: Record<string, EquipmentData> = {
         image: "/assets/equipment/manlift-860aj.webp"
       }
     ],
+    relatedEquipment: [
+      { name: "Passenger Bus for Rent", slug: "passenger-bus-rental-abu-dhabi" },
+      { name: "Generator for Rent", slug: "generator-rental-abu-dhabi" },
+      { name: "Compressor for Rent", slug: "air-compressor-rental-abu-dhabi" }
+    ],
     image: "/assets/equipment/manlift.webp"
   },
   "scissor-lift": {
-    name: "Scissor Lift",
-    slug: "scissor-lift",
+    name: "Scissor Lift Rental in Abu Dhabi",
+    slug: "scissor-lift-rental-abu-dhabi",
     heroTitle: "Scissor Lift Rental in UAE",
     heroSubtitle: "Versatile Scissor Lift Rental Services in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent electric & diesel scissor lifts in UAE from 6m to 22m. Western Eagle offers indoor and rough terrain scissor lifts for construction & warehouse work.",
@@ -731,6 +1259,70 @@ export const equipmentData: Record<string, EquipmentData> = {
       noMaintenance: "Scissor lifts require regular maintenance of hydraulic systems, electrical components, and safety features. Western Eagle handles all servicing and safety certifications, ensuring every scissor lift meets operational and safety standards. You receive ready-to-work equipment with responsive support throughout your rental.",
       flexibility: "Different environments require different scissor lift solutions. Rental allows access to electric scissor lifts for quiet indoor work and diesel rough terrain models for outdoor sites, with heights from 6 to 22 meters to match your specific elevated platform requirements."
     },
+    seoContent: {
+  h2: "Scissor Lift Rental in Abu Dhabi & Mussafah (Electric & Diesel Platform Hire UAE)",
+  sections: [
+    {
+      title: "Professional Scissor Lift Rental Services in Abu Dhabi",
+      content: [
+        "Western Eagle Transport LLC provides professional scissor lift rental services in Abu Dhabi, Mussafah, Dubai, Sharjah, and across the UAE.",
+        "Scissor lifts are stable aerial work platforms designed for safe vertical access in construction, warehouse, maintenance, and industrial environments.",
+        "Our fleet includes electric scissor lifts for indoor use and diesel rough terrain scissor lifts for demanding outdoor construction projects."
+      ]
+    },
+
+    {
+      title: "Scissor Lift Applications Across Mussafah & UAE",
+      content: [
+        "Scissor lift rental services in Abu Dhabi and Mussafah are widely used for electrical installation, ceiling works, facility maintenance, painting, signage installation, and warehouse racking operations.",
+        "These platforms provide a large working area, allowing multiple workers and equipment to operate safely at height.",
+        "Contractors in Mussafah Industrial Area, ICAD, and Abu Dhabi development zones rely on scissor lifts for efficient indoor and outdoor access solutions."
+      ]
+    },
+
+    {
+      title: "Why Choose Western Eagle for Scissor Lift Rental?",
+      content: [
+        "Wide range of electric and diesel scissor lifts with different working heights including 16m and 22m models.",
+        "Flexible daily, weekly, and monthly scissor lift rental plans tailored to your project needs.",
+        "Fast delivery across Abu Dhabi, Mussafah, Dubai, Sharjah, and all Emirates.",
+        "Certified operator support available with 24/7 technical assistance and breakdown service."
+      ]
+    },
+
+    {
+      title: "Affordable Scissor Lift Rental Solutions in UAE",
+      content: [
+        "Renting a scissor lift is a cost-effective alternative to purchasing expensive access equipment, especially for short-term or project-based work.",
+        "Western Eagle Transport ensures all scissor lifts are regularly maintained, safety-certified, and job-ready for UAE construction and industrial standards.",
+        "Contact us today for competitive pricing and immediate availability of scissor lift rentals in Abu Dhabi and Mussafah."
+      ]
+    }
+  ]
+},
+faq: [
+  {
+    q: "Do you provide scissor lift rental in Mussafah?",
+    a: "Yes, Western Eagle Transport offers fast scissor lift rental delivery across Mussafah Industrial Area, ICAD, Abu Dhabi city, and all UAE regions."
+  },
+  {
+    q: "What is a scissor lift used for?",
+    a: "Scissor lifts are used for safe vertical access in construction, warehouse maintenance, electrical installation, painting, signage work, and facility management projects."
+  },
+  {
+    q: "Which scissor lift types are available for rent?",
+    a: "We supply electric scissor lifts for indoor work and diesel rough terrain scissor lifts for outdoor construction sites, with heights up to 22 meters."
+  },
+  {
+    q: "Can I rent a scissor lift with an operator?",
+    a: "Yes, certified operators are available on request to ensure safe and professional platform operation on-site."
+  },
+  {
+    q: "How quickly can you deliver a scissor lift in Abu Dhabi?",
+    a: "Western Eagle provides same-day delivery across Abu Dhabi, Mussafah, Dubai, and nearby industrial zones depending on availability."
+  }
+],
+
     variants: [
       { 
         name: "Electric Scissor Lift for Rent", 
@@ -769,11 +1361,16 @@ export const equipmentData: Record<string, EquipmentData> = {
         image: "/assets/equipment/scissor-lift-diesel.webp"
       }
     ],
+    relatedEquipment: [
+      { name: "Crane for Rent", slug: "crane-rental-abu-dhabi" },
+      { name: "Manlift for Rent", slug: "manlift-rental-abu-dhabi" },
+      { name: "Skid Steer Loader for Rent", slug: "skid-steer-loader-rental-abu-dhabi" }
+    ],
     image: "/assets/equipment/scissor-lift.webp"
   },
   generator: {
-    name: "Generator",
-    slug: "generator",
+    name: "Generator Rental in Abu Dhabi",
+    slug: "generator-rental-abu-dhabi",
     heroTitle: "Generator Rental in UAE",
     heroSubtitle: "Reliable Generator Rental Services in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent diesel generators in UAE for construction, events & emergency backup. Western Eagle provides power solutions across Dubai, Abu Dhabi & Sharjah.",
@@ -812,6 +1409,70 @@ export const equipmentData: Record<string, EquipmentData> = {
       noMaintenance: "Generators require regular maintenance, load testing, and fuel system care to ensure reliable operation when needed. Western Eagle handles all servicing and delivers generators tested and ready for immediate use. Our 24/7 support ensures rapid response to any power issues.",
       flexibility: "Power requirements vary by project phase, event size, and facility needs. Generator rental provides access to various capacities from portable units to large industrial generators, allowing you to scale power supply to match actual requirements without excess capacity costs."
     },
+    seoContent: {
+  h2: "Generator Rental in Abu Dhabi & Mussafah (Diesel Generator Hire UAE)",
+  sections: [
+    {
+      title: "Professional Generator Rental Services in Abu Dhabi",
+      content: [
+        "Western Eagle Transport LLC provides reliable generator rental services in Abu Dhabi, Mussafah, Dubai, Sharjah, and across the UAE.",
+        "Diesel generators are essential for providing temporary power supply at construction sites, industrial facilities, outdoor events, and emergency backup operations.",
+        "Our generator fleet includes fuel-efficient, low-noise, and well-maintained units suitable for both short-term and long-term power rental requirements."
+      ]
+    },
+
+    {
+      title: "Generator Rental Applications Across Mussafah & UAE",
+      content: [
+        "Generator rental services in Abu Dhabi and Mussafah are widely used for powering construction projects, site offices, warehouses, industrial plants, and remote operations.",
+        "Industries in Mussafah Industrial Area and ICAD depend on diesel generators for uninterrupted power during maintenance shutdowns and critical industrial activities.",
+        "Western Eagle ensures stable power solutions for infrastructure development, commercial sites, and event power requirements across the UAE."
+      ]
+    },
+
+    {
+      title: "Why Choose Western Eagle for Generator Rental?",
+      content: [
+        "Wide range of diesel generator capacities available for construction, industrial, and commercial use.",
+        "Flexible daily, weekly, and monthly generator rental plans tailored to your project needs.",
+        "Fast delivery across Abu Dhabi, Mussafah, Dubai, Sharjah, and all Emirates.",
+        "24/7 technical support, maintenance assistance, and optional fuel management solutions."
+      ]
+    },
+
+    {
+      title: "Affordable Diesel Generator Rental Solutions in UAE",
+      content: [
+        "Renting a generator is a cost-effective alternative to purchasing expensive power equipment, especially for temporary or project-based operations.",
+        "Western Eagle Transport ensures all generators are regularly inspected, safety-certified, and job-ready to meet UAE industrial standards.",
+        "Contact us today for competitive generator rental pricing and immediate availability in Abu Dhabi and Mussafah."
+      ]
+    }
+  ]
+},
+faq: [
+  {
+    q: "Do you provide generator rental in Mussafah?",
+    a: "Yes, Western Eagle Transport offers fast diesel generator rental delivery across Mussafah Industrial Area, ICAD, Abu Dhabi city, and all UAE regions."
+  },
+  {
+    q: "What are generators used for in construction projects?",
+    a: "Generators provide temporary power for construction sites, site offices, machinery, lighting systems, and remote project operations where grid power is not available."
+  },
+  {
+    q: "Which types of generators are available for rent?",
+    a: "We supply diesel generators of various capacities including low-noise silent generators suitable for industrial sites, events, and emergency backup power."
+  },
+  {
+    q: "Can I rent a generator for long-term use?",
+    a: "Yes, Western Eagle provides flexible daily, weekly, and monthly generator rental plans for both short-term and long-term requirements."
+  },
+  {
+    q: "How quickly can you deliver a generator in Abu Dhabi?",
+    a: "Western Eagle provides same-day generator delivery across Abu Dhabi, Mussafah, Dubai, and nearby industrial zones depending on availability."
+  }
+],
+
     variants: [
       { 
         name: "Generator for Rent", 
@@ -823,11 +1484,16 @@ export const equipmentData: Record<string, EquipmentData> = {
         image: "/assets/equipment/generator-standard.webp"
       }
     ],
+    relatedEquipment: [
+      { name: "Excavator for Rent", slug: "excavator-rental-abu-dhabi" },
+      { name: "Forklift for Rent", slug: "forklift-rental-abu-dhabi" },
+      { name: "Boom Loader for Rent", slug: "boom-loader-rental-abu-dhabi" }
+    ],
     image: "/assets/equipment/generator.webp"
   },
   "skid-steer": {
-    name: "Skid Steer Loader",
-    slug: "skid-steer",
+    name: "Skid Steer Loader Rental in Abu Dhabi",
+    slug: "skid-steer-loader-rental-abu-dhabi",
     heroTitle: "Skid Steer Loader Rental in UAE",
     heroSubtitle: "Versatile Bobcat Skid Steer Rental in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent Bobcat skid steer loaders in UAE. Western Eagle offers wheeled and tracked skid steers for construction, landscaping & demolition work.",
@@ -866,10 +1532,75 @@ export const equipmentData: Record<string, EquipmentData> = {
       noMaintenance: "Skid steers work hard in challenging conditions and require regular hydraulic system and attachment maintenance. Western Eagle handles all servicing, ensuring you receive machines in peak operating condition. Our support team responds quickly to keep your compact equipment working productively.",
       flexibility: "Different tasks require different attachments and capabilities. Skid steer rental provides access to versatile Bobcat loaders that can switch between tasks simply by changing attachments, giving you the flexibility to handle varied site work without multiple specialized machines."
     },
+    seoContent: {
+  h2: "Skid Steer Loader Rental in Abu Dhabi & Mussafah (Bobcat Hire UAE)",
+  sections: [
+    {
+      title: "Professional Skid Steer Loader Rental Services in Abu Dhabi",
+      content: [
+        "Western Eagle Transport LLC provides professional skid steer loader rental services in Abu Dhabi, Mussafah, Dubai, Sharjah, and across the UAE.",
+        "Skid steer loaders, also known as Bobcat loaders, are compact and powerful machines designed for material handling, earthmoving, demolition, and landscaping work in confined job sites.",
+        "Our fleet includes modern skid steer loaders with high maneuverability, strong hydraulic performance, and compatibility with multiple attachments."
+      ]
+    },
+
+    {
+      title: "Skid Steer Applications Across Mussafah & UAE",
+      content: [
+        "Skid steer loader rental services in Abu Dhabi and Mussafah are widely used for excavation support, debris removal, site cleanup, trenching, and landscaping projects.",
+        "These compact machines are ideal for urban construction zones, warehouses, industrial yards, and road works where larger equipment cannot operate efficiently.",
+        "Contractors in Mussafah Industrial Area, ICAD, and surrounding Abu Dhabi development zones rely on skid steers for fast and versatile site operations."
+      ]
+    },
+
+    {
+      title: "Why Choose Western Eagle for Skid Steer Rental?",
+      content: [
+        "Modern Bobcat skid steer loaders with excellent maneuverability and lifting capacity.",
+        "Flexible daily, weekly, and monthly skid steer rental plans tailored to project requirements.",
+        "Fast delivery across Abu Dhabi, Mussafah, Dubai, Sharjah, and all Emirates.",
+        "Multiple attachments available including buckets, breakers, augers, and grading tools.",
+        "Certified operator support available with 24/7 technical assistance."
+      ]
+    },
+
+    {
+      title: "Affordable Skid Steer Loader Rental Solutions in UAE",
+      content: [
+        "Renting a skid steer loader is a cost-effective alternative to purchasing expensive compact equipment, especially for short-term construction and landscaping work.",
+        "Western Eagle Transport ensures all machines are regularly maintained, safety-certified, and job-ready for demanding UAE construction environments.",
+        "Contact us today for competitive skid steer rental pricing and immediate availability in Abu Dhabi and Mussafah."
+      ]
+    }
+  ]
+},
+faq: [
+  {
+    q: "Do you provide skid steer loader rental in Mussafah?",
+    a: "Yes, Western Eagle Transport offers fast skid steer loader rental delivery across Mussafah Industrial Area, ICAD, Abu Dhabi city, and all UAE regions."
+  },
+  {
+    q: "What is a skid steer loader used for?",
+    a: "Skid steer loaders are used for material handling, earthmoving, debris removal, landscaping, trenching, and demolition support in construction and industrial sites."
+  },
+  {
+    q: "Is a Bobcat the same as a skid steer loader?",
+    a: "Yes, Bobcat is a common brand name used for skid steer loaders, which are compact machines known for versatility and zero-turn maneuverability."
+  },
+  {
+    q: "Can I rent a skid steer with attachments?",
+    a: "Yes, Western Eagle provides skid steers with multiple attachments such as buckets, augers, hydraulic breakers, and grading tools depending on your project needs."
+  },
+  {
+    q: "How quickly can you deliver a skid steer in Abu Dhabi?",
+    a: "Western Eagle provides same-day skid steer delivery across Abu Dhabi, Mussafah, Dubai, and nearby industrial zones depending on availability."
+  }
+],
+
     variants: [
       { 
         name: "Skid Steer Bobcat for Rent", 
-        slug: "bobcat", 
+        slug: "skid-steer-bobcat-for rent", 
         capacity: "Bobcat", 
         description: "Versatile Bobcat skid steer loader for construction, landscaping, and material handling applications. Zero-turn maneuverability with multiple attachment compatibility.", 
         applications: ["General construction", "Landscaping", "Material handling"], 
@@ -878,11 +1609,16 @@ export const equipmentData: Record<string, EquipmentData> = {
         image: "/assets/equipment/skid-steer-bobcat.webp"
       }
     ],
+    relatedEquipment: [
+      { name: "Crane for Rent", slug: "crane-rental-abu-dhabi" },
+      { name: "Forklift for Rent", slug: "forklift-rental-abu-dhabi" },
+      { name: "Boom Loader for Rent", slug: "boom-loader-rental-abu-dhabi" }
+    ],
     image: "/assets/equipment/skid-steer.webp"
   },
   "recovery-truck": {
-    name: "Recovery Truck",
-    slug: "recovery-truck",
+    name: "Recovery Truck Rental in Abu Dhabi",
+    slug: "recovery-truck-rental-abu-dhabi",
     heroTitle: "Recovery Truck Rental in UAE",
     heroSubtitle: "Professional 10 Ton Recovery Truck Rental in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent 10 ton recovery trucks in UAE. Western Eagle provides vehicle recovery, towing & machinery transport services across UAE.",
@@ -921,6 +1657,71 @@ export const equipmentData: Record<string, EquipmentData> = {
       noMaintenance: "Recovery trucks require specialized maintenance of hydraulic systems, winches, and transport equipment. Western Eagle ensures every recovery vehicle is professionally maintained and operated by trained recovery specialists who understand safe recovery techniques for all vehicle and machinery types.",
       flexibility: "Transport and recovery needs are unpredictable. Our 24/7 recovery truck availability ensures emergency breakdown response when needed, while scheduled services handle planned machinery transport and fleet vehicle relocation requirements across Dubai, Abu Dhabi, and throughout the UAE."
     },
+    seoContent: {
+  h2: "Recovery Truck Rental in Abu Dhabi & Mussafah (10 Ton Towing Service UAE)",
+  sections: [
+    {
+      title: "Professional Recovery Truck Rental Services in Abu Dhabi",
+      content: [
+        "Western Eagle Transport LLC provides professional recovery truck rental services in Abu Dhabi, Mussafah, Dubai, Sharjah, and across the UAE.",
+        "Recovery trucks are essential for vehicle towing, emergency roadside assistance, machinery transport, and accident recovery operations.",
+        "Our fleet includes modern 10-ton recovery trucks equipped with hydraulic systems, safety winches, and reliable towing capability for light and heavy-duty requirements."
+      ]
+    },
+
+    {
+      title: "Recovery Truck Applications Across Mussafah & UAE",
+      content: [
+        "Recovery truck rental services in Abu Dhabi and Mussafah are widely used for roadside breakdown recovery, accident vehicle towing, fleet support, and construction equipment transport.",
+        "Industrial zones in Mussafah and ICAD often require heavy recovery trucks to support logistics operations, machinery relocation, and emergency towing services.",
+        "Western Eagle ensures safe and efficient recovery operations for vehicles, buses, commercial fleets, and construction machinery across the UAE."
+      ]
+    },
+
+    {
+      title: "Why Choose Western Eagle for Recovery Truck Rental?",
+      content: [
+        "10-ton recovery trucks available for heavy-duty towing and machinery recovery operations.",
+        "Fast emergency response across Abu Dhabi, Mussafah, Dubai, and UAE industrial zones.",
+        "Flexible daily, weekly, and monthly recovery truck rental options.",
+        "Experienced recovery operators available on request for safe towing services.",
+        "24/7 technical support and emergency assistance for minimal downtime."
+      ]
+    },
+
+    {
+      title: "Reliable & Affordable Recovery Truck Solutions in UAE",
+      content: [
+        "Renting a recovery truck is a cost-effective option compared to maintaining dedicated towing vehicles, especially for emergency or project-based transport needs.",
+        "Western Eagle Transport ensures all recovery trucks are well-maintained, safety-certified, and ready for demanding UAE road and industrial conditions.",
+        "Contact us today for recovery truck availability and competitive rental pricing in Abu Dhabi and Mussafah."
+      ]
+    }
+  ]
+},
+faq: [
+  {
+    q: "Do you provide recovery truck rental in Mussafah?",
+    a: "Yes, Western Eagle Transport provides fast recovery truck rental and towing services across Mussafah Industrial Area, ICAD, Abu Dhabi city, and all UAE regions."
+  },
+  {
+    q: "What is a recovery truck used for?",
+    a: "Recovery trucks are used for vehicle towing, accident recovery, roadside breakdown assistance, fleet relocation, and heavy machinery transport operations."
+  },
+  {
+    q: "Do you offer 10-ton recovery trucks for rent?",
+    a: "Yes, we provide modern 10-ton recovery trucks equipped with hydraulic towing systems suitable for commercial vehicles, buses, and construction equipment."
+  },
+  {
+    q: "Can I rent a recovery truck with an operator?",
+    a: "Yes, experienced recovery operators are available on request to ensure safe and professional towing services."
+  },
+  {
+    q: "How quickly can you deliver a recovery truck in Abu Dhabi?",
+    a: "Western Eagle offers same-day recovery truck service across Abu Dhabi, Mussafah, Dubai, and nearby industrial zones depending on availability."
+  }
+],
+
     variants: [
       { 
         name: "10 Ton Recovery Truck for Rent", 
@@ -932,11 +1733,16 @@ export const equipmentData: Record<string, EquipmentData> = {
         image: "/assets/equipment/recovery-truck-10ton.webp"
       }
     ],
+    relatedEquipment: [
+      { name: "Crane for Rent", slug: "crane-rental-abu-dhabi" },
+      { name: "Forklift for Rent", slug: "forklift-rental-abu-dhabi" },
+      { name: "Boom Loader for Rent", slug: "boom-loader-rental-abu-dhabi" }
+    ],
     image: "/assets/equipment/recovery-truck.webp"
   },
   compressor: {
-    name: "Compressor",
-    slug: "compressor",
+    name: "Air Compressor Rental in Abu Dhabi",
+    slug: "air-compressor-rental-abu-dhabi",
     heroTitle: "Compressor Rental in UAE",
     heroSubtitle: "Industrial Air Compressor Rental Services in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent air compressors in UAE for construction & industrial applications. Western Eagle provides pneumatic tool power across Dubai, Abu Dhabi & Sharjah.",
@@ -975,6 +1781,49 @@ export const equipmentData: Record<string, EquipmentData> = {
       noMaintenance: "Air compressors require regular maintenance of engines, air systems, and filtration to ensure clean, reliable compressed air delivery. Western Eagle handles all servicing, delivering compressors in peak operating condition with complete air system support including hoses and fittings.",
       flexibility: "Different applications require different air capacity. Compressor rental provides access to various CFM outputs matched to your specific pneumatic power requirements, whether powering construction tools, sandblasting operations, or spray painting systems across UAE project sites."
     },
+    seoContent: {
+  h2: "Air Compressor Rental in Abu Dhabi & Mussafah (Diesel Compressor Hire UAE)",
+  sections: [
+    {
+      title: "Professional Air Compressor Rental Services in Abu Dhabi",
+      content: [
+        "Western Eagle Transport LLC provides professional air compressor rental services in Abu Dhabi, Mussafah, Dubai, Sharjah, and across the UAE.",
+        "Air compressors are essential machines used to supply compressed air for construction, industrial operations, sandblasting, painting, drilling, and pneumatic tool applications.",
+        "Our fleet includes modern portable diesel air compressors designed for reliable performance, high CFM output, and continuous operation on demanding UAE job sites."
+      ]
+    },
+
+    {
+      title: "Air Compressor Applications Across Mussafah & UAE",
+      content: [
+        "Air compressor rental services in Abu Dhabi and Mussafah are widely used for powering jackhammers, drills, breakers, sandblasting equipment, and spray painting systems.",
+        "Industrial facilities in Mussafah and ICAD depend on diesel compressors for maintenance shutdowns, workshop operations, and construction support activities.",
+        "Western Eagle ensures stable compressed air supply solutions for contractors, industrial operators, and infrastructure projects across the UAE."
+      ]
+    },
+
+    {
+      title: "Why Choose Western Eagle for Air Compressor Rental?",
+      content: [
+        "Wide range of diesel and portable air compressors available with different CFM capacities.",
+        "Flexible daily, weekly, and monthly air compressor rental plans tailored to your project needs.",
+        "Fast delivery across Abu Dhabi, Mussafah, Dubai, Sharjah, and all Emirates.",
+        "Reliable compressed air supply for construction, sandblasting, painting, and industrial applications.",
+        "24/7 technical support, maintenance assistance, and breakdown service."
+      ]
+    },
+
+    {
+      title: "Affordable Diesel Air Compressor Rental Solutions in UAE",
+      content: [
+        "Renting an air compressor is a cost-effective option compared to purchasing expensive compressed air equipment, especially for project-based operations.",
+        "Western Eagle Transport ensures all compressors are well-maintained, safety-certified, and job-ready for demanding UAE construction and industrial environments.",
+        "Contact us today for competitive air compressor rental pricing and immediate availability in Abu Dhabi and Mussafah."
+      ]
+    }
+  ]
+},
+
     variants: [
       { 
         name: "Air Compressor for Rent", 
@@ -986,11 +1835,16 @@ export const equipmentData: Record<string, EquipmentData> = {
         image: "/assets/equipment/compressor-air.webp"
       }
     ],
+    relatedEquipment: [
+      { name: "Recovery Truck for Rent", slug: "recovery-truck-rental-abu-dhabi" },
+      { name: "Generator for Rent", slug: "generator-rental-abu-dhabi" },
+      { name: "Compressor for Rent", slug: "air-compressor-rental-abu-dhabi" }
+    ],
     image: "/assets/equipment/compressor.webp"
   },
   "passenger-bus": {
-    name: "Passenger Bus",
-    slug: "passenger-bus",
+    name: "Passenger Bus Rental in Abu Dhabi",
+    slug: "passenger-bus-rental-abu-dhabi",
     heroTitle: "Passenger Bus Rental in UAE",
     heroSubtitle: "Comfortable Passenger Bus Rental in Dubai, Abu Dhabi & Sharjah",
     metaDescription: "Rent passenger buses in UAE from 14 to 66 seaters. Western Eagle provides staff transport & corporate event transportation services.",
@@ -1029,6 +1883,71 @@ export const equipmentData: Record<string, EquipmentData> = {
       noMaintenance: "Passenger buses require regular mechanical servicing, safety inspections, and interior maintenance. Western Eagle handles all vehicle maintenance and provides experienced, licensed drivers who ensure safe, punctual transport services for your staff and group transportation needs.",
       flexibility: "Transport requirements vary from small group site visits to large workforce movements. Bus rental provides access to 14-seater mini buses for intimate groups, 34-seater coaches for medium requirements, and 66-seater buses for major workforce transport, matching capacity to your specific needs."
     },
+    seoContent: {
+  h2: "Passenger Bus Rental in Abu Dhabi & Mussafah (Staff Transport Hire UAE)",
+  sections: [
+    {
+      title: "Professional Passenger Bus Rental Services in Abu Dhabi",
+      content: [
+        "Western Eagle Transport LLC provides reliable passenger bus rental services in Abu Dhabi, Mussafah, Dubai, Sharjah, and across the UAE.",
+        "Passenger buses are essential for staff transportation, workforce mobility, corporate travel, event transfers, and long-distance group transport.",
+        "Our fleet includes modern air-conditioned buses with different seating capacities, ensuring comfortable and safe travel for employees, contractors, and passengers."
+      ]
+    },
+
+    {
+      title: "Passenger Bus Applications Across Mussafah & UAE",
+      content: [
+        "Passenger bus rental services in Abu Dhabi and Mussafah are widely used for staff transportation to industrial zones, construction sites, labor camps, corporate offices, and events.",
+        "Industrial companies operating in Mussafah and ICAD depend on buses for daily workforce movement and reliable transport logistics.",
+        "Western Eagle ensures punctual, comfortable, and regulation-compliant passenger transport solutions across all Emirates."
+      ]
+    },
+
+    {
+      title: "Why Choose Western Eagle for Passenger Bus Rental?",
+      content: [
+        "Wide range of passenger buses available including 14-seater, 34-seater, and 66-seater options.",
+        "Flexible daily, weekly, and monthly bus rental plans tailored to your transport requirements.",
+        "Professional licensed drivers available to ensure safe and on-time service.",
+        "Fast availability across Abu Dhabi, Mussafah, Dubai, Sharjah, and all UAE regions.",
+        "Well-maintained vehicles meeting UAE transport and safety standards."
+      ]
+    },
+
+    {
+      title: "Affordable Staff Transport & Passenger Bus Rental Solutions",
+      content: [
+        "Renting passenger buses is a cost-effective alternative to maintaining your own transport fleet, especially for workforce and corporate travel needs.",
+        "Western Eagle Transport provides dependable bus rental services focused on comfort, safety, and efficient staff movement.",
+        "Contact us today for competitive passenger bus rental pricing and immediate availability in Abu Dhabi and Mussafah."
+      ]
+    }
+  ]
+},
+faq: [
+  {
+    q: "Do you provide passenger bus rental in Mussafah?",
+    a: "Yes, Western Eagle Transport provides fast passenger bus rental services across Mussafah Industrial Area, ICAD, Abu Dhabi city, and all UAE regions."
+  },
+  {
+    q: "What are passenger buses commonly used for in Abu Dhabi?",
+    a: "Passenger buses are widely used for staff transportation, labor workforce movement, corporate travel, airport transfers, and event group transport."
+  },
+  {
+    q: "Which bus sizes are available for rent?",
+    a: "We offer multiple seating capacities including 14-seater mini buses, 34-seater staff buses, and 66-seater passenger coaches."
+  },
+  {
+    q: "Do you provide buses with professional drivers?",
+    a: "Yes, licensed and experienced drivers are available with all passenger bus rental services to ensure safe and punctual transport."
+  },
+  {
+    q: "How quickly can you provide a bus rental in Abu Dhabi?",
+    a: "Western Eagle offers same-day bus availability across Abu Dhabi, Mussafah, Dubai, and nearby industrial zones depending on fleet schedule."
+  }
+],
+
     variants: [
       { 
         name: "14 Seater Passenger Bus for Rent", 
@@ -1058,18 +1977,29 @@ export const equipmentData: Record<string, EquipmentData> = {
         image: "/assets/equipment/bus-66seater.webp"
       }
     ],
+    relatedEquipment: [
+      { name: "Excavator for Rent", slug: "excavator-rental-abu-dhabi" },
+      { name: "Forklift for Rent", slug: "forklift-rental-abu-dhabi" },
+      { name: "Boom Loader for Rent", slug: "boom-loader-rental-abu-dhabi" }
+    ],
     image: "/assets/equipment/bus.webp"
   }
 };
 
-export const getEquipmentBySlug = (slug: string): EquipmentData | undefined => {
-  return equipmentData[slug];
+export const getEquipmentBySlug = (slug: string) => {
+  return Object.values(equipmentData).find(
+    (equipment) => equipment.slug === slug
+  );
 };
 
-export const getVariantBySlug = (equipmentSlug: string, variantSlug: string): EquipmentVariant | undefined => {
-  const equipment = equipmentData[equipmentSlug];
-  if (!equipment) return undefined;
-  return equipment.variants.find(v => v.slug === variantSlug);
+
+export const getVariantBySlug = (equipmentSlug: string, variantSlug: string) => {
+  const equipment = getEquipmentBySlug(equipmentSlug);
+  if (!equipment || !equipment.variants) return null;
+
+  return equipment.variants.find(
+    (variant) => variant.slug === variantSlug
+  );
 };
 
 export const getAllEquipmentSlugs = (): string[] => {

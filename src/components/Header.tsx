@@ -28,23 +28,23 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 md:gap-3 flex-shrink-0">
-            <img src={logoImage} alt="Western Eagle Transport Company" width={50} height={40} className="h-10 md:h-14 w-auto" />
+            <img src={logoImage} alt="Western Eagle Transport Company" width={50} height={49} className="h-14 md:h-12 w-auto" />
             <div>
               <p className="font-heading font-bold text-sm sm:text-base md:text-lg text-foreground leading-tight">WESTERN EAGLE</p>
-              <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider">Transport Company</p>
+              <p className="text-[10px] sm:text-[12px] md:text-xs text-muted-foreground uppercase tracking-wider">Transport Company</p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
             <Link to="/" className="text-foreground hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">Home</Link>
-            <Link to="/#about" className="text-foreground hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">About Us</Link>
+            <Link to="/about" className="text-foreground hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">About Us</Link>
             
             {/* Equipment Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Link 
-                  to="/#equipment" 
+                  to="/equipment" 
                   className="text-foreground hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide flex items-center gap-1 focus:outline-none cursor-pointer"
                 >
                   Equipment <ChevronDown className="w-4 h-4" />
@@ -70,7 +70,7 @@ const Header = () => {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Link 
-                  to="/#services" 
+                  to="/services" 
                   className="text-foreground hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide flex items-center gap-1 focus:outline-none cursor-pointer"
                 >
                   Services <ChevronDown className="w-4 h-4" />
@@ -92,9 +92,9 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
             
-            <Link to="/#gallery" className="text-foreground hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">Gallery</Link>
+            <Link to="/gallery" className="text-foreground hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">Gallery</Link>
             <Link to="/blog" className="text-foreground hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">Blog</Link>
-            <Link to="/#contact" className="text-foreground hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">Contact</Link>
+            <Link to="/contact" className="text-foreground hover:text-primary transition-colors font-medium uppercase text-sm tracking-wide">Contact</Link>
           </nav>
 
           {/* Phone Numbers & Theme Toggle */}
@@ -137,7 +137,7 @@ const Header = () => {
             <Link to="/" className="nav-link py-2" onClick={() => setIsMenuOpen(false)}>
               Home
             </Link>
-            <Link to="/#about" className="nav-link py-2" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/about" className="nav-link py-2" onClick={() => setIsMenuOpen(false)}>
               About Us
             </Link>
             
@@ -179,13 +179,13 @@ const Header = () => {
               </div>
             </details>
             
-            <Link to="/#gallery" className="nav-link py-2" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/gallery" className="nav-link py-2" onClick={() => setIsMenuOpen(false)}>
               Gallery
             </Link>
             <Link to="/blog" className="nav-link py-2" onClick={() => setIsMenuOpen(false)}>
               Blogs
             </Link>
-            <Link to="/#contact" className="nav-link py-2" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/contact" className="nav-link py-2" onClick={() => setIsMenuOpen(false)}>
               Contact
             </Link>
             
