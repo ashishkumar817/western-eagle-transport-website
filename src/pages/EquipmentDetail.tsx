@@ -37,15 +37,24 @@ const equipment = slug ? getEquipmentBySlug(slug) : undefined;
 
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    name: equipment.name,
+    "@type": "Service",
+    name: `${equipment.name} rental`,
+    serviceType: equipment.name,
     description: equipment.metaDescription,
-    brand: { "@type": "Brand", name: "Western Eagle Transport" },
-    offers: {
-      "@type": "AggregateOffer",
-      priceCurrency: "AED",
-      availability: "https://schema.org/InStock"
-    }
+    url: `https://westerneagletransportllc.com/equipment/${equipment.slug}`,
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Western Eagle Transport LLC",
+      url: "https://westerneagletransportllc.com/",
+      telephone: "+971505567467",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Mussafah-44, Elite Business Zone Investment, Office No.58",
+        addressLocality: "Abu Dhabi",
+        addressCountry: "AE",
+      },
+    },
+    areaServed: ["Abu Dhabi", "Dubai", "Sharjah", "United Arab Emirates"],
   };
 
   const faqSchema =
@@ -88,6 +97,15 @@ const equipment = slug ? getEquipmentBySlug(slug) : undefined;
         <meta name="description" content={equipment.metaDescription} />
         <meta name="keywords" content={`${equipment.name} rental, ${equipment.name} for rent UAE, ${equipment.name} rental Dubai, ${equipment.name} rental Abu Dhabi, heavy equipment rental UAE, ${equipment.name} hire`} />
         <link rel="canonical" href={`https://westerneagletransportllc.com/equipment/${slug}`} />
+        <meta property="og:title" content={`${equipment.heroTitle} | Western Eagle Transport`} />
+        <meta property="og:description" content={equipment.metaDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://westerneagletransportllc.com/equipment/${equipment.slug}`} />
+        <meta property="og:image" content={`https://westerneagletransportllc.com${equipment.image}`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${equipment.heroTitle} | Western Eagle Transport`} />
+        <meta name="twitter:description" content={equipment.metaDescription} />
+        <meta name="twitter:image" content={`https://westerneagletransportllc.com${equipment.image}`} />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
         {faqSchema && (
   <script type="application/ld+json">

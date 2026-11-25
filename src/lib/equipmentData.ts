@@ -1600,7 +1600,7 @@ faq: [
     variants: [
       { 
         name: "Skid Steer Bobcat for Rent", 
-        slug: "skid-steer-bobcat-for rent", 
+        slug: "skid-steer-bobcat-for-rent", 
         capacity: "Bobcat", 
         description: "Versatile Bobcat skid steer loader for construction, landscaping, and material handling applications. Zero-turn maneuverability with multiple attachment compatibility.", 
         applications: ["General construction", "Landscaping", "Material handling"], 

@@ -8,13 +8,30 @@ import { blogPosts } from "@/lib/data";
 import { format } from "date-fns";
 
 const Blog = () => {
+  const blogListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Heavy Equipment Rental Insights",
+    itemListElement: blogPosts.map((post, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `https://westerneagletransportllc.com/blog/${post.slug}`,
+      name: post.title,
+    })),
+  };
+
   return (
     <>
       <Helmet>
-        <title>Blog | Heavy Equipment Rental Insights | Western Eagle Transport</title>
-        <meta name="description" content="Stay updated with the latest news, tips, and insights about heavy equipment rental and transport services." />
-        <meta name="keywords" content="heavy equipment blog, construction machinery articles, equipment rental tips UAE, Abu Dhabi" />
+        <title>Heavy Equipment Rental Blog UAE | Western Eagle Transport</title>
+        <meta name="description" content="Practical guides and expert insights on heavy equipment rental, forklifts, cranes, loaders, maintenance, and construction projects in Abu Dhabi and the UAE." />
+        <meta name="keywords" content="heavy equipment rental blog UAE, construction equipment tips Abu Dhabi, forklift rental advice" />
+        <meta property="og:title" content="Heavy Equipment Rental Blog UAE | Western Eagle Transport" />
+        <meta property="og:description" content="Practical guides and expert insights on heavy equipment rental and construction machinery in Abu Dhabi and the UAE." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://westerneagletransportllc.com/blog" />
         <link rel="canonical" href="https://westerneagletransportllc.com/blog" />
+        <script type="application/ld+json">{JSON.stringify(blogListSchema)}</script>
       </Helmet>
       
       <div className="min-h-screen bg-background">
@@ -54,7 +71,7 @@ const Blog = () => {
                     <div className="p-6">
                       <div className="flex items-center gap-2 text-muted-foreground text-sm mb-3">
                         <Calendar className="w-4 h-4" />
-                        {format(new Date(post.date), "MMMM d, yyyy")}
+                        <time dateTime={post.date}>{format(new Date(post.date), "MMMM d, yyyy")}</time>
                       </div>
                       <h2 className="font-heading text-xl font-bold text-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors">
                         {post.title}

@@ -31,28 +31,63 @@ const EquipmentVariant = () => {
   }
 
   const otherVariants = equipment.variants.filter(v => v.slug !== variantSlug);
+  const variantLabel = variant.name.replace(/\s+for rent$/i, "");
+  const pageUrl = `https://westerneagletransportllc.com/equipment/${equipment.slug}/${variant.slug}`;
+  const pageTitle = `${variantLabel} Rental in Abu Dhabi | Western Eagle`;
+  const pageDescription = `${variant.description} Rent this ${variant.capacity} ${equipment.name.toLowerCase()} in Abu Dhabi and across the UAE from Western Eagle Transport. Request availability and a quote.`;
+  const pageImage = `https://westerneagletransportllc.com${variant.image || equipment.image}`;
 
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    name: `${variant.name} for Rent in UAE`,
-    description: variant.description,
-    brand: { "@type": "Brand", name: "Western Eagle Transport" },
-    offers: {
-      "@type": "Offer",
-      priceCurrency: "AED",
-      availability: "https://schema.org/InStock"
-    }
+    "@type": "Service",
+    name: `${variantLabel} rental`,
+    serviceType: `${variant.capacity} ${equipment.name} rental`,
+    description: pageDescription,
+    image: pageImage,
+    url: pageUrl,
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Western Eagle Transport LLC",
+      url: "https://westerneagletransportllc.com/",
+      telephone: "+971505567467",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Mussafah-44, Elite Business Zone Investment, Office No.58",
+        addressLocality: "Abu Dhabi",
+        addressCountry: "AE",
+      },
+    },
+    areaServed: ["Abu Dhabi", "Dubai", "Sharjah", "United Arab Emirates"],
+  };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://westerneagletransportllc.com/" },
+      { "@type": "ListItem", position: 2, name: "Equipment Rental", item: "https://westerneagletransportllc.com/equipment" },
+      { "@type": "ListItem", position: 3, name: equipment.name, item: `https://westerneagletransportllc.com/equipment/${equipment.slug}` },
+      { "@type": "ListItem", position: 4, name: variant.name, item: pageUrl },
+    ],
   };
 
   return (
     <>
       <Helmet>
-        <title>{variant.name} for Rent in UAE | Western Eagle Transport</title>
-        <meta name="description" content={`${variant.description} Rent ${variant.name} in Dubai, Abu Dhabi, Sharjah. Professional service, competitive rates.`} />
-        <meta name="keywords" content={`${variant.name} rental UAE, ${variant.capacity} ${equipment.name} for rent Dubai, heavy equipment rental Abu Dhabi`} />
-        <link rel="canonical" href={`https://westerneagletransportllc.com/equipment/${slug}/${variantSlug}`} />
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:image" content={pageImage} />
+        <meta property="og:image:alt" content={`${variantLabel} available for rent in Abu Dhabi`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content={pageImage} />
+        <link rel="canonical" href={pageUrl} />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
       
       <div className="min-h-screen bg-background">
@@ -68,11 +103,11 @@ const EquipmentVariant = () => {
             <div className="container-custom px-4 relative z-10">
               <nav className="mb-6">
                 <Link to={`/equipment/${slug}`} className="inline-flex items-center text-primary hover:underline">
-                  <ArrowLeft className="w-4 h-4 mr-2" /> Home / {equipment.name} / {variant.name}
+                  <ArrowLeft className="w-4 h-4 mr-2" /> Equipment / {equipment.name} / {variant.name}
                 </Link>
               </nav>
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
-                {variant.name} 
+                  {variantLabel} for Rent in Abu Dhabi
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mb-8">
                 Professional {variant.capacity} {equipment.name.toLowerCase()} rental services across Dubai, Abu Dhabi & Sharjah

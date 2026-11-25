@@ -19,6 +19,7 @@ const Services = () => {
       <Helmet>
         <title>Our Services | Western Eagle Transport Company</title>
         <meta name="description" content="Explore our comprehensive range of equipment rental services including leasing, trained operators, maintenance, and more." />
+        <link rel="canonical" href="https://westerneagletransportllc.com/services" />
       </Helmet>
       
       <div className="min-h-screen bg-background">

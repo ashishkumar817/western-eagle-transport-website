@@ -19,7 +19,6 @@ const HeroSection = () => {
       <img
         src={heroImage}
         alt=""
-        fetchPriority="high"
         decoding="async"
         className="absolute inset-0 w-full h-full object-cover"
       />

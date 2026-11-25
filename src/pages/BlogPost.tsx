@@ -33,17 +33,64 @@ const BlogPost = () => {
   }
 
   const formattedDate = format(new Date(post.date), "MMMM d, yyyy");
+  const pageUrl = `https://westerneagletransportllc.com/blog/${post.slug}`;
+  const imageUrl = `https://westerneagletransportllc.com${post.image}`;
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    image: [imageUrl],
+    datePublished: `${post.date}T00:00:00+04:00`,
+    author: {
+      "@type": "Organization",
+      name: "Western Eagle Transport LLC",
+      url: "https://westerneagletransportllc.com/",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Western Eagle Transport LLC",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://westerneagletransportllc.com/assets/logo.webp",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": pageUrl,
+    },
+  };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://westerneagletransportllc.com/" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://westerneagletransportllc.com/blog" },
+      { "@type": "ListItem", position: 3, name: post.title, item: pageUrl },
+    ],
+  };
 
   return (
     <>
       <Helmet>
-        <title>{post.title} | Western Eagle Transport Blog</title>
+        <title>{post.title} | Western Eagle Transport</title>
         <meta name="description" content={post.excerpt} />
-        <meta name="keywords" content="heavy equipment rental, construction equipment UAE, equipment tips, Abu Dhabi" />
-        <link rel="canonical" href={`westerneagletransportllc.com/blog/${slug}`} />
+        <meta name="keywords" content={`${post.title}, heavy equipment rental UAE, construction equipment Abu Dhabi`} />
+        <meta name="author" content="Western Eagle Transport LLC" />
+        <link rel="canonical" href={pageUrl} />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:type" content="article" />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:image:alt" content={post.title} />
+        <meta property="article:published_time" content={`${post.date}T00:00:00+04:00`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:image" content={imageUrl} />
+        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
       
       <div className="min-h-screen bg-background">
@@ -62,6 +109,8 @@ const BlogPost = () => {
                 <img
                   src={post.image}
                   alt={post.title}
+                  width="1200"
+                  height="675"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -71,11 +120,13 @@ const BlogPost = () => {
                   Blog Post
                 </span>
                 <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
-                  {post.excerpt}
+                  {post.title}
                 </h1>
-                <div className="flex items-center gap-2 text-muted-foreground text-sm">
+                <div className="flex flex-wrap items-center gap-2 text-muted-foreground text-sm">
                   <Calendar className="w-4 h-4" />
-                  {formattedDate}
+                  <time dateTime={post.date}>{formattedDate}</time>
+                  <span aria-hidden="true">·</span>
+                  <span>By Western Eagle Transport LLC</span>
                 </div>
               </header>
 

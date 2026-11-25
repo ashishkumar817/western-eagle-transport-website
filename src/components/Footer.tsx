@@ -173,9 +173,25 @@ const Footer = forwardRef<HTMLElement, {}>((_props, ref) => {
             <p className="text-muted-foreground text-sm">
               © {new Date().getFullYear()} Western Eagle Transport Company. All Rights Reserved.
             </p>
-            <p className="text-muted-foreground text-sm">
-              Designed & Developed by <span className="text-primary font-medium">Ashish Kumar</span>
-            </p>
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm">
+              <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">
+                Privacy Policy
+              </Link>
+              <Link to="/terms-and-conditions" className="text-muted-foreground hover:text-primary transition-colors">
+                Terms &amp; Conditions
+              </Link>
+              <p className="text-muted-foreground">
+                Designed & Developed by{" "}
+                <a
+                  href="https://www.instagram.com/_ash_kumar_21_?igsh=bHphcnN3YWExdzF3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary font-medium hover:underline"
+                >
+                  Ashish Kumar
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </div>

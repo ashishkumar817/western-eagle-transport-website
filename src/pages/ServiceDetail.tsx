@@ -37,6 +37,48 @@ const ServiceDetail = () => {
 
   const IconComponent = service.icon;
   const heroImage = serviceImages[slug || ""] ;
+  const pageUrl = `https://westerneagletransportllc.com/services/${service.slug}`;
+  const imageUrl = `https://westerneagletransportllc.com${heroImage}`;
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.heroTitle,
+    serviceType: service.name,
+    description: service.metaDescription,
+    image: imageUrl,
+    url: pageUrl,
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Western Eagle Transport LLC",
+      url: "https://westerneagletransportllc.com/",
+      telephone: "+971505567467",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Mussafah-44, Elite Business Zone Investment, Office No.58",
+        addressLocality: "Abu Dhabi",
+        addressCountry: "AE",
+      },
+    },
+    areaServed: ["Abu Dhabi", "Dubai", "Sharjah", "United Arab Emirates"],
+  };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: service.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://westerneagletransportllc.com/" },
+      { "@type": "ListItem", position: 2, name: "Services", item: "https://westerneagletransportllc.com/services" },
+      { "@type": "ListItem", position: 3, name: service.name, item: pageUrl },
+    ],
+  };
 
   return (
     <>
@@ -44,7 +86,21 @@ const ServiceDetail = () => {
         <title>{service.metaTitle}</title>
         <meta name="description" content={service.metaDescription} />
         <meta name="keywords" content={service.metaKeywords} />
-        <link rel="canonical" href={`https://westerneagletransportllc.com/services/${slug}`} />
+        <meta name="author" content="Western Eagle Transport LLC" />
+        <link rel="canonical" href={pageUrl} />
+        <meta property="og:title" content={service.metaTitle} />
+        <meta property="og:description" content={service.metaDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:image:alt" content={service.heroTitle} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={service.metaTitle} />
+        <meta name="twitter:description" content={service.metaDescription} />
+        <meta name="twitter:image" content={imageUrl} />
+        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
       
       <div className="min-h-screen bg-background">
