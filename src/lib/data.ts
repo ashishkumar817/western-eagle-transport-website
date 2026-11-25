@@ -103,6 +103,66 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 7,
+    title: "Heavy Equipment Delivery Checklist for Abu Dhabi Construction Sites",
+    slug: "heavy-equipment-delivery-checklist-abu-dhabi",
+    excerpt: "Prepare your Abu Dhabi site for heavy equipment delivery with a practical checklist covering access, timing, unloading, rental details, and handover.",
+    date: "2026-11-25",
+    image: "/assets/hero-bg.webp",
+    content: {
+      intro: [
+        "A smooth equipment delivery starts with site coordination. A gate restriction, unclear drop-off point, or unconfirmed unloading plan can delay the start of work even when the right machine has been booked.",
+        "Use this checklist before arranging heavy equipment rental in Abu Dhabi. Confirm details with your rental provider because transport, unloading, operator supply, and site access arrangements can differ by machine and project."
+      ],
+      sections: [
+        {
+          title: "Confirm the equipment and rental details",
+          paragraphs: ["Before dispatch is arranged, make sure the enquiry or booking identifies the equipment needed and the dates it is required."],
+          bullets: [
+            "Equipment type, capacity, model or variant, and required attachments",
+            "Project task and any site conditions that affect machine choice",
+            "Requested delivery date, time window, rental start date, and expected return date",
+            "Whether an operator is required and whether one is included in the agreed quotation",
+            "What transport, unloading, and collection arrangements are included or need separate coordination"
+          ]
+        },
+        {
+          title: "Share accurate site access information",
+          paragraphs: ["Give the provider the exact delivery location, including the site name, gate or entrance, map pin, and a reachable site contact. Mention access restrictions before the vehicle is sent."],
+          bullets: [
+            "Gate width, turning space, height limits, ramps, or narrow internal roads",
+            "Ground conditions and the route from the entrance to the drop-off area",
+            "Site entry procedures, permits, security checks, and allowed delivery hours",
+            "Any overhead or nearby obstructions along the planned route"
+          ]
+        },
+        {
+          title: "Agree on the unloading and drop-off plan",
+          paragraphs: ["Choose a clear drop-off location and confirm who will coordinate the vehicle on arrival. Ask the provider in advance what unloading support or equipment is needed and who is responsible for arranging it."]
+        },
+        {
+          title: "Prepare for the handover",
+          paragraphs: ["Have the site contact available when the equipment arrives. Check that the delivered machine and attachments match the booking, review its visible condition, and raise any questions before work begins. Operation should follow the manufacturer's instructions and the site's procedures, using an appropriately trained and authorized operator."]
+        },
+        {
+          title: "A quick pre-delivery checklist",
+          bullets: [
+            "Equipment, capacity, and attachments confirmed",
+            "Delivery address, map pin, gate, and contact shared",
+            "Access route and delivery time checked with the site",
+            "Unloading responsibilities agreed with the rental provider",
+            "Rental dates and transport or operator arrangements confirmed",
+            "A person assigned to receive and check the equipment"
+          ]
+        }
+      ],
+      conclusion: [
+        "A few checks before dispatch can help avoid preventable delays and make the handover clearer for both the site team and the rental provider. Share access constraints early, confirm what the quotation includes, and keep the site contact reachable during the delivery window.",
+        "Western Eagle Transport LLC provides equipment rental support for projects in Abu Dhabi and across the UAE. Contact our team with your equipment requirements, rental dates, and site access details to discuss the next steps."
+      ]
+    }
+  },
+  {
     id: 1,
     title: "Forklift Rental in Abu Dhabi: Benefits, Applications, and Cost Savings",
     slug: "forklift-rental-abu-dhabi-benefits-applications-cost-savings",
