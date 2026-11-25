@@ -17,6 +17,9 @@ The website showcases available equipment, services, company information, projec
 - 📱 Mobile-friendly navigation
 - ⚡ Fast client-side page navigation
 - 🔎 SEO-friendly page metadata
+- 📄 Pre-rendered HTML pages for search crawlers and direct route visits
+- 🗺️ Generated sitemap covering equipment variants, services, and blog posts
+- ⚖️ Privacy Policy and Terms & Conditions pages
 - 📄 Downloadable brochures and company documents
 - 🎨 Reusable design components and animations
 
@@ -44,6 +47,7 @@ The website showcases available equipment, services, company information, projec
 │   ├── brochures/           Equipment brochures
 │   ├── favicon files
 │   ├── robots.txt
+│   ├── sitemap.xml           Generated route sitemap
 │   └── site.webmanifest
 │
 ├── src/
@@ -61,6 +65,8 @@ The website showcases available equipment, services, company information, projec
 │
 ├── index.html                Main HTML document
 ├── package.json              Project scripts and dependencies
+├── scripts/
+│   └── prerender.mjs          Pre-renders routes and generates sitemap.xml
 ├── vite.config.ts            Vite configuration
 ├── tailwind.config.ts        Tailwind configuration
 ├── tsconfig*.json            TypeScript configuration
@@ -83,8 +89,12 @@ The website showcases available equipment, services, company information, projec
 | 📩 Contact | `/contact` |
 | 📝 Blog | `/blog` |
 | 📖 Blog Article | `/blog/:slug` |
+| 🔐 Privacy Policy | `/privacy-policy` |
+| ⚖️ Terms & Conditions | `/terms-and-conditions` |
 
 Unknown URLs are handled by a dedicated not-found page.
+
+The production build pre-renders core routes and all equipment, equipment-variant, service, and blog routes to static HTML. The sitemap generator writes to both `public/sitemap.xml` and `dist/sitemap.xml`. Each `<lastmod>` date is derived from the latest modification date of the relevant page source files, rather than the build date.
 
 ## 🗂️ Content Management
 
@@ -170,6 +180,8 @@ The development server runs on the port configured in `vite.config.ts`.
 npm run build
 ```
 
+The build runs the `postbuild` script, which pre-renders routes into `dist/` and refreshes both sitemap files.
+
 ### Preview the production build
 
 ```bash
@@ -184,7 +196,7 @@ npm run lint
 
 ## 🌐 Deployment
 
-The project is configured for deployment on Vercel.
+The project is configured for deployment on Vercel. `vercel.json` runs `npm run build`, publishes `dist/`, and enables clean URLs for the pre-rendered route files.
 
 The production build:
 
@@ -198,7 +210,7 @@ generates the website output inside:
 dist/
 ```
 
-Because the application uses client-side routing, the hosting platform should serve the main application page for nested routes.
+For a static host such as Hostinger, upload the **contents** of `dist/` to the document root (commonly `public_html`), keeping the files and subfolders together. `public/` is source input and is not the built website by itself. Configure the host to serve the generated route files at clean URLs such as `/about` and `/equipment/...`, while preserving a real 404 response for unknown URLs.
 
 ## 🔐 Privacy and Security
 
